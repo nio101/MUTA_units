@@ -1,0 +1,41 @@
+ build/18F27J53/production/_ext/1853667253/muta_messages.d  \
+ build/18F27J53/production/_ext/1853667253/muta_messages.p1:  \
+ ../../muta/muta_messages.c  \
+../../../xc8/v1.35/include/stdarg.h  \
+../../../xc8/v1.35/include/pic18.h  \
+../../../xc8/v1.35/include/p18cxxx.h  \
+src/18F27J53/spi.h  \
+../../../xc8/v1.35/include/xc.h  \
+../../../xc8/v1.35/include/errata.h  \
+src/18F27J53/system_config.h  \
+src/miwi/drv_mrf_miwi_89xa.h  \
+src/18F27J53/miwi_config.h  \
+../../../xc8/v1.35/include/string.h  \
+../../../xc8/v1.35/include/htc.h  \
+src/miwi/miwi_mesh.h  \
+src/18F27J53/delay.h  \
+../../../xc8/v1.35/include/plib.h  \
+../../../xc8/v1.35/include/xc8debug.h  \
+src/18F27J53/config_89xa.h  \
+../../muta/muta_messages.h  \
+src/18F27J53/system.h  \
+../../../xc8/v1.35/include/stdio.h  \
+../../../xc8/v1.35/include/GenericTypeDefs.h  \
+src/18F27J53/console.h  \
+../../../xc8/v1.35/include/conio.h  \
+../../../xc8/v1.35/include/stdint.h  \
+src/miwi/drv_mrf_miwi.h  \
+../../../xc8/v1.35/include/pic18_chip_select.h  \
+../../../xc8/v1.35/include/cci.h  \
+src/miwi/miwi_api.h  \
+src/18F27J53/miwi_config_mesh.h  \
+src/miwi/drv_mrf_miwi_security.h  \
+src/18F27J53/symbol.h  \
+../../../xc8/v1.35/include/stdbool.h  \
+src/18F27J53/timer.h  \
+../../../xc8/v1.35/include/__at.h  \
+../../../xc8/v1.35/include/errno.h  \
+../../../xc8/v1.35/include/__null.h  \
+../../../xc8/v1.35/include/__size_t.h  \
+../../../xc8/v1.35/include/pic18f27j53.h  \
+../../../xc8/v1.35/include/stddef.h 

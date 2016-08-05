@@ -1,0 +1,243 @@
+
+# 1 "src/miwi/drv_mrf_miwi_security.c"
+
+# 69 "src/miwi/drv_mrf_miwi_security.h"
+extern unsigned char mySecurityKey[];
+
+# 13 "../../../xc8/v1.35/include/stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 12 "../../../xc8/v1.35/include/stdbool.h"
+typedef unsigned char bool;
+
+# 74 "src/miwi/drv_mrf_miwi_security.h"
+void CTR(uint8_t *text, uint8_t len, uint8_t *key, uint8_t *nounce);
+void CBC_MAC(uint8_t *text, uint8_t len, uint8_t *key, uint8_t *MIC);
+void CCM_Enc(uint8_t *text, uint8_t headerLen, uint8_t payloadLen, uint8_t *key);
+bool CCM_Dec(uint8_t *text, uint8_t headerLen, uint8_t payloadLen, uint8_t *key);
+
+# 36 "src/miwi/drv_mrf_miwi_security.c"
+uint8_t tmpBlock[4];
+
+# 50
+extern unsigned char mySecurityKey[8];
+
+# 76
+void encode(uint16_t *text, uint16_t *key)
+{
+uint16_t part1=text[0], part2=text[1];
+uint16_t sum=0, delta=0x9E37;
+uint8_t i;
+
+for(i=0; i<32; i++)
+{
+part1 += (((part2 << 4) ^ (part2 >> 5)) + part2) ^ (sum + key[sum & 3]);
+sum += delta;
+part2 += (((part1 << 4) ^ (part1 >> 5)) + part1) ^ (sum + key[(sum>>11) & 3]);
+}
+text[0]=part1; text[1]=part2;
+}
+
+# 117
+void CTR(uint8_t *text, uint8_t len, uint8_t *key, uint8_t *nounce)
+{
+uint8_t block = len/4+1;
+uint8_t i, j;
+
+# 127
+for(i = 0; i < block; i++)
+{
+for(j = 0; j < 4-1; j++)
+{
+tmpBlock[j] = nounce[j];
+}
+tmpBlock[4-1] = i;
+encode((uint16_t *)tmpBlock, (uint16_t *)key);
+for(j = 0; j < 4; j++)
+{
+if( (i * 4 + j) >= len )
+{
+break;
+}
+text[i * 4 + j] ^= tmpBlock[j];
+}
+}
+
+# 148
+}
+
+# 174
+void CBC_MAC( uint8_t *text,
+uint8_t len,
+uint8_t *key,
+uint8_t *MIC)
+{
+uint8_t block = len / 4 + 1;
+uint8_t i, j;
+
+# 187
+for(i = 0; i < 4; i++)
+{
+MIC[i] = 0;
+}
+
+for(i = 0; i < block; i++)
+{
+for(j = 0; j < 4; j++)
+{
+if( (i * 4 + j) >= len )
+{
+break;
+}
+MIC[j] ^= text[i * 4 + j];
+}
+encode((uint16_t *)MIC, (uint16_t *)key);
+}
+
+# 207
+}
+
+# 239
+void CCM_Enc( uint8_t *text,
+uint8_t headerLen,
+uint8_t payloadLen,
+uint8_t *key)
+{
+uint8_t i;
+
+# 251
+CBC_MAC(text, (headerLen + payloadLen), key, tmpBlock);
+
+for(i = 0; i < 4; i++)
+{
+text[headerLen + payloadLen + i] = tmpBlock[i];
+}
+
+for(i = 0; i < 4-1; i++)
+{
+tmpBlock[i] = (i < headerLen) ? text[i] : 0;
+}
+
+CTR(&(text[headerLen]), (payloadLen + 4), key, tmpBlock);
+
+# 267
+}
+
+# 298
+bool CCM_Dec(uint8_t *text, uint8_t headerLen, uint8_t payloadLen, uint8_t *key)
+{
+uint8_t i;
+
+# 307
+for(i = 0; i < 4-1; i++)
+{
+tmpBlock[i] = (i < headerLen) ? text[i] : 0;
+}
+CTR(&(text[headerLen]), payloadLen, key, tmpBlock);
+
+CBC_MAC(text, (headerLen + payloadLen - 2), key, tmpBlock);
+for(i = 0; i < 2; i++)
+{
+if( tmpBlock[i] != text[headerLen + payloadLen - 2 + i] )
+{
+
+# 321
+return 0;
+}
+}
+
+# 327
+return 1;
+}
+
+
+
+extern char bogus;
+
