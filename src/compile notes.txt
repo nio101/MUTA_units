@@ -1,0 +1,10 @@
+compile notes.txt
+-----------------------
+
+Install MPLAB X IDE
+Install XC8 v1.35 and the Legacy PLIB library v2.00 (both are available in the archive download of the XC8 microchip page)
+Open the source code projects in MPLAB, it should compile straight on. :)
+
+XC8 compiler versions after v1.35 won't compile the legacy PLIB, and the microchip Code Configurator plugin that should replace the legacy PLIB library is not supporting the PIC18F27J53 at this time (2016/08).
+Furthermore, it seems that the MiWi source code is using defines from GenerycTypesDefs.h, from the legacy PLIB.
+Maybe I'll refactor the source code later, when the device is supported by the Code Configurator, and I'll make it ready to compile by the most recent XC8 version. Until then, I'll stick to XC8 v1.35 + legacy PLIB v2.00! :)
