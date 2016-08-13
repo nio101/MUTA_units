@@ -1246,8 +1246,8 @@ bssBANK1 100 1FF BANK1 100 1
 text54 2104 8C43 CODE 2104 0
 %locals
 dist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.obj
-../../../xc8/v1.35/include/pic18f27j53.h
-/tmp/xcXoG5pqH
+/opt/microchip/xc8/v1.35/include/pic18f27j53.h
+/tmp/xcXNYKwIy
 6627 834C 0 CODE 0
 6629 834C 0 CODE 0
 6632 834C 0 CODE 0

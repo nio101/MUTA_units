@@ -5,7 +5,7 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.35/dat/en_msgs.txt -cs \
   -h+dist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.sym \
   --cmf=dist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.cmf \
-  -z -Q18F27J53 -o/tmp/xcXVDjDPq \
+  -z -Q18F27J53 -o/tmp/xcXPiTQ2I \
   -Mdist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.map \
   -E1 -ver=XC8 -ASTACK=03EFh-0eafh -pstack=STACK -p_myUID_const=1FFF6h \
   -p_myMODEL_const=1FFF4h -p_StaticSecurityKey_const=1FECh \
@@ -28,7 +28,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcX2qdyqk.obj \
+  /tmp/xcXwwiQHD.obj \
   dist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.obj 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcX2qdyqk.obj
+/tmp/xcXwwiQHD.obj
                 end_init                             F6       F6        4        C       0
                 reset_vec                             0        0        4        0       0
                 config                            1FFF8    1FFF8        8    1FFF8       0

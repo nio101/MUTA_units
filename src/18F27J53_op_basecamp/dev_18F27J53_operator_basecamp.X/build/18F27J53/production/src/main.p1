@@ -24,7 +24,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E10088 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
 "1906 src/usb/usb_device.h
 [v _USBDeviceState `VE10088 ~T0 @X0 0 e ]
-"6460 ../../../xc8/v1.35/include/pic18f27j53.h
+"6460 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
 "6459
@@ -32,12 +32,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S407 . . ]
 "6470
 [v _UCONbits `VS407 ~T0 @X0 0 e@3941 ]
-"35 ../../../xc8/v1.35/include/string.h
+"35 /opt/microchip/xc8/v1.35/include/string.h
 [v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "116 src/main.c
 [v _sendHIDText `(uc ~T0 @X0 0 ef1`*uc ]
 [v F9635 `(v ~T0 @X0 1 tf1`ul ]
-"152 ../../../xc8/v1.35/include/pic18.h
+"152 /opt/microchip/xc8/v1.35/include/pic18.h
 [v __delay `JF9635 ~T0 @X0 0 e ]
 [p i __delay ]
 "103 src/main.c
@@ -71,7 +71,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiMAC_SetPower `(uc ~T0 @X0 0 ef1`uc ]
 "800 src/miwi/miwi_api.h
 [v _MiApp_NoiseDetection `(uc ~T0 @X0 0 ef4`ul`uc`uc`*uc ]
-"194 ../../../xc8/v1.35/include/stdio.h
+"194 /opt/microchip/xc8/v1.35/include/stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "178 src/miwi/miwi_api.h
 [v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
@@ -115,7 +115,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiApp_UnicastAddress `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
 "21 src/../../../muta/muta_messages.h
 [v _dBm_to_mW `(*Cuc ~T0 @X0 0 ef1`uc ]
-"14 ../../../xc8/v1.35/include/string.h
+"14 /opt/microchip/xc8/v1.35/include/string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 "115 src/main.c
 [v _sendHIDBinary `(uc ~T0 @X0 0 ef2`*uc`uc ]
@@ -131,11 +131,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _encode_uint8_variable `(uc ~T0 @X0 0 ef2`*uc`S1360 ]
 "80
 [v _encode_uint16_variable `(uc ~T0 @X0 0 ef2`*uc`S1360 ]
-"43 ../../../xc8/v1.35/include/string.h
+"43 /opt/microchip/xc8/v1.35/include/string.h
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "680 /opt/microchip/xc8/v1.35/include/plib/rtcc.h
 [v _RtccWrOn `(v ~T0 @X0 0 ef ]
-"5269 ../../../xc8/v1.35/include/pic18f27j53.h
+"5269 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S346 . RTCPTR0 RTCPTR1 RTCOE HALFSEC RTCSYNC RTCWREN . RTCEN ]
 "5268
@@ -196,7 +196,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ALRMCFGbits `VS360 ~T0 @X0 0 e@3911 ]
 "356 src/usb/usb_device.h
 [v _USBEnableEndpoint `(v ~T0 @X0 0 ef2`uc`uc ]
-"13661 ../../../xc8/v1.35/include/pic18f27j53.h
+"13661 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S851 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
 [n S851 . CCP1M DC1B P1M ]
 "13666
@@ -227,7 +227,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MIWIInterruptHandler `(v ~T0 @X0 0 ef ]
 "304 src/usb/usb_device.h
 [v _USBDeviceTasks `(v ~T0 @X0 0 ef ]
-"11584 ../../../xc8/v1.35/include/pic18f27j53.h
+"11584 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
 "11594
@@ -255,7 +255,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

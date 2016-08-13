@@ -74,7 +74,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
 "631 src/miwi/miwi_api.h
 [v _MiApp_UnicastAddress `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
-"14 ../../../xc8/v1.35/include/string.h
+"14 /opt/microchip/xc8/v1.35/include/string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 "85 src/../../../muta/muta_messages.h
 [v _decode_variable `(S1305 ~T0 @X0 0 ef1`*uc ]
@@ -90,15 +90,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _encode_uint16_variable `(uc ~T0 @X0 0 ef2`*uc`S1305 ]
 "92
 [v _do_UPDATE `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
-"31 ../../../xc8/v1.35/include/math.h
+"31 /opt/microchip/xc8/v1.35/include/math.h
 [v _floor `(d ~T0 @X0 0 ef1`d ]
 "81 src/../../../muta/muta_messages.h
 [v _encode_ufixed16_variable `(uc ~T0 @X0 0 ef2`*uc`S1305 ]
-"43 ../../../xc8/v1.35/include/string.h
+"43 /opt/microchip/xc8/v1.35/include/string.h
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "680 /opt/microchip/xc8/v1.35/include/plib/rtcc.h
 [v _RtccWrOn `(v ~T0 @X0 0 ef ]
-"5269 ../../../xc8/v1.35/include/pic18f27j53.h
+"5269 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S346 . RTCPTR0 RTCPTR1 RTCOE HALFSEC RTCSYNC RTCWREN . RTCEN ]
 "5268
@@ -186,7 +186,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T4CONbits `VS494 ~T0 @X0 0 e@3958 ]
 "462 src/miwi/drv_mrf_miwi_89xa.h
 [v _MIWIInterruptHandler `(v ~T0 @X0 0 ef ]
-"11584 ../../../xc8/v1.35/include/pic18f27j53.h
+"11584 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
 "11594
@@ -201,14 +201,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "11603
 [v _PIR3bits `VS735 ~T0 @X0 0 e@4004 ]
 [v F9635 `(v ~T0 @X0 1 tf1`ul ]
-"152 ../../../xc8/v1.35/include/pic18.h
+"152 /opt/microchip/xc8/v1.35/include/pic18.h
 [v __delay `JF9635 ~T0 @X0 0 e ]
 [p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

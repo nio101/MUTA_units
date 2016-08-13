@@ -36,7 +36,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _mySecurityKey `uc ~T0 @X0 -> 0 `x e ]
 "121 src/miwi/drv_mrf_miwi_89xa.c
 [v _RegisterRead `(uc ~T0 @X0 0 ef1`uc ]
-"18097 ../../../xc8/v1.35/include/pic18f27j53.h
+"18097 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S1185 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1185 . INT1IF INT2IF INT3IF INT1IE INT2IE INT3IE INT1IP INT2IP ]
 "18107
@@ -103,7 +103,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SPIPut `(v ~T0 @X0 0 ef1`uc ]
 "30
 [v _SPIGet `(uc ~T0 @X0 0 ef ]
-"9920 ../../../xc8/v1.35/include/pic18f27j53.h
+"9920 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S651 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
 "9928
@@ -141,7 +141,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiWi_TickGet `(S1268 ~T0 @X0 0 ef ]
 "68 src/18F27J53/delay.h
 [v _DELAY_ms `(v ~T0 @X0 0 ef1`ui ]
-"16616 ../../../xc8/v1.35/include/pic18f27j53.h
+"16616 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "607 src/miwi/drv_mrf_miwi_89xa.c
 [c E8801 0 1 .. ]
@@ -188,10 +188,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _IncomingFrameCounter `S1271 ~T0 @X0 -> 0 `x e ]
 "78 src/miwi/drv_mrf_miwi_security.h
 [v _CCM_Dec `(uc ~T0 @X0 0 ef4`*uc`uc`uc`*uc ]
-"43 ../../../xc8/v1.35/include/pic18.h
+"43 /opt/microchip/xc8/v1.35/include/pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"11054 ../../../xc8/v1.35/include/pic18f27j53.h
+"11054 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S709 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S709 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
 "11063
@@ -220,7 +220,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

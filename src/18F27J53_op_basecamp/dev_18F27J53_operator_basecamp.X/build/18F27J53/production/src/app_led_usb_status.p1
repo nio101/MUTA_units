@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"6460 ../../../xc8/v1.35/include/pic18f27j53.h
+"6460 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
 "6459
@@ -23,7 +23,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

@@ -1257,8 +1257,8 @@ cstackBANK4 400 425 BANK4 400 1
 text46 20F8 9BBD CODE 20F8 0
 %locals
 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-../../../xc8/v1.35/include/pic18f27j53.h
-/tmp/xcXLFaZXC
+/opt/microchip/xc8/v1.35/include/pic18f27j53.h
+/tmp/xcXQxOxd2
 6590 91DC 0 CODE 0
 6592 91DC 0 CODE 0
 6595 91DC 0 CODE 0

@@ -4,7 +4,7 @@
 # 69 "src/miwi/drv_mrf_miwi_security.h"
 extern unsigned char mySecurityKey[];
 
-# 13 "../../../xc8/v1.35/include/stdint.h"
+# 13 "/opt/microchip/xc8/v1.35/include/stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -94,7 +94,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "../../../xc8/v1.35/include/stdbool.h"
+# 12 "/opt/microchip/xc8/v1.35/include/stdbool.h"
 typedef unsigned char bool;
 
 # 74 "src/miwi/drv_mrf_miwi_security.h"

@@ -16,7 +16,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiMAC_SetPower `(uc ~T0 @X0 0 ef1`uc ]
 "320 src/miwi/miwi_api.h
 [v _MiApp_SearchConnection `(uc ~T0 @X0 0 ef2`uc`ul ]
-"9920 ../../../xc8/v1.35/include/pic18f27j53.h
+"9920 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S651 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
 "9928
@@ -78,7 +78,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _read_sensors `(v ~T0 @X0 0 ef ]
 "858 src/miwi/miwi_api.h
 [v _MiApp_TransceiverPowerState `(uc ~T0 @X0 0 ef1`uc ]
-"11584 ../../../xc8/v1.35/include/pic18f27j53.h
+"11584 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
 "11594
@@ -107,7 +107,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "111 src/main.c
 [v _send_periodical_update `(uc ~T0 @X0 0 ef ]
 [v F9635 `(v ~T0 @X0 1 tf1`ul ]
-"152 ../../../xc8/v1.35/include/pic18.h
+"152 /opt/microchip/xc8/v1.35/include/pic18.h
 [v __delay `JF9635 ~T0 @X0 0 e ]
 [p i __delay ]
 "649 src/miwi/miwi_api.h
@@ -127,7 +127,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _update_variable `(v ~T0 @X0 0 ef ]
 "110
 [v _send_writables_update `(uc ~T0 @X0 0 ef ]
-"14336 ../../../xc8/v1.35/include/pic18f27j53.h
+"14336 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S883 :1 `uc 1 :1 `uc 1 ]
 [n S883 . . GO_NOT_DONE ]
 "14340
@@ -229,7 +229,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESLbits `VS892 ~T0 @X0 0 e@4035 ]
 "244 /opt/microchip/xc8/v1.35/include/plib/i2c.h
 [v _OpenI2C1 `(v ~T0 @X0 0 ef2`uc`uc ]
-"14519 ../../../xc8/v1.35/include/pic18f27j53.h
+"14519 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _SSP1CON2 `Vuc ~T0 @X0 0 e@4037 ]
 "15228
 [s S951 :2 `uc 1 :1 `uc 1 ]
@@ -365,11 +365,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _WriteI2C1 `(c ~T0 @X0 0 ef1`uc ]
 "264
 [v _ReadI2C1 `(uc ~T0 @X0 0 ef ]
-"14938 ../../../xc8/v1.35/include/pic18f27j53.h
+"14938 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
-"14 ../../../xc8/v1.35/include/string.h
+"14 /opt/microchip/xc8/v1.35/include/string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"31 ../../../xc8/v1.35/include/math.h
+"31 /opt/microchip/xc8/v1.35/include/math.h
 [v _floor `(d ~T0 @X0 0 ef1`d ]
 "81 src/../../../muta/muta_messages.h
 [v _encode_ufixed16_variable `(uc ~T0 @X0 0 ef2`*uc`S1305 ]
@@ -379,11 +379,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _do_UPDATE `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
 "80
 [v _encode_uint16_variable `(uc ~T0 @X0 0 ef2`*uc`S1305 ]
-"43 ../../../xc8/v1.35/include/string.h
+"43 /opt/microchip/xc8/v1.35/include/string.h
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "680 /opt/microchip/xc8/v1.35/include/plib/rtcc.h
 [v _RtccWrOn `(v ~T0 @X0 0 ef ]
-"5269 ../../../xc8/v1.35/include/pic18f27j53.h
+"5269 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S346 . RTCPTR0 RTCPTR1 RTCOE HALFSEC RTCSYNC RTCWREN . RTCEN ]
 "5268
@@ -448,7 +448,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

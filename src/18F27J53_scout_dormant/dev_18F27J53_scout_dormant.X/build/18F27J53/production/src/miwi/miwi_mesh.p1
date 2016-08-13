@@ -83,10 +83,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "169 src/miwi/miwi_mesh.c
 [s S1307 `S1272 1 `uc 1 `uc 1 `S1268 1 ]
 [n S1307 _BROADCAST_RECORD AltSourceAddr MiWiSeq RxCounter StartTick ]
-"43 ../../../xc8/v1.35/include/pic18.h
+"43 /opt/microchip/xc8/v1.35/include/pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"16616 ../../../xc8/v1.35/include/pic18f27j53.h
+"16616 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "90 src/18F27J53/symbol.h
 [v _MiWi_TickGet `(S1268 ~T0 @X0 0 ef ]
@@ -121,7 +121,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MiMAC_Init `(uc ~T0 @X0 0 ef1`S1302 ]
 "178 src/miwi/miwi_api.h
 [v _MiApp_SetChannel `(uc ~T0 @X0 0 ef1`uc ]
-"18097 ../../../xc8/v1.35/include/pic18f27j53.h
+"18097 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [s S1185 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1185 . INT1IF INT2IF INT3IF INT1IE INT2IE INT3IE INT1IP INT2IP ]
 "18107
@@ -144,7 +144,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "68 ../../muta/muta_messages.h
 [s S1305 `uc -> 3 `i `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1305 . label type value_byte1 value_byte2 unit writable size ]
-"14 ../../../xc8/v1.35/include/string.h
+"14 /opt/microchip/xc8/v1.35/include/string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 "207 src/miwi/miwi_mesh.h
 [v _TxData `uc ~T0 @X0 0 e ]
@@ -13,7 +13,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10 ../../muta/muta_messages.c
 [v _m_failed_messages `ul ~T0 @X0 0 e ]
 [v F9719 `(v ~T0 @X0 1 tf1`ul ]
-"152 ../../../xc8/v1.35/include/pic18.h
+"152 /opt/microchip/xc8/v1.35/include/pic18.h
 [v __delay `JF9719 ~T0 @X0 0 e ]
 [p i __delay ]
 "710 src/miwi/miwi_api.h
@@ -101,7 +101,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

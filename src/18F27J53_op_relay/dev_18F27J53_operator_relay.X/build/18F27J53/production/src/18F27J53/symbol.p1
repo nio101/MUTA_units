@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"16507 ../../../xc8/v1.35/include/pic18f27j53.h
+"16507 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
 "11054
 [s S709 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -52,7 +52,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1268 `ul 1 `S1269 1 `uc -> 4 `i `S1270 1 ]
 [n S1268 _MIWI_TICK Val byte v word ]
-"16616 ../../../xc8/v1.35/include/pic18f27j53.h
+"16616 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "16635
 [v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
@@ -60,7 +60,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 ../../../xc8/v1.35/include/pic18f27j53.h
+"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {

@@ -9,7 +9,7 @@
  * 
 */
 
-#include <xc.h>
+#include <xc.h>         // should compile with XC8 v1.35 + legacy PLIB v2.00
 #include <stdint.h>
 #include <string.h>
 #include <timers.h>     // remember: you must install manually legacy plib to
