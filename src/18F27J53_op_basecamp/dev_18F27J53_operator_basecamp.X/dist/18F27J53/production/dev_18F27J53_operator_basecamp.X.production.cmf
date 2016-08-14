@@ -153,7 +153,7 @@ text113 CODE 0 A522 A522 74 1
 _StaticSecurityKey_const CODE 0 1FEC 1FEC 8 1
 bssCOMRAM COMRAM 1 32 32 27 1
 mediumconst MEDIUMCONST 0 1FF4 1FF4 3D4 1
-$/tmp/xcXdknF1d.obj
+$/tmp/xcXPTcylZ.obj
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 1E4 1E4 4 1
 config CONFIG 0 1FFF8 1FFF8 8 1
@@ -3022,112 +3022,112 @@ A6CA text2 CODE >41:/opt/microchip/xc8/v1.35/sources/common/strcmp.c
 4804 text0 CODE >459:/home/nio/muta/MUTA_units/src/18F27J53_op_basecamp/dev_18F27J53_operator_basecamp.X/src/main.c
 4808 text0 CODE >460:/home/nio/muta/MUTA_units/src/18F27J53_op_basecamp/dev_18F27J53_operator_basecamp.X/src/main.c
 480E text0 CODE >292:/home/nio/muta/MUTA_units/src/18F27J53_op_basecamp/dev_18F27J53_operator_basecamp.X/src/main.c
-8ED0 cinit CODE >10025:/tmp/xcXmhsaDR
-8ED0 cinit CODE >10027:/tmp/xcXmhsaDR
-8ED0 cinit CODE >10030:/tmp/xcXmhsaDR
-8ED0 cinit CODE >10390:/tmp/xcXmhsaDR
-8ED4 cinit CODE >10391:/tmp/xcXmhsaDR
-8ED8 cinit CODE >10392:/tmp/xcXmhsaDR
-8ED8 cinit CODE >10393:/tmp/xcXmhsaDR
-8EDA cinit CODE >10394:/tmp/xcXmhsaDR
-8EDC cinit CODE >10395:/tmp/xcXmhsaDR
-8EDE cinit CODE >10396:/tmp/xcXmhsaDR
-8EE0 cinit CODE >10397:/tmp/xcXmhsaDR
-8EE2 cinit CODE >10398:/tmp/xcXmhsaDR
-8EE4 cinit CODE >10401:/tmp/xcXmhsaDR
-8EE8 cinit CODE >10402:/tmp/xcXmhsaDR
-8EEC cinit CODE >10403:/tmp/xcXmhsaDR
-8EEC cinit CODE >10404:/tmp/xcXmhsaDR
-8EEE cinit CODE >10405:/tmp/xcXmhsaDR
-8EF0 cinit CODE >10406:/tmp/xcXmhsaDR
-8EF2 cinit CODE >10407:/tmp/xcXmhsaDR
-8EF4 cinit CODE >10408:/tmp/xcXmhsaDR
-8EF6 cinit CODE >10409:/tmp/xcXmhsaDR
-8EF8 cinit CODE >10412:/tmp/xcXmhsaDR
-8EFC cinit CODE >10413:/tmp/xcXmhsaDR
-8EFE cinit CODE >10414:/tmp/xcXmhsaDR
-8EFE cinit CODE >10415:/tmp/xcXmhsaDR
-8F00 cinit CODE >10416:/tmp/xcXmhsaDR
-8F02 cinit CODE >10417:/tmp/xcXmhsaDR
-8F04 cinit CODE >10420:/tmp/xcXmhsaDR
-8F08 cinit CODE >10421:/tmp/xcXmhsaDR
-8F0A cinit CODE >10422:/tmp/xcXmhsaDR
-8F0A cinit CODE >10423:/tmp/xcXmhsaDR
-8F0C cinit CODE >10424:/tmp/xcXmhsaDR
-8F0E cinit CODE >10425:/tmp/xcXmhsaDR
-8F10 cinit CODE >10428:/tmp/xcXmhsaDR
-8F14 cinit CODE >10429:/tmp/xcXmhsaDR
-8F16 cinit CODE >10430:/tmp/xcXmhsaDR
-8F16 cinit CODE >10431:/tmp/xcXmhsaDR
-8F18 cinit CODE >10432:/tmp/xcXmhsaDR
-8F1A cinit CODE >10433:/tmp/xcXmhsaDR
-8F1C cinit CODE >10436:/tmp/xcXmhsaDR
-8F20 cinit CODE >10437:/tmp/xcXmhsaDR
-8F22 cinit CODE >10438:/tmp/xcXmhsaDR
-8F22 cinit CODE >10439:/tmp/xcXmhsaDR
-8F24 cinit CODE >10440:/tmp/xcXmhsaDR
-8F26 cinit CODE >10441:/tmp/xcXmhsaDR
-8F28 cinit CODE >10444:/tmp/xcXmhsaDR
-8F2C cinit CODE >10445:/tmp/xcXmhsaDR
-8F2E cinit CODE >10446:/tmp/xcXmhsaDR
-8F2E cinit CODE >10447:/tmp/xcXmhsaDR
-8F30 cinit CODE >10448:/tmp/xcXmhsaDR
-8F32 cinit CODE >10449:/tmp/xcXmhsaDR
-8F34 cinit CODE >10452:/tmp/xcXmhsaDR
-8F38 cinit CODE >10453:/tmp/xcXmhsaDR
-8F3A cinit CODE >10454:/tmp/xcXmhsaDR
-8F3A cinit CODE >10455:/tmp/xcXmhsaDR
-8F3C cinit CODE >10456:/tmp/xcXmhsaDR
-8F3E cinit CODE >10457:/tmp/xcXmhsaDR
-8F40 cinit CODE >10462:/tmp/xcXmhsaDR
-8F42 cinit CODE >10463:/tmp/xcXmhsaDR
-8F44 cinit CODE >10464:/tmp/xcXmhsaDR
-8F46 cinit CODE >10465:/tmp/xcXmhsaDR
-8F48 cinit CODE >10466:/tmp/xcXmhsaDR
-8F4A cinit CODE >10467:/tmp/xcXmhsaDR
-8F4C cinit CODE >10468:/tmp/xcXmhsaDR
-8F50 cinit CODE >10469:/tmp/xcXmhsaDR
-8F54 cinit CODE >10470:/tmp/xcXmhsaDR
-8F54 cinit CODE >10471:/tmp/xcXmhsaDR
-8F56 cinit CODE >10472:/tmp/xcXmhsaDR
-8F5A cinit CODE >10473:/tmp/xcXmhsaDR
-8F5C cinit CODE >10474:/tmp/xcXmhsaDR
-8F5E cinit CODE >10475:/tmp/xcXmhsaDR
-8F60 cinit CODE >10479:/tmp/xcXmhsaDR
-8F62 cinit CODE >10480:/tmp/xcXmhsaDR
-8F64 cinit CODE >10481:/tmp/xcXmhsaDR
-8F66 cinit CODE >10482:/tmp/xcXmhsaDR
-8F68 cinit CODE >10483:/tmp/xcXmhsaDR
-8F6A cinit CODE >10484:/tmp/xcXmhsaDR
-8F6C cinit CODE >10485:/tmp/xcXmhsaDR
-8F6E cinit CODE >10486:/tmp/xcXmhsaDR
-8F72 cinit CODE >10487:/tmp/xcXmhsaDR
-8F74 cinit CODE >10488:/tmp/xcXmhsaDR
-8F78 cinit CODE >10492:/tmp/xcXmhsaDR
-8F7A cinit CODE >10493:/tmp/xcXmhsaDR
-8F7C cinit CODE >10494:/tmp/xcXmhsaDR
-8F7E cinit CODE >10495:/tmp/xcXmhsaDR
-8F80 cinit CODE >10496:/tmp/xcXmhsaDR
-8F82 cinit CODE >10497:/tmp/xcXmhsaDR
-8F84 cinit CODE >10498:/tmp/xcXmhsaDR
-8F86 cinit CODE >10499:/tmp/xcXmhsaDR
-8F8A cinit CODE >10503:/tmp/xcXmhsaDR
-8F8C cinit CODE >10504:/tmp/xcXmhsaDR
-8F8E cinit CODE >10505:/tmp/xcXmhsaDR
-8F90 cinit CODE >10506:/tmp/xcXmhsaDR
-8F92 cinit CODE >10507:/tmp/xcXmhsaDR
-8F94 cinit CODE >10508:/tmp/xcXmhsaDR
-8F96 cinit CODE >10509:/tmp/xcXmhsaDR
-8F98 cinit CODE >10510:/tmp/xcXmhsaDR
-8F9C cinit CODE >10511:/tmp/xcXmhsaDR
-8F9E cinit CODE >10512:/tmp/xcXmhsaDR
-8FA2 cinit CODE >10513:/tmp/xcXmhsaDR
-8FA4 cinit CODE >10514:/tmp/xcXmhsaDR
-8FA8 cinit CODE >10520:/tmp/xcXmhsaDR
-8FA8 cinit CODE >10522:/tmp/xcXmhsaDR
-8FAA cinit CODE >10523:/tmp/xcXmhsaDR
-8FAC cinit CODE >10524:/tmp/xcXmhsaDR
-8FAE cinit CODE >10525:/tmp/xcXmhsaDR
+8ED0 cinit CODE >10025:/tmp/xcX2olfOA
+8ED0 cinit CODE >10027:/tmp/xcX2olfOA
+8ED0 cinit CODE >10030:/tmp/xcX2olfOA
+8ED0 cinit CODE >10390:/tmp/xcX2olfOA
+8ED4 cinit CODE >10391:/tmp/xcX2olfOA
+8ED8 cinit CODE >10392:/tmp/xcX2olfOA
+8ED8 cinit CODE >10393:/tmp/xcX2olfOA
+8EDA cinit CODE >10394:/tmp/xcX2olfOA
+8EDC cinit CODE >10395:/tmp/xcX2olfOA
+8EDE cinit CODE >10396:/tmp/xcX2olfOA
+8EE0 cinit CODE >10397:/tmp/xcX2olfOA
+8EE2 cinit CODE >10398:/tmp/xcX2olfOA
+8EE4 cinit CODE >10401:/tmp/xcX2olfOA
+8EE8 cinit CODE >10402:/tmp/xcX2olfOA
+8EEC cinit CODE >10403:/tmp/xcX2olfOA
+8EEC cinit CODE >10404:/tmp/xcX2olfOA
+8EEE cinit CODE >10405:/tmp/xcX2olfOA
+8EF0 cinit CODE >10406:/tmp/xcX2olfOA
+8EF2 cinit CODE >10407:/tmp/xcX2olfOA
+8EF4 cinit CODE >10408:/tmp/xcX2olfOA
+8EF6 cinit CODE >10409:/tmp/xcX2olfOA
+8EF8 cinit CODE >10412:/tmp/xcX2olfOA
+8EFC cinit CODE >10413:/tmp/xcX2olfOA
+8EFE cinit CODE >10414:/tmp/xcX2olfOA
+8EFE cinit CODE >10415:/tmp/xcX2olfOA
+8F00 cinit CODE >10416:/tmp/xcX2olfOA
+8F02 cinit CODE >10417:/tmp/xcX2olfOA
+8F04 cinit CODE >10420:/tmp/xcX2olfOA
+8F08 cinit CODE >10421:/tmp/xcX2olfOA
+8F0A cinit CODE >10422:/tmp/xcX2olfOA
+8F0A cinit CODE >10423:/tmp/xcX2olfOA
+8F0C cinit CODE >10424:/tmp/xcX2olfOA
+8F0E cinit CODE >10425:/tmp/xcX2olfOA
+8F10 cinit CODE >10428:/tmp/xcX2olfOA
+8F14 cinit CODE >10429:/tmp/xcX2olfOA
+8F16 cinit CODE >10430:/tmp/xcX2olfOA
+8F16 cinit CODE >10431:/tmp/xcX2olfOA
+8F18 cinit CODE >10432:/tmp/xcX2olfOA
+8F1A cinit CODE >10433:/tmp/xcX2olfOA
+8F1C cinit CODE >10436:/tmp/xcX2olfOA
+8F20 cinit CODE >10437:/tmp/xcX2olfOA
+8F22 cinit CODE >10438:/tmp/xcX2olfOA
+8F22 cinit CODE >10439:/tmp/xcX2olfOA
+8F24 cinit CODE >10440:/tmp/xcX2olfOA
+8F26 cinit CODE >10441:/tmp/xcX2olfOA
+8F28 cinit CODE >10444:/tmp/xcX2olfOA
+8F2C cinit CODE >10445:/tmp/xcX2olfOA
+8F2E cinit CODE >10446:/tmp/xcX2olfOA
+8F2E cinit CODE >10447:/tmp/xcX2olfOA
+8F30 cinit CODE >10448:/tmp/xcX2olfOA
+8F32 cinit CODE >10449:/tmp/xcX2olfOA
+8F34 cinit CODE >10452:/tmp/xcX2olfOA
+8F38 cinit CODE >10453:/tmp/xcX2olfOA
+8F3A cinit CODE >10454:/tmp/xcX2olfOA
+8F3A cinit CODE >10455:/tmp/xcX2olfOA
+8F3C cinit CODE >10456:/tmp/xcX2olfOA
+8F3E cinit CODE >10457:/tmp/xcX2olfOA
+8F40 cinit CODE >10462:/tmp/xcX2olfOA
+8F42 cinit CODE >10463:/tmp/xcX2olfOA
+8F44 cinit CODE >10464:/tmp/xcX2olfOA
+8F46 cinit CODE >10465:/tmp/xcX2olfOA
+8F48 cinit CODE >10466:/tmp/xcX2olfOA
+8F4A cinit CODE >10467:/tmp/xcX2olfOA
+8F4C cinit CODE >10468:/tmp/xcX2olfOA
+8F50 cinit CODE >10469:/tmp/xcX2olfOA
+8F54 cinit CODE >10470:/tmp/xcX2olfOA
+8F54 cinit CODE >10471:/tmp/xcX2olfOA
+8F56 cinit CODE >10472:/tmp/xcX2olfOA
+8F5A cinit CODE >10473:/tmp/xcX2olfOA
+8F5C cinit CODE >10474:/tmp/xcX2olfOA
+8F5E cinit CODE >10475:/tmp/xcX2olfOA
+8F60 cinit CODE >10479:/tmp/xcX2olfOA
+8F62 cinit CODE >10480:/tmp/xcX2olfOA
+8F64 cinit CODE >10481:/tmp/xcX2olfOA
+8F66 cinit CODE >10482:/tmp/xcX2olfOA
+8F68 cinit CODE >10483:/tmp/xcX2olfOA
+8F6A cinit CODE >10484:/tmp/xcX2olfOA
+8F6C cinit CODE >10485:/tmp/xcX2olfOA
+8F6E cinit CODE >10486:/tmp/xcX2olfOA
+8F72 cinit CODE >10487:/tmp/xcX2olfOA
+8F74 cinit CODE >10488:/tmp/xcX2olfOA
+8F78 cinit CODE >10492:/tmp/xcX2olfOA
+8F7A cinit CODE >10493:/tmp/xcX2olfOA
+8F7C cinit CODE >10494:/tmp/xcX2olfOA
+8F7E cinit CODE >10495:/tmp/xcX2olfOA
+8F80 cinit CODE >10496:/tmp/xcX2olfOA
+8F82 cinit CODE >10497:/tmp/xcX2olfOA
+8F84 cinit CODE >10498:/tmp/xcX2olfOA
+8F86 cinit CODE >10499:/tmp/xcX2olfOA
+8F8A cinit CODE >10503:/tmp/xcX2olfOA
+8F8C cinit CODE >10504:/tmp/xcX2olfOA
+8F8E cinit CODE >10505:/tmp/xcX2olfOA
+8F90 cinit CODE >10506:/tmp/xcX2olfOA
+8F92 cinit CODE >10507:/tmp/xcX2olfOA
+8F94 cinit CODE >10508:/tmp/xcX2olfOA
+8F96 cinit CODE >10509:/tmp/xcX2olfOA
+8F98 cinit CODE >10510:/tmp/xcX2olfOA
+8F9C cinit CODE >10511:/tmp/xcX2olfOA
+8F9E cinit CODE >10512:/tmp/xcX2olfOA
+8FA2 cinit CODE >10513:/tmp/xcX2olfOA
+8FA4 cinit CODE >10514:/tmp/xcX2olfOA
+8FA8 cinit CODE >10520:/tmp/xcX2olfOA
+8FA8 cinit CODE >10522:/tmp/xcX2olfOA
+8FAA cinit CODE >10523:/tmp/xcX2olfOA
+8FAC cinit CODE >10524:/tmp/xcX2olfOA
+8FAE cinit CODE >10525:/tmp/xcX2olfOA
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -3168,7 +3168,7 @@ __Hibigdata 0 0 CODE 0 ibigdata dist/18F27J53/production/dev_18F27J53_operator_b
 _p_buffer 1BA 0 BANK1 1 bssBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 MiWi_TickGet@currentTime 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 i1_USBDeviceInit 7F66 0 CODE 0 text76 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst /tmp/xcXdknF1d.obj
+__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst /tmp/xcXPTcylZ.obj
 MiMAC_SendPacket@headerLen 136 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 MiApp_UnicastAddress@PermanentAddr 17F 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _ReceivedBankIndex 1C6 0 BANK1 1 bssBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -3207,7 +3207,7 @@ _UEIE F37 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.pr
 _UEIR F63 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _UEP0 F26 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _UEP1 F27 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcXdknF1d.obj
+___sp 0 0 STACK 2 stack /tmp/xcXPTcylZ.obj
 _main 3D4C 0 CODE 0 text0 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _pDst 3A 0 COMRAM 1 bssCOMRAM dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _role 1CB 0 BANK1 1 bssBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -3216,7 +3216,7 @@ __H_myMODEL_const 1FFF6 0 CODE 0 _myMODEL_const dist/18F27J53/production/dev_18F
 CBC_MAC@text 117 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 SetRFMode@mode 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_USBCtrlTrfTxService 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-start 1E4 0 CODE 0 init /tmp/xcXdknF1d.obj
+start 1E4 0 CODE 0 init /tmp/xcXPTcylZ.obj
 __end_of_TX_POWER_13_DB_MW 21BB 0 MEDIUMCONST 0 mediumconst dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_USBCheckHIDRequest 8BF4 0 CODE 0 text91 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_MIWIInterruptHandler 53BA 0 CODE 0 text104 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -3287,11 +3287,11 @@ __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/18F27J53/production/dev_18F27J53_operato
 i2RegisterRead@IRQ0select 64 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 MiWiTasks@destShortAddress 173 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __end_ofi2_TxPacket 7434 0 CODE 0 text106 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/xcXdknF1d.obj
-intlevel0 0 0 CODE 0 text /tmp/xcXdknF1d.obj
-intlevel1 0 0 CODE 0 text /tmp/xcXdknF1d.obj
-intlevel2 0 0 CODE 0 text /tmp/xcXdknF1d.obj
-intlevel3 0 0 CODE 0 text /tmp/xcXdknF1d.obj
+__accesstop 60 0 ABS 0 - /tmp/xcXPTcylZ.obj
+intlevel0 0 0 CODE 0 text /tmp/xcXPTcylZ.obj
+intlevel1 0 0 CODE 0 text /tmp/xcXPTcylZ.obj
+intlevel2 0 0 CODE 0 text /tmp/xcXPTcylZ.obj
+intlevel3 0 0 CODE 0 text /tmp/xcXPTcylZ.obj
 __ptext100 957A 0 CODE 0 text100 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __ptext101 963E 0 CODE 0 text101 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __ptext102 9248 0 CODE 0 text102 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -3360,8 +3360,8 @@ _ANCON0 F48 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.
 _ANCON1 F49 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _idle_rate 58 0 COMRAM 1 bssCOMRAM dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 ___awdiv@dividend 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXdknF1d.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXdknF1d.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXPTcylZ.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXPTcylZ.obj
 __end_ofi2_MiWi_TickGet A596 0 CODE 0 text113 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_send_network_register 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 encode_uint16_variable@var 102 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -3650,7 +3650,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/18F27J53/production/dev_18F27J53_operator_baseca
 __size_of_USBCtrlEPAllowStatusStage 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXdknF1d.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXPTcylZ.obj
 _USBCheckStdRequest 8DDE 0 CODE 0 text84 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 i2_WriteFIFO AB74 0 CODE 0 text107 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 i2RegisterRead@IRQ1select 63 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -4181,8 +4181,8 @@ _RTCVALLbits F3A 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_baseca
 __L_StaticSecurityKey_const 1FEC 0 CODE 0 _StaticSecurityKey_const dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_findNextNetworkEntry ABF4 0 CODE 0 text49 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 USBEnableEndpoint@p A 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-stackhi CFF 0 ABS 0 - /tmp/xcXdknF1d.obj
-stacklo 840 0 ABS 0 - /tmp/xcXdknF1d.obj
+stackhi CFF 0 ABS 0 - /tmp/xcXPTcylZ.obj
+stacklo 840 0 ABS 0 - /tmp/xcXPTcylZ.obj
 __end_of_USBConfigureEndpoint A1A4 0 CODE 0 text97 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _MiApp_DiscardMessage AF6C 0 CODE 0 text52 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _USBCtrlEPAllowDataStage 9D78 0 CODE 0 text83 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
@@ -4390,7 +4390,7 @@ __Ltext98 0 0 ABS 0 text98 dist/18F27J53/production/dev_18F27J53_operator_baseca
 __Ltext99 0 0 ABS 0 text99 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_InitSymbolTimer 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_USBCtrlTrfInHandler 9702 0 CODE 0 text101 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
-__ramtop F00 0 RAM 0 ramtop /tmp/xcXdknF1d.obj
+__ramtop F00 0 RAM 0 ramtop /tmp/xcXPTcylZ.obj
 _sprintf 53BA 0 CODE 0 text7 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 _MiWiTasks 23C8 0 CODE 0 text31 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj
 CBC_MAC@MIC 11C 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.obj

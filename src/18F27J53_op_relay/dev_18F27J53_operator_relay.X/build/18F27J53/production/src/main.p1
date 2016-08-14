@@ -9933,9 +9933,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 155: MiApp_ProtocolInit(0);
 "155
 [e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 156: MiMAC_SetPower(0x04);
+[; ;main.c: 156: MiMAC_SetPower(0x00);
 "156
-[e ( _MiMAC_SetPower (1 -> -> 4 `i `uc ]
+[e ( _MiMAC_SetPower (1 -> -> 0 `i `uc ]
 "160
 [v _scanresult `Vuc ~T0 @X0 1 a ]
 [; ;main.c: 160: volatile uint8_t scanresult;
@@ -10138,9 +10138,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 232: update_LED();
 "232
 [e ( _update_LED ..  ]
-[; ;main.c: 236: m_power = adapt_power_level(0x04, 33);
+[; ;main.c: 236: m_power = adapt_power_level(0x00, 33);
 "236
-[e = _m_power ( _adapt_power_level (2 , -> -> 4 `i `uc -> -> 33 `i `uc ]
+[e = _m_power ( _adapt_power_level (2 , -> -> 0 `i `uc -> -> 33 `i `uc ]
 [; ;main.c: 240: m_uptime_seconds = 0;
 "240
 [e = _m_uptime_seconds -> -> -> 0 `i `l `ul ]

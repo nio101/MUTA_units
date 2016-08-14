@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Sat Aug 13 18:14:37 2016
+                                                                                               Sun Aug 14 10:38:00 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F27J53
@@ -178,7 +178,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    172  002023  2E81               	dw	11905
    173  002025  307E               	dw	12414
    174  002027  3296               	dw	12950
-   175  002029  34F8               	dw	13560
+   175  002029  34F0               	dw	13552
    176  00202B  3688               	dw	13960
    177  00202D  3840               	dw	14400
    178  00202F  3A00               	dw	14848
@@ -2324,8 +2324,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2313  0040C6  0E00               	movlw	0
   2314  0040C8  ECF2  F036         	call	_MiApp_ProtocolInit
   2315                           
-  2316                           ;main.c: 156: MiMAC_SetPower(0x04);
-  2317  0040CC  0E04               	movlw	4
+  2316                           ;main.c: 156: MiMAC_SetPower(0x00);
+  2317  0040CC  0E00               	movlw	0
   2318  0040CE  ECCB  F04C         	call	_MiMAC_SetPower
   2319  0040D2                     l17020:
   2320                           
@@ -2591,11 +2591,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   2579                           ;main.c: 232: update_LED();
   2580  004226  ECEB  F04A         	call	_update_LED	;wreg free
   2581                           
-  2582                           ;main.c: 236: m_power = adapt_power_level(0x04, 33);
+  2582                           ;main.c: 236: m_power = adapt_power_level(0x00, 33);
   2583  00422A  0E21               	movlw	33
   2584  00422C  0100               	movlb	0	; () banked
   2585  00422E  6FD0               	movwf	adapt_power_level@minimal_rssi& (0+255),b
-  2586  004230  0E04               	movlw	4
+  2586  004230  0E00               	movlw	0
   2587  004232  EC57  F04A         	call	_adapt_power_level
   2588  004236  0101               	movlb	1	; () banked
   2589  004238  6F4F               	movwf	_m_power& (0+255),b
@@ -9792,11 +9792,11 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   9632  0094AE                     _adapt_power_level:
   9633                           	opt stack 9
   9634                           
-  9635                           ;muta_messages.c: 254: uint8_t m_power = 0x04;
+  9635                           ;muta_messages.c: 254: uint8_t m_power = 0x00;
   9636                           
   9637                           ; BSR set to: 0
   9638                           ;incstack = 0
-  9639  0094AE  0E04               	movlw	4
+  9639  0094AE  0E00               	movlw	0
   9640  0094B0  0101               	movlb	1	; () banked
   9641  0094B2  6FFB               	movwf	adapt_power_level@m_power& (0+255),b
   9642                           
@@ -10354,7 +10354,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
  10183                           
  10184                           ; BSR set to: 0
  10185                           ;drv_mrf_miwi_89xa.c: 549: }
- 10186                           ;drv_mrf_miwi_89xa.c: 550: RegisterSet(0x3400 | ((0xF0 | (0x04<<1)) & 0xF0) | (outputPow
+ 10186                           ;drv_mrf_miwi_89xa.c: 550: RegisterSet(0x3400 | ((0xF0 | (0x00<<1)) & 0xF0) | (outputPow
       +                          er<<1));
  10187  0099A4  0100               	movlb	0	; () banked
  10188  0099A6  5189               	movf	MiMAC_SetPower@outputPower& (0+255),w,b
@@ -37117,7 +37117,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Sat Aug 13 18:14:37 2016
+Symbol Table                                                                                   Sun Aug 14 10:38:00 2016
 
                               i2_TxPacket 769C                              ___altoft@exp 00AC  
                     ?_MiMAC_DiscardPacket 0001                              _UPTIME_LABEL 20F3  

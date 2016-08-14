@@ -10342,8 +10342,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "254
 [v _m_power `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 254: uint8_t m_power = 0x04;
-[e = _m_power -> -> 4 `i `uc ]
+[; ;muta_messages.c: 254: uint8_t m_power = 0x00;
+[e = _m_power -> -> 0 `i `uc ]
 "255
 [v _last_good_power `uc ~T0 @X0 1 a ]
 [; ;muta_messages.c: 255: uint8_t last_good_power = m_power;

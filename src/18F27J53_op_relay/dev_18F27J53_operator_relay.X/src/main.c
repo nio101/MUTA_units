@@ -10,12 +10,12 @@
 */
 
 #include <xc.h>         // should compile with XC8 v1.35 + legacy PLIB v2.00
-#include <stdint.h>
-#include <string.h>
+#include <stdint.h>     // remember: you must install manually legacy plib
+#include <string.h>     // those since XC8 v1.35 doesn't include plib anymore
 #include <i2c.h>
 #include <rtcc.h>
-#include <timers.h>     // remember: you must install manually legacy plib to
-#include <pwm.h>        // those since XC5 v1.35 doesn't include plib anymore
+#include <timers.h>
+#include <pwm.h>
 #include <math.h>
 #include "18F27J53/system.h"
 #include "18F27J53/system_config.h"

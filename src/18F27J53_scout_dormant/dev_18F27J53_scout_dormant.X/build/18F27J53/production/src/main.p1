@@ -9961,14 +9961,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _myUID `Cuc ~T0 @X0 -> 2 `i e@131062 ]
 [i _myUID
 :U ..
--> -> 255 `i `uc
+-> -> 0 `i `uc
 -> -> 4 `i `uc
 ..
 ]
-[; ;main.c: 44: const uint8_t myUID[2] @ 0x01FFF6 = { 0xFF, 0x04 };
+[; ;main.c: 44: const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };
 [; ;main.c: 47: extern uint8_t myLongAddress[4];
 "55
-[v _StaticSecurityKey `Cuc ~T0 @X0 -> 8 `i e@8172 ]
+[v _StaticSecurityKey `Cuc ~T0 @X0 -> 8 `i e@131052 ]
 [i _StaticSecurityKey
 :U ..
 -> -> 0 `i `uc
@@ -9981,7 +9981,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 7 `i `uc
 ..
 ]
-[; ;main.c: 55: const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
+[; ;main.c: 55: const unsigned char StaticSecurityKey[8] @ 0x01FFEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
 "56
 [v _mySecurityKey `uc ~T0 @X0 -> 8 `i e ]
 [; ;main.c: 56: unsigned char mySecurityKey[8];
@@ -10192,9 +10192,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 152: MiApp_ProtocolInit(0);
 "152
 [e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 153: MiMAC_SetPower(0x04);
+[; ;main.c: 153: MiMAC_SetPower(0x00);
 "153
-[e ( _MiMAC_SetPower (1 -> -> 4 `i `uc ]
+[e ( _MiMAC_SetPower (1 -> -> 0 `i `uc ]
 "157
 [v _scanresult `Vuc ~T0 @X0 1 a ]
 [; ;main.c: 157: volatile uint8_t scanresult;
@@ -10382,9 +10382,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 226: myAppState = STATE_READY;
 "226
 [e = _myAppState . `E9872 1 ]
-[; ;main.c: 230: m_power = adapt_power_level(0x04, 33);
+[; ;main.c: 230: m_power = adapt_power_level(0x00, 33);
 "230
-[e = _m_power ( _adapt_power_level (2 , -> -> 4 `i `uc -> -> 33 `i `uc ]
+[e = _m_power ( _adapt_power_level (2 , -> -> 0 `i `uc -> -> 33 `i `uc ]
 [; ;main.c: 234: m_uptime_seconds = 0;
 "234
 [e = _m_uptime_seconds -> -> -> 0 `i `l `ul ]

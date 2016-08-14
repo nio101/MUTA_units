@@ -12268,13 +12268,13 @@ bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
 # 42 "src/main.c"
 const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x01, 0x02 };
 
-const uint8_t myUID[2] @ 0x01FFF6 = { 0xFF, 0x04 };
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };
 
 # 47
 extern uint8_t myLongAddress[4];
 
 # 55
-const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
+const unsigned char StaticSecurityKey[8] @ 0x01FFEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
 unsigned char mySecurityKey[8];
 
 # 80
@@ -12337,7 +12337,7 @@ for (int x=0; x<8; x++)
 mySecurityKey[x] = StaticSecurityKey[x];
 
 MiApp_ProtocolInit(0);
-MiMAC_SetPower(0x04);
+MiMAC_SetPower(0x00);
 
 
 
@@ -12409,7 +12409,7 @@ myAppState = STATE_READY;
 
 
 
-m_power = adapt_power_level(0x04, 33);
+m_power = adapt_power_level(0x00, 33);
 
 
 

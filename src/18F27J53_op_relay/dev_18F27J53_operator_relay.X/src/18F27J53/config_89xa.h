@@ -65,7 +65,7 @@
     /*********************************************************************/
     // TX_POWER defines the output power for MRF89XA
     /*********************************************************************/
-    #define TX_POWER        TX_POWER_1_DB
+    #define TX_POWER        TX_POWER_13_DB
 
 /*
 #define TX_POWER_13_DB      0x00    //[3:1], 13dBm  => 20mW (interdit en France)

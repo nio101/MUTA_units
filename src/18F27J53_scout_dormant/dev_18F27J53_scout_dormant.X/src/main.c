@@ -10,12 +10,12 @@
 */
 
 #include <xc.h>         // should compile with XC8 v1.35 + legacy PLIB v2.00
-#include <stdint.h>
-#include <string.h>
+#include <stdint.h>     // remember: you must install manually legacy plib
+#include <string.h>     // those since XC8 v1.35 doesn't include plib anymore
 #include <i2c.h>
 #include <rtcc.h>
-#include <timers.h>     // remember: you must install manually legacy plib to
-#include <pwm.h>        // those since XC5 v1.35 doesn't include plib anymore
+#include <timers.h>
+#include <pwm.h>
 #include <math.h>
 #include "18F27J53/system.h"
 #include "18F27J53/system_config.h"
@@ -41,7 +41,7 @@ let's put some const at the end of flash memory:
     + make of the unit (1 for mk1, 2 for mk2...) */
 const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x01, 0x02 }; // scout mk2
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0xFF, 0x04 }; // uid
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };   // uid
 /* those info are mapped @ 0x01FFF4 and 0x01FFF6, and can then be modified
  * without recompiling the firmware, if needed (using the proper tool) */
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
@@ -52,7 +52,7 @@ extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
 // algo: XTEA64 + CCM_16
 // the key is mapped @ 0x01FEC and can then be modified without recompiling
 // the firmware, if needed (using the proper tool)
-const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07  };
+const unsigned char StaticSecurityKey[8] @ 0x01FFEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07  };
 unsigned char mySecurityKey[8];
 /* note: mySecurityKey will be initialized with StaticSecurityKey
  * then mySecurityKey[2] and mySecurityKey[6] will be replaced by
@@ -61,7 +61,7 @@ unsigned char mySecurityKey[8];
 /* Memory mapping of myMODEL, myUID and mySecurityKey:
     myMODEL[2] @ 0x01FFF4
     myUID[2] @ 0x01FFF6
-    mySecurityKey[8] @ 0x01FEC        
+    mySecurityKey[8] @ 0x01FFEC        
 => allow the use of HEXMATE (command line utility that comes with MPLABX)
 to modify those value without recompiling the firmware
 ex.: HEXMATE source.hex -FILL=0xBEEF@0x1000 -Odest.hex */

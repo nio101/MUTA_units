@@ -11,10 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcX2emLRP.obj
-reset_vec CODE 0 0 0 4 1
-end_init CODE 0 1E2 1E2 4 1
-config CONFIG 0 1FFF8 1FFF8 8 1
 $dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 intcodelo CODE 0 18 18 1CA 1
 cinit CODE 0 91DC 91DC 82 1
@@ -128,6 +124,10 @@ dataCOMRAM COMRAM 1 49 49 3 1
 _StaticSecurityKey_const CODE 0 1FEC 1FEC 8 1
 bssCOMRAM COMRAM 1 36 36 13 1
 mediumconst MEDIUMCONST 0 1FF4 1FF4 104 1
+$/tmp/xcXcQ3f5I.obj
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 1E2 1E2 4 1
+config CONFIG 0 1FFF8 1FFF8 8 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -2516,68 +2516,68 @@ F4 intcodelo CODE >664:/home/nio/muta/MUTA_units/src/18F27J53_op_relay/dev_18F27
 4554 text0 CODE >371:/home/nio/muta/MUTA_units/src/18F27J53_op_relay/dev_18F27J53_operator_relay.X/src/main.c
 455A text0 CODE >372:/home/nio/muta/MUTA_units/src/18F27J53_op_relay/dev_18F27J53_operator_relay.X/src/main.c
 4560 text0 CODE >270:/home/nio/muta/MUTA_units/src/18F27J53_op_relay/dev_18F27J53_operator_relay.X/src/main.c
-91DC cinit CODE >6590:/tmp/xcXQxOxd2
-91DC cinit CODE >6592:/tmp/xcXQxOxd2
-91DC cinit CODE >6595:/tmp/xcXQxOxd2
-91DC cinit CODE >6843:/tmp/xcXQxOxd2
-91E0 cinit CODE >6844:/tmp/xcXQxOxd2
-91E2 cinit CODE >6845:/tmp/xcXQxOxd2
-91E2 cinit CODE >6846:/tmp/xcXQxOxd2
-91E4 cinit CODE >6847:/tmp/xcXQxOxd2
-91E6 cinit CODE >6848:/tmp/xcXQxOxd2
-91E8 cinit CODE >6851:/tmp/xcXQxOxd2
-91EC cinit CODE >6852:/tmp/xcXQxOxd2
-91EE cinit CODE >6853:/tmp/xcXQxOxd2
-91EE cinit CODE >6854:/tmp/xcXQxOxd2
-91F0 cinit CODE >6855:/tmp/xcXQxOxd2
-91F2 cinit CODE >6856:/tmp/xcXQxOxd2
-91F4 cinit CODE >6859:/tmp/xcXQxOxd2
-91F8 cinit CODE >6860:/tmp/xcXQxOxd2
-91FA cinit CODE >6861:/tmp/xcXQxOxd2
-91FA cinit CODE >6862:/tmp/xcXQxOxd2
-91FC cinit CODE >6863:/tmp/xcXQxOxd2
-91FE cinit CODE >6864:/tmp/xcXQxOxd2
-9200 cinit CODE >6867:/tmp/xcXQxOxd2
-9204 cinit CODE >6868:/tmp/xcXQxOxd2
-9206 cinit CODE >6869:/tmp/xcXQxOxd2
-9206 cinit CODE >6870:/tmp/xcXQxOxd2
-9208 cinit CODE >6871:/tmp/xcXQxOxd2
-920A cinit CODE >6872:/tmp/xcXQxOxd2
-920C cinit CODE >6875:/tmp/xcXQxOxd2
-9210 cinit CODE >6876:/tmp/xcXQxOxd2
-9212 cinit CODE >6877:/tmp/xcXQxOxd2
-9212 cinit CODE >6878:/tmp/xcXQxOxd2
-9214 cinit CODE >6879:/tmp/xcXQxOxd2
-9216 cinit CODE >6880:/tmp/xcXQxOxd2
-9218 cinit CODE >6885:/tmp/xcXQxOxd2
-921A cinit CODE >6886:/tmp/xcXQxOxd2
-921C cinit CODE >6887:/tmp/xcXQxOxd2
-921E cinit CODE >6888:/tmp/xcXQxOxd2
-9220 cinit CODE >6889:/tmp/xcXQxOxd2
-9222 cinit CODE >6890:/tmp/xcXQxOxd2
-9224 cinit CODE >6891:/tmp/xcXQxOxd2
-9226 cinit CODE >6892:/tmp/xcXQxOxd2
-922A cinit CODE >6893:/tmp/xcXQxOxd2
-922C cinit CODE >6894:/tmp/xcXQxOxd2
-9230 cinit CODE >6895:/tmp/xcXQxOxd2
-9232 cinit CODE >6896:/tmp/xcXQxOxd2
-9236 cinit CODE >6900:/tmp/xcXQxOxd2
-9238 cinit CODE >6901:/tmp/xcXQxOxd2
-923A cinit CODE >6902:/tmp/xcXQxOxd2
-923C cinit CODE >6903:/tmp/xcXQxOxd2
-923E cinit CODE >6904:/tmp/xcXQxOxd2
-9240 cinit CODE >6905:/tmp/xcXQxOxd2
-9242 cinit CODE >6906:/tmp/xcXQxOxd2
-9244 cinit CODE >6907:/tmp/xcXQxOxd2
-9248 cinit CODE >6908:/tmp/xcXQxOxd2
-924A cinit CODE >6909:/tmp/xcXQxOxd2
-924E cinit CODE >6910:/tmp/xcXQxOxd2
-9250 cinit CODE >6911:/tmp/xcXQxOxd2
-9254 cinit CODE >6917:/tmp/xcXQxOxd2
-9254 cinit CODE >6919:/tmp/xcXQxOxd2
-9256 cinit CODE >6920:/tmp/xcXQxOxd2
-9258 cinit CODE >6921:/tmp/xcXQxOxd2
-925A cinit CODE >6922:/tmp/xcXQxOxd2
+91DC cinit CODE >6590:/tmp/xcXSZYgaP
+91DC cinit CODE >6592:/tmp/xcXSZYgaP
+91DC cinit CODE >6595:/tmp/xcXSZYgaP
+91DC cinit CODE >6843:/tmp/xcXSZYgaP
+91E0 cinit CODE >6844:/tmp/xcXSZYgaP
+91E2 cinit CODE >6845:/tmp/xcXSZYgaP
+91E2 cinit CODE >6846:/tmp/xcXSZYgaP
+91E4 cinit CODE >6847:/tmp/xcXSZYgaP
+91E6 cinit CODE >6848:/tmp/xcXSZYgaP
+91E8 cinit CODE >6851:/tmp/xcXSZYgaP
+91EC cinit CODE >6852:/tmp/xcXSZYgaP
+91EE cinit CODE >6853:/tmp/xcXSZYgaP
+91EE cinit CODE >6854:/tmp/xcXSZYgaP
+91F0 cinit CODE >6855:/tmp/xcXSZYgaP
+91F2 cinit CODE >6856:/tmp/xcXSZYgaP
+91F4 cinit CODE >6859:/tmp/xcXSZYgaP
+91F8 cinit CODE >6860:/tmp/xcXSZYgaP
+91FA cinit CODE >6861:/tmp/xcXSZYgaP
+91FA cinit CODE >6862:/tmp/xcXSZYgaP
+91FC cinit CODE >6863:/tmp/xcXSZYgaP
+91FE cinit CODE >6864:/tmp/xcXSZYgaP
+9200 cinit CODE >6867:/tmp/xcXSZYgaP
+9204 cinit CODE >6868:/tmp/xcXSZYgaP
+9206 cinit CODE >6869:/tmp/xcXSZYgaP
+9206 cinit CODE >6870:/tmp/xcXSZYgaP
+9208 cinit CODE >6871:/tmp/xcXSZYgaP
+920A cinit CODE >6872:/tmp/xcXSZYgaP
+920C cinit CODE >6875:/tmp/xcXSZYgaP
+9210 cinit CODE >6876:/tmp/xcXSZYgaP
+9212 cinit CODE >6877:/tmp/xcXSZYgaP
+9212 cinit CODE >6878:/tmp/xcXSZYgaP
+9214 cinit CODE >6879:/tmp/xcXSZYgaP
+9216 cinit CODE >6880:/tmp/xcXSZYgaP
+9218 cinit CODE >6885:/tmp/xcXSZYgaP
+921A cinit CODE >6886:/tmp/xcXSZYgaP
+921C cinit CODE >6887:/tmp/xcXSZYgaP
+921E cinit CODE >6888:/tmp/xcXSZYgaP
+9220 cinit CODE >6889:/tmp/xcXSZYgaP
+9222 cinit CODE >6890:/tmp/xcXSZYgaP
+9224 cinit CODE >6891:/tmp/xcXSZYgaP
+9226 cinit CODE >6892:/tmp/xcXSZYgaP
+922A cinit CODE >6893:/tmp/xcXSZYgaP
+922C cinit CODE >6894:/tmp/xcXSZYgaP
+9230 cinit CODE >6895:/tmp/xcXSZYgaP
+9232 cinit CODE >6896:/tmp/xcXSZYgaP
+9236 cinit CODE >6900:/tmp/xcXSZYgaP
+9238 cinit CODE >6901:/tmp/xcXSZYgaP
+923A cinit CODE >6902:/tmp/xcXSZYgaP
+923C cinit CODE >6903:/tmp/xcXSZYgaP
+923E cinit CODE >6904:/tmp/xcXSZYgaP
+9240 cinit CODE >6905:/tmp/xcXSZYgaP
+9242 cinit CODE >6906:/tmp/xcXSZYgaP
+9244 cinit CODE >6907:/tmp/xcXSZYgaP
+9248 cinit CODE >6908:/tmp/xcXSZYgaP
+924A cinit CODE >6909:/tmp/xcXSZYgaP
+924E cinit CODE >6910:/tmp/xcXSZYgaP
+9250 cinit CODE >6911:/tmp/xcXSZYgaP
+9254 cinit CODE >6917:/tmp/xcXSZYgaP
+9254 cinit CODE >6919:/tmp/xcXSZYgaP
+9256 cinit CODE >6920:/tmp/xcXSZYgaP
+9258 cinit CODE >6921:/tmp/xcXSZYgaP
+925A cinit CODE >6922:/tmp/xcXSZYgaP
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -2614,7 +2614,7 @@ ___ftdiv@exp A3 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_oper
 __Hibigdata 0 0 CODE 0 ibigdata dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 _p_buffer 13C 0 BANK1 1 bssBANK1 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 MiWi_TickGet@currentTime 87 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst /tmp/xcX2emLRP.obj
+__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst /tmp/xcXcQ3f5I.obj
 MiApp_SearchConnection@backupChannel 1F3 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 MiMAC_SendPacket@headerLen B7 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 MiApp_UnicastAddress@PermanentAddr CD 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -2642,7 +2642,7 @@ i2RegisterRead@address 19 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production/dev_1
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 _myMODEL 1FFF4 0 CODE 0 _myMODEL_const dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 _myPANID D9 0 BANK0 1 bssBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcX2emLRP.obj
+___sp 0 0 STACK 2 stack /tmp/xcXcQ3f5I.obj
 _main 401A 0 CODE 0 text0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 _role D7 0 BANK0 1 bssBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 btemp 4C 0 COMRAM 1 temp dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -2651,7 +2651,7 @@ CBC_MAC@text 98 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_oper
 SetRFMode@mode 87 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 ___ftadd@f1 89 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 ___ftadd@f2 8C 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-start 1E2 0 CODE 0 init /tmp/xcX2emLRP.obj
+start 1E2 0 CODE 0 init /tmp/xcXcQ3f5I.obj
 __end_of_TX_POWER_13_DB_MW 20E3 0 MEDIUMCONST 0 mediumconst dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __end_of_MIWIInterruptHandler 4A94 0 CODE 0 text81 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 do_NETWORK_REGISTER@shortaddress 2F8 0 BANK2 1 cstackBANK2 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -2711,11 +2711,11 @@ i2RegisterRead@IRQ0select 18 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production/de
 MiWiTasks@destShortAddress 1D3 0 BANK1 1 cstackBANK1 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __end_ofi2_TxPacket 77EA 0 CODE 0 text83 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 do_UPDATE@i 2FA 0 BANK2 1 cstackBANK2 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/xcX2emLRP.obj
-intlevel0 0 0 CODE 0 text /tmp/xcX2emLRP.obj
-intlevel1 0 0 CODE 0 text /tmp/xcX2emLRP.obj
-intlevel2 0 0 CODE 0 text /tmp/xcX2emLRP.obj
-intlevel3 0 0 CODE 0 text /tmp/xcX2emLRP.obj
+__accesstop 60 0 ABS 0 - /tmp/xcXcQ3f5I.obj
+intlevel0 0 0 CODE 0 text /tmp/xcXcQ3f5I.obj
+intlevel1 0 0 CODE 0 text /tmp/xcXcQ3f5I.obj
+intlevel2 0 0 CODE 0 text /tmp/xcXcQ3f5I.obj
+intlevel3 0 0 CODE 0 text /tmp/xcXcQ3f5I.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 SendMACPacket@PacketType BC 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __size_of_OpenSocket 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -2764,8 +2764,8 @@ AddNodeToNetworkTable@i 89 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18
 _ANCON0 F48 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 _ANCON1 F49 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 ___awdiv@dividend 81 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/xcX2emLRP.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/xcX2emLRP.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXcQ3f5I.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXcQ3f5I.obj
 __end_ofi2_MiWi_TickGet 97A6 0 CODE 0 text90 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 encode_uint16_variable@var 83 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 MiApp_UnicastAddress@DestAddress CB 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -3010,7 +3010,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/18F27J53/production/dev_18F27J53_operator_relay.
 __Hbank14 0 0 ABS 0 bank14 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcX2emLRP.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXcQ3f5I.obj
 i2_WriteFIFO 9A40 0 CODE 0 text84 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 i2RegisterRead@IRQ1select 17 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __end_of_MiApp_UnicastAddress 588E 0 CODE 0 text41 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -3455,8 +3455,8 @@ _RTCVALHbits F3B 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.
 _RTCVALLbits F3A 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __L_StaticSecurityKey_const 1FEC 0 CODE 0 _StaticSecurityKey_const dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __end_of_findNextNetworkEntry 9996 0 CODE 0 text72 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-stackhi EAF 0 ABS 0 - /tmp/xcX2emLRP.obj
-stacklo 426 0 ABS 0 - /tmp/xcX2emLRP.obj
+stackhi EAF 0 ABS 0 - /tmp/xcXcQ3f5I.obj
+stacklo 426 0 ABS 0 - /tmp/xcXcQ3f5I.obj
 _MiApp_DiscardMessage 9BA2 0 CODE 0 text75 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __Lintcode 8 0 CODE 0 intcode dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 i2RegisterSet@setting 16 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
@@ -3643,7 +3643,7 @@ __Ltext88 0 0 ABS 0 text88 dist/18F27J53/production/dev_18F27J53_operator_relay.
 __Ltext89 0 0 ABS 0 text89 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __Ltext90 0 0 ABS 0 text90 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 __size_of_InitSymbolTimer 0 0 ABS 0 - dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
-__ramtop F00 0 RAM 0 ramtop /tmp/xcX2emLRP.obj
+__ramtop F00 0 RAM 0 ramtop /tmp/xcXcQ3f5I.obj
 _MiWiTasks 20F8 0 CODE 0 text46 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 CBC_MAC@MIC 9D 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj
 CBC_MAC@key 9B 0 BANK0 1 cstackBANK0 dist/18F27J53/production/dev_18F27J53_operator_relay.X.production.obj

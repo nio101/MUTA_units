@@ -1,0 +1,10 @@
+TODO
+====
+
+reinstall eagle pcb
+
++ réouvrir les projets et faire modif scout mk3 pour exposer le port I2C (si pas déjà fait)
+=> envoyer à tirer chez dirtyPCB
+
+vérifier/réfléchir aux problèmes d'overflow sur les compteurs de messages...
+Ca va bien déborder un jour... :s

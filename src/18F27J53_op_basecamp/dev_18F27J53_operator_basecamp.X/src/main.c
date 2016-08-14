@@ -10,10 +10,10 @@
 */
 
 #include <xc.h>         // should compile with XC8 v1.35 + legacy PLIB v2.00
-#include <stdint.h>
-#include <string.h>
-#include <timers.h>     // remember: you must install manually legacy plib to
-#include <pwm.h>        // those since XC5 v1.35 doesn't include plib anymore
+#include <stdint.h>     // remember: you must install manually legacy plib
+#include <string.h>     // those since XC8 v1.35 doesn't include plib anymore
+#include <timers.h>
+#include <pwm.h>
 #include "18F27J53/system.h"
 #include "18F27J53/system_config.h"
 #include "18F27J53/symbol.h"
@@ -49,7 +49,7 @@ const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x01 }; // operator mk1
 const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x03 }; // operator mk3
 #endif
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0xFF, 0x01 }; // UID, must be unique!
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 }; // UID, must be unique!
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
                                     // done at the beginning of main()
 /* this is the 64bit key that will be used for encryption/decryption

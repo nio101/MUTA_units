@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Sat Aug 13 18:13:53 2016
+                                                                                               Sun Aug 14 10:38:44 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F27J53
@@ -226,7 +226,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
    220  002023  2E81               	dw	11905
    221  002025  307E               	dw	12414
    222  002027  3296               	dw	12950
-   223  002029  34F8               	dw	13560
+   223  002029  34F0               	dw	13552
    224  00202B  3688               	dw	13960
    225  00202D  3840               	dw	14400
    226  00202F  3A00               	dw	14848
@@ -1257,7 +1257,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   1251                           	opt stack 0
   1252  01FFF6                     _myUID:
   1253                           	opt stack 0
-  1254  01FFF6  FF                 	db	255
+  1254  01FFF6  00                 	db	0
   1255  01FFF7  01                 	db	1
   1256  01FFF8                     __end_of_myUID:
   1257                           	opt stack 0
@@ -3617,8 +3617,8 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3604  003F0A  0E00               	movlw	0
   3605  003F0C  ECEF  F03A         	call	_MiApp_ProtocolInit
   3606                           
-  3607                           ;main.c: 228: m_power = 0x04;
-  3608  003F10  0E04               	movlw	4
+  3607                           ;main.c: 228: m_power = 0x00;
+  3608  003F10  0E00               	movlw	0
   3609  003F12  0101               	movlb	1	; () banked
   3610  003F14  6FC9               	movwf	_m_power& (0+255),b
   3611                           
@@ -5506,7 +5506,7 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   5467                           
   5468                           ; BSR set to: 1
   5469                           ;drv_mrf_miwi_89xa.c: 542: }
-  5470                           ;drv_mrf_miwi_89xa.c: 543: RegisterSet(0x3400 | ((0xF0 | (0x04<<1)) & 0xF0) | (outputPow
+  5470                           ;drv_mrf_miwi_89xa.c: 543: RegisterSet(0x3400 | ((0xF0 | (0x00<<1)) & 0xF0) | (outputPow
       +                          er<<1));
   5471  00AC7C  0101               	movlb	1	; () banked
   5472  00AC7E  5108               	movf	MiMAC_SetPower@outputPower& (0+255),w,b
@@ -40474,7 +40474,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Sat Aug 13 18:13:53 2016
+Symbol Table                                                                                   Sun Aug 14 10:38:44 2016
 
                               i2_TxPacket 7284                                _USB_SD_Ptr 20C3  
                     ?_MiMAC_DiscardPacket 0001                              _UPTIME_LABEL 21CF  

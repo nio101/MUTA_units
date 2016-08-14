@@ -12478,7 +12478,7 @@ return rssi;
 
 uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi)
 {
-uint8_t m_power = 0x04;
+uint8_t m_power = 0x00;
 uint8_t last_good_power = m_power;
 uint8_t rssi;
 while(1)

@@ -12349,7 +12349,7 @@ status_led = LED_FAST_PULSE;
 update_LED();
 
 MiApp_ProtocolInit(0);
-MiMAC_SetPower(0x04);
+MiMAC_SetPower(0x00);
 
 
 
@@ -12425,7 +12425,7 @@ update_LED();
 
 
 
-m_power = adapt_power_level(0x04, 33);
+m_power = adapt_power_level(0x00, 33);
 
 
 

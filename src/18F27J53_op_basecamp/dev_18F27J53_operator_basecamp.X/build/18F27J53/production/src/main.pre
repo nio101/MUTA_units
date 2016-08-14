@@ -13043,7 +13043,7 @@ bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
 const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x03 };
 
 
-const uint8_t myUID[2] @ 0x01FFF6 = { 0xFF, 0x01 };
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 };
 extern uint8_t myLongAddress[4];
 
 # 58
@@ -13193,7 +13193,7 @@ break;
 
 
 MiApp_ProtocolInit(0);
-m_power = 0x04;
+m_power = 0x00;
 MiMAC_SetPower(m_power);
 
 

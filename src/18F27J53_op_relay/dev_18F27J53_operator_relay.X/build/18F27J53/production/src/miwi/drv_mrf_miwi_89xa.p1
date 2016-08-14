@@ -9777,7 +9777,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "111
 -> | -> 12800 `i -> 150 `i `ui
 "112
--> | -> 13312 `i | -> 240 `i << -> 4 `i -> 1 `i `ui
+-> | -> 13312 `i | -> 240 `i << -> 0 `i -> 1 `i `ui
 "113
 -> | -> 13824 `i -> 136 `i `ui
 "114
@@ -9817,7 +9817,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_mrf_miwi_89xa.c: 109: 0x2E00 | (0x81),
 [; ;drv_mrf_miwi_89xa.c: 110: 0x3000 | (0x7E),
 [; ;drv_mrf_miwi_89xa.c: 111: 0x3200 | (0x96),
-[; ;drv_mrf_miwi_89xa.c: 112: 0x3400 | (0xF0 | (0x04<<1)),
+[; ;drv_mrf_miwi_89xa.c: 112: 0x3400 | (0xF0 | (0x00<<1)),
 [; ;drv_mrf_miwi_89xa.c: 113: 0x3600 | (0x88),
 [; ;drv_mrf_miwi_89xa.c: 114: 0x3800 | (0x40),
 [; ;drv_mrf_miwi_89xa.c: 115: 0x3A00 | (0x00),
@@ -10376,9 +10376,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1342 ]
 [; ;drv_mrf_miwi_89xa.c: 549: }
-[; ;drv_mrf_miwi_89xa.c: 550: RegisterSet(0x3400 | ((0xF0 | (0x04<<1)) & 0xF0) | (outputPower<<1));
+[; ;drv_mrf_miwi_89xa.c: 550: RegisterSet(0x3400 | ((0xF0 | (0x00<<1)) & 0xF0) | (outputPower<<1));
 "550
-[e ( _RegisterSet (1 -> | | -> 13312 `i & | -> 240 `i << -> 4 `i -> 1 `i -> 240 `i << -> _outputPower `i -> 1 `i `ui ]
+[e ( _RegisterSet (1 -> | | -> 13312 `i & | -> 240 `i << -> 0 `i -> 1 `i -> 240 `i << -> _outputPower `i -> 1 `i `ui ]
 [; ;drv_mrf_miwi_89xa.c: 551: return 1;
 "551
 [e ) -> -> 1 `i `uc ]
