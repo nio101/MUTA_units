@@ -11,9 +11,9 @@
 
 #include <xc.h>         // should compile with XC8 v1.35 + legacy PLIB v2.00
 #include <stdint.h>     // remember: you must install manually legacy plib
-#include <string.h>     // those since XC8 v1.35 doesn't include plib anymore
-#include <timers.h>
+#include <timers.h>     // since XC8 v1.35 doesn't include plib anymore
 #include <pwm.h>
+#include <math.h>
 #include "18F27J53/system.h"
 #include "18F27J53/system_config.h"
 #include "18F27J53/symbol.h"
@@ -43,13 +43,15 @@ Remember: Miwi stack uses TIMER1
 let's put some const at the end of flash memory:
     model of the unit (00: operator, 01:scout, 02:enforcer...)
     + make of the unit (1 for mk1, 2 for mk2...) */
+const uint8_t myMUTA_version @ 0x01FFF2 = 0x01; // MUTA protocol version
 #ifdef MK1
-const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x01 }; // operator mk1
+const uint8_t myMODEL @ 0x01FFF4 = 0x01; // operator mk1
 #else #ifdef MK3
-const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x03 }; // operator mk3
+const uint8_t myMODEL @ 0x01FFF4 = 0x03; // operator mk3
 #endif
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 }; // UID, must be unique!
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x00 }; // UID, must be unique!
+//const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 }; // UID, must be unique!
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
                                     // done at the beginning of main()
 /* this is the 64bit key that will be used for encryption/decryption
@@ -73,7 +75,7 @@ ex.: HEXMATE source.hex -FILL=0xBEEF@0x1000 -Odest.hex */
 // Possible channel numbers are from 0 to 31
 // channels 0,4,8,12,16,20,24,28 (energy scan duration: ~22sec)
 //#define MUTA_CHANNELS      0x11111111
-#define MUTA_CHANNELS      0x00000001
+#define MUTA_CHANNELS      0x00000100
 
 // to use the internal RTCC as a timer (with frequency==multiples of 1min, default @1min)
 #define DEFAULT_UPDATE_FREQUENCY    1
@@ -87,11 +89,14 @@ const char CHANNEL_LABEL[] = "Chn"; // Channel used by the operator
 const char NOISE_LABEL[] = "Nse";   // Noise level measured on the channel
 uint8_t m_power, noise_level, BestChannel;
 const char UPTIME_LABEL[] = "Upt";  // Uptime (since the last reset)
-volatile unsigned long m_uptime_seconds = 0;  // updated every minute
+volatile float m_uptime_days = 0;   // updated every minute
 const char UPDATE_FREQUENCY_LABEL[] = "UpF";    // Update frequency
 volatile uint8_t m_update_frequency = DEFAULT_UPDATE_FREQUENCY;
 unsigned long m_failed_messages = 0;
 unsigned long m_sent_messages = 0;
+
+bool Pwr_updated = false;
+bool UpF_updated = false;
 
 // TinyPack encoding stuff
 uint8_t m_buffer[32];
@@ -102,7 +107,7 @@ MUTA_VARIABLE m_var;
 void timer_reset();
 void send_network_register();
 void send_complete_update();
-void send_writables_update();
+void send_answer_to_update();
 void send_periodic_update();
 void update_variable();
 void wait_for_1_sec();
@@ -149,8 +154,8 @@ void main(void)
 
     bool result;
     // set the unique LongAddress as the result of the unique myMODEL+myUID
-    myLongAddress[0] = myMODEL[0];
-    myLongAddress[1] = myMODEL[1];
+    myLongAddress[0] = myMUTA_version;
+    myLongAddress[1] = myMODEL;
     myLongAddress[2] = myUID[0];
     myLongAddress[3] = myUID[1];
     
@@ -234,8 +239,7 @@ void main(void)
     __delay_ms(20);
       
     // noise scan on the 8 selected channels takes 24 sec with '14'
-    // to speed up dev phase, let's use '8' and 1 channel only
-    BestChannel = MiApp_NoiseDetection(MUTA_CHANNELS, 8, NOISE_DETECT_ENERGY, &noise_level);
+    BestChannel = MiApp_NoiseDetection(MUTA_CHANNELS, 14, NOISE_DETECT_ENERGY, &noise_level);
     
     sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
     sendHIDText(ToSendDataBuffer);
@@ -284,7 +288,7 @@ void main(void)
     status_led = LED_SLOW_PULSE;
     update_LED();
     
-    m_uptime_seconds = 0;
+    m_uptime_days = 0;
     timer_reset();
     
     // D) MAIN LOOP
@@ -416,15 +420,15 @@ void main(void)
                                 m_var = decode_variable(p_buffer);
                                 p_buffer += m_var.size;
                                 // take the update order into account
-                                /*sprintf(ToSendDataBuffer, "I|0000:update/value decoded:%s size=%i", m_var.label, m_var.size);
-                                sendHIDText(ToSendDataBuffer);
-                                __delay_ms(20);*/
+                                //sprintf(ToSendDataBuffer, "I|0000:update/value decoded:%s size=%i", m_var.label, m_var.size);
+                                //sendHIDText(ToSendDataBuffer);
+                                //__delay_ms(20);
                                 update_variable();
                             }
                             if (last_update)
                             {   // all values decoded, answer if last_update
                                 // send back a partial update
-                                send_writables_update();
+                                send_answer_to_update();
                             }
                         }
                     }
@@ -499,10 +503,10 @@ void send_complete_update()
     *(p_buffer++) = MUTA_BOOL_FALSE;    // ack_required
     // encode units variables/values now
     memcpy(m_var.label, POWER_LABEL, 3);
-    m_var.unit = MUTA_NO_UNIT;
-    m_var.value_byte1 = m_power;
+    m_var.unit = MUTA_MWATT_UNIT;
+    dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
     m_var.writable = true;
-    p_buffer += encode_uint8_variable(p_buffer, m_var);
+    p_buffer += encode_ufixed16_variable(p_buffer, m_var);
     memcpy(m_var.label, CHANNEL_LABEL, 3);
     m_var.unit = MUTA_NO_UNIT;
     m_var.value_byte1 = BestChannel;
@@ -524,40 +528,13 @@ void send_complete_update()
     *(p_buffer++) = MUTA_UPDATE;
     *(p_buffer++) = MUTA_BOOL_TRUE;    // ack_required
     // encode units variables/values now
-    // send the uptime
+    // send the uptime as a fraction of days
     memcpy(m_var.label, UPTIME_LABEL, 3);
-    if (m_uptime_seconds < 60)  // send uptime as seconds
-    {
-        m_var.unit = MUTA_SECONDS_UNIT;
-        m_var.value_byte1 = m_uptime_seconds;
-        m_var.writable = false;
-        p_buffer += encode_uint8_variable(p_buffer, m_var);        
-    }
-    else if (m_uptime_seconds < 3600)   // send uptime as minutes
-    {
-        m_var.unit = MUTA_MINUTES_UNIT;
-        m_var.value_byte1 = m_uptime_seconds / 60;
-        m_var.writable = false;
-        p_buffer += encode_uint8_variable(p_buffer, m_var);        
-    }
-    else if (m_uptime_seconds < (86400))    // send uptime as hours
-    {
-        m_var.unit = MUTA_HOURS_UNIT;
-        tmp = m_uptime_seconds / 3600;
-        m_var.value_byte1 = tmp / 256;
-        m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-        m_var.writable = false;
-        p_buffer += encode_uint16_variable(p_buffer, m_var);        
-    }
-    else
-    {   // send uptime as days
-        m_var.unit = MUTA_NO_UNIT;
-        tmp = m_uptime_seconds / 86400;
-        m_var.value_byte1 = tmp / 256;
-        m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-        m_var.writable = false;
-        p_buffer += encode_uint16_variable(p_buffer, m_var);        
-    }
+    m_var.unit = MUTA_DAYS_UNIT;
+    m_var.value_byte1 = (uint8_t)floor(m_uptime_days);  // integer part
+    m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));  // +2 digits
+    m_var.writable = false;
+    p_buffer += encode_ufixed16_variable(p_buffer, m_var);
     // send the update frequency
     memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
     m_var.unit = MUTA_MINUTES_UNIT;
@@ -570,8 +547,9 @@ void send_complete_update()
 }
 
 
-/* send an update message with only the variables/values that can be modified */
-void send_writables_update()
+/* send an update message with only the variables/values that were modified */
+/* by a remote UPDATE received message*/
+void send_answer_to_update()
 {   uint8_t tmp;
     p_buffer = m_buffer;    // encode the UPDATE message in a temporary buffer
     *(p_buffer++) = PC_MESSAGE_RECEIVED;
@@ -580,18 +558,25 @@ void send_writables_update()
     *(p_buffer++) = MUTA_UPDATE;
     *(p_buffer++) = MUTA_BOOL_TRUE;    // last_one
     // encode units variables/values now
-    // send power level
-    memcpy(m_var.label, POWER_LABEL, 3);
-    m_var.unit = MUTA_NO_UNIT;
-    m_var.value_byte1 = m_power;
-    m_var.writable = true;
-    p_buffer += encode_uint8_variable(p_buffer, m_var);
-    // send the update frequency
-    memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-    m_var.unit = MUTA_MINUTES_UNIT;
-    m_var.value_byte1 = m_update_frequency;
-    m_var.writable = true;
-    p_buffer += encode_uint8_variable(p_buffer, m_var);
+    if  (Pwr_updated)
+    {
+        // send power level
+        memcpy(m_var.label, POWER_LABEL, 3);
+        m_var.unit = MUTA_MWATT_UNIT;
+        dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+        m_var.writable = true;
+        p_buffer += encode_ufixed16_variable(p_buffer, m_var);        
+    }
+    if (UpF_updated)
+    {
+        // send the update frequency
+        memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+        m_var.unit = MUTA_MINUTES_UNIT;
+        m_var.value_byte1 = m_update_frequency;
+        m_var.writable = true;
+        p_buffer += encode_uint8_variable(p_buffer, m_var);
+        UpF_updated = false;
+    }
     // send temp buffer to PC via USB in binary
     sendHIDBinary(m_buffer, (p_buffer-m_buffer));
     __delay_ms(20);
@@ -608,58 +593,30 @@ void send_periodic_update()
     *(p_buffer++) = MUTA_UPDATE;
     *(p_buffer++) = MUTA_BOOL_TRUE;    // last_one
     // encode units variables/values now
-    // send the uptime
+    // send the uptime as a fraction of days
     memcpy(m_var.label, UPTIME_LABEL, 3);
-    if (m_uptime_seconds < 60)  // send uptime as seconds
-    {
-        m_var.unit = MUTA_SECONDS_UNIT;
-        m_var.value_byte1 = m_uptime_seconds;
-        m_var.writable = false;
-        p_buffer += encode_uint8_variable(p_buffer, m_var);        
-    }
-    else if (m_uptime_seconds < 3600)   // send uptime as minutes
-    {
-        m_var.unit = MUTA_MINUTES_UNIT;
-        m_var.value_byte1 = m_uptime_seconds / 60;
-        m_var.writable = false;
-        p_buffer += encode_uint8_variable(p_buffer, m_var);        
-    }
-    else if (m_uptime_seconds < (86400))    // send uptime as hours
-    {
-        m_var.unit = MUTA_HOURS_UNIT;
-        tmp = m_uptime_seconds / 3600;
-        m_var.value_byte1 = tmp / 256;
-        m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-        m_var.writable = false;
-        p_buffer += encode_uint16_variable(p_buffer, m_var);        
-    }
-    else
-    {   // send uptime as days
-        m_var.unit = MUTA_NO_UNIT;
-        tmp = m_uptime_seconds / 86400;
-        m_var.value_byte1 = tmp / 256;
-        m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-        m_var.writable = false;
-        p_buffer += encode_uint16_variable(p_buffer, m_var);        
-    }
+    m_var.unit = MUTA_DAYS_UNIT;
+    m_var.value_byte1 = (uint8_t)floor(m_uptime_days);  // integer part
+    m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));  // +2 digits
+    m_var.writable = false;
+    p_buffer += encode_ufixed16_variable(p_buffer, m_var);
     // send temp buffer to PC via USB in binary
     sendHIDBinary(m_buffer, (p_buffer-m_buffer));
     __delay_ms(20);
 }
 
 
-
 /* update the variables */
 void update_variable()
 {   // m_var handles all the update info received, now process them
     // and update the corresponding variable/value accordingly
-    if (strcmp(POWER_LABEL, m_var.label) == 0)   // new value for power
+    if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)   // new value for power
     {
-        m_power = m_var.value_byte1;
-        if ((m_power >= 1) && (m_power <= 7))
-            MiMAC_SetPower(m_power);
+        m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
+        MiMAC_SetPower(m_power);
+        Pwr_updated = true;
     }
-    else if ((strcmp(UPDATE_FREQUENCY_LABEL, m_var.label) == 0) \
+    else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) \
             && (m_var.unit == MUTA_MINUTES_UNIT) && (m_var.type == MUTA_UINT8_TYPE))
     {
         if (m_var.value_byte1 == 0) // special test/debug mode: timer every 10sec
@@ -688,6 +645,7 @@ void update_variable()
             timer_count = m_update_frequency;
             timer_flag = false;
         }
+        UpF_updated = true;
     }
 }
 
@@ -876,7 +834,7 @@ void interrupt low_priority SYS_InterruptLow(void)
     }
     else if(PIR3bits.RTCCIF) // RTCC every minute interrupt
     {
-        m_uptime_seconds = m_uptime_seconds + 64;
+        m_uptime_days = m_uptime_days + 0.000740741F; //== 64 seconds in days
         timer_count = timer_count - 1;
         if (timer_count == 0)
         {

@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"11584 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"11584 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
 "11594
@@ -54,7 +54,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"51 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {
@@ -8185,10 +8185,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;spi.h: 29: void SPIPut(uint8_t v);
-[; ;spi.h: 30: uint8_t SPIGet(void);
-[; ;spi.h: 32: void SPIPut2(uint8_t v);
-[; ;spi.h: 33: uint8_t SPIGet2(void);
+[; ;18F27J53\spi.h: 29: void SPIPut(uint8_t v);
+[; ;18F27J53\spi.h: 30: uint8_t SPIGet(void);
+[; ;18F27J53\spi.h: 32: void SPIPut2(uint8_t v);
+[; ;18F27J53\spi.h: 33: uint8_t SPIGet2(void);
 [; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
 [; ;can2510.h: 415: unsigned char brp,
 [; ;can2510.h: 416: unsigned char interruptFlags,

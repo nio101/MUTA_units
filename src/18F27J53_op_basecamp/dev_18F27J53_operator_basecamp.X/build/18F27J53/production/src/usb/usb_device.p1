@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "136 src/usb/usb_device.c
 [c E10004 0 1 2 4 8 16 32 .. ]
 [n E10004 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"264 src/usb/usb_hal_pic18.h
+"264 src\usb/usb_hal_pic18.h
 [s S1316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1316 . BC8 BC9 BSTALL DTSEN INCDIS KEN DTS UOWN ]
 "275
@@ -23,7 +23,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "293
 [u S1319 `S1320 1 `S1321 1 `ul 1 `uc -> 4 `i ]
 [n S1319 __BDT . . Val v ]
-"1845 src/usb/usb_device.h
+"1845 src\usb/usb_device.h
 [u S1308 `*uc 1 `*Cuc 1 `*ui 1 `*Cui 1 ]
 [n S1308 . bRam bRom wRam wRom ]
 "1856
@@ -54,19 +54,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1874
 [s S1311 `S1312 1 `S1313 1 `S1305 1 `*F10147 1 ]
 [n S1311 . pDst info wCount pFunc ]
-"316 src/usb/usb_hal_pic18.h
+"316 src\usb/usb_hal_pic18.h
 [s S1323 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S1323 . filler1 ping_pong direction endpoint_number ]
 "313
 [u S1322 `S1323 1 `uc 1 ]
 [n S1322 __USTAT . Val ]
-"52 src/usb/usb_device_local.h
+"52 src\usb/usb_device_local.h
 [s S1327 :1 `uc 1 :1 `uc 1 ]
 [n S1327 . ping_pong_state transfer_terminated ]
 "50
 [u S1326 `S1327 1 `uc 1 ]
 [n S1326 . bits Val ]
-"283 src/usb/usb_ch9.h
+"283 src\usb/usb_ch9.h
 [s S1282 `uc 1 `uc 1 `ui 1 `ui 1 `ui 1 ]
 [n S1282 . bmRequestType bRequest wValue wIndex wLength ]
 "299
@@ -123,7 +123,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "280
 [u S1281 `S1282 1 `S1283 1 `S1290 1 `S1291 1 `S1294 1 `S1295 1 `S1296 1 `S1297 1 `S1298 1 `S1299 1 ]
 [n S1281 . . . . . . . . . . . ]
-"11206 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"11206 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [s S715 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S715 . CCP2IE TMR3IE LVDIE BCL1IE USBIE CM1IE CM2IE OSCFIE ]
 "11216
@@ -143,9 +143,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UIR `Vuc ~T0 @X0 0 e@3938 ]
 "3010
 [v _UEP0 `Vuc ~T0 @X0 0 e@3878 ]
-"16 /opt/microchip/xc8/v1.35/include/string.h
+"16 D:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
-"3141 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"3141 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [v _UEP1 `Vuc ~T0 @X0 0 e@3879 ]
 "4922
 [v _UCFG `Vuc ~T0 @X0 0 e@3897 ]
@@ -181,7 +181,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UIEbits `VS314 ~T0 @X0 0 e@3894 ]
 "237 src/usb/usb_device.c
 [v _USBWakeFromSuspend `(v ~T0 @X0 0 sf ]
-"11291 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"11291 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [s S719 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S719 . CCP2IF TMR3IF LVDIF BCL1IF USBIF CM1IF CM2IF OSCFIF ]
 "11301
@@ -202,11 +202,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E9947 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
 "222
 [v _USER_USB_CALLBACK_EVENT_HANDLER `(uc ~T0 @X0 0 ef3`E9947`*v`ui ]
-"679 src/usb/usb_device.h
+"679 src\usb/usb_device.h
 [v _USBCtrlEPAllowStatusStage `(v ~T0 @X0 0 ef ]
 "239 src/usb/usb_device.c
 [v _USBStallHandler `(v ~T0 @X0 0 sf ]
-"6395 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"6395 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [v _USTAT `Vuc ~T0 @X0 0 e@3940 ]
 "224 src/usb/usb_device.c
 [v _USBCtrlEPService `(v ~T0 @X0 0 sf ]
@@ -218,7 +218,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "116
 [u S1328 `uc 1 `S1329 1 ]
 [n S1328 . Val bits ]
-"6454 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"6454 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [v _UCON `Vuc ~T0 @X0 0 e@3941 ]
 "16660
 [s S1074 :1 `uc 1 ]
@@ -288,7 +288,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "2017
 [c E10013 1 2 3 4 5 .. ]
 [n E10013 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
-"76 src/usb/usb_ch9.h
+"76 src\usb/usb_ch9.h
 [s S1273 `uc 1 `uc 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `ui 1 `ui 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1273 _USB_DEVICE_DESCRIPTOR bLength bDescriptorType bcdUSB bDeviceClass bDeviceSubClass bDeviceProtocol bMaxPacketSize0 idVendor idProduct bcdDevice iManufacturer iProduct iSerialNumber bNumConfigurations ]
 "204 src/usb/usb_device.c
@@ -299,7 +299,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F10376 `*Cuc ~T0 @X0 1 t ]
 "214
 [v _USB_SD_Ptr `C*Cuc ~T0 @X0 -> 0 `x e ]
-"3016 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"3016 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [s S163 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S163 . EPSTALL EPINEN EPOUTEN EPCONDIS EPHSHK ]
 "3023
@@ -381,7 +381,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"51 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {
@@ -8484,10 +8484,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ancomp.h: 205: void Open_ancomp2(unsigned char config);
 [; ;ancomp.h: 208: void Close_ancomp3( void );
 [; ;ancomp.h: 209: void Open_ancomp3(unsigned char config);
-[; ;spi.h: 29: void SPIPut(uint8_t v);
-[; ;spi.h: 30: uint8_t SPIGet(void);
-[; ;spi.h: 32: void SPIPut2(uint8_t v);
-[; ;spi.h: 33: uint8_t SPIGet2(void);
+[; ;18F27J53\spi.h: 29: void SPIPut(uint8_t v);
+[; ;18F27J53\spi.h: 30: uint8_t SPIGet(void);
+[; ;18F27J53\spi.h: 32: void SPIPut2(uint8_t v);
+[; ;18F27J53\spi.h: 33: uint8_t SPIGet2(void);
 [; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
 [; ;can2510.h: 415: unsigned char brp,
 [; ;can2510.h: 416: unsigned char interruptFlags,
@@ -9898,21 +9898,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;usb_hal_pic18.h: 610: extern volatile OUT_PIPE outPipes[1];
 [; ;usb_hal_pic18.h: 613: extern volatile BDT_ENTRY* pBDTEntryOut[1+1];
 [; ;usb_hal_pic18.h: 614: extern volatile BDT_ENTRY* pBDTEntryIn[1+1];
-[; ;usb_hal.h: 167: void OTGCORE_SetDeviceAddr( uint8_t addr );
-[; ;usb_hal.h: 203: void USBHALControlUsbResistors( uint8_t flags );
-[; ;usb_hal.h: 237: bool USBHALSessionIsValid( void );
-[; ;usb_hal.h: 263: bool USBHALControlBusPower( uint8_t cmd );
-[; ;usb_hal.h: 293: unsigned long USBHALGetLastError( void );
-[; ;usb_hal.h: 326: void USBHALHandleBusEvent ( void );
-[; ;usb_hal.h: 367: bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 404: bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 438: uint16_t OTGCORE_GetStalledEndpoints ( void );
-[; ;usb_hal.h: 475: bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
-[; ;usb_hal.h: 535: bool USBHALTransferData ( TRANSFER_FLAGS flags,
-[; ;usb_hal.h: 536: void *buffer,
-[; ;usb_hal.h: 537: unsigned int size );
-[; ;usb_hal.h: 575: bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
-[; ;usb_hal.h: 603: bool USBHALInitialize ( unsigned long flags );
+[; ;usb\usb_hal.h: 167: void OTGCORE_SetDeviceAddr( uint8_t addr );
+[; ;usb\usb_hal.h: 203: void USBHALControlUsbResistors( uint8_t flags );
+[; ;usb\usb_hal.h: 237: bool USBHALSessionIsValid( void );
+[; ;usb\usb_hal.h: 263: bool USBHALControlBusPower( uint8_t cmd );
+[; ;usb\usb_hal.h: 293: unsigned long USBHALGetLastError( void );
+[; ;usb\usb_hal.h: 326: void USBHALHandleBusEvent ( void );
+[; ;usb\usb_hal.h: 367: bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
+[; ;usb\usb_hal.h: 404: bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
+[; ;usb\usb_hal.h: 438: uint16_t OTGCORE_GetStalledEndpoints ( void );
+[; ;usb\usb_hal.h: 475: bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
+[; ;usb\usb_hal.h: 535: bool USBHALTransferData ( TRANSFER_FLAGS flags,
+[; ;usb\usb_hal.h: 536: void *buffer,
+[; ;usb\usb_hal.h: 537: unsigned int size );
+[; ;usb\usb_hal.h: 575: bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
+[; ;usb\usb_hal.h: 603: bool USBHALInitialize ( unsigned long flags );
 [; ;usb_device_local.h: 49: typedef union
 [; ;usb_device_local.h: 50: {
 [; ;usb_device_local.h: 51: struct

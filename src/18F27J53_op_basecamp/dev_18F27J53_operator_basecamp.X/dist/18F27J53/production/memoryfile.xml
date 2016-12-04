@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/18F27J53/production/dev_18F27J53_operator_basecamp.X.production.hex">
+  <executable name="dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>131064</length>
-      <used>37266</used>
-      <free>93798</free>
+      <used>40362</used>
+      <free>90702</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3760</length>
-      <used>1901</used>
-      <free>1859</free>
+      <used>1905</used>
+      <free>1855</free>
     </memory>
   </executable>
 </project>

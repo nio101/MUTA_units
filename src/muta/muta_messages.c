@@ -1,5 +1,7 @@
 #include "muta_messages.h"
 
+// Compatible with: MUTA v01
+
 /*
 #define testbit(var, bit)       ((var) & (1 << (bit)))
 #define setbit(var, bit)        ((var) |= (1 << (bit)))
@@ -9,6 +11,79 @@
 uint8_t last_rssi = 0;
 extern unsigned long m_failed_messages;
 extern unsigned long m_sent_messages;
+
+/* compare two labels */
+bool labelcmp(uint8_t* p1, uint8_t* p2)
+{
+    return (*p1==*p2)&&(*(p1+1)==*(p2+1))&&(*(p1+2)==*(p2+2));
+}
+
+// Power_lvl -> ufixed16
+uint8_t mW_ufixed16_to_dBm(uint8_t value1, uint8_t value2)
+{
+    if (value1==20 && value2==0)
+        return TX_POWER_13_DB;
+    else if (value1==10 && value2==0)
+        return TX_POWER_10_DB;
+    else if (value1==5 && value2==0)
+        return TX_POWER_7_DB;
+    else if (value1==2 && value2==50)
+        return TX_POWER_4_DB;
+    else if (value1==1 && value2==25)
+        return TX_POWER_1_DB;
+    else if (value1==0 && value2==60)
+        return TX_POWER_N_2_DB;
+    else if (value1==0 && value2==30)
+        return TX_POWER_N_5_DB;
+    else if (value1==0 && value2==15)
+        return TX_POWER_N_8_DB;
+    else
+        return TX_POWER_N_8_DB;  // could not decode!
+}
+
+// Power_lvl -> ufixed16
+void dBm_to_mW_ufixed16(uint8_t power, uint8_t* value1, uint8_t* value2)
+{
+    switch(power)
+    {
+        case TX_POWER_13_DB:
+            *value1 = 20;
+            *value2 = 0;
+            break;
+        case TX_POWER_10_DB:
+            *value1 = 10;
+            *value2 = 0;
+            break;            
+        case TX_POWER_7_DB:
+            *value1 = 5;
+            *value2 = 0;
+            break;
+        case TX_POWER_4_DB:
+            *value1 = 2;
+            *value2 = 50;
+            break;
+        case TX_POWER_1_DB:
+            *value1 = 1;
+            *value2 = 25;
+            break;
+        case TX_POWER_N_2_DB:
+            *value1 = 0;
+            *value2 = 60;
+            break;
+        case TX_POWER_N_5_DB:
+            *value1 = 0;
+            *value2 = 30;
+            break;
+        case TX_POWER_N_8_DB:
+            *value1 = 0;
+            *value2 = 15;
+            break;
+        default:
+            *value1 = 0;
+            *value2 = 0;
+            break;
+    }
+}
 
 // Power_lvl -> text description
 const char* dBm_to_mW(uint8_t power)
@@ -45,13 +120,13 @@ uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var)
     *(buffer++) = var.label[0];
     *(buffer++) = var.label[1];
     *(buffer++) = var.label[2];
-    var.type = MUTA_UINT8_TYPE << 1;
+    uint8_t m_signed = 0;
+    uint8_t m_writable = 0;
+    if (var._signed)
+        { m_signed = 1; }
     if (var.writable)
-    {
-        var.type = var.type + 1;
-    }
-    var.type = var.type << 4;
-    var.type = var.type + var.unit;
+        { m_writable = 1; }
+    var.type = (MUTA_UINT8_TYPE << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;  
     *(buffer++) = var.type;
     *(buffer++) = var.value_byte1;
     return 5;
@@ -62,13 +137,13 @@ uint8_t encode_uint16_variable(uint8_t* buffer, MUTA_VARIABLE var)
     *(buffer++) = var.label[0];
     *(buffer++) = var.label[1];
     *(buffer++) = var.label[2];
-    var.type = MUTA_UINT16_TYPE << 1;
+    uint8_t m_signed = 0;
+    uint8_t m_writable = 0;
+    if (var._signed)
+        m_signed = 1;
     if (var.writable)
-    {
-        var.type = var.type + 1;
-    }
-    var.type = var.type << 4;
-    var.type = var.type + var.unit;
+        m_writable = 1;        
+    var.type = (MUTA_UINT16_TYPE << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
     *(buffer++) = var.type;
     *(buffer++) = var.value_byte2;
     *(buffer++) = var.value_byte1;
@@ -80,13 +155,13 @@ uint8_t encode_ufixed16_variable(uint8_t* buffer, MUTA_VARIABLE var)
     *(buffer++) = var.label[0];
     *(buffer++) = var.label[1];
     *(buffer++) = var.label[2];
-    var.type = MUTA_UFIXED16_TYPE << 1;
+    uint8_t m_signed = 0;
+    uint8_t m_writable = 0;
+    if (var._signed)
+        m_signed = 1;
     if (var.writable)
-    {
-        var.type = var.type + 1;
-    }
-    var.type = var.type << 4;
-    var.type = var.type + var.unit;
+        m_writable = 1;        
+    var.type = (MUTA_UFIXED16_TYPE << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
     *(buffer++) = var.type;
     *(buffer++) = var.value_byte2;
     *(buffer++) = var.value_byte1;
@@ -98,13 +173,13 @@ uint8_t encode_boolean_variable(uint8_t* buffer, MUTA_VARIABLE var)
     *(buffer++) = var.label[0];
     *(buffer++) = var.label[1];
     *(buffer++) = var.label[2];
-    var.type = MUTA_BOOLEAN_TYPE << 1;
+    uint8_t m_signed = 0;
+    uint8_t m_writable = 0;
+    if (var._signed)
+        m_signed = 1;
     if (var.writable)
-    {
-        var.type = var.type + 1;
-    }
-    var.type = var.type << 4;
-    var.type = var.type + var.unit;
+        m_writable = 1;        
+    var.type = (MUTA_BOOLEAN_TYPE << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
     *(buffer++) = var.type;
     if (var.value_byte1 == MUTA_BOOL_TRUE)
     {
@@ -123,12 +198,17 @@ MUTA_VARIABLE decode_variable(uint8_t* p_buffer)
     memcpy(var.label, p_buffer, 3);
     p_buffer += 3;
     
-    var.unit = *p_buffer & 0b00000111;
+    var.unit = *p_buffer & 0b00001111;
     if (*p_buffer & 0b00010000)
         var.writable = true;
     else
         var.writable = false;
-    var.type = (*p_buffer++ & 0b11100000) >> 5;
+    if (*p_buffer & 0b00100000)
+        var._signed = true;
+    else
+        var._signed = false;
+    // signed is ignored for now - TODO
+    var.type = (*p_buffer++ & 0b11000000) >> 6;
     var.value_byte1 = *p_buffer++;
     if ((var.type == MUTA_UINT16_TYPE) || (var.type == MUTA_UFIXED16_TYPE))
     {

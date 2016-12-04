@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"16507 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"16507 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
 "11054
 [s S709 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -43,7 +43,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1063 . . . . . . ]
 "16541
 [v _T1CONbits `VS1063 ~T0 @X0 0 e@4045 ]
-"74 src/18F27J53/symbol.h
+"74 src\18F27J53/symbol.h
 [s S1269 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1269 _MIWI_TICK_bytes b0 b1 b2 b3 ]
 "82
@@ -52,7 +52,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71
 [u S1268 `ul 1 `S1269 1 `uc -> 4 `i `S1270 1 ]
 [n S1268 _MIWI_TICK Val byte v word ]
-"16616 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"16616 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "16635
 [v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
@@ -60,7 +60,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"51 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {
@@ -8191,10 +8191,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;spi.h: 29: void SPIPut(uint8_t v);
-[; ;spi.h: 30: uint8_t SPIGet(void);
-[; ;spi.h: 32: void SPIPut2(uint8_t v);
-[; ;spi.h: 33: uint8_t SPIGet2(void);
+[; ;18F27J53\spi.h: 29: void SPIPut(uint8_t v);
+[; ;18F27J53\spi.h: 30: uint8_t SPIGet(void);
+[; ;18F27J53\spi.h: 32: void SPIPut2(uint8_t v);
+[; ;18F27J53\spi.h: 33: uint8_t SPIGet2(void);
 [; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
 [; ;can2510.h: 415: unsigned char brp,
 [; ;can2510.h: 416: unsigned char interruptFlags,

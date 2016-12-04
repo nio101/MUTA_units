@@ -1,22 +1,22 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"68 ../../muta/muta_messages.h
-[s S1305 `uc -> 3 `i `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1305 . label type value_byte1 value_byte2 unit writable size ]
-"14 /opt/microchip/xc8/v1.35/include/string.h
+"71 ../../muta/muta_messages.h
+[s S1305 `uc -> 3 `i `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1305 . label type value_byte1 value_byte2 unit writable _signed size ]
+"14 D:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"207 src/miwi/miwi_mesh.h
+"207 src\miwi/miwi_mesh.h
 [v _TxData `uc ~T0 @X0 0 e ]
 "206
 [v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"631 src/miwi/miwi_api.h
+"631 src\miwi/miwi_api.h
 [v _MiApp_UnicastAddress `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
-"10 ../../muta/muta_messages.c
+"12 ../../muta/muta_messages.c
 [v _m_failed_messages `ul ~T0 @X0 0 e ]
 [v F9719 `(v ~T0 @X0 1 tf1`ul ]
-"152 /opt/microchip/xc8/v1.35/include/pic18.h
+"152 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF9719 ~T0 @X0 0 e ]
 [p i __delay ]
-"710 src/miwi/miwi_api.h
+"710 src\miwi/miwi_api.h
 [v _MiApp_MessageAvailable `(uc ~T0 @X0 0 ef ]
 "649
 [s S1300 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -24,23 +24,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 "646
 [u S1299 `uc 1 `S1300 1 ]
 [n S1299 . Val bits ]
-"66 src/18F27J53/system.h
+"66 src\18F27J53/system.h
 [u S1272 `uc -> 2 `i `ui 1 ]
 [n S1272 . v Val ]
-"644 src/miwi/miwi_api.h
+"644 src\miwi/miwi_api.h
 [s S1298 `S1299 1 `S1272 1 `*uc 1 `*uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1298 . flags SourcePANID SourceAddress Payload PayloadSize PacketRSSI PacketLQI ]
 "950
 [v _rxMessage `S1298 ~T0 @X0 0 e ]
 "752
 [v _MiApp_DiscardMessage `(v ~T0 @X0 0 ef ]
-"69 src/miwi/drv_mrf_miwi_security.h
+"69 src\miwi/drv_mrf_miwi_security.h
 [v _mySecurityKey `uc ~T0 @X0 -> 0 `x e ]
-"11 ../../muta/muta_messages.c
+"13 ../../muta/muta_messages.c
 [v _m_sent_messages `ul ~T0 @X0 0 e ]
-"209 src/miwi/miwi_mesh.h
+"209 src\miwi/miwi_mesh.h
 [v _myShortAddress `S1272 ~T0 @X0 0 e ]
-"274 src/miwi/drv_mrf_miwi.h
+"274 src\miwi/drv_mrf_miwi.h
 [v _MiMAC_SetPower `(uc ~T0 @X0 0 ef1`uc ]
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
@@ -101,7 +101,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f27j53.h: 49: extern volatile unsigned char ADCTRIG @ 0xEB8;
-"51 /opt/microchip/xc8/v1.35/include/pic18f27j53.h
+"51 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
 [; ;pic18f27j53.h: 51: asm("ADCTRIG equ 0EB8h");
 [; <" ADCTRIG equ 0EB8h ;# ">
 [; ;pic18f27j53.h: 54: typedef union {
@@ -8204,10 +8204,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ancomp.h: 205: void Open_ancomp2(unsigned char config);
 [; ;ancomp.h: 208: void Close_ancomp3( void );
 [; ;ancomp.h: 209: void Open_ancomp3(unsigned char config);
-[; ;spi.h: 29: void SPIPut(uint8_t v);
-[; ;spi.h: 30: uint8_t SPIGet(void);
-[; ;spi.h: 32: void SPIPut2(uint8_t v);
-[; ;spi.h: 33: uint8_t SPIGet2(void);
+[; ;18F27J53\spi.h: 29: void SPIPut(uint8_t v);
+[; ;18F27J53\spi.h: 30: uint8_t SPIGet(void);
+[; ;18F27J53\spi.h: 32: void SPIPut2(uint8_t v);
+[; ;18F27J53\spi.h: 33: uint8_t SPIGet2(void);
 [; ;can2510.h: 414: void CAN2510Initialize(  unsigned int configuration,
 [; ;can2510.h: 415: unsigned char brp,
 [; ;can2510.h: 416: unsigned char interruptFlags,
@@ -9383,9 +9383,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_mrf_miwi_89xa.h: 458: MIWI_TICK startTick;
 [; ;drv_mrf_miwi_89xa.h: 459: } ACK_INFO;
 [; ;drv_mrf_miwi_89xa.h: 461: void MIWIInterruptHandler(void);
-[; ;muta_messages.h: 16: extern uint8_t last_rssi;
-[; ;muta_messages.h: 21: const char* dBm_to_mW(uint8_t power);
-"22 ../../muta/muta_messages.h
+[; ;muta_messages.h: 18: extern uint8_t last_rssi;
+[; ;muta_messages.h: 21: uint8_t mW_ufixed16_to_dBm(uint8_t value1, uint8_t value2);
+[; ;muta_messages.h: 22: void dBm_to_mW_ufixed16(uint8_t power, uint8_t* value1, uint8_t* value2);
+[; ;muta_messages.h: 23: const char* dBm_to_mW(uint8_t power);
+"24 ../../muta/muta_messages.h
 [v _TX_POWER_13_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_13_DB_MW
 :U ..
@@ -9396,8 +9398,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 22: const char TX_POWER_13_DB_MW[] = "20mW";
-"23
+[; ;muta_messages.h: 24: const char TX_POWER_13_DB_MW[] = "20mW";
+"25
 [v _TX_POWER_10_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_10_DB_MW
 :U ..
@@ -9408,8 +9410,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 23: const char TX_POWER_10_DB_MW[] = "10mW";
-"24
+[; ;muta_messages.h: 25: const char TX_POWER_10_DB_MW[] = "10mW";
+"26
 [v _TX_POWER_7_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_7_DB_MW
 :U ..
@@ -9419,8 +9421,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 24: const char TX_POWER_7_DB_MW[] = "5mW";
-"25
+[; ;muta_messages.h: 26: const char TX_POWER_7_DB_MW[] = "5mW";
+"27
 [v _TX_POWER_4_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_4_DB_MW
 :U ..
@@ -9432,21 +9434,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 25: const char TX_POWER_4_DB_MW[] = "2.5mW";
-"26
+[; ;muta_messages.h: 27: const char TX_POWER_4_DB_MW[] = "2.5mW";
+"28
 [v _TX_POWER_1_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_1_DB_MW
 :U ..
 -> 49 `c
 -> 46 `c
 -> 50 `c
+-> 53 `c
 -> 109 `c
 -> 87 `c
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 26: const char TX_POWER_1_DB_MW[] = "1.2mW";
-"27
+[; ;muta_messages.h: 28: const char TX_POWER_1_DB_MW[] = "1.25mW";
+"29
 [v _TX_POWER_N_2_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_N_2_DB_MW
 :U ..
@@ -9458,8 +9461,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 27: const char TX_POWER_N_2_DB_MW[] = "0.6mW";
-"28
+[; ;muta_messages.h: 29: const char TX_POWER_N_2_DB_MW[] = "0.6mW";
+"30
 [v _TX_POWER_N_5_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_N_5_DB_MW
 :U ..
@@ -9471,8 +9474,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 28: const char TX_POWER_N_5_DB_MW[] = "0.3mW";
-"29
+[; ;muta_messages.h: 30: const char TX_POWER_N_5_DB_MW[] = "0.3mW";
+"31
 [v _TX_POWER_N_8_DB_MW `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_N_8_DB_MW
 :U ..
@@ -9485,1015 +9488,1027 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 29: const char TX_POWER_N_8_DB_MW[] = "0.15mW";
-"30
+[; ;muta_messages.h: 31: const char TX_POWER_N_8_DB_MW[] = "0.15mW";
+"32
 [v _TX_POWER_INVALID `Cuc ~T0 @X0 -> 0 `x e ]
 [i _TX_POWER_INVALID
 :U ..
--> 105 `c
--> 110 `c
--> 118 `c
--> 97 `c
--> 108 `c
--> 105 `c
--> 100 `c
--> 33 `c
+-> 48 `c
+-> 46 `c
+-> 48 `c
+-> 109 `c
+-> 87 `c
 -> 0 `c
 ..
 ]
-[; ;muta_messages.h: 30: const char TX_POWER_INVALID[] = "invalid!";
-[; ;muta_messages.h: 68: typedef struct {
-[; ;muta_messages.h: 69: char label[3];
-[; ;muta_messages.h: 70: uint8_t type;
-[; ;muta_messages.h: 71: uint8_t value_byte1;
-[; ;muta_messages.h: 72: uint8_t value_byte2;
-[; ;muta_messages.h: 73: uint8_t unit;
-[; ;muta_messages.h: 74: bool writable;
-[; ;muta_messages.h: 75: uint8_t size;
-[; ;muta_messages.h: 76: } MUTA_VARIABLE;
-[; ;muta_messages.h: 79: uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var);
-[; ;muta_messages.h: 80: uint8_t encode_uint16_variable(uint8_t* buffer, MUTA_VARIABLE var);
-[; ;muta_messages.h: 81: uint8_t encode_ufixed16_variable(uint8_t* buffer, MUTA_VARIABLE var);
-[; ;muta_messages.h: 82: uint8_t encode_boolean_variable(uint8_t* buffer, MUTA_VARIABLE var);
-[; ;muta_messages.h: 85: MUTA_VARIABLE decode_variable(uint8_t* p_buffer);
-[; ;muta_messages.h: 88: bool do_NETWORK_REGISTER(uint8_t* p_uid, bool sleeping_device);
-[; ;muta_messages.h: 89: uint8_t do_POWER_TEST(uint8_t power_lvl);
-[; ;muta_messages.h: 90: bool do_PING(uint8_t* p_short_addr);
-[; ;muta_messages.h: 91: uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi);
-[; ;muta_messages.h: 92: bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
-"9 ../../muta/muta_messages.c
+[; ;muta_messages.h: 32: const char TX_POWER_INVALID[] = "0.0mW";
+[; ;muta_messages.h: 71: typedef struct {
+[; ;muta_messages.h: 72: char label[3];
+[; ;muta_messages.h: 73: uint8_t type;
+[; ;muta_messages.h: 74: uint8_t value_byte1;
+[; ;muta_messages.h: 75: uint8_t value_byte2;
+[; ;muta_messages.h: 76: uint8_t unit;
+[; ;muta_messages.h: 77: bool writable;
+[; ;muta_messages.h: 78: bool _signed;
+[; ;muta_messages.h: 79: uint8_t size;
+[; ;muta_messages.h: 80: } MUTA_VARIABLE;
+[; ;muta_messages.h: 83: bool labelcmp(uint8_t* p1, uint8_t* p2);
+[; ;muta_messages.h: 86: uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var);
+[; ;muta_messages.h: 87: uint8_t encode_uint16_variable(uint8_t* buffer, MUTA_VARIABLE var);
+[; ;muta_messages.h: 88: uint8_t encode_ufixed16_variable(uint8_t* buffer, MUTA_VARIABLE var);
+[; ;muta_messages.h: 89: uint8_t encode_boolean_variable(uint8_t* buffer, MUTA_VARIABLE var);
+[; ;muta_messages.h: 92: MUTA_VARIABLE decode_variable(uint8_t* p_buffer);
+[; ;muta_messages.h: 95: bool do_NETWORK_REGISTER(uint8_t* p_uid, bool sleeping_device);
+[; ;muta_messages.h: 96: uint8_t do_POWER_TEST(uint8_t power_lvl);
+[; ;muta_messages.h: 97: bool do_PING(uint8_t* p_short_addr);
+[; ;muta_messages.h: 98: uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi);
+[; ;muta_messages.h: 99: bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
+"11 ../../muta/muta_messages.c
 [v _last_rssi `uc ~T0 @X0 1 e ]
 [i _last_rssi
 -> -> 0 `i `uc
 ]
-[; ;muta_messages.c: 9: uint8_t last_rssi = 0;
-[; ;muta_messages.c: 10: extern unsigned long m_failed_messages;
-[; ;muta_messages.c: 11: extern unsigned long m_sent_messages;
-"14
-[v _dBm_to_mW `(*Cuc ~T0 @X0 1 ef1`uc ]
-"15
-{
-[; ;muta_messages.c: 14: const char* dBm_to_mW(uint8_t power)
-[; ;muta_messages.c: 15: {
-[e :U _dBm_to_mW ]
-"14
-[v _power `uc ~T0 @X0 1 r1 ]
-"15
-[f ]
-[; ;muta_messages.c: 16: switch(power)
+[; ;muta_messages.c: 11: uint8_t last_rssi = 0;
+[; ;muta_messages.c: 12: extern unsigned long m_failed_messages;
+[; ;muta_messages.c: 13: extern unsigned long m_sent_messages;
 "16
-[e $U 1308  ]
-[; ;muta_messages.c: 17: {
+[v _labelcmp `(uc ~T0 @X0 1 ef2`*uc`*uc ]
 "17
 {
-[; ;muta_messages.c: 18: case 0x00:
-"18
-[e :U 1309 ]
-[; ;muta_messages.c: 19: return TX_POWER_13_DB_MW;
-"19
-[e ) &U _TX_POWER_13_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 20: case 0x01:
-"20
-[e :U 1310 ]
-[; ;muta_messages.c: 21: return TX_POWER_10_DB_MW;
-"21
-[e ) &U _TX_POWER_10_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 22: case 0x02:
-"22
-[e :U 1311 ]
-[; ;muta_messages.c: 23: return TX_POWER_7_DB_MW;
-"23
-[e ) &U _TX_POWER_7_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 24: case 0x03:
-"24
-[e :U 1312 ]
-[; ;muta_messages.c: 25: return TX_POWER_4_DB_MW;
-"25
-[e ) &U _TX_POWER_4_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 26: case 0x04:
-"26
-[e :U 1313 ]
-[; ;muta_messages.c: 27: return TX_POWER_1_DB_MW;
-"27
-[e ) &U _TX_POWER_1_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 28: case 0x05:
-"28
-[e :U 1314 ]
-[; ;muta_messages.c: 29: return TX_POWER_N_2_DB_MW;
-"29
-[e ) &U _TX_POWER_N_2_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 30: case 0x06:
-"30
-[e :U 1315 ]
-[; ;muta_messages.c: 31: return TX_POWER_N_5_DB_MW;
-"31
-[e ) &U _TX_POWER_N_5_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 32: case 0x07:
-"32
-[e :U 1316 ]
-[; ;muta_messages.c: 33: return TX_POWER_N_8_DB_MW;
-"33
-[e ) &U _TX_POWER_N_8_DB_MW ]
-[e $UE 1306  ]
-[; ;muta_messages.c: 34: default:
-"34
-[e :U 1317 ]
-[; ;muta_messages.c: 35: return TX_POWER_INVALID;
-"35
-[e ) &U _TX_POWER_INVALID ]
-[e $UE 1306  ]
-"36
-}
-[; ;muta_messages.c: 36: }
-[e $U 1307  ]
+[; ;muta_messages.c: 16: bool labelcmp(uint8_t* p1, uint8_t* p2)
+[; ;muta_messages.c: 17: {
+[e :U _labelcmp ]
 "16
-[e :U 1308 ]
-[e [\ _power , $ -> -> 0 `i `uc 1309
- , $ -> -> 1 `i `uc 1310
- , $ -> -> 2 `i `uc 1311
- , $ -> -> 3 `i `uc 1312
- , $ -> -> 4 `i `uc 1313
- , $ -> -> 5 `i `uc 1314
- , $ -> -> 6 `i `uc 1315
- , $ -> -> 7 `i `uc 1316
- 1317 ]
-"36
-[e :U 1307 ]
-[; ;muta_messages.c: 37: }
-"37
+[v _p1 `*uc ~T0 @X0 1 r1 ]
+[v _p2 `*uc ~T0 @X0 1 r2 ]
+"17
+[f ]
+[; ;muta_messages.c: 18: return (*p1==*p2)&&(*(p1+1)==*(p2+1))&&(*(p1+2)==*(p2+2));
+"18
+[e ) -> -> && && == -> *U _p1 `i -> *U _p2 `i == -> *U + _p1 * -> -> 1 `i `x -> -> # *U _p1 `i `x `i -> *U + _p2 * -> -> 1 `i `x -> -> # *U _p2 `i `x `i == -> *U + _p1 * -> -> 2 `i `x -> -> # *U _p1 `i `x `i -> *U + _p2 * -> -> 2 `i `x -> -> # *U _p2 `i `x `i `i `uc ]
+[e $UE 1306  ]
+[; ;muta_messages.c: 19: }
+"19
 [e :UE 1306 ]
 }
-"43
-[v _encode_uint8_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
-"44
+"22
+[v _mW_ufixed16_to_dBm `(uc ~T0 @X0 1 ef2`uc`uc ]
+"23
 {
-[; ;muta_messages.c: 43: uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var)
-[; ;muta_messages.c: 44: {
-[e :U _encode_uint8_variable ]
-"43
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-[v _var `S1305 ~T0 @X0 1 r2 ]
-"44
+[; ;muta_messages.c: 22: uint8_t mW_ufixed16_to_dBm(uint8_t value1, uint8_t value2)
+[; ;muta_messages.c: 23: {
+[e :U _mW_ufixed16_to_dBm ]
+"22
+[v _value1 `uc ~T0 @X0 1 r1 ]
+[v _value2 `uc ~T0 @X0 1 r2 ]
+"23
 [f ]
-[; ;muta_messages.c: 45: *(buffer++) = var.label[0];
-"45
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 46: *(buffer++) = var.label[1];
-"46
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 47: *(buffer++) = var.label[2];
-"47
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 48: var.type = 0 << 1;
-"48
-[e = . _var 1 -> << -> 0 `i -> 1 `i `uc ]
-[; ;muta_messages.c: 49: if (var.writable)
-"49
-[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1319  ]
-[; ;muta_messages.c: 50: {
-"50
-{
-[; ;muta_messages.c: 51: var.type = var.type + 1;
-"51
-[e = . _var 1 -> + -> . _var 1 `i -> 1 `i `uc ]
-"52
-}
-[e :U 1319 ]
-[; ;muta_messages.c: 52: }
-[; ;muta_messages.c: 53: var.type = var.type << 4;
-"53
-[e = . _var 1 -> << -> . _var 1 `i -> 4 `i `uc ]
-[; ;muta_messages.c: 54: var.type = var.type + var.unit;
-"54
-[e = . _var 1 -> + -> . _var 1 `i -> . _var 4 `i `uc ]
-[; ;muta_messages.c: 55: *(buffer++) = var.type;
-"55
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
-[; ;muta_messages.c: 56: *(buffer++) = var.value_byte1;
-"56
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
-[; ;muta_messages.c: 57: return 5;
-"57
+[; ;muta_messages.c: 24: if (value1==20 && value2==0)
+"24
+[e $ ! && == -> _value1 `i -> 20 `i == -> _value2 `i -> 0 `i 1308  ]
+[; ;muta_messages.c: 25: return 0x00;
+"25
+[e ) -> -> 0 `i `uc ]
+[e $UE 1307  ]
+[e $U 1309  ]
+"26
+[e :U 1308 ]
+[; ;muta_messages.c: 26: else if (value1==10 && value2==0)
+[e $ ! && == -> _value1 `i -> 10 `i == -> _value2 `i -> 0 `i 1310  ]
+[; ;muta_messages.c: 27: return 0x01;
+"27
+[e ) -> -> 1 `i `uc ]
+[e $UE 1307  ]
+[e $U 1311  ]
+"28
+[e :U 1310 ]
+[; ;muta_messages.c: 28: else if (value1==5 && value2==0)
+[e $ ! && == -> _value1 `i -> 5 `i == -> _value2 `i -> 0 `i 1312  ]
+[; ;muta_messages.c: 29: return 0x02;
+"29
+[e ) -> -> 2 `i `uc ]
+[e $UE 1307  ]
+[e $U 1313  ]
+"30
+[e :U 1312 ]
+[; ;muta_messages.c: 30: else if (value1==2 && value2==50)
+[e $ ! && == -> _value1 `i -> 2 `i == -> _value2 `i -> 50 `i 1314  ]
+[; ;muta_messages.c: 31: return 0x03;
+"31
+[e ) -> -> 3 `i `uc ]
+[e $UE 1307  ]
+[e $U 1315  ]
+"32
+[e :U 1314 ]
+[; ;muta_messages.c: 32: else if (value1==1 && value2==25)
+[e $ ! && == -> _value1 `i -> 1 `i == -> _value2 `i -> 25 `i 1316  ]
+[; ;muta_messages.c: 33: return 0x04;
+"33
+[e ) -> -> 4 `i `uc ]
+[e $UE 1307  ]
+[e $U 1317  ]
+"34
+[e :U 1316 ]
+[; ;muta_messages.c: 34: else if (value1==0 && value2==60)
+[e $ ! && == -> _value1 `i -> 0 `i == -> _value2 `i -> 60 `i 1318  ]
+[; ;muta_messages.c: 35: return 0x05;
+"35
 [e ) -> -> 5 `i `uc ]
-[e $UE 1318  ]
-[; ;muta_messages.c: 58: }
-"58
-[e :UE 1318 ]
-}
-"60
-[v _encode_uint16_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
-"61
-{
-[; ;muta_messages.c: 60: uint8_t encode_uint16_variable(uint8_t* buffer, MUTA_VARIABLE var)
-[; ;muta_messages.c: 61: {
-[e :U _encode_uint16_variable ]
-"60
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-[v _var `S1305 ~T0 @X0 1 r2 ]
-"61
-[f ]
-[; ;muta_messages.c: 62: *(buffer++) = var.label[0];
-"62
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 63: *(buffer++) = var.label[1];
-"63
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 64: *(buffer++) = var.label[2];
-"64
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 65: var.type = 1 << 1;
-"65
-[e = . _var 1 -> << -> 1 `i -> 1 `i `uc ]
-[; ;muta_messages.c: 66: if (var.writable)
-"66
-[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1321  ]
-[; ;muta_messages.c: 67: {
-"67
-{
-[; ;muta_messages.c: 68: var.type = var.type + 1;
-"68
-[e = . _var 1 -> + -> . _var 1 `i -> 1 `i `uc ]
-"69
-}
-[e :U 1321 ]
-[; ;muta_messages.c: 69: }
-[; ;muta_messages.c: 70: var.type = var.type << 4;
-"70
-[e = . _var 1 -> << -> . _var 1 `i -> 4 `i `uc ]
-[; ;muta_messages.c: 71: var.type = var.type + var.unit;
-"71
-[e = . _var 1 -> + -> . _var 1 `i -> . _var 4 `i `uc ]
-[; ;muta_messages.c: 72: *(buffer++) = var.type;
-"72
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
-[; ;muta_messages.c: 73: *(buffer++) = var.value_byte2;
-"73
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 3 ]
-[; ;muta_messages.c: 74: *(buffer++) = var.value_byte1;
-"74
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
-[; ;muta_messages.c: 75: return 6;
-"75
+[e $UE 1307  ]
+[e $U 1319  ]
+"36
+[e :U 1318 ]
+[; ;muta_messages.c: 36: else if (value1==0 && value2==30)
+[e $ ! && == -> _value1 `i -> 0 `i == -> _value2 `i -> 30 `i 1320  ]
+[; ;muta_messages.c: 37: return 0x06;
+"37
 [e ) -> -> 6 `i `uc ]
-[e $UE 1320  ]
-[; ;muta_messages.c: 76: }
-"76
-[e :UE 1320 ]
-}
-"78
-[v _encode_ufixed16_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
-"79
-{
-[; ;muta_messages.c: 78: uint8_t encode_ufixed16_variable(uint8_t* buffer, MUTA_VARIABLE var)
-[; ;muta_messages.c: 79: {
-[e :U _encode_ufixed16_variable ]
-"78
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-[v _var `S1305 ~T0 @X0 1 r2 ]
-"79
-[f ]
-[; ;muta_messages.c: 80: *(buffer++) = var.label[0];
-"80
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 81: *(buffer++) = var.label[1];
-"81
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 82: *(buffer++) = var.label[2];
-"82
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 83: var.type = 2 << 1;
-"83
-[e = . _var 1 -> << -> 2 `i -> 1 `i `uc ]
-[; ;muta_messages.c: 84: if (var.writable)
-"84
-[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1323  ]
-[; ;muta_messages.c: 85: {
-"85
-{
-[; ;muta_messages.c: 86: var.type = var.type + 1;
-"86
-[e = . _var 1 -> + -> . _var 1 `i -> 1 `i `uc ]
-"87
-}
+[e $UE 1307  ]
+[e $U 1321  ]
+"38
+[e :U 1320 ]
+[; ;muta_messages.c: 38: else if (value1==0 && value2==15)
+[e $ ! && == -> _value1 `i -> 0 `i == -> _value2 `i -> 15 `i 1322  ]
+[; ;muta_messages.c: 39: return 0x07;
+"39
+[e ) -> -> 7 `i `uc ]
+[e $UE 1307  ]
+[e $U 1323  ]
+"40
+[e :U 1322 ]
+[; ;muta_messages.c: 40: else
+[; ;muta_messages.c: 41: return 0x07;
+"41
+[e ) -> -> 7 `i `uc ]
+[e $UE 1307  ]
 [e :U 1323 ]
-[; ;muta_messages.c: 87: }
-[; ;muta_messages.c: 88: var.type = var.type << 4;
-"88
-[e = . _var 1 -> << -> . _var 1 `i -> 4 `i `uc ]
-[; ;muta_messages.c: 89: var.type = var.type + var.unit;
-"89
-[e = . _var 1 -> + -> . _var 1 `i -> . _var 4 `i `uc ]
-[; ;muta_messages.c: 90: *(buffer++) = var.type;
-"90
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
-[; ;muta_messages.c: 91: *(buffer++) = var.value_byte2;
-"91
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 3 ]
-[; ;muta_messages.c: 92: *(buffer++) = var.value_byte1;
-"92
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
-[; ;muta_messages.c: 93: return 6;
-"93
-[e ) -> -> 6 `i `uc ]
-[e $UE 1322  ]
-[; ;muta_messages.c: 94: }
-"94
-[e :UE 1322 ]
+[e :U 1321 ]
+[e :U 1319 ]
+[e :U 1317 ]
+[e :U 1315 ]
+[e :U 1313 ]
+[e :U 1311 ]
+[e :U 1309 ]
+[; ;muta_messages.c: 42: }
+"42
+[e :UE 1307 ]
 }
-"96
-[v _encode_boolean_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
-"97
+"45
+[v _dBm_to_mW_ufixed16 `(v ~T0 @X0 1 ef3`uc`*uc`*uc ]
+"46
 {
-[; ;muta_messages.c: 96: uint8_t encode_boolean_variable(uint8_t* buffer, MUTA_VARIABLE var)
-[; ;muta_messages.c: 97: {
-[e :U _encode_boolean_variable ]
-"96
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-[v _var `S1305 ~T0 @X0 1 r2 ]
-"97
+[; ;muta_messages.c: 45: void dBm_to_mW_ufixed16(uint8_t power, uint8_t* value1, uint8_t* value2)
+[; ;muta_messages.c: 46: {
+[e :U _dBm_to_mW_ufixed16 ]
+"45
+[v _power `uc ~T0 @X0 1 r1 ]
+[v _value1 `*uc ~T0 @X0 1 r2 ]
+[v _value2 `*uc ~T0 @X0 1 r3 ]
+"46
 [f ]
-[; ;muta_messages.c: 98: *(buffer++) = var.label[0];
-"98
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 99: *(buffer++) = var.label[1];
-"99
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 100: *(buffer++) = var.label[2];
-"100
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
-[; ;muta_messages.c: 101: var.type = 3 << 1;
-"101
-[e = . _var 1 -> << -> 3 `i -> 1 `i `uc ]
-[; ;muta_messages.c: 102: if (var.writable)
-"102
-[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1325  ]
-[; ;muta_messages.c: 103: {
-"103
+[; ;muta_messages.c: 47: switch(power)
+"47
+[e $U 1326  ]
+[; ;muta_messages.c: 48: {
+"48
 {
-[; ;muta_messages.c: 104: var.type = var.type + 1;
-"104
-[e = . _var 1 -> + -> . _var 1 `i -> 1 `i `uc ]
-"105
-}
-[e :U 1325 ]
-[; ;muta_messages.c: 105: }
-[; ;muta_messages.c: 106: var.type = var.type << 4;
-"106
-[e = . _var 1 -> << -> . _var 1 `i -> 4 `i `uc ]
-[; ;muta_messages.c: 107: var.type = var.type + var.unit;
-"107
-[e = . _var 1 -> + -> . _var 1 `i -> . _var 4 `i `uc ]
-[; ;muta_messages.c: 108: *(buffer++) = var.type;
-"108
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
-[; ;muta_messages.c: 109: if (var.value_byte1 == 0xff)
-"109
-[e $ ! == -> . _var 2 `i -> 255 `i 1326  ]
-[; ;muta_messages.c: 110: {
-"110
-{
-[; ;muta_messages.c: 111: *(buffer++) = 0xff;
-"111
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x -> -> 255 `i `uc ]
-"112
-}
-[; ;muta_messages.c: 112: } else {
-[e $U 1327  ]
-[e :U 1326 ]
-{
-[; ;muta_messages.c: 113: *(buffer++) = 0xf0;
-"113
-[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x -> -> 240 `i `uc ]
-"114
-}
+[; ;muta_messages.c: 49: case 0x00:
+"49
 [e :U 1327 ]
-[; ;muta_messages.c: 114: }
-[; ;muta_messages.c: 115: return 5;
-"115
-[e ) -> -> 5 `i `uc ]
-[e $UE 1324  ]
-[; ;muta_messages.c: 116: }
-"116
+[; ;muta_messages.c: 50: *value1 = 20;
+"50
+[e = *U _value1 -> -> 20 `i `uc ]
+[; ;muta_messages.c: 51: *value2 = 0;
+"51
+[e = *U _value2 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 52: break;
+"52
+[e $U 1325  ]
+[; ;muta_messages.c: 53: case 0x01:
+"53
+[e :U 1328 ]
+[; ;muta_messages.c: 54: *value1 = 10;
+"54
+[e = *U _value1 -> -> 10 `i `uc ]
+[; ;muta_messages.c: 55: *value2 = 0;
+"55
+[e = *U _value2 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 56: break;
+"56
+[e $U 1325  ]
+[; ;muta_messages.c: 57: case 0x02:
+"57
+[e :U 1329 ]
+[; ;muta_messages.c: 58: *value1 = 5;
+"58
+[e = *U _value1 -> -> 5 `i `uc ]
+[; ;muta_messages.c: 59: *value2 = 0;
+"59
+[e = *U _value2 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 60: break;
+"60
+[e $U 1325  ]
+[; ;muta_messages.c: 61: case 0x03:
+"61
+[e :U 1330 ]
+[; ;muta_messages.c: 62: *value1 = 2;
+"62
+[e = *U _value1 -> -> 2 `i `uc ]
+[; ;muta_messages.c: 63: *value2 = 50;
+"63
+[e = *U _value2 -> -> 50 `i `uc ]
+[; ;muta_messages.c: 64: break;
+"64
+[e $U 1325  ]
+[; ;muta_messages.c: 65: case 0x04:
+"65
+[e :U 1331 ]
+[; ;muta_messages.c: 66: *value1 = 1;
+"66
+[e = *U _value1 -> -> 1 `i `uc ]
+[; ;muta_messages.c: 67: *value2 = 25;
+"67
+[e = *U _value2 -> -> 25 `i `uc ]
+[; ;muta_messages.c: 68: break;
+"68
+[e $U 1325  ]
+[; ;muta_messages.c: 69: case 0x05:
+"69
+[e :U 1332 ]
+[; ;muta_messages.c: 70: *value1 = 0;
+"70
+[e = *U _value1 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 71: *value2 = 60;
+"71
+[e = *U _value2 -> -> 60 `i `uc ]
+[; ;muta_messages.c: 72: break;
+"72
+[e $U 1325  ]
+[; ;muta_messages.c: 73: case 0x06:
+"73
+[e :U 1333 ]
+[; ;muta_messages.c: 74: *value1 = 0;
+"74
+[e = *U _value1 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 75: *value2 = 30;
+"75
+[e = *U _value2 -> -> 30 `i `uc ]
+[; ;muta_messages.c: 76: break;
+"76
+[e $U 1325  ]
+[; ;muta_messages.c: 77: case 0x07:
+"77
+[e :U 1334 ]
+[; ;muta_messages.c: 78: *value1 = 0;
+"78
+[e = *U _value1 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 79: *value2 = 15;
+"79
+[e = *U _value2 -> -> 15 `i `uc ]
+[; ;muta_messages.c: 80: break;
+"80
+[e $U 1325  ]
+[; ;muta_messages.c: 81: default:
+"81
+[e :U 1335 ]
+[; ;muta_messages.c: 82: *value1 = 0;
+"82
+[e = *U _value1 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 83: *value2 = 0;
+"83
+[e = *U _value2 -> -> 0 `i `uc ]
+[; ;muta_messages.c: 84: break;
+"84
+[e $U 1325  ]
+"85
+}
+[; ;muta_messages.c: 85: }
+[e $U 1325  ]
+"47
+[e :U 1326 ]
+[e [\ _power , $ -> -> 0 `i `uc 1327
+ , $ -> -> 1 `i `uc 1328
+ , $ -> -> 2 `i `uc 1329
+ , $ -> -> 3 `i `uc 1330
+ , $ -> -> 4 `i `uc 1331
+ , $ -> -> 5 `i `uc 1332
+ , $ -> -> 6 `i `uc 1333
+ , $ -> -> 7 `i `uc 1334
+ 1335 ]
+"85
+[e :U 1325 ]
+[; ;muta_messages.c: 86: }
+"86
 [e :UE 1324 ]
 }
-"120
-[v _decode_variable `(S1305 ~T0 @X0 1 ef1`*uc ]
-"121
+"89
+[v _dBm_to_mW `(*Cuc ~T0 @X0 1 ef1`uc ]
+"90
 {
-[; ;muta_messages.c: 120: MUTA_VARIABLE decode_variable(uint8_t* p_buffer)
-[; ;muta_messages.c: 121: {
-[e :U _decode_variable ]
-"120
-[v _p_buffer `*uc ~T0 @X0 1 r1 ]
-"121
+[; ;muta_messages.c: 89: const char* dBm_to_mW(uint8_t power)
+[; ;muta_messages.c: 90: {
+[e :U _dBm_to_mW ]
+"89
+[v _power `uc ~T0 @X0 1 r1 ]
+"90
 [f ]
+[; ;muta_messages.c: 91: switch(power)
+"91
+[e $U 1338  ]
+[; ;muta_messages.c: 92: {
+"92
+{
+[; ;muta_messages.c: 93: case 0x00:
+"93
+[e :U 1339 ]
+[; ;muta_messages.c: 94: return TX_POWER_13_DB_MW;
+"94
+[e ) &U _TX_POWER_13_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 95: case 0x01:
+"95
+[e :U 1340 ]
+[; ;muta_messages.c: 96: return TX_POWER_10_DB_MW;
+"96
+[e ) &U _TX_POWER_10_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 97: case 0x02:
+"97
+[e :U 1341 ]
+[; ;muta_messages.c: 98: return TX_POWER_7_DB_MW;
+"98
+[e ) &U _TX_POWER_7_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 99: case 0x03:
+"99
+[e :U 1342 ]
+[; ;muta_messages.c: 100: return TX_POWER_4_DB_MW;
+"100
+[e ) &U _TX_POWER_4_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 101: case 0x04:
+"101
+[e :U 1343 ]
+[; ;muta_messages.c: 102: return TX_POWER_1_DB_MW;
+"102
+[e ) &U _TX_POWER_1_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 103: case 0x05:
+"103
+[e :U 1344 ]
+[; ;muta_messages.c: 104: return TX_POWER_N_2_DB_MW;
+"104
+[e ) &U _TX_POWER_N_2_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 105: case 0x06:
+"105
+[e :U 1345 ]
+[; ;muta_messages.c: 106: return TX_POWER_N_5_DB_MW;
+"106
+[e ) &U _TX_POWER_N_5_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 107: case 0x07:
+"107
+[e :U 1346 ]
+[; ;muta_messages.c: 108: return TX_POWER_N_8_DB_MW;
+"108
+[e ) &U _TX_POWER_N_8_DB_MW ]
+[e $UE 1336  ]
+[; ;muta_messages.c: 109: default:
+"109
+[e :U 1347 ]
+[; ;muta_messages.c: 110: return TX_POWER_INVALID;
+"110
+[e ) &U _TX_POWER_INVALID ]
+[e $UE 1336  ]
+"111
+}
+[; ;muta_messages.c: 111: }
+[e $U 1337  ]
+"91
+[e :U 1338 ]
+[e [\ _power , $ -> -> 0 `i `uc 1339
+ , $ -> -> 1 `i `uc 1340
+ , $ -> -> 2 `i `uc 1341
+ , $ -> -> 3 `i `uc 1342
+ , $ -> -> 4 `i `uc 1343
+ , $ -> -> 5 `i `uc 1344
+ , $ -> -> 6 `i `uc 1345
+ , $ -> -> 7 `i `uc 1346
+ 1347 ]
+"111
+[e :U 1337 ]
+[; ;muta_messages.c: 112: }
+"112
+[e :UE 1336 ]
+}
+"118
+[v _encode_uint8_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
+"119
+{
+[; ;muta_messages.c: 118: uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var)
+[; ;muta_messages.c: 119: {
+[e :U _encode_uint8_variable ]
+"118
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _var `S1305 ~T0 @X0 1 r2 ]
+"119
+[f ]
+[; ;muta_messages.c: 120: *(buffer++) = var.label[0];
+"120
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 121: *(buffer++) = var.label[1];
+"121
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 122: *(buffer++) = var.label[2];
 "122
-[v _var `S1305 ~T0 @X0 1 a ]
-[; ;muta_messages.c: 122: MUTA_VARIABLE var;
-[; ;muta_messages.c: 123: memcpy(var.label, p_buffer, 3);
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
 "123
-[e ( _memcpy (3 , , -> &U . _var 0 `*v -> _p_buffer `*Cv -> -> 3 `i `ui ]
-[; ;muta_messages.c: 124: p_buffer += 3;
+[v _m_signed `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 123: uint8_t m_signed = 0;
+[e = _m_signed -> -> 0 `i `uc ]
 "124
-[e =+ _p_buffer * -> -> 3 `i `x -> -> # *U _p_buffer `i `x ]
-[; ;muta_messages.c: 126: var.unit = *p_buffer & 0b00000111;
+[v _m_writable `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 124: uint8_t m_writable = 0;
+[e = _m_writable -> -> 0 `i `uc ]
+[; ;muta_messages.c: 125: if (var._signed)
+"125
+[e $ ! != -> . _var 6 `i -> -> -> 0 `i `uc `i 1349  ]
+[; ;muta_messages.c: 126: { m_signed = 1; }
 "126
-[e = . _var 4 -> & -> *U _p_buffer `i -> 7 `i `uc ]
-[; ;muta_messages.c: 127: if (*p_buffer & 0b00010000)
+{
+[e = _m_signed -> -> 1 `i `uc ]
+}
+[e :U 1349 ]
+[; ;muta_messages.c: 127: if (var.writable)
 "127
-[e $ ! != & -> *U _p_buffer `i -> 16 `i -> 0 `i 1329  ]
-[; ;muta_messages.c: 128: var.writable = 1;
+[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1350  ]
+[; ;muta_messages.c: 128: { m_writable = 1; }
 "128
-[e = . _var 5 -> -> 1 `i `uc ]
-[e $U 1330  ]
+{
+[e = _m_writable -> -> 1 `i `uc ]
+}
+[e :U 1350 ]
+[; ;muta_messages.c: 129: var.type = (0 << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
 "129
-[e :U 1329 ]
-[; ;muta_messages.c: 129: else
-[; ;muta_messages.c: 130: var.writable = 0;
+[e = . _var 1 -> + + + << -> 0 `i -> 6 `i << -> _m_signed `i -> 5 `i << -> _m_writable `i -> 4 `i -> . _var 4 `i `uc ]
+[; ;muta_messages.c: 130: *(buffer++) = var.type;
 "130
-[e = . _var 5 -> -> 0 `i `uc ]
-[e :U 1330 ]
-[; ;muta_messages.c: 131: var.type = (*p_buffer++ & 0b11100000) >> 5;
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
+[; ;muta_messages.c: 131: *(buffer++) = var.value_byte1;
 "131
-[e = . _var 1 -> >> & -> *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x `i -> 224 `i -> 5 `i `uc ]
-[; ;muta_messages.c: 132: var.value_byte1 = *p_buffer++;
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
+[; ;muta_messages.c: 132: return 5;
 "132
-[e = . _var 2 *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x ]
-[; ;muta_messages.c: 133: if ((var.type == 1) || (var.type == 2))
+[e ) -> -> 5 `i `uc ]
+[e $UE 1348  ]
+[; ;muta_messages.c: 133: }
 "133
-[e $ ! || == -> . _var 1 `i -> 1 `i == -> . _var 1 `i -> 2 `i 1331  ]
-[; ;muta_messages.c: 134: {
-"134
-{
-[; ;muta_messages.c: 135: var.value_byte2 = *p_buffer++;
+[e :UE 1348 ]
+}
 "135
-[e = . _var 3 *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x ]
-[; ;muta_messages.c: 136: var.size = 6;
+[v _encode_uint16_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
 "136
-[e = . _var 6 -> -> 6 `i `uc ]
-"137
-}
-[; ;muta_messages.c: 137: }
-[e $U 1332  ]
-"138
-[e :U 1331 ]
-[; ;muta_messages.c: 138: else
-[; ;muta_messages.c: 139: var.size = 5;
-"139
-[e = . _var 6 -> -> 5 `i `uc ]
-[e :U 1332 ]
-[; ;muta_messages.c: 140: return var;
-"140
-[e ) _var ]
-[e $UE 1328  ]
-[; ;muta_messages.c: 141: }
-"141
-[e :UE 1328 ]
-}
-"146
-[v _do_NETWORK_REGISTER `(uc ~T0 @X0 1 ef2`*uc`uc ]
-"147
 {
-[; ;muta_messages.c: 146: bool do_NETWORK_REGISTER(uint8_t* p_uid, bool sleeping_device)
-[; ;muta_messages.c: 147: {
-[e :U _do_NETWORK_REGISTER ]
+[; ;muta_messages.c: 135: uint8_t encode_uint16_variable(uint8_t* buffer, MUTA_VARIABLE var)
+[; ;muta_messages.c: 136: {
+[e :U _encode_uint16_variable ]
+"135
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _var `S1305 ~T0 @X0 1 r2 ]
+"136
+[f ]
+[; ;muta_messages.c: 137: *(buffer++) = var.label[0];
+"137
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 138: *(buffer++) = var.label[1];
+"138
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 139: *(buffer++) = var.label[2];
+"139
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+"140
+[v _m_signed `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 140: uint8_t m_signed = 0;
+[e = _m_signed -> -> 0 `i `uc ]
+"141
+[v _m_writable `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 141: uint8_t m_writable = 0;
+[e = _m_writable -> -> 0 `i `uc ]
+[; ;muta_messages.c: 142: if (var._signed)
+"142
+[e $ ! != -> . _var 6 `i -> -> -> 0 `i `uc `i 1352  ]
+[; ;muta_messages.c: 143: m_signed = 1;
+"143
+[e = _m_signed -> -> 1 `i `uc ]
+[e :U 1352 ]
+[; ;muta_messages.c: 144: if (var.writable)
+"144
+[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1353  ]
+[; ;muta_messages.c: 145: m_writable = 1;
+"145
+[e = _m_writable -> -> 1 `i `uc ]
+[e :U 1353 ]
+[; ;muta_messages.c: 146: var.type = (1 << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
 "146
+[e = . _var 1 -> + + + << -> 1 `i -> 6 `i << -> _m_signed `i -> 5 `i << -> _m_writable `i -> 4 `i -> . _var 4 `i `uc ]
+[; ;muta_messages.c: 147: *(buffer++) = var.type;
+"147
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
+[; ;muta_messages.c: 148: *(buffer++) = var.value_byte2;
+"148
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 3 ]
+[; ;muta_messages.c: 149: *(buffer++) = var.value_byte1;
+"149
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
+[; ;muta_messages.c: 150: return 6;
+"150
+[e ) -> -> 6 `i `uc ]
+[e $UE 1351  ]
+[; ;muta_messages.c: 151: }
+"151
+[e :UE 1351 ]
+}
+"153
+[v _encode_ufixed16_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
+"154
+{
+[; ;muta_messages.c: 153: uint8_t encode_ufixed16_variable(uint8_t* buffer, MUTA_VARIABLE var)
+[; ;muta_messages.c: 154: {
+[e :U _encode_ufixed16_variable ]
+"153
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _var `S1305 ~T0 @X0 1 r2 ]
+"154
+[f ]
+[; ;muta_messages.c: 155: *(buffer++) = var.label[0];
+"155
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 156: *(buffer++) = var.label[1];
+"156
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 157: *(buffer++) = var.label[2];
+"157
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+"158
+[v _m_signed `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 158: uint8_t m_signed = 0;
+[e = _m_signed -> -> 0 `i `uc ]
+"159
+[v _m_writable `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 159: uint8_t m_writable = 0;
+[e = _m_writable -> -> 0 `i `uc ]
+[; ;muta_messages.c: 160: if (var._signed)
+"160
+[e $ ! != -> . _var 6 `i -> -> -> 0 `i `uc `i 1355  ]
+[; ;muta_messages.c: 161: m_signed = 1;
+"161
+[e = _m_signed -> -> 1 `i `uc ]
+[e :U 1355 ]
+[; ;muta_messages.c: 162: if (var.writable)
+"162
+[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1356  ]
+[; ;muta_messages.c: 163: m_writable = 1;
+"163
+[e = _m_writable -> -> 1 `i `uc ]
+[e :U 1356 ]
+[; ;muta_messages.c: 164: var.type = (2 << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
+"164
+[e = . _var 1 -> + + + << -> 2 `i -> 6 `i << -> _m_signed `i -> 5 `i << -> _m_writable `i -> 4 `i -> . _var 4 `i `uc ]
+[; ;muta_messages.c: 165: *(buffer++) = var.type;
+"165
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
+[; ;muta_messages.c: 166: *(buffer++) = var.value_byte2;
+"166
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 3 ]
+[; ;muta_messages.c: 167: *(buffer++) = var.value_byte1;
+"167
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 2 ]
+[; ;muta_messages.c: 168: return 6;
+"168
+[e ) -> -> 6 `i `uc ]
+[e $UE 1354  ]
+[; ;muta_messages.c: 169: }
+"169
+[e :UE 1354 ]
+}
+"171
+[v _encode_boolean_variable `(uc ~T0 @X0 1 ef2`*uc`S1305 ]
+"172
+{
+[; ;muta_messages.c: 171: uint8_t encode_boolean_variable(uint8_t* buffer, MUTA_VARIABLE var)
+[; ;muta_messages.c: 172: {
+[e :U _encode_boolean_variable ]
+"171
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _var `S1305 ~T0 @X0 1 r2 ]
+"172
+[f ]
+[; ;muta_messages.c: 173: *(buffer++) = var.label[0];
+"173
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 174: *(buffer++) = var.label[1];
+"174
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+[; ;muta_messages.c: 175: *(buffer++) = var.label[2];
+"175
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x *U + &U . _var 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _var 0 `ui `ux ]
+"176
+[v _m_signed `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 176: uint8_t m_signed = 0;
+[e = _m_signed -> -> 0 `i `uc ]
+"177
+[v _m_writable `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 177: uint8_t m_writable = 0;
+[e = _m_writable -> -> 0 `i `uc ]
+[; ;muta_messages.c: 178: if (var._signed)
+"178
+[e $ ! != -> . _var 6 `i -> -> -> 0 `i `uc `i 1358  ]
+[; ;muta_messages.c: 179: m_signed = 1;
+"179
+[e = _m_signed -> -> 1 `i `uc ]
+[e :U 1358 ]
+[; ;muta_messages.c: 180: if (var.writable)
+"180
+[e $ ! != -> . _var 5 `i -> -> -> 0 `i `uc `i 1359  ]
+[; ;muta_messages.c: 181: m_writable = 1;
+"181
+[e = _m_writable -> -> 1 `i `uc ]
+[e :U 1359 ]
+[; ;muta_messages.c: 182: var.type = (3 << 6)+ (m_signed << 5) + (m_writable << 4) + var.unit;
+"182
+[e = . _var 1 -> + + + << -> 3 `i -> 6 `i << -> _m_signed `i -> 5 `i << -> _m_writable `i -> 4 `i -> . _var 4 `i `uc ]
+[; ;muta_messages.c: 183: *(buffer++) = var.type;
+"183
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x . _var 1 ]
+[; ;muta_messages.c: 184: if (var.value_byte1 == 0xff)
+"184
+[e $ ! == -> . _var 2 `i -> 255 `i 1360  ]
+[; ;muta_messages.c: 185: {
+"185
+{
+[; ;muta_messages.c: 186: *(buffer++) = 0xff;
+"186
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x -> -> 255 `i `uc ]
+"187
+}
+[; ;muta_messages.c: 187: } else {
+[e $U 1361  ]
+[e :U 1360 ]
+{
+[; ;muta_messages.c: 188: *(buffer++) = 0xf0;
+"188
+[e = *U ++ _buffer * -> -> 1 `i `x -> -> # *U _buffer `i `x -> -> 240 `i `uc ]
+"189
+}
+[e :U 1361 ]
+[; ;muta_messages.c: 189: }
+[; ;muta_messages.c: 190: return 5;
+"190
+[e ) -> -> 5 `i `uc ]
+[e $UE 1357  ]
+[; ;muta_messages.c: 191: }
+"191
+[e :UE 1357 ]
+}
+"195
+[v _decode_variable `(S1305 ~T0 @X0 1 ef1`*uc ]
+"196
+{
+[; ;muta_messages.c: 195: MUTA_VARIABLE decode_variable(uint8_t* p_buffer)
+[; ;muta_messages.c: 196: {
+[e :U _decode_variable ]
+"195
+[v _p_buffer `*uc ~T0 @X0 1 r1 ]
+"196
+[f ]
+"197
+[v _var `S1305 ~T0 @X0 1 a ]
+[; ;muta_messages.c: 197: MUTA_VARIABLE var;
+[; ;muta_messages.c: 198: memcpy(var.label, p_buffer, 3);
+"198
+[e ( _memcpy (3 , , -> &U . _var 0 `*v -> _p_buffer `*Cv -> -> 3 `i `ui ]
+[; ;muta_messages.c: 199: p_buffer += 3;
+"199
+[e =+ _p_buffer * -> -> 3 `i `x -> -> # *U _p_buffer `i `x ]
+[; ;muta_messages.c: 201: var.unit = *p_buffer & 0b00001111;
+"201
+[e = . _var 4 -> & -> *U _p_buffer `i -> 15 `i `uc ]
+[; ;muta_messages.c: 202: if (*p_buffer & 0b00010000)
+"202
+[e $ ! != & -> *U _p_buffer `i -> 16 `i -> 0 `i 1363  ]
+[; ;muta_messages.c: 203: var.writable = 1;
+"203
+[e = . _var 5 -> -> 1 `i `uc ]
+[e $U 1364  ]
+"204
+[e :U 1363 ]
+[; ;muta_messages.c: 204: else
+[; ;muta_messages.c: 205: var.writable = 0;
+"205
+[e = . _var 5 -> -> 0 `i `uc ]
+[e :U 1364 ]
+[; ;muta_messages.c: 206: if (*p_buffer & 0b00100000)
+"206
+[e $ ! != & -> *U _p_buffer `i -> 32 `i -> 0 `i 1365  ]
+[; ;muta_messages.c: 207: var._signed = 1;
+"207
+[e = . _var 6 -> -> 1 `i `uc ]
+[e $U 1366  ]
+"208
+[e :U 1365 ]
+[; ;muta_messages.c: 208: else
+[; ;muta_messages.c: 209: var._signed = 0;
+"209
+[e = . _var 6 -> -> 0 `i `uc ]
+[e :U 1366 ]
+[; ;muta_messages.c: 211: var.type = (*p_buffer++ & 0b11000000) >> 6;
+"211
+[e = . _var 1 -> >> & -> *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x `i -> 192 `i -> 6 `i `uc ]
+[; ;muta_messages.c: 212: var.value_byte1 = *p_buffer++;
+"212
+[e = . _var 2 *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x ]
+[; ;muta_messages.c: 213: if ((var.type == 1) || (var.type == 2))
+"213
+[e $ ! || == -> . _var 1 `i -> 1 `i == -> . _var 1 `i -> 2 `i 1367  ]
+[; ;muta_messages.c: 214: {
+"214
+{
+[; ;muta_messages.c: 215: var.value_byte2 = *p_buffer++;
+"215
+[e = . _var 3 *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x ]
+[; ;muta_messages.c: 216: var.size = 6;
+"216
+[e = . _var 7 -> -> 6 `i `uc ]
+"217
+}
+[; ;muta_messages.c: 217: }
+[e $U 1368  ]
+"218
+[e :U 1367 ]
+[; ;muta_messages.c: 218: else
+[; ;muta_messages.c: 219: var.size = 5;
+"219
+[e = . _var 7 -> -> 5 `i `uc ]
+[e :U 1368 ]
+[; ;muta_messages.c: 220: return var;
+"220
+[e ) _var ]
+[e $UE 1362  ]
+[; ;muta_messages.c: 221: }
+"221
+[e :UE 1362 ]
+}
+"226
+[v _do_NETWORK_REGISTER `(uc ~T0 @X0 1 ef2`*uc`uc ]
+"227
+{
+[; ;muta_messages.c: 226: bool do_NETWORK_REGISTER(uint8_t* p_uid, bool sleeping_device)
+[; ;muta_messages.c: 227: {
+[e :U _do_NETWORK_REGISTER ]
+"226
 [v _p_uid `*uc ~T0 @X0 1 r1 ]
 [v _sleeping_device `uc ~T0 @X0 1 r2 ]
-"147
+"227
 [f ]
-[v F10203 `uc ~T0 @X0 -> 2 `i s ]
-[i F10203
+[v F10229 `uc ~T0 @X0 -> 2 `i s ]
+[i F10229
 :U ..
-"148
+"228
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 ..
 ]
 [v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
-[; ;muta_messages.c: 148: uint8_t shortaddress[2] = { 0x00, 0x00 };
-[e = _shortaddress F10203 ]
-[; ;muta_messages.c: 149: {TxData = 11;};
-"149
+[; ;muta_messages.c: 228: uint8_t shortaddress[2] = { 0x00, 0x00 };
+[e = _shortaddress F10229 ]
+[; ;muta_messages.c: 229: {TxData = 11;};
+"229
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;muta_messages.c: 150: TxBuffer[TxData++] = 02;
-"150
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
-[; ;muta_messages.c: 151: memcpy(&TxBuffer[TxData], p_uid, 4);
-"151
-[e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> _p_uid `*Cv -> -> 4 `i `ui ]
-[; ;muta_messages.c: 152: TxData = TxData + 4;
-"152
-[e = _TxData -> + -> _TxData `i -> 4 `i `uc ]
-[; ;muta_messages.c: 153: TxBuffer[TxData++] = sleeping_device;
-"153
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _sleeping_device ]
-"154
-[v _result `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 154: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 0);
-[e = _result ( _MiApp_UnicastAddress (3 , , &U *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;muta_messages.c: 155: if (!result)
-"155
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1334  ]
-[; ;muta_messages.c: 156: {
-"156
-{
-[; ;muta_messages.c: 157: m_failed_messages++;
-"157
-[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 158: return 0;
-"158
-[e ) -> -> 0 `i `uc ]
-[e $UE 1333  ]
-"159
-}
-[; ;muta_messages.c: 159: }
-[e $U 1335  ]
-"160
-[e :U 1334 ]
-[; ;muta_messages.c: 160: else
-[; ;muta_messages.c: 161: {
-"161
-{
-"162
-[v _i `ui ~T0 @X0 1 a ]
-[; ;muta_messages.c: 162: unsigned int i;
-[; ;muta_messages.c: 163: result = 0;
-"163
-[e = _result -> -> 0 `i `uc ]
-[; ;muta_messages.c: 164: for (i=0; i<100; i++)
-"164
-{
-[e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1336  ]
-[e $U 1337  ]
-"165
-[e :U 1336 ]
-[; ;muta_messages.c: 165: {
-{
-[; ;muta_messages.c: 166: _delay((unsigned long)((10)*(16000000/4000.0)));
-"166
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;muta_messages.c: 167: if(MiApp_MessageAvailable())
-"167
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1339  ]
-[; ;muta_messages.c: 168: {
-"168
-{
-[; ;muta_messages.c: 170: last_rssi = rxMessage.PacketRSSI;
-"170
-[e = _last_rssi . _rxMessage 5 ]
-[; ;muta_messages.c: 171: if (rxMessage.Payload[0] != 02)
-"171
-[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1340  ]
-[; ;muta_messages.c: 172: {
-"172
-{
-[; ;muta_messages.c: 173: MiApp_DiscardMessage();
-"173
-[e ( _MiApp_DiscardMessage ..  ]
-"174
-}
-[; ;muta_messages.c: 174: }
-[e $U 1341  ]
-"175
-[e :U 1340 ]
-[; ;muta_messages.c: 175: else
-[; ;muta_messages.c: 176: {
-"176
-{
-[; ;muta_messages.c: 177: result = (rxMessage.Payload[1] == 0xff);
-"177
-[e = _result -> -> == -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 255 `i `i `uc ]
-[; ;muta_messages.c: 178: mySecurityKey[2] = rxMessage.Payload[2];
-"178
-[e = *U + &U _mySecurityKey * -> -> -> 2 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;muta_messages.c: 179: mySecurityKey[6] = rxMessage.Payload[3];
-"179
-[e = *U + &U _mySecurityKey * -> -> -> 6 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + . _rxMessage 3 * -> -> 3 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;muta_messages.c: 180: MiApp_DiscardMessage();
-"180
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;muta_messages.c: 181: break;
-"181
-[e $U 1337  ]
-"182
-}
-[e :U 1341 ]
-"183
-}
-[e :U 1339 ]
-"184
-}
-"164
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1336  ]
-[e :U 1337 ]
-"184
-}
-[; ;muta_messages.c: 182: }
-[; ;muta_messages.c: 183: }
-[; ;muta_messages.c: 184: }
-[; ;muta_messages.c: 186: if (!result)
-"186
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1342  ]
-[; ;muta_messages.c: 187: m_failed_messages++;
-"187
-[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[e $U 1343  ]
-"188
-[e :U 1342 ]
-[; ;muta_messages.c: 188: else
-[; ;muta_messages.c: 189: m_sent_messages++;
-"189
-[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
-[e :U 1343 ]
-[; ;muta_messages.c: 190: return result;
-"190
-[e ) _result ]
-[e $UE 1333  ]
-"191
-}
-[e :U 1335 ]
-[; ;muta_messages.c: 191: }
-[; ;muta_messages.c: 192: }
-"192
-[e :UE 1333 ]
-}
-"194
-[v _do_POWER_TEST `(uc ~T0 @X0 1 ef1`uc ]
-"195
-{
-[; ;muta_messages.c: 194: uint8_t do_POWER_TEST(uint8_t power_lvl)
-[; ;muta_messages.c: 195: {
-[e :U _do_POWER_TEST ]
-"194
-[v _power_lvl `uc ~T0 @X0 1 r1 ]
-"195
-[f ]
-"196
-[v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
-[; ;muta_messages.c: 196: uint8_t shortaddress[2];
-[; ;muta_messages.c: 197: {TxData = 11;};
-"197
-{
-[e = _TxData -> -> 11 `i `uc ]
-}
-[; ;muta_messages.c: 198: TxBuffer[TxData++] = 01;
-"198
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;muta_messages.c: 199: TxBuffer[TxData++] = power_lvl;
-"199
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _power_lvl ]
-[; ;muta_messages.c: 200: if (myShortAddress.v[0] == 0x00)
-"200
-[e $ ! == -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> 0 `i 1345  ]
-[; ;muta_messages.c: 201: {
-"201
-{
-[; ;muta_messages.c: 202: if (myShortAddress.v[1] == 0x00)
-"202
-[e $ ! == -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> 0 `i 1346  ]
-[; ;muta_messages.c: 203: {
-"203
-{
-[; ;muta_messages.c: 204: return 0;
-"204
-[e ) -> -> 0 `i `uc ]
-[e $UE 1344  ]
-"205
-}
-[e :U 1346 ]
-[; ;muta_messages.c: 205: }
-[; ;muta_messages.c: 206: shortaddress[0] = 0x00;
-"206
-[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
-[; ;muta_messages.c: 207: shortaddress[1] = 0x00;
-"207
-[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
-"208
-}
-[; ;muta_messages.c: 208: }
-[e $U 1347  ]
-"209
-[e :U 1345 ]
-[; ;muta_messages.c: 209: else
-[; ;muta_messages.c: 210: {
-"210
-{
-[; ;muta_messages.c: 211: shortaddress[0] = 0x00;
-"211
-[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
-[; ;muta_messages.c: 212: shortaddress[1] = myShortAddress.v[1];
-"212
-[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
-"213
-}
-[e :U 1347 ]
-"214
-[v _result `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 213: }
-[; ;muta_messages.c: 214: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 1);
-[e = _result ( _MiApp_UnicastAddress (3 , , &U *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;muta_messages.c: 215: if (!result)
-"215
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1348  ]
-[; ;muta_messages.c: 216: {
-"216
-{
-[; ;muta_messages.c: 217: m_failed_messages++;
-"217
-[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 218: return 0;
-"218
-[e ) -> -> 0 `i `uc ]
-[e $UE 1344  ]
-"219
-}
-[; ;muta_messages.c: 219: }
-[e $U 1349  ]
-"220
-[e :U 1348 ]
-[; ;muta_messages.c: 220: else
-[; ;muta_messages.c: 221: {
-"221
-{
-"222
-[v _i `ui ~T0 @X0 1 a ]
-"223
-[v _rssi `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 222: unsigned int i;
-[; ;muta_messages.c: 223: uint8_t rssi = 0;
-[e = _rssi -> -> 0 `i `uc ]
-[; ;muta_messages.c: 224: for (i=0; i<100; i++)
-"224
-{
-[e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1350  ]
-[e $U 1351  ]
-"225
-[e :U 1350 ]
-[; ;muta_messages.c: 225: {
-{
-[; ;muta_messages.c: 226: _delay((unsigned long)((10)*(16000000/4000.0)));
-"226
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;muta_messages.c: 227: if(MiApp_MessageAvailable())
-"227
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1353  ]
-[; ;muta_messages.c: 228: {
-"228
-{
-[; ;muta_messages.c: 230: last_rssi = rxMessage.PacketRSSI;
+[; ;muta_messages.c: 230: TxBuffer[TxData++] = 02;
 "230
-[e = _last_rssi . _rxMessage 5 ]
-[; ;muta_messages.c: 231: if (rxMessage.Payload[0] != 01 || rxMessage.Payload[1] != power_lvl)
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 2 `i `uc ]
+[; ;muta_messages.c: 231: memcpy(&TxBuffer[TxData], p_uid, 4);
 "231
-[e $ ! || != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> _power_lvl `i 1354  ]
-[; ;muta_messages.c: 232: {
+[e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> _p_uid `*Cv -> -> 4 `i `ui ]
+[; ;muta_messages.c: 232: TxData = TxData + 4;
 "232
-{
-[; ;muta_messages.c: 233: MiApp_DiscardMessage();
+[e = _TxData -> + -> _TxData `i -> 4 `i `uc ]
+[; ;muta_messages.c: 233: TxBuffer[TxData++] = sleeping_device;
 "233
-[e ( _MiApp_DiscardMessage ..  ]
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _sleeping_device ]
 "234
-}
-[; ;muta_messages.c: 234: }
-[e $U 1355  ]
+[v _result `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 234: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 0);
+[e = _result ( _MiApp_UnicastAddress (3 , , &U *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;muta_messages.c: 235: if (!result)
 "235
-[e :U 1354 ]
-[; ;muta_messages.c: 235: else
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1370  ]
 [; ;muta_messages.c: 236: {
 "236
 {
-[; ;muta_messages.c: 237: rssi = (rxMessage.Payload[2]);
+[; ;muta_messages.c: 237: m_failed_messages++;
 "237
-[e = _rssi *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;muta_messages.c: 238: MiApp_DiscardMessage();
-"238
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;muta_messages.c: 239: break;
-"239
-[e $U 1351  ]
-"240
-}
-[e :U 1355 ]
-"241
-}
-[e :U 1353 ]
-"242
-}
-"224
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1350  ]
-[e :U 1351 ]
-"242
-}
-[; ;muta_messages.c: 240: }
-[; ;muta_messages.c: 241: }
-[; ;muta_messages.c: 242: }
-[; ;muta_messages.c: 244: if (rssi == 0)
-"244
-[e $ ! == -> _rssi `i -> 0 `i 1356  ]
-[; ;muta_messages.c: 245: m_failed_messages++;
-"245
 [e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[e $U 1357  ]
+[; ;muta_messages.c: 238: return 0;
+"238
+[e ) -> -> 0 `i `uc ]
+[e $UE 1369  ]
+"239
+}
+[; ;muta_messages.c: 239: }
+[e $U 1371  ]
+"240
+[e :U 1370 ]
+[; ;muta_messages.c: 240: else
+[; ;muta_messages.c: 241: {
+"241
+{
+"242
+[v _i `ui ~T0 @X0 1 a ]
+[; ;muta_messages.c: 242: unsigned int i;
+[; ;muta_messages.c: 243: result = 0;
+"243
+[e = _result -> -> 0 `i `uc ]
+[; ;muta_messages.c: 244: for (i=0; i<100; i++)
+"244
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1372  ]
+[e $U 1373  ]
+"245
+[e :U 1372 ]
+[; ;muta_messages.c: 245: {
+{
+[; ;muta_messages.c: 246: _delay((unsigned long)((10)*(16000000/4000.0)));
 "246
-[e :U 1356 ]
-[; ;muta_messages.c: 246: else
-[; ;muta_messages.c: 247: m_sent_messages++;
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;muta_messages.c: 247: if(MiApp_MessageAvailable())
 "247
-[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
-[e :U 1357 ]
-[; ;muta_messages.c: 248: return rssi;
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1375  ]
+[; ;muta_messages.c: 248: {
 "248
-[e ) _rssi ]
-[e $UE 1344  ]
-"249
-}
-[e :U 1349 ]
-[; ;muta_messages.c: 249: }
-[; ;muta_messages.c: 250: }
+{
+[; ;muta_messages.c: 250: last_rssi = rxMessage.PacketRSSI;
 "250
-[e :UE 1344 ]
-}
+[e = _last_rssi . _rxMessage 5 ]
+[; ;muta_messages.c: 251: if (rxMessage.Payload[0] != 02)
+"251
+[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 2 `i 1376  ]
+[; ;muta_messages.c: 252: {
 "252
-[v _adapt_power_level `(uc ~T0 @X0 1 ef2`uc`uc ]
-"253
 {
-[; ;muta_messages.c: 252: uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi)
-[; ;muta_messages.c: 253: {
-[e :U _adapt_power_level ]
-"252
-[v _power `uc ~T0 @X0 1 r1 ]
-[v _minimal_rssi `uc ~T0 @X0 1 r2 ]
+[; ;muta_messages.c: 253: MiApp_DiscardMessage();
 "253
-[f ]
+[e ( _MiApp_DiscardMessage ..  ]
 "254
-[v _m_power `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 254: uint8_t m_power = 0x00;
-[e = _m_power -> -> 0 `i `uc ]
+}
+[; ;muta_messages.c: 254: }
+[e $U 1377  ]
 "255
-[v _last_good_power `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 255: uint8_t last_good_power = m_power;
-[e = _last_good_power _m_power ]
+[e :U 1376 ]
+[; ;muta_messages.c: 255: else
+[; ;muta_messages.c: 256: {
 "256
-[v _rssi `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 256: uint8_t rssi;
-[; ;muta_messages.c: 257: while(1)
+{
+[; ;muta_messages.c: 257: result = (rxMessage.Payload[1] == 0xff);
 "257
-[e :U 1360 ]
-[; ;muta_messages.c: 258: {
+[e = _result -> -> == -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 255 `i `i `uc ]
+[; ;muta_messages.c: 258: mySecurityKey[2] = rxMessage.Payload[2];
 "258
-{
-[; ;muta_messages.c: 259: MiMAC_SetPower(m_power);
+[e = *U + &U _mySecurityKey * -> -> -> 2 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;muta_messages.c: 259: mySecurityKey[6] = rxMessage.Payload[3];
 "259
-[e ( _MiMAC_SetPower (1 _m_power ]
-[; ;muta_messages.c: 260: _delay((unsigned long)((20)*(16000000/4000.0)));
+[e = *U + &U _mySecurityKey * -> -> -> 6 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + . _rxMessage 3 * -> -> 3 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;muta_messages.c: 260: MiApp_DiscardMessage();
 "260
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;muta_messages.c: 261: rssi = do_POWER_TEST(m_power);
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;muta_messages.c: 261: break;
 "261
-[e = _rssi ( _do_POWER_TEST (1 _m_power ]
-[; ;muta_messages.c: 262: if (rssi < minimal_rssi)
+[e $U 1373  ]
 "262
-[e $ ! < -> _rssi `i -> _minimal_rssi `i 1362  ]
-[; ;muta_messages.c: 263: {
+}
+[e :U 1377 ]
 "263
-{
-[; ;muta_messages.c: 264: break;
+}
+[e :U 1375 ]
 "264
-[e $U 1361  ]
-"265
 }
-[; ;muta_messages.c: 265: }
-[e $U 1363  ]
+"244
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1372  ]
+[e :U 1373 ]
+"264
+}
+[; ;muta_messages.c: 262: }
+[; ;muta_messages.c: 263: }
+[; ;muta_messages.c: 264: }
+[; ;muta_messages.c: 266: if (!result)
 "266
-[e :U 1362 ]
-[; ;muta_messages.c: 266: else
-[; ;muta_messages.c: 267: {
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1378  ]
+[; ;muta_messages.c: 267: m_failed_messages++;
 "267
-{
-[; ;muta_messages.c: 268: last_good_power = m_power;
+[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
+[e $U 1379  ]
 "268
-[e = _last_good_power _m_power ]
-[; ;muta_messages.c: 269: if (m_power == 0x07)
+[e :U 1378 ]
+[; ;muta_messages.c: 268: else
+[; ;muta_messages.c: 269: m_sent_messages++;
 "269
-[e $ ! == -> _m_power `i -> 7 `i 1364  ]
-[; ;muta_messages.c: 270: {
+[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
+[e :U 1379 ]
+[; ;muta_messages.c: 270: return result;
 "270
-{
-[; ;muta_messages.c: 271: break;
+[e ) _result ]
+[e $UE 1369  ]
 "271
-[e $U 1361  ]
-"272
 }
+[e :U 1371 ]
+[; ;muta_messages.c: 271: }
 [; ;muta_messages.c: 272: }
-[e $U 1365  ]
-"273
-[e :U 1364 ]
-[; ;muta_messages.c: 273: else
-[; ;muta_messages.c: 274: {
+"272
+[e :UE 1369 ]
+}
 "274
-{
-[; ;muta_messages.c: 275: m_power = m_power + 1;
+[v _do_POWER_TEST `(uc ~T0 @X0 1 ef1`uc ]
 "275
-[e = _m_power -> + -> _m_power `i -> 1 `i `uc ]
-"276
-}
-[e :U 1365 ]
-"277
-}
-[e :U 1363 ]
-"278
-}
-[e :U 1359 ]
-"257
-[e $U 1360  ]
-[e :U 1361 ]
-[; ;muta_messages.c: 276: }
-[; ;muta_messages.c: 277: }
-[; ;muta_messages.c: 278: }
-[; ;muta_messages.c: 279: m_power = last_good_power;
-"279
-[e = _m_power _last_good_power ]
-[; ;muta_messages.c: 280: MiMAC_SetPower(m_power);
-"280
-[e ( _MiMAC_SetPower (1 _m_power ]
-[; ;muta_messages.c: 281: return m_power;
-"281
-[e ) _m_power ]
-[e $UE 1358  ]
-[; ;muta_messages.c: 282: }
-"282
-[e :UE 1358 ]
-}
-"284
-[v _do_PING `(uc ~T0 @X0 1 ef1`*uc ]
-"285
 {
-[; ;muta_messages.c: 284: bool do_PING(uint8_t* p_short_addr)
-[; ;muta_messages.c: 285: {
-[e :U _do_PING ]
-"284
-[v _p_short_addr `*uc ~T0 @X0 1 r1 ]
-"285
+[; ;muta_messages.c: 274: uint8_t do_POWER_TEST(uint8_t power_lvl)
+[; ;muta_messages.c: 275: {
+[e :U _do_POWER_TEST ]
+"274
+[v _power_lvl `uc ~T0 @X0 1 r1 ]
+"275
 [f ]
-"286
-[v _buffer `uc ~T0 @X0 -> 21 `i a ]
-"287
-[v _p_buffer `*uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 286: uint8_t buffer[21];
-[; ;muta_messages.c: 287: uint8_t* p_buffer = buffer;
-[e = _p_buffer &U _buffer ]
-[; ;muta_messages.c: 288: *(p_buffer++) = 03;
-"288
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 3 `i `uc ]
-[; ;muta_messages.c: 289: for (uint8_t x=0; x<20; x++)
-"289
-{
-[v _x `uc ~T0 @X0 1 a ]
-[e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 20 `i 1367  ]
-[e $U 1368  ]
-"290
-[e :U 1367 ]
-[; ;muta_messages.c: 290: *(p_buffer++) = x;
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x _x ]
-"289
-[e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 20 `i 1367  ]
-[e :U 1368 ]
-"290
-}
-[; ;muta_messages.c: 291: {TxData = 11;};
-"291
+"276
+[v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
+[; ;muta_messages.c: 276: uint8_t shortaddress[2];
+[; ;muta_messages.c: 277: {TxData = 11;};
+"277
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;muta_messages.c: 292: memcpy(&TxBuffer[TxData], buffer, 21);
+[; ;muta_messages.c: 278: TxBuffer[TxData++] = 01;
+"278
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
+[; ;muta_messages.c: 279: TxBuffer[TxData++] = power_lvl;
+"279
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _power_lvl ]
+[; ;muta_messages.c: 280: if (myShortAddress.v[0] == 0x00)
+"280
+[e $ ! == -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> 0 `i 1381  ]
+[; ;muta_messages.c: 281: {
+"281
+{
+[; ;muta_messages.c: 282: if (myShortAddress.v[1] == 0x00)
+"282
+[e $ ! == -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> 0 `i 1382  ]
+[; ;muta_messages.c: 283: {
+"283
+{
+[; ;muta_messages.c: 284: return 0;
+"284
+[e ) -> -> 0 `i `uc ]
+[e $UE 1380  ]
+"285
+}
+[e :U 1382 ]
+[; ;muta_messages.c: 285: }
+[; ;muta_messages.c: 286: shortaddress[0] = 0x00;
+"286
+[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
+[; ;muta_messages.c: 287: shortaddress[1] = 0x00;
+"287
+[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
+"288
+}
+[; ;muta_messages.c: 288: }
+[e $U 1383  ]
+"289
+[e :U 1381 ]
+[; ;muta_messages.c: 289: else
+[; ;muta_messages.c: 290: {
+"290
+{
+[; ;muta_messages.c: 291: shortaddress[0] = 0x00;
+"291
+[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc ]
+[; ;muta_messages.c: 292: shortaddress[1] = myShortAddress.v[1];
 "292
-[e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> &U _buffer `*Cv -> -> 21 `i `ui ]
-[; ;muta_messages.c: 293: TxData = TxData + 21;
+[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux ]
 "293
-[e = _TxData -> + -> _TxData `i -> 21 `i `uc ]
+}
+[e :U 1383 ]
 "294
 [v _result `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 294: bool result = MiApp_UnicastAddress(p_short_addr, 0, 1);
-[e = _result ( _MiApp_UnicastAddress (3 , , _p_short_addr -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;muta_messages.c: 293: }
+[; ;muta_messages.c: 294: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 1);
+[e = _result ( _MiApp_UnicastAddress (3 , , &U *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc -> -> 1 `i `uc ]
 [; ;muta_messages.c: 295: if (!result)
 "295
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1370  ]
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1384  ]
 [; ;muta_messages.c: 296: {
 "296
 {
@@ -10503,316 +10518,603 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;muta_messages.c: 298: return 0;
 "298
 [e ) -> -> 0 `i `uc ]
-[e $UE 1366  ]
+[e $UE 1380  ]
 "299
 }
 [; ;muta_messages.c: 299: }
-[e $U 1371  ]
+[e $U 1385  ]
 "300
-[e :U 1370 ]
+[e :U 1384 ]
 [; ;muta_messages.c: 300: else
 [; ;muta_messages.c: 301: {
 "301
 {
 "302
 [v _i `ui ~T0 @X0 1 a ]
-[; ;muta_messages.c: 302: unsigned int i;
-[; ;muta_messages.c: 303: for (i=0; i<100; i++)
 "303
+[v _rssi `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 302: unsigned int i;
+[; ;muta_messages.c: 303: uint8_t rssi = 0;
+[e = _rssi -> -> 0 `i `uc ]
+[; ;muta_messages.c: 304: for (i=0; i<100; i++)
+"304
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1372  ]
-[e $U 1373  ]
-"304
-[e :U 1372 ]
-[; ;muta_messages.c: 304: {
-{
-[; ;muta_messages.c: 305: _delay((unsigned long)((10)*(16000000/4000.0)));
+[e $ < _i -> -> 100 `i `ui 1386  ]
+[e $U 1387  ]
 "305
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;muta_messages.c: 306: if(MiApp_MessageAvailable())
+[e :U 1386 ]
+[; ;muta_messages.c: 305: {
+{
+[; ;muta_messages.c: 306: _delay((unsigned long)((10)*(16000000/4000.0)));
 "306
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1375  ]
-[; ;muta_messages.c: 307: {
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;muta_messages.c: 307: if(MiApp_MessageAvailable())
 "307
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1389  ]
+[; ;muta_messages.c: 308: {
+"308
 {
-[; ;muta_messages.c: 309: last_rssi = rxMessage.PacketRSSI;
-"309
-[e = _last_rssi . _rxMessage 5 ]
-[; ;muta_messages.c: 310: if (rxMessage.Payload[0] != 03)
+[; ;muta_messages.c: 310: last_rssi = rxMessage.PacketRSSI;
 "310
-[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 3 `i 1376  ]
-[; ;muta_messages.c: 311: {
+[e = _last_rssi . _rxMessage 5 ]
+[; ;muta_messages.c: 311: if (rxMessage.Payload[0] != 01 || rxMessage.Payload[1] != power_lvl)
 "311
-{
-[; ;muta_messages.c: 312: MiApp_DiscardMessage();
+[e $ ! || != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 1 `i != -> *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> _power_lvl `i 1390  ]
+[; ;muta_messages.c: 312: {
 "312
-[e ( _MiApp_DiscardMessage ..  ]
-"313
-}
-[; ;muta_messages.c: 313: }
-[e $U 1377  ]
-"314
-[e :U 1376 ]
-[; ;muta_messages.c: 314: else
-[; ;muta_messages.c: 315: {
-"315
 {
-[; ;muta_messages.c: 316: for (uint8_t x=0; x<20; x++)
+[; ;muta_messages.c: 313: MiApp_DiscardMessage();
+"313
+[e ( _MiApp_DiscardMessage ..  ]
+"314
+}
+[; ;muta_messages.c: 314: }
+[e $U 1391  ]
+"315
+[e :U 1390 ]
+[; ;muta_messages.c: 315: else
+[; ;muta_messages.c: 316: {
 "316
+{
+[; ;muta_messages.c: 317: rssi = (rxMessage.Payload[2]);
+"317
+[e = _rssi *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;muta_messages.c: 318: MiApp_DiscardMessage();
+"318
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;muta_messages.c: 319: break;
+"319
+[e $U 1387  ]
+"320
+}
+[e :U 1391 ]
+"321
+}
+[e :U 1389 ]
+"322
+}
+"304
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1386  ]
+[e :U 1387 ]
+"322
+}
+[; ;muta_messages.c: 320: }
+[; ;muta_messages.c: 321: }
+[; ;muta_messages.c: 322: }
+[; ;muta_messages.c: 324: if (rssi == 0)
+"324
+[e $ ! == -> _rssi `i -> 0 `i 1392  ]
+[; ;muta_messages.c: 325: m_failed_messages++;
+"325
+[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
+[e $U 1393  ]
+"326
+[e :U 1392 ]
+[; ;muta_messages.c: 326: else
+[; ;muta_messages.c: 327: m_sent_messages++;
+"327
+[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
+[e :U 1393 ]
+[; ;muta_messages.c: 328: return rssi;
+"328
+[e ) _rssi ]
+[e $UE 1380  ]
+"329
+}
+[e :U 1385 ]
+[; ;muta_messages.c: 329: }
+[; ;muta_messages.c: 330: }
+"330
+[e :UE 1380 ]
+}
+"332
+[v _adapt_power_level `(uc ~T0 @X0 1 ef2`uc`uc ]
+"333
+{
+[; ;muta_messages.c: 332: uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi)
+[; ;muta_messages.c: 333: {
+[e :U _adapt_power_level ]
+"332
+[v _power `uc ~T0 @X0 1 r1 ]
+[v _minimal_rssi `uc ~T0 @X0 1 r2 ]
+"333
+[f ]
+"334
+[v _m_power `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 334: uint8_t m_power = 0x00;
+[e = _m_power -> -> 0 `i `uc ]
+"335
+[v _last_good_power `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 335: uint8_t last_good_power = m_power;
+[e = _last_good_power _m_power ]
+"336
+[v _rssi `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 336: uint8_t rssi;
+[; ;muta_messages.c: 337: while(1)
+"337
+[e :U 1396 ]
+[; ;muta_messages.c: 338: {
+"338
+{
+[; ;muta_messages.c: 339: MiMAC_SetPower(m_power);
+"339
+[e ( _MiMAC_SetPower (1 _m_power ]
+[; ;muta_messages.c: 340: _delay((unsigned long)((20)*(16000000/4000.0)));
+"340
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;muta_messages.c: 341: rssi = do_POWER_TEST(m_power);
+"341
+[e = _rssi ( _do_POWER_TEST (1 _m_power ]
+[; ;muta_messages.c: 342: if (rssi < minimal_rssi)
+"342
+[e $ ! < -> _rssi `i -> _minimal_rssi `i 1398  ]
+[; ;muta_messages.c: 343: {
+"343
+{
+[; ;muta_messages.c: 344: break;
+"344
+[e $U 1397  ]
+"345
+}
+[; ;muta_messages.c: 345: }
+[e $U 1399  ]
+"346
+[e :U 1398 ]
+[; ;muta_messages.c: 346: else
+[; ;muta_messages.c: 347: {
+"347
+{
+[; ;muta_messages.c: 348: last_good_power = m_power;
+"348
+[e = _last_good_power _m_power ]
+[; ;muta_messages.c: 349: if (m_power == 0x07)
+"349
+[e $ ! == -> _m_power `i -> 7 `i 1400  ]
+[; ;muta_messages.c: 350: {
+"350
+{
+[; ;muta_messages.c: 351: break;
+"351
+[e $U 1397  ]
+"352
+}
+[; ;muta_messages.c: 352: }
+[e $U 1401  ]
+"353
+[e :U 1400 ]
+[; ;muta_messages.c: 353: else
+[; ;muta_messages.c: 354: {
+"354
+{
+[; ;muta_messages.c: 355: m_power = m_power + 1;
+"355
+[e = _m_power -> + -> _m_power `i -> 1 `i `uc ]
+"356
+}
+[e :U 1401 ]
+"357
+}
+[e :U 1399 ]
+"358
+}
+[e :U 1395 ]
+"337
+[e $U 1396  ]
+[e :U 1397 ]
+[; ;muta_messages.c: 356: }
+[; ;muta_messages.c: 357: }
+[; ;muta_messages.c: 358: }
+[; ;muta_messages.c: 359: m_power = last_good_power;
+"359
+[e = _m_power _last_good_power ]
+[; ;muta_messages.c: 360: MiMAC_SetPower(m_power);
+"360
+[e ( _MiMAC_SetPower (1 _m_power ]
+[; ;muta_messages.c: 361: return m_power;
+"361
+[e ) _m_power ]
+[e $UE 1394  ]
+[; ;muta_messages.c: 362: }
+"362
+[e :UE 1394 ]
+}
+"364
+[v _do_PING `(uc ~T0 @X0 1 ef1`*uc ]
+"365
+{
+[; ;muta_messages.c: 364: bool do_PING(uint8_t* p_short_addr)
+[; ;muta_messages.c: 365: {
+[e :U _do_PING ]
+"364
+[v _p_short_addr `*uc ~T0 @X0 1 r1 ]
+"365
+[f ]
+"366
+[v _buffer `uc ~T0 @X0 -> 21 `i a ]
+"367
+[v _p_buffer `*uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 366: uint8_t buffer[21];
+[; ;muta_messages.c: 367: uint8_t* p_buffer = buffer;
+[e = _p_buffer &U _buffer ]
+[; ;muta_messages.c: 368: *(p_buffer++) = 03;
+"368
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 3 `i `uc ]
+[; ;muta_messages.c: 369: for (uint8_t x=0; x<20; x++)
+"369
 {
 [v _x `uc ~T0 @X0 1 a ]
 [e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 20 `i 1378  ]
-[e $U 1379  ]
-"317
-[e :U 1378 ]
-[; ;muta_messages.c: 317: if (rxMessage.Payload[x+1] != x)
-[e $ ! != -> *U + . _rxMessage 3 * -> + -> _x `i -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> _x `i 1381  ]
-[; ;muta_messages.c: 318: {
-"318
-{
-[; ;muta_messages.c: 319: MiApp_DiscardMessage();
-"319
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;muta_messages.c: 320: return 0;
-"320
-[e ) -> -> 0 `i `uc ]
-[e $UE 1366  ]
-"321
-}
-[e :U 1381 ]
-"316
+[e $ < -> _x `i -> 20 `i 1403  ]
+[e $U 1404  ]
+"370
+[e :U 1403 ]
+[; ;muta_messages.c: 370: *(p_buffer++) = x;
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x _x ]
+"369
 [e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 20 `i 1378  ]
-[e :U 1379 ]
-"322
+[e $ < -> _x `i -> 20 `i 1403  ]
+[e :U 1404 ]
+"370
 }
-[; ;muta_messages.c: 321: }
-[; ;muta_messages.c: 322: MiApp_DiscardMessage();
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;muta_messages.c: 323: m_sent_messages++;
-"323
-[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 324: return 1;
-"324
-[e ) -> -> 1 `i `uc ]
-[e $UE 1366  ]
-"325
-}
-[e :U 1377 ]
-"326
-}
-[e :U 1375 ]
-"327
-}
-"303
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1372  ]
-[e :U 1373 ]
-"327
-}
-[; ;muta_messages.c: 325: }
-[; ;muta_messages.c: 326: }
-[; ;muta_messages.c: 327: }
-[; ;muta_messages.c: 328: m_failed_messages++;
-"328
-[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 329: return 0;
-"329
-[e ) -> -> 0 `i `uc ]
-[e $UE 1366  ]
-"330
-}
-[e :U 1371 ]
-[; ;muta_messages.c: 330: }
-[; ;muta_messages.c: 331: }
-"331
-[e :UE 1366 ]
-}
-"333
-[v _do_UPDATE `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
-"334
+[; ;muta_messages.c: 371: {TxData = 11;};
+"371
 {
-[; ;muta_messages.c: 333: bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required)
-[; ;muta_messages.c: 334: {
+[e = _TxData -> -> 11 `i `uc ]
+}
+[; ;muta_messages.c: 372: memcpy(&TxBuffer[TxData], buffer, 21);
+"372
+[e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> &U _buffer `*Cv -> -> 21 `i `ui ]
+[; ;muta_messages.c: 373: TxData = TxData + 21;
+"373
+[e = _TxData -> + -> _TxData `i -> 21 `i `uc ]
+"374
+[v _result `uc ~T0 @X0 1 a ]
+[; ;muta_messages.c: 374: bool result = MiApp_UnicastAddress(p_short_addr, 0, 1);
+[e = _result ( _MiApp_UnicastAddress (3 , , _p_short_addr -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;muta_messages.c: 375: if (!result)
+"375
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1406  ]
+[; ;muta_messages.c: 376: {
+"376
+{
+[; ;muta_messages.c: 377: m_failed_messages++;
+"377
+[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
+[; ;muta_messages.c: 378: return 0;
+"378
+[e ) -> -> 0 `i `uc ]
+[e $UE 1402  ]
+"379
+}
+[; ;muta_messages.c: 379: }
+[e $U 1407  ]
+"380
+[e :U 1406 ]
+[; ;muta_messages.c: 380: else
+[; ;muta_messages.c: 381: {
+"381
+{
+"382
+[v _i `ui ~T0 @X0 1 a ]
+[; ;muta_messages.c: 382: unsigned int i;
+[; ;muta_messages.c: 383: for (i=0; i<100; i++)
+"383
+{
+[e = _i -> -> 0 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1408  ]
+[e $U 1409  ]
+"384
+[e :U 1408 ]
+[; ;muta_messages.c: 384: {
+{
+[; ;muta_messages.c: 385: _delay((unsigned long)((10)*(16000000/4000.0)));
+"385
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;muta_messages.c: 386: if(MiApp_MessageAvailable())
+"386
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1411  ]
+[; ;muta_messages.c: 387: {
+"387
+{
+[; ;muta_messages.c: 389: last_rssi = rxMessage.PacketRSSI;
+"389
+[e = _last_rssi . _rxMessage 5 ]
+[; ;muta_messages.c: 390: if (rxMessage.Payload[0] != 03)
+"390
+[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 3 `i 1412  ]
+[; ;muta_messages.c: 391: {
+"391
+{
+[; ;muta_messages.c: 392: MiApp_DiscardMessage();
+"392
+[e ( _MiApp_DiscardMessage ..  ]
+"393
+}
+[; ;muta_messages.c: 393: }
+[e $U 1413  ]
+"394
+[e :U 1412 ]
+[; ;muta_messages.c: 394: else
+[; ;muta_messages.c: 395: {
+"395
+{
+[; ;muta_messages.c: 396: for (uint8_t x=0; x<20; x++)
+"396
+{
+[v _x `uc ~T0 @X0 1 a ]
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 20 `i 1414  ]
+[e $U 1415  ]
+"397
+[e :U 1414 ]
+[; ;muta_messages.c: 397: if (rxMessage.Payload[x+1] != x)
+[e $ ! != -> *U + . _rxMessage 3 * -> + -> _x `i -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> _x `i 1417  ]
+[; ;muta_messages.c: 398: {
+"398
+{
+[; ;muta_messages.c: 399: MiApp_DiscardMessage();
+"399
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;muta_messages.c: 400: return 0;
+"400
+[e ) -> -> 0 `i `uc ]
+[e $UE 1402  ]
+"401
+}
+[e :U 1417 ]
+"396
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 20 `i 1414  ]
+[e :U 1415 ]
+"402
+}
+[; ;muta_messages.c: 401: }
+[; ;muta_messages.c: 402: MiApp_DiscardMessage();
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;muta_messages.c: 403: m_sent_messages++;
+"403
+[e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
+[; ;muta_messages.c: 404: return 1;
+"404
+[e ) -> -> 1 `i `uc ]
+[e $UE 1402  ]
+"405
+}
+[e :U 1413 ]
+"406
+}
+[e :U 1411 ]
+"407
+}
+"383
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1408  ]
+[e :U 1409 ]
+"407
+}
+[; ;muta_messages.c: 405: }
+[; ;muta_messages.c: 406: }
+[; ;muta_messages.c: 407: }
+[; ;muta_messages.c: 408: m_failed_messages++;
+"408
+[e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
+[; ;muta_messages.c: 409: return 0;
+"409
+[e ) -> -> 0 `i `uc ]
+[e $UE 1402  ]
+"410
+}
+[e :U 1407 ]
+[; ;muta_messages.c: 410: }
+[; ;muta_messages.c: 411: }
+"411
+[e :UE 1402 ]
+}
+"413
+[v _do_UPDATE `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
+"414
+{
+[; ;muta_messages.c: 413: bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required)
+[; ;muta_messages.c: 414: {
 [e :U _do_UPDATE ]
-"333
+"413
 [v _p_buff `*uc ~T0 @X0 1 r1 ]
 [v _size `uc ~T0 @X0 1 r2 ]
 [v _ack_required `uc ~T0 @X0 1 r3 ]
-"334
+"414
 [f ]
-[v F10231 `uc ~T0 @X0 -> 2 `i s ]
-[i F10231
+[v F10257 `uc ~T0 @X0 -> 2 `i s ]
+[i F10257
 :U ..
-"335
+"415
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 ..
 ]
 [v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
-[; ;muta_messages.c: 335: uint8_t shortaddress[2] = { 0x00, 0x00 };
-[e = _shortaddress F10231 ]
-[; ;muta_messages.c: 336: {TxData = 11;};
-"336
+[; ;muta_messages.c: 415: uint8_t shortaddress[2] = { 0x00, 0x00 };
+[e = _shortaddress F10257 ]
+[; ;muta_messages.c: 416: {TxData = 11;};
+"416
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;muta_messages.c: 337: TxBuffer[TxData++] = 04;
-"337
+[; ;muta_messages.c: 417: TxBuffer[TxData++] = 04;
+"417
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 4 `i `uc ]
-[; ;muta_messages.c: 338: if (ack_required)
-"338
-[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1383  ]
-[; ;muta_messages.c: 339: TxBuffer[TxData++] = 0xff;
-"339
+[; ;muta_messages.c: 418: if (ack_required)
+"418
+[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1419  ]
+[; ;muta_messages.c: 419: TxBuffer[TxData++] = 0xff;
+"419
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 255 `i `uc ]
-[e $U 1384  ]
-"340
-[e :U 1383 ]
-[; ;muta_messages.c: 340: else
-[; ;muta_messages.c: 341: TxBuffer[TxData++] = 0xf0;
-"341
+[e $U 1420  ]
+"420
+[e :U 1419 ]
+[; ;muta_messages.c: 420: else
+[; ;muta_messages.c: 421: TxBuffer[TxData++] = 0xf0;
+"421
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 240 `i `uc ]
-[e :U 1384 ]
-[; ;muta_messages.c: 342: memcpy(&TxBuffer[TxData], p_buff, size);
-"342
+[e :U 1420 ]
+[; ;muta_messages.c: 422: memcpy(&TxBuffer[TxData], p_buff, size);
+"422
 [e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> _p_buff `*Cv -> _size `ui ]
-[; ;muta_messages.c: 343: TxData = TxData + size;
-"343
+[; ;muta_messages.c: 423: TxData = TxData + size;
+"423
 [e = _TxData -> + -> _TxData `i -> _size `i `uc ]
-"344
+"424
 [v _result `uc ~T0 @X0 1 a ]
-[; ;muta_messages.c: 344: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 1);
+[; ;muta_messages.c: 424: bool result = MiApp_UnicastAddress(&shortaddress[0], 0, 1);
 [e = _result ( _MiApp_UnicastAddress (3 , , &U *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;muta_messages.c: 345: if (!result)
-"345
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1385  ]
-[; ;muta_messages.c: 346: {
-"346
+[; ;muta_messages.c: 425: if (!result)
+"425
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1421  ]
+[; ;muta_messages.c: 426: {
+"426
 {
-[; ;muta_messages.c: 347: m_failed_messages++;
-"347
+[; ;muta_messages.c: 427: m_failed_messages++;
+"427
 [e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 348: return 0;
-"348
+[; ;muta_messages.c: 428: return 0;
+"428
 [e ) -> -> 0 `i `uc ]
-[e $UE 1382  ]
-"349
+[e $UE 1418  ]
+"429
 }
-[e :U 1385 ]
-[; ;muta_messages.c: 349: }
-[; ;muta_messages.c: 350: if (ack_required)
-"350
-[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1386  ]
-[; ;muta_messages.c: 351: {
-"351
+[e :U 1421 ]
+[; ;muta_messages.c: 429: }
+[; ;muta_messages.c: 430: if (ack_required)
+"430
+[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1422  ]
+[; ;muta_messages.c: 431: {
+"431
 {
-"352
+"432
 [v _i `ui ~T0 @X0 1 a ]
-[; ;muta_messages.c: 352: unsigned int i;
-[; ;muta_messages.c: 353: result = 0;
-"353
+[; ;muta_messages.c: 432: unsigned int i;
+[; ;muta_messages.c: 433: result = 0;
+"433
 [e = _result -> -> 0 `i `uc ]
-[; ;muta_messages.c: 354: for (i=0; i<100; i++)
-"354
+[; ;muta_messages.c: 434: for (i=0; i<100; i++)
+"434
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1387  ]
-[e $U 1388  ]
-"355
-[e :U 1387 ]
-[; ;muta_messages.c: 355: {
+[e $ < _i -> -> 100 `i `ui 1423  ]
+[e $U 1424  ]
+"435
+[e :U 1423 ]
+[; ;muta_messages.c: 435: {
 {
-[; ;muta_messages.c: 356: _delay((unsigned long)((10)*(16000000/4000.0)));
-"356
+[; ;muta_messages.c: 436: _delay((unsigned long)((10)*(16000000/4000.0)));
+"436
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;muta_messages.c: 357: if(MiApp_MessageAvailable())
-"357
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1390  ]
-[; ;muta_messages.c: 358: {
-"358
+[; ;muta_messages.c: 437: if(MiApp_MessageAvailable())
+"437
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1426  ]
+[; ;muta_messages.c: 438: {
+"438
 {
-[; ;muta_messages.c: 360: last_rssi = rxMessage.PacketRSSI;
-"360
+[; ;muta_messages.c: 440: last_rssi = rxMessage.PacketRSSI;
+"440
 [e = _last_rssi . _rxMessage 5 ]
-[; ;muta_messages.c: 361: if (rxMessage.Payload[0] != 04)
-"361
-[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1391  ]
-[; ;muta_messages.c: 362: {
-"362
+[; ;muta_messages.c: 441: if (rxMessage.Payload[0] != 04)
+"441
+[e $ ! != -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i -> 4 `i 1427  ]
+[; ;muta_messages.c: 442: {
+"442
 {
-[; ;muta_messages.c: 363: MiApp_DiscardMessage();
-"363
+[; ;muta_messages.c: 443: MiApp_DiscardMessage();
+"443
 [e ( _MiApp_DiscardMessage ..  ]
-"364
+"444
 }
-[; ;muta_messages.c: 364: }
-[e $U 1392  ]
-"365
-[e :U 1391 ]
-[; ;muta_messages.c: 365: else
-[; ;muta_messages.c: 366: result = 1;
-"366
+[; ;muta_messages.c: 444: }
+[e $U 1428  ]
+"445
+[e :U 1427 ]
+[; ;muta_messages.c: 445: else
+[; ;muta_messages.c: 446: result = 1;
+"446
 [e = _result -> -> 1 `i `uc ]
-[e :U 1392 ]
-[; ;muta_messages.c: 369: break;
-"369
-[e $U 1388  ]
-"370
+[e :U 1428 ]
+[; ;muta_messages.c: 449: break;
+"449
+[e $U 1424  ]
+"450
 }
-[e :U 1390 ]
-"371
+[e :U 1426 ]
+"451
 }
-"354
+"434
 [e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1387  ]
-[e :U 1388 ]
-"371
+[e $ < _i -> -> 100 `i `ui 1423  ]
+[e :U 1424 ]
+"451
 }
-[; ;muta_messages.c: 370: }
-[; ;muta_messages.c: 371: }
-[; ;muta_messages.c: 372: if (!result)
-"372
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1393  ]
-[; ;muta_messages.c: 373: m_failed_messages++;
-"373
+[; ;muta_messages.c: 450: }
+[; ;muta_messages.c: 451: }
+[; ;muta_messages.c: 452: if (!result)
+"452
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1429  ]
+[; ;muta_messages.c: 453: m_failed_messages++;
+"453
 [e ++ _m_failed_messages -> -> -> 1 `i `l `ul ]
-[e $U 1394  ]
-"374
-[e :U 1393 ]
-[; ;muta_messages.c: 374: else
-[; ;muta_messages.c: 375: m_sent_messages++;
-"375
+[e $U 1430  ]
+"454
+[e :U 1429 ]
+[; ;muta_messages.c: 454: else
+[; ;muta_messages.c: 455: m_sent_messages++;
+"455
 [e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
-[e :U 1394 ]
-[; ;muta_messages.c: 376: return result;
-"376
+[e :U 1430 ]
+[; ;muta_messages.c: 456: return result;
+"456
 [e ) _result ]
-[e $UE 1382  ]
-"377
+[e $UE 1418  ]
+"457
 }
-[; ;muta_messages.c: 377: }
-[e $U 1395  ]
-"378
-[e :U 1386 ]
-[; ;muta_messages.c: 378: else
-[; ;muta_messages.c: 379: {
-"379
+[; ;muta_messages.c: 457: }
+[e $U 1431  ]
+"458
+[e :U 1422 ]
+[; ;muta_messages.c: 458: else
+[; ;muta_messages.c: 459: {
+"459
 {
-[; ;muta_messages.c: 380: m_sent_messages++;
-"380
+[; ;muta_messages.c: 460: m_sent_messages++;
+"460
 [e ++ _m_sent_messages -> -> -> 1 `i `l `ul ]
-[; ;muta_messages.c: 381: return 1;
-"381
+[; ;muta_messages.c: 461: return 1;
+"461
 [e ) -> -> 1 `i `uc ]
-[e $UE 1382  ]
-"382
+[e $UE 1418  ]
+"462
 }
-[e :U 1395 ]
-[; ;muta_messages.c: 382: }
-[; ;muta_messages.c: 383: }
-"383
-[e :UE 1382 ]
+[e :U 1431 ]
+[; ;muta_messages.c: 462: }
+[; ;muta_messages.c: 463: }
+"463
+[e :UE 1418 ]
 }

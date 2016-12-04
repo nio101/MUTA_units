@@ -1,17 +1,17 @@
 
 # 1 "src/main.c"
 
-# 26 "/opt/microchip/xc8/v1.35/include/htc.h"
+# 26 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/opt/microchip/xc8/v1.35/include/xc8debug.h"
+# 13 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "/opt/microchip/xc8/v1.35/include/pic18f27j53.h"
+# 49 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h"
 extern volatile unsigned char ADCTRIG @ 0xEB8;
 
 asm("ADCTRIG equ 0EB8h");
@@ -10318,7 +10318,7 @@ extern volatile __bit nWRITE @ (((unsigned) &SSP1STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 2008 "/opt/microchip/xc8/v1.35/include/plib/adc.h"
+# 2008 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\adc.h"
 union ADCResult
 {
 int lr;
@@ -10346,7 +10346,7 @@ void SetChanADC(unsigned char );
 # 2100
 void SelChanConvADC( unsigned char );
 
-# 202 "/opt/microchip/xc8/v1.35/include/plib/ancomp.h"
+# 202 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\ancomp.h"
 void Close_ancomp1( void );
 void Open_ancomp1(unsigned char config);
 void Close_ancomp2( void );
@@ -10356,7 +10356,7 @@ void Open_ancomp2(unsigned char config);
 void Close_ancomp3( void );
 void Open_ancomp3(unsigned char config);
 
-# 13 "/opt/microchip/xc8/v1.35/include/stdint.h"
+# 13 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -10446,14 +10446,14 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 29 "src/18F27J53/spi.h"
+# 29 "src/18F27J53\spi.h"
 void SPIPut(uint8_t v);
 uint8_t SPIGet(void);
 
 void SPIPut2(uint8_t v);
 uint8_t SPIGet2(void);
 
-# 414 "/opt/microchip/xc8/v1.35/include/plib/can2510.h"
+# 414 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\can2510.h"
 void CAN2510Initialize(  unsigned int configuration,
  unsigned char brp,
  unsigned char interruptFlags,
@@ -10560,7 +10560,7 @@ unsigned char CAN2510DataRead(  unsigned char bufferNum,
  unsigned char *numBytes,
  unsigned char *data );
 
-# 64 "/opt/microchip/xc8/v1.35/include/plib/capture.h"
+# 64 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\capture.h"
 union capstatus
 {
 
@@ -10637,7 +10637,7 @@ void OpenECapture3 ( unsigned char config);
 unsigned int ReadECapture3 (void);
 void CloseECapture3 (void);
 
-# 403 "/opt/microchip/xc8/v1.35/include/plib/compare.h"
+# 403 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\compare.h"
 void OpenCompare4(unsigned char config,unsigned int period);
 void CloseCompare4(void);
 
@@ -10666,14 +10666,14 @@ void CloseECompare2(void);
 void OpenECompare3(unsigned char config,unsigned int period);
 void CloseECompare3(void);
 
-# 374 "/opt/microchip/xc8/v1.35/include/plib/ctmu.h"
+# 374 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\ctmu.h"
 void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
 
 # 379
 void CurrentControlCTMU(unsigned char config);
 void CloseCTMU(void);
 
-# 49 "/opt/microchip/xc8/v1.35/include/plib/dpslp.h"
+# 49 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\dpslp.h"
 typedef union
 {
 struct
@@ -10709,13 +10709,13 @@ extern void ReadDSGPR( CONTEXT* ptr );
 
 extern void ULPWakeUpEnable( void );
 
-# 4 "/opt/microchip/xc8/v1.35/include/__size_t.h"
+# 4 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\__size_t.h"
 typedef unsigned size_t;
 
-# 6 "/opt/microchip/xc8/v1.35/include/stddef.h"
+# 6 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stddef.h"
 typedef int ptrdiff_t;
 
-# 65 "/opt/microchip/xc8/v1.35/include/GenericTypeDefs.h"
+# 65 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\GenericTypeDefs.h"
 typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
 
 
@@ -11095,7 +11095,7 @@ struct
 } bits;
 } QWORD_VAL;
 
-# 113 "/opt/microchip/xc8/v1.35/include/plib/flash.h"
+# 113 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\flash.h"
 extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
 
 # 120
@@ -11108,7 +11108,7 @@ extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, uns
 
 extern void WriteWordFlash(unsigned long startaddr, unsigned int data);
 
-# 244 "/opt/microchip/xc8/v1.35/include/plib/i2c.h"
+# 244 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\i2c.h"
 void OpenI2C1( unsigned char sync_mode, unsigned char slew );
 
 # 264
@@ -11148,7 +11148,7 @@ unsigned char address,
 unsigned char *rdptr,
 unsigned char length );
 
-# 200 "/opt/microchip/xc8/v1.35/include/plib/mwire.h"
+# 200 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\mwire.h"
 void OpenMwire1( unsigned char sync_mode );
 
 
@@ -11161,7 +11161,7 @@ signed char WriteMwire1( unsigned char data_out );
 # 234
 void getsMwire1( unsigned char *rdptr, unsigned char length );
 
-# 126 "/opt/microchip/xc8/v1.35/include/plib/portb.h"
+# 126 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\portb.h"
 void OpenPORTB( unsigned char config);
 
 # 176
@@ -11176,7 +11176,7 @@ void OpenRB2INT( unsigned char config);
 # 230
 void OpenRB3INT( unsigned char config);
 
-# 85 "/opt/microchip/xc8/v1.35/include/plib/pwm.h"
+# 85 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\pwm.h"
 union PWMDC
 {
 unsigned int lpwm;
@@ -11233,7 +11233,7 @@ void SetOutputEPWM3 ( unsigned char output_config,
 unsigned char pwm_mode);
 void CloseEPWM3 (void);
 
-# 16 "/opt/microchip/xc8/v1.35/include/plib/reset.h"
+# 16 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\reset.h"
 char isMCLR(void);
 void StatusReset(void);
 char isPOR(void);
@@ -11251,7 +11251,7 @@ char isWDTWU(void);
 
 char isLVD(void);
 
-# 43 "/opt/microchip/xc8/v1.35/include/plib/rtcc.h"
+# 43 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\rtcc.h"
 typedef union _WORD_VAL
 {
 unsigned int Val;
@@ -11427,7 +11427,7 @@ void Open_RTCC(void);
 void Close_RTCC(void);
 unsigned char update_RTCC(void);
 
-# 97 "/opt/microchip/xc8/v1.35/include/plib/sw_i2c.h"
+# 97 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\sw_i2c.h"
 void SWStopI2C ( void );
 void SWStartI2C ( void );
 void SWRestartI2C ( void );
@@ -11440,7 +11440,7 @@ signed char SWWriteI2C(  unsigned char data_out );
 signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
 signed char SWPutsI2C(  unsigned char *wrptr );
 
-# 84 "/opt/microchip/xc8/v1.35/include/plib/sw_spi.h"
+# 84 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\sw_spi.h"
 void OpenSWSPI(void);
 
 
@@ -11452,7 +11452,7 @@ void SetCSSWSPI(void);
 
 void ClearCSSWSPI(void);
 
-# 47 "/opt/microchip/xc8/v1.35/include/plib/sw_uart.h"
+# 47 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\sw_uart.h"
 void OpenUART(void);
 
 unsigned char ReadUART(void);
@@ -11468,7 +11468,7 @@ extern void DelayRXBitUART (void);
 extern void DelayRXHalfBitUART(void);
 extern void DelayTXBitUART (void);
 
-# 36 "/opt/microchip/xc8/v1.35/include/plib/timers.h"
+# 36 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\timers.h"
 union Timers
 {
 unsigned int lt;
@@ -11515,7 +11515,7 @@ void CloseTimer6 (void);
 void OpenTimer8 ( unsigned char config);
 void CloseTimer8 (void);
 
-# 200 "/opt/microchip/xc8/v1.35/include/plib/usart.h"
+# 200 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\usart.h"
 union USART1
 {
 unsigned char val;
@@ -11568,7 +11568,7 @@ void baud1USART ( unsigned char baudconfig);
 # 665
 void baud2USART ( unsigned char baudconfig);
 
-# 87 "/opt/microchip/xc8/v1.35/include/plib/xlcd.h"
+# 87 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\xlcd.h"
 void OpenXLCD( unsigned char);
 
 # 92
@@ -11603,7 +11603,7 @@ extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
 
-# 13 "/opt/microchip/xc8/v1.35/include/plib/delays.h"
+# 13 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\delays.h"
 void Delay1TCYx(unsigned char);
 
 # 19
@@ -11618,7 +11618,7 @@ void Delay1KTCYx(unsigned char);
 # 37
 void Delay10KTCYx(unsigned char);
 
-# 18 "/opt/microchip/xc8/v1.35/include/pic18.h"
+# 18 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -11636,39 +11636,35 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 14 "/opt/microchip/xc8/v1.35/include/string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
+# 30 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
 
-# 34
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 7 "/opt/microchip/xc8/v1.35/include/stdarg.h"
+# 7 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -11677,17 +11673,17 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "/opt/microchip/xc8/v1.35/include/stdio.h"
+# 43 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
 struct __prbuf
 {
 char * ptr;
 void (* func)(char);
 };
 
-# 25 "/opt/microchip/xc8/v1.35/include/errno.h"
+# 25 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\errno.h"
 extern int errno;
 
-# 12 "/opt/microchip/xc8/v1.35/include/conio.h"
+# 12 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -11701,7 +11697,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 88 "/opt/microchip/xc8/v1.35/include/stdio.h"
+# 88 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -11728,10 +11724,10 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 12 "/opt/microchip/xc8/v1.35/include/stdbool.h"
+# 12 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\stdbool.h"
 typedef unsigned char bool;
 
-# 71 "src/18F27J53/symbol.h"
+# 71 "src\18F27J53/symbol.h"
 typedef union _MIWI_TICK
 {
 uint32_t Val;
@@ -11757,7 +11753,7 @@ MIWI_TICK MiWi_TickGet(void);
 
 extern volatile uint8_t timerExtension1,timerExtension2;
 
-# 47 "src/18F27J53/delay.h"
+# 47 "src\18F27J53/delay.h"
 void DELAY_10us( uint32_t tenMicroSecondCounter );
 
 # 68
@@ -12037,7 +12033,7 @@ unsigned :8;
 
 } CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
 
-# 138 "src/usb/usb_common.h"
+# 138 "src\usb/usb_common.h"
 typedef union
 {
 uint8_t bitmap;
@@ -12194,7 +12190,7 @@ uint8_t bDeviceProtocol;
 # 456
 typedef bool (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
 
-# 78 "src/usb/usb_device.h"
+# 78 "src\usb/usb_device.h"
 typedef enum
 {
 
@@ -12425,7 +12421,39 @@ extern volatile bool USBBusIsSuspended;
 extern volatile USB_DEVICE_STATE USBDeviceState;
 extern volatile uint8_t USBActiveConfiguration;
 
-# 261 "src/usb/usb_hal_pic18.h"
+# 14 "D:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 34
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 261 "src\usb/usb_hal_pic18.h"
 typedef union _BD_STAT
 {
 uint8_t Val;
@@ -12525,7 +12553,7 @@ extern volatile OUT_PIPE outPipes[1];
 extern volatile BDT_ENTRY* pBDTEntryOut[1+1];
 extern volatile BDT_ENTRY* pBDTEntryIn[1+1];
 
-# 167 "src/usb/usb_hal.h"
+# 167 "src/usb\usb_hal.h"
 void OTGCORE_SetDeviceAddr( uint8_t addr );
 
 # 203
@@ -12597,7 +12625,7 @@ extern volatile uint8_t CtrlTrfData[8];
 # 40 "src/app_led_usb_status.h"
 void APP_LEDUpdateUSBStatus(void);
 
-# 69 "src/miwi/drv_mrf_miwi_security.h"
+# 69 "src\miwi/drv_mrf_miwi_security.h"
 extern unsigned char mySecurityKey[];
 
 # 74
@@ -12606,7 +12634,7 @@ void CBC_MAC(uint8_t *text, uint8_t len, uint8_t *key, uint8_t *MIC);
 void CCM_Enc(uint8_t *text, uint8_t headerLen, uint8_t payloadLen, uint8_t *key);
 bool CCM_Dec(uint8_t *text, uint8_t headerLen, uint8_t payloadLen, uint8_t *key);
 
-# 440 "src/miwi/drv_mrf_miwi_89xa.h"
+# 440 "src\miwi/drv_mrf_miwi_89xa.h"
 typedef struct
 {
 union
@@ -12630,7 +12658,7 @@ MIWI_TICK startTick;
 
 void MIWIInterruptHandler(void);
 
-# 84 "src/miwi/drv_mrf_miwi.h"
+# 84 "src\miwi/drv_mrf_miwi.h"
 typedef union _DRIVER_UINT8_UNION_
 {
 uint8_t Val;
@@ -12760,7 +12788,7 @@ extern API_UINT32_UNION IncomingFrameCounter[64];
 
 void UserInterruptHandler(void);
 
-# 44 "src/miwi/miwi_mesh.h"
+# 44 "src\miwi/miwi_mesh.h"
 void MiWiTasks(void);
 uint8_t findNextNetworkEntry(void);
 void ClearNetworkTable(void);
@@ -12995,24 +13023,24 @@ bool MiApp_ResyncConnection(uint8_t ConnectionIndex, uint32_t ChannelMap);
 # 950
 extern RECEIVED_MESSAGE rxMessage;
 
-# 16 "src/../../../muta/muta_messages.h"
+# 18 "src/../../../muta/muta_messages.h"
 extern uint8_t last_rssi;
 
 
-
-
+uint8_t mW_ufixed16_to_dBm(uint8_t value1, uint8_t value2);
+void dBm_to_mW_ufixed16(uint8_t power, uint8_t* value1, uint8_t* value2);
 const char* dBm_to_mW(uint8_t power);
 const char TX_POWER_13_DB_MW[] = "20mW";
 const char TX_POWER_10_DB_MW[] = "10mW";
 const char TX_POWER_7_DB_MW[] = "5mW";
 const char TX_POWER_4_DB_MW[] = "2.5mW";
-const char TX_POWER_1_DB_MW[] = "1.2mW";
+const char TX_POWER_1_DB_MW[] = "1.25mW";
 const char TX_POWER_N_2_DB_MW[] = "0.6mW";
 const char TX_POWER_N_5_DB_MW[] = "0.3mW";
 const char TX_POWER_N_8_DB_MW[] = "0.15mW";
-const char TX_POWER_INVALID[] = "invalid!";
+const char TX_POWER_INVALID[] = "0.0mW";
 
-# 68
+# 71
 typedef struct {
 char label[3];
 uint8_t type;
@@ -13020,8 +13048,12 @@ uint8_t value_byte1;
 uint8_t value_byte2;
 uint8_t unit;
 bool writable;
+bool _signed;
 uint8_t size;
 } MUTA_VARIABLE;
+
+
+bool labelcmp(uint8_t* p1, uint8_t* p2);
 
 
 uint8_t encode_uint8_variable(uint8_t* buffer, MUTA_VARIABLE var);
@@ -13039,18 +13071,21 @@ bool do_PING(uint8_t* p_short_addr);
 uint8_t adapt_power_level(uint8_t power, uint8_t minimal_rssi);
 bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
 
-# 49 "src/main.c"
-const uint8_t myMODEL[2] @ 0x01FFF4 = { 0x00, 0x03 };
+# 46 "src/main.c"
+const uint8_t myMUTA_version @ 0x01FFF2 = 0x01;
 
+const uint8_t myMODEL @ 0x01FFF4 = 0x01;
 
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 };
+# 53
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x00 };
+
 extern uint8_t myLongAddress[4];
 
-# 58
+# 60
 const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
 unsigned char mySecurityKey[8];
 
-# 80
+# 82
 volatile bool timer_flag = 0;
 volatile uint8_t timer_count = 1;
 
@@ -13061,11 +13096,14 @@ const char CHANNEL_LABEL[] = "Chn";
 const char NOISE_LABEL[] = "Nse";
 uint8_t m_power, noise_level, BestChannel;
 const char UPTIME_LABEL[] = "Upt";
-volatile unsigned long m_uptime_seconds = 0;
+volatile float m_uptime_days = 0;
 const char UPDATE_FREQUENCY_LABEL[] = "UpF";
 volatile uint8_t m_update_frequency = 1;
 unsigned long m_failed_messages = 0;
 unsigned long m_sent_messages = 0;
+
+bool Pwr_updated = 0;
+bool UpF_updated = 0;
 
 
 uint8_t m_buffer[32];
@@ -13076,7 +13114,7 @@ MUTA_VARIABLE m_var;
 void timer_reset();
 void send_network_register();
 void send_complete_update();
-void send_writables_update();
+void send_answer_to_update();
 void send_periodic_update();
 void update_variable();
 void wait_for_1_sec();
@@ -13123,8 +13161,8 @@ myAppState = STATE_INIT;
 
 bool result;
 
-myLongAddress[0] = myMODEL[0];
-myLongAddress[1] = myMODEL[1];
+myLongAddress[0] = myMUTA_version;
+myLongAddress[1] = myMODEL;
 myLongAddress[2] = myUID[0];
 myLongAddress[3] = myUID[1];
 
@@ -13132,19 +13170,19 @@ myLongAddress[3] = myUID[1];
 for (int x=0; x<8; x++)
 mySecurityKey[x] = StaticSecurityKey[x];
 
-# 166
+# 171
 status_led = LED_FAST_PULSE;
 update_LED();
 
 
 USBDeviceInit();
 
-# 174
+# 179
 USBDeviceAttach();
 while(1)
 {
 
-# 180
+# 185
 if( USBDeviceState < CONFIGURED_STATE )
 continue;
 if( UCONbits.SUSPND == 1 )
@@ -13170,7 +13208,7 @@ switch (ReceivedDataBuffer[0])
 case 0x53:
 if (ReceivedDataBuffer[1] != 0x00 || ReceivedDataBuffer[2] != 0x00 || ReceivedDataBuffer[3] != 4 ||ReceivedDataBuffer[4] != 02 || ReceivedDataBuffer[5] != 0xff)
 
-# 206
+# 211
 {
 asm("reset");
 }
@@ -13202,8 +13240,7 @@ sendHIDText(ToSendDataBuffer);
 _delay((unsigned long)((20)*(16000000/4000.0)));
 
 
-
-BestChannel = MiApp_NoiseDetection(0x00000001, 8, 0x00, &noise_level);
+BestChannel = MiApp_NoiseDetection(0x00000100, 14, 0x00, &noise_level);
 
 sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
 sendHIDText(ToSendDataBuffer);
@@ -13252,7 +13289,7 @@ myAppState = STATE_READY;
 status_led = LED_SLOW_PULSE;
 update_LED();
 
-m_uptime_seconds = 0;
+m_uptime_days = 0;
 timer_reset();
 
 
@@ -13384,13 +13421,15 @@ while ((p_buffer - &ReceivedDataBuffer[6]) < (size - 2))
 m_var = decode_variable(p_buffer);
 p_buffer += m_var.size;
 
-# 422
+
+
+
 update_variable();
 }
 if (last_update)
 {
 
-send_writables_update();
+send_answer_to_update();
 }
 }
 }
@@ -13405,7 +13444,7 @@ MiApp_UnicastAddress(&shortaddress, 0, 0) == 1;
 else
 MiApp_UnicastAddress(&shortaddress, 0, 1);
 
-# 445
+# 449
 }
 break;
 default:
@@ -13463,10 +13502,10 @@ p_buffer = m_buffer;
 *(p_buffer++) = 0xf0;
 
 memcpy(m_var.label, POWER_LABEL, 3);
-m_var.unit = 0;
-m_var.value_byte1 = m_power;
+m_var.unit = 8;
+dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 m_var.writable = 1;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
+p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 memcpy(m_var.label, CHANNEL_LABEL, 3);
 m_var.unit = 0;
 m_var.value_byte1 = BestChannel;
@@ -13490,38 +13529,11 @@ p_buffer = m_buffer;
 
 
 memcpy(m_var.label, UPTIME_LABEL, 3);
-if (m_uptime_seconds < 60)
-{
-m_var.unit = 5;
-m_var.value_byte1 = m_uptime_seconds;
+m_var.unit = 7;
+m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
 m_var.writable = 0;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
-}
-else if (m_uptime_seconds < 3600)
-{
-m_var.unit = 4;
-m_var.value_byte1 = m_uptime_seconds / 60;
-m_var.writable = 0;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
-}
-else if (m_uptime_seconds < (86400))
-{
-m_var.unit = 6;
-tmp = m_uptime_seconds / 3600;
-m_var.value_byte1 = tmp / 256;
-m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-m_var.writable = 0;
-p_buffer += encode_uint16_variable(p_buffer, m_var);
-}
-else
-{
-m_var.unit = 0;
-tmp = m_uptime_seconds / 86400;
-m_var.value_byte1 = tmp / 256;
-m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-m_var.writable = 0;
-p_buffer += encode_uint16_variable(p_buffer, m_var);
-}
+p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 
 memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
 m_var.unit = 4;
@@ -13535,7 +13547,8 @@ _delay((unsigned long)((20)*(16000000/4000.0)));
 
 
 
-void send_writables_update()
+
+void send_answer_to_update()
 { uint8_t tmp;
 p_buffer = m_buffer;
 *(p_buffer++) = 0x4d;
@@ -13544,18 +13557,25 @@ p_buffer = m_buffer;
 *(p_buffer++) = 04;
 *(p_buffer++) = 0xff;
 
+if (Pwr_updated)
+{
 
 memcpy(m_var.label, POWER_LABEL, 3);
-m_var.unit = 0;
-m_var.value_byte1 = m_power;
+m_var.unit = 8;
+dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 m_var.writable = 1;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
+p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+}
+if (UpF_updated)
+{
 
 memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
 m_var.unit = 4;
 m_var.value_byte1 = m_update_frequency;
 m_var.writable = 1;
 p_buffer += encode_uint8_variable(p_buffer, m_var);
+UpF_updated = 0;
+}
 
 sendHIDBinary(m_buffer, (p_buffer-m_buffer));
 _delay((unsigned long)((20)*(16000000/4000.0)));
@@ -13574,38 +13594,11 @@ p_buffer = m_buffer;
 
 
 memcpy(m_var.label, UPTIME_LABEL, 3);
-if (m_uptime_seconds < 60)
-{
-m_var.unit = 5;
-m_var.value_byte1 = m_uptime_seconds;
+m_var.unit = 7;
+m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
 m_var.writable = 0;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
-}
-else if (m_uptime_seconds < 3600)
-{
-m_var.unit = 4;
-m_var.value_byte1 = m_uptime_seconds / 60;
-m_var.writable = 0;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
-}
-else if (m_uptime_seconds < (86400))
-{
-m_var.unit = 6;
-tmp = m_uptime_seconds / 3600;
-m_var.value_byte1 = tmp / 256;
-m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-m_var.writable = 0;
-p_buffer += encode_uint16_variable(p_buffer, m_var);
-}
-else
-{
-m_var.unit = 0;
-tmp = m_uptime_seconds / 86400;
-m_var.value_byte1 = tmp / 256;
-m_var.value_byte2 = tmp - (m_var.value_byte1 * 256);
-m_var.writable = 0;
-p_buffer += encode_uint16_variable(p_buffer, m_var);
-}
+p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 
 sendHIDBinary(m_buffer, (p_buffer-m_buffer));
 _delay((unsigned long)((20)*(16000000/4000.0)));
@@ -13613,19 +13606,18 @@ _delay((unsigned long)((20)*(16000000/4000.0)));
 
 
 
-
 void update_variable()
 {
 
-if (strcmp(POWER_LABEL, m_var.label) == 0)
+if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
 {
-m_power = m_var.value_byte1;
-if ((m_power >= 1) && (m_power <= 7))
+m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
 MiMAC_SetPower(m_power);
+Pwr_updated = 1;
 }
-else if ((strcmp(UPDATE_FREQUENCY_LABEL, m_var.label) == 0) && (m_var.unit == 4) && (m_var.type == 0))
+else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 
-# 664
+# 621
 {
 if (m_var.value_byte1 == 0)
 {
@@ -13653,13 +13645,14 @@ ALRMCFGbits.AMASK = 0b0011;
 timer_count = m_update_frequency;
 timer_flag = 0;
 }
+UpF_updated = 1;
 }
 }
 
 void timer_reset()
 {
 
-# 703
+# 661
 if (m_update_frequency == 0)
 timer_count = 1;
 else
@@ -13771,7 +13764,7 @@ break;
 }
 }
 
-# 821
+# 779
 void interrupt SYS_InterruptHigh(void)
 {
 MIWIInterruptHandler();
@@ -13830,7 +13823,7 @@ update_LED();
 }
 else if(PIR3bits.RTCCIF)
 {
-m_uptime_seconds = m_uptime_seconds + 64;
+m_uptime_days = m_uptime_days + 0.000740741F;
 timer_count = timer_count - 1;
 if (timer_count == 0)
 {
@@ -13855,7 +13848,7 @@ break;
 
 case EVENT_SOF:
 
-# 905
+# 863
 APP_LEDUpdateUSBStatus();
 break;
 
@@ -13871,7 +13864,7 @@ break;
 
 case EVENT_CONFIGURED:
 
-# 921
+# 879
 APP_DeviceCustomHIDInitialize();
 break;
 
@@ -13880,7 +13873,7 @@ break;
 
 case EVENT_EP0_REQUEST:
 
-# 930
+# 888
 USBCheckHIDRequest();
 break;
 
