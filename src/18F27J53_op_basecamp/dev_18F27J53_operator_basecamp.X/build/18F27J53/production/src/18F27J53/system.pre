@@ -11835,9 +11835,12 @@ RPINR22 = 5;
 RPOR4 = 10;
 RPOR5 = 11;
 
-RPOR17 = 14;
 
-# 136
+
+RPOR11 = 14;
+
+
+
 EECON2 = 0x55;
 EECON2 = 0xAA;
 PPSCONbits.IOLOCK = 1;
@@ -11895,10 +11898,10 @@ TRISAbits.TRISA5 = 1;
 INTCONbits.GIEH = 1;
 INTCONbits.GIEL = 1;
 
-# 215
-TRISCbits.TRISC6 = 1;
+# 217
+TRISCbits.TRISC0 = 1;
 
-# 220
+
 CCPTMRS0 = 0x00;
 
 PR2 = 0xF9;
@@ -11910,9 +11913,13 @@ T2CONbits.T2CKPS = 0b10;
 T2CONbits.TMR2ON = 0b1;
 
 
-TRISCbits.TRISC6 = 0;
 
-# 238
+
+TRISCbits.TRISC0 = 0;
+
+
+
+
 T4CONbits.T4OUTPS = 0b1111;
 T4CONbits.T4CKPS = 0b11;
 PR4 = 234;

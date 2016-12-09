@@ -31,8 +31,8 @@
 #define _XTAL_FREQ 16000000
 
 // because led output has changed on mk3+ models
-#define MK1
-//#define MK3
+//#define MK1
+#define MK3
 
 // switches ?
 

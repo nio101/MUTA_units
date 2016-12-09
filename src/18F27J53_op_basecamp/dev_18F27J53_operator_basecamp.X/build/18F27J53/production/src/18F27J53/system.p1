@@ -190,8 +190,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RPOR4 `Vuc ~T0 @X0 0 e@3780 ]
 "1117
 [v _RPOR5 `Vuc ~T0 @X0 0 e@3781 ]
-"1171
-[v _RPOR17 `Vuc ~T0 @X0 0 e@3793 ]
+"1153
+[v _RPOR11 `Vuc ~T0 @X0 0 e@3787 ]
 "5624
 [v _ANCON0 `Vuc ~T0 @X0 0 e@3912 ]
 "5667
@@ -9596,9 +9596,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 128: RPOR5 = 11;
 "128
 [e = _RPOR5 -> -> 11 `i `uc ]
-[; ;system.c: 130: RPOR17 = 14;
-"130
-[e = _RPOR17 -> -> 14 `i `uc ]
+[; ;system.c: 132: RPOR11 = 14;
+"132
+[e = _RPOR11 -> -> 14 `i `uc ]
 [; ;system.c: 136: EECON2 = 0x55;
 "136
 [e = _EECON2 -> -> 85 `i `uc ]
@@ -9689,9 +9689,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 206: INTCONbits.GIEL = 1;
 "206
 [e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-[; ;system.c: 215: TRISCbits.TRISC6 = 1;
-"215
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;system.c: 217: TRISCbits.TRISC0 = 1;
+"217
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
 [; ;system.c: 220: CCPTMRS0 = 0x00;
 "220
 [e = _CCPTMRS0 -> -> 0 `i `uc ]
@@ -9713,9 +9713,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 228: T2CONbits.TMR2ON = 0b1;
 "228
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;system.c: 231: TRISCbits.TRISC6 = 0;
-"231
-[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+[; ;system.c: 233: TRISCbits.TRISC0 = 0;
+"233
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 [; ;system.c: 238: T4CONbits.T4OUTPS = 0b1111;
 "238
 [e = . . _T4CONbits 0 2 -> -> 15 `i `uc ]

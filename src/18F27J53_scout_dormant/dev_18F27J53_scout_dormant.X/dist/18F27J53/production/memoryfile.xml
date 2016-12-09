@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/18F27J53/production/dev_18F27J53_scout_dormant.X.production.hex">
+  <executable name="dist/18F27J53/production\dev_18F27J53_scout_dormant.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>131064</length>
-      <used>27984</used>
-      <free>103080</free>
+      <used>29100</used>
+      <free>101964</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3760</length>
-      <used>954</used>
-      <free>2806</free>
+      <used>962</used>
+      <free>2798</free>
     </memory>
   </executable>
 </project>

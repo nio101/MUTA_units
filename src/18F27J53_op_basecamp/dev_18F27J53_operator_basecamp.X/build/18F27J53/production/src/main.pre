@@ -13073,19 +13073,16 @@ bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
 
 # 46 "src/main.c"
 const uint8_t myMUTA_version @ 0x01FFF2 = 0x01;
+const uint8_t myMODEL @ 0x01FFF4 = 0x00;
 
-const uint8_t myMODEL @ 0x01FFF4 = 0x01;
-
-# 53
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x00 };
-
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 };
 extern uint8_t myLongAddress[4];
 
-# 60
+# 55
 const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
 unsigned char mySecurityKey[8];
 
-# 82
+# 78
 volatile bool timer_flag = 0;
 volatile uint8_t timer_count = 1;
 
@@ -13170,19 +13167,19 @@ myLongAddress[3] = myUID[1];
 for (int x=0; x<8; x++)
 mySecurityKey[x] = StaticSecurityKey[x];
 
-# 171
+# 167
 status_led = LED_FAST_PULSE;
 update_LED();
 
 
 USBDeviceInit();
 
-# 179
+# 175
 USBDeviceAttach();
 while(1)
 {
 
-# 185
+# 181
 if( USBDeviceState < CONFIGURED_STATE )
 continue;
 if( UCONbits.SUSPND == 1 )
@@ -13208,7 +13205,7 @@ switch (ReceivedDataBuffer[0])
 case 0x53:
 if (ReceivedDataBuffer[1] != 0x00 || ReceivedDataBuffer[2] != 0x00 || ReceivedDataBuffer[3] != 4 ||ReceivedDataBuffer[4] != 02 || ReceivedDataBuffer[5] != 0xff)
 
-# 211
+# 207
 {
 asm("reset");
 }
@@ -13240,7 +13237,7 @@ sendHIDText(ToSendDataBuffer);
 _delay((unsigned long)((20)*(16000000/4000.0)));
 
 
-BestChannel = MiApp_NoiseDetection(0x00000100, 14, 0x00, &noise_level);
+BestChannel = MiApp_NoiseDetection(0x01010101, 14, 0x00, &noise_level);
 
 sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
 sendHIDText(ToSendDataBuffer);
@@ -13444,7 +13441,7 @@ MiApp_UnicastAddress(&shortaddress, 0, 0) == 1;
 else
 MiApp_UnicastAddress(&shortaddress, 0, 1);
 
-# 449
+# 445
 }
 break;
 default:
@@ -13565,6 +13562,7 @@ m_var.unit = 8;
 dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 m_var.writable = 1;
 p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+Pwr_updated = 0;
 }
 if (UpF_updated)
 {
@@ -13617,7 +13615,7 @@ Pwr_updated = 1;
 }
 else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 
-# 621
+# 618
 {
 if (m_var.value_byte1 == 0)
 {
@@ -13652,7 +13650,7 @@ UpF_updated = 1;
 void timer_reset()
 {
 
-# 661
+# 658
 if (m_update_frequency == 0)
 timer_count = 1;
 else
@@ -13764,7 +13762,7 @@ break;
 }
 }
 
-# 779
+# 776
 void interrupt SYS_InterruptHigh(void)
 {
 MIWIInterruptHandler();
@@ -13848,7 +13846,7 @@ break;
 
 case EVENT_SOF:
 
-# 863
+# 860
 APP_LEDUpdateUSBStatus();
 break;
 
@@ -13864,7 +13862,7 @@ break;
 
 case EVENT_CONFIGURED:
 
-# 879
+# 876
 APP_DeviceCustomHIDInitialize();
 break;
 
@@ -13873,7 +13871,7 @@ break;
 
 case EVENT_EP0_REQUEST:
 
-# 888
+# 885
 USBCheckHIDRequest();
 break;
 

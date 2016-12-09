@@ -2,24 +2,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 src/../../../muta/muta_messages.h
 [s S1360 `uc -> 3 `i `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1360 . label type value_byte1 value_byte2 unit writable _signed size ]
-"137 src/main.c
+"133 src/main.c
 [c E10824 0 1 2 3 .. ]
 [n E10824 . LED_OFF LED_FAST_PULSE LED_SLOW_PULSE LED_FULL  ]
-"141
+"137
 [c E9788 0 1 2 3 .. ]
 [n E9788 . STATE_INIT STATE_USB_READY STATE_READY STATE_PROBLEM  ]
 [p mainexit ]
 "117 src/18F27J53/system.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"55 src/main.c
+"50 src/main.c
 [v _myLongAddress `uc ~T0 @X0 -> 0 `x e ]
-"138
+"134
 [v _update_LED `(v ~T0 @X0 0 ef ]
 "200 src\usb/usb_device.h
 [v _USBDeviceInit `(v ~T0 @X0 0 ef ]
 "640
 [v _USBDeviceAttach `(v ~T0 @X0 0 ef ]
-"185 src/main.c
+"181 src/main.c
 [c E10064 0 1 2 4 8 16 32 .. ]
 [n E10064 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
 "1906 src\usb/usb_device.h
@@ -34,13 +34,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UCONbits `VS407 ~T0 @X0 0 e@3941 ]
 "35 D:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h
 [v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"121 src/main.c
+"117 src/main.c
 [v _sendHIDText `(uc ~T0 @X0 0 ef1`*uc ]
 [v F9635 `(v ~T0 @X0 1 tf1`ul ]
 "152 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF9635 ~T0 @X0 0 e ]
 [p i __delay ]
-"108 src/main.c
+"104 src/main.c
 [v _send_network_register `(v ~T0 @X0 0 ef ]
 "264 src\usb/usb_hal_pic18.h
 [s S1316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -86,9 +86,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _myPANID `S1272 ~T0 @X0 0 e ]
 "209
 [v _myShortAddress `S1272 ~T0 @X0 0 e ]
-"109 src/main.c
+"105 src/main.c
 [v _send_complete_update `(v ~T0 @X0 0 ef ]
-"107
+"103
 [v _timer_reset `(v ~T0 @X0 0 ef ]
 "44 src\miwi/miwi_mesh.h
 [v _MiWiTasks `(v ~T0 @X0 0 ef ]
@@ -117,15 +117,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _dBm_to_mW `(*Cuc ~T0 @X0 0 ef1`uc ]
 "14 D:\Program Files (x86)\Microchip\xc8\v1.35\include\string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"120 src/main.c
+"116 src/main.c
 [v _sendHIDBinary `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "92 src/../../../muta/muta_messages.h
 [v _decode_variable `(S1360 ~T0 @X0 0 ef1`*uc ]
-"112 src/main.c
+"108 src/main.c
 [v _update_variable `(v ~T0 @X0 0 ef ]
-"110
+"106
 [v _send_answer_to_update `(v ~T0 @X0 0 ef ]
-"111
+"107
 [v _send_periodic_update `(v ~T0 @X0 0 ef ]
 "22 src/../../../muta/muta_messages.h
 [v _dBm_to_mW_ufixed16 `(v ~T0 @X0 0 ef3`uc`*uc`*uc ]
@@ -247,14 +247,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S735 . . . . ]
 "11603
 [v _PIR3bits `VS735 ~T0 @X0 0 e@4004 ]
-"854 src/main.c
+"851 src/main.c
 [c E10007 0 1 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 400 500 600 700 800 900 1000 10000 32767 .. ]
 [n E10007 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
 "40 src/app_led_usb_status.h
 [v _APP_LEDUpdateUSBStatus `(v ~T0 @X0 0 ef ]
 "102 src/usb/usb_device_hid.h
 [v _USBCheckHIDRequest `(v ~T0 @X0 0 ef ]
-"855 src/main.c
+"852 src/main.c
 [c E10073 1 2 3 4 5 .. ]
 [n E10073 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -10280,23 +10280,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 1 `i `uc
 ]
 [; ;main.c: 46: const uint8_t myMUTA_version @ 0x01FFF2 = 0x01;
-"48
+"47
 [v _myMODEL `Cuc ~T0 @X0 1 e@131060 ]
 [i _myMODEL
--> -> 1 `i `uc
+-> -> 0 `i `uc
 ]
-[; ;main.c: 48: const uint8_t myMODEL @ 0x01FFF4 = 0x01;
-"53
+[; ;main.c: 47: const uint8_t myMODEL @ 0x01FFF4 = 0x00;
+"49
 [v _myUID `Cuc ~T0 @X0 -> 2 `i e@131062 ]
 [i _myUID
 :U ..
 -> -> 0 `i `uc
--> -> 0 `i `uc
+-> -> 1 `i `uc
 ..
 ]
-[; ;main.c: 53: const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x00 };
-[; ;main.c: 55: extern uint8_t myLongAddress[4];
-"60
+[; ;main.c: 49: const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 };
+[; ;main.c: 50: extern uint8_t myLongAddress[4];
+"55
 [v _StaticSecurityKey `Cuc ~T0 @X0 -> 8 `i e@8172 ]
 [i _StaticSecurityKey
 :U ..
@@ -10310,23 +10310,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 7 `i `uc
 ..
 ]
-[; ;main.c: 60: const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
-"61
+[; ;main.c: 55: const unsigned char StaticSecurityKey[8] @ 0x01FEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
+"56
 [v _mySecurityKey `uc ~T0 @X0 -> 8 `i e ]
-[; ;main.c: 61: unsigned char mySecurityKey[8];
-"82
+[; ;main.c: 56: unsigned char mySecurityKey[8];
+"78
 [v _timer_flag `Vuc ~T0 @X0 1 e ]
 [i _timer_flag
 -> -> 0 `i `uc
 ]
-[; ;main.c: 82: volatile bool timer_flag = 0;
-"83
+[; ;main.c: 78: volatile bool timer_flag = 0;
+"79
 [v _timer_count `Vuc ~T0 @X0 1 e ]
 [i _timer_count
 -> -> 1 `i `uc
 ]
-[; ;main.c: 83: volatile uint8_t timer_count = 1;
-"86
+[; ;main.c: 79: volatile uint8_t timer_count = 1;
+"82
 [v _POWER_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _POWER_LABEL
 :U ..
@@ -10336,8 +10336,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 86: const char POWER_LABEL[] = "Pwr";
-"87
+[; ;main.c: 82: const char POWER_LABEL[] = "Pwr";
+"83
 [v _PANID_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _PANID_LABEL
 :U ..
@@ -10347,8 +10347,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 87: const char PANID_LABEL[] = "PAN";
-"88
+[; ;main.c: 83: const char PANID_LABEL[] = "PAN";
+"84
 [v _CHANNEL_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _CHANNEL_LABEL
 :U ..
@@ -10358,8 +10358,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 88: const char CHANNEL_LABEL[] = "Chn";
-"89
+[; ;main.c: 84: const char CHANNEL_LABEL[] = "Chn";
+"85
 [v _NOISE_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _NOISE_LABEL
 :U ..
@@ -10369,13 +10369,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 89: const char NOISE_LABEL[] = "Nse";
-"90
+[; ;main.c: 85: const char NOISE_LABEL[] = "Nse";
+"86
 [v _m_power `uc ~T0 @X0 1 e ]
 [v _noise_level `uc ~T0 @X0 1 e ]
 [v _BestChannel `uc ~T0 @X0 1 e ]
-[; ;main.c: 90: uint8_t m_power, noise_level, BestChannel;
-"91
+[; ;main.c: 86: uint8_t m_power, noise_level, BestChannel;
+"87
 [v _UPTIME_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _UPTIME_LABEL
 :U ..
@@ -10385,14 +10385,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 91: const char UPTIME_LABEL[] = "Upt";
-"92
+[; ;main.c: 87: const char UPTIME_LABEL[] = "Upt";
+"88
 [v _m_uptime_days `Vf ~T0 @X0 1 e ]
 [i _m_uptime_days
 -> -> 0 `i `f
 ]
-[; ;main.c: 92: volatile float m_uptime_days = 0;
-"93
+[; ;main.c: 88: volatile float m_uptime_days = 0;
+"89
 [v _UPDATE_FREQUENCY_LABEL `Cuc ~T0 @X0 -> 0 `x e ]
 [i _UPDATE_FREQUENCY_LABEL
 :U ..
@@ -10402,1955 +10402,1958 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[; ;main.c: 93: const char UPDATE_FREQUENCY_LABEL[] = "UpF";
-"94
+[; ;main.c: 89: const char UPDATE_FREQUENCY_LABEL[] = "UpF";
+"90
 [v _m_update_frequency `Vuc ~T0 @X0 1 e ]
 [i _m_update_frequency
 -> -> 1 `i `uc
 ]
-[; ;main.c: 94: volatile uint8_t m_update_frequency = 1;
-"95
+[; ;main.c: 90: volatile uint8_t m_update_frequency = 1;
+"91
 [v _m_failed_messages `ul ~T0 @X0 1 e ]
 [i _m_failed_messages
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 95: unsigned long m_failed_messages = 0;
-"96
+[; ;main.c: 91: unsigned long m_failed_messages = 0;
+"92
 [v _m_sent_messages `ul ~T0 @X0 1 e ]
 [i _m_sent_messages
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 96: unsigned long m_sent_messages = 0;
-"98
+[; ;main.c: 92: unsigned long m_sent_messages = 0;
+"94
 [v _Pwr_updated `uc ~T0 @X0 1 e ]
 [i _Pwr_updated
 -> -> 0 `i `uc
 ]
-[; ;main.c: 98: bool Pwr_updated = 0;
-"99
+[; ;main.c: 94: bool Pwr_updated = 0;
+"95
 [v _UpF_updated `uc ~T0 @X0 1 e ]
 [i _UpF_updated
 -> -> 0 `i `uc
 ]
-[; ;main.c: 99: bool UpF_updated = 0;
-"102
+[; ;main.c: 95: bool UpF_updated = 0;
+"98
 [v _m_buffer `uc ~T0 @X0 -> 32 `i e ]
-[; ;main.c: 102: uint8_t m_buffer[32];
-"103
+[; ;main.c: 98: uint8_t m_buffer[32];
+"99
 [v _p_buffer `*uc ~T0 @X0 1 e ]
-[; ;main.c: 103: uint8_t * p_buffer;
-"104
+[; ;main.c: 99: uint8_t * p_buffer;
+"100
 [v _m_var `S1360 ~T0 @X0 1 e ]
-[; ;main.c: 104: MUTA_VARIABLE m_var;
-[; ;main.c: 107: void timer_reset();
-[; ;main.c: 108: void send_network_register();
-[; ;main.c: 109: void send_complete_update();
-[; ;main.c: 110: void send_answer_to_update();
-[; ;main.c: 111: void send_periodic_update();
-[; ;main.c: 112: void update_variable();
-[; ;main.c: 113: void wait_for_1_sec();
-[; ;main.c: 116: void APP_DeviceCustomHIDInitialize();
-"117
+[; ;main.c: 100: MUTA_VARIABLE m_var;
+[; ;main.c: 103: void timer_reset();
+[; ;main.c: 104: void send_network_register();
+[; ;main.c: 105: void send_complete_update();
+[; ;main.c: 106: void send_answer_to_update();
+[; ;main.c: 107: void send_periodic_update();
+[; ;main.c: 108: void update_variable();
+[; ;main.c: 109: void wait_for_1_sec();
+[; ;main.c: 112: void APP_DeviceCustomHIDInitialize();
+"113
 [v _ReceivedDataBuffer `uc ~T0 @X0 -> 64 `i e ]
-[; ;main.c: 117: unsigned char ReceivedDataBuffer[64];
-"118
+[; ;main.c: 113: unsigned char ReceivedDataBuffer[64];
+"114
 [v _ToSendDataBuffer `uc ~T0 @X0 -> 64 `i e ]
-[; ;main.c: 118: unsigned char ToSendDataBuffer[64];
-"119
+[; ;main.c: 114: unsigned char ToSendDataBuffer[64];
+"115
 [v _pUsbBuffer `*uc ~T0 @X0 1 e ]
-[; ;main.c: 119: unsigned char* pUsbBuffer;
-[; ;main.c: 120: bool sendHIDBinary(uint8_t* buffer, uint8_t length);
-[; ;main.c: 121: bool sendHIDText(char* str);
-"122
+[; ;main.c: 115: unsigned char* pUsbBuffer;
+[; ;main.c: 116: bool sendHIDBinary(uint8_t* buffer, uint8_t length);
+[; ;main.c: 117: bool sendHIDText(char* str);
+"118
 [v _USBOutHandle `*Vv ~T0 @X0 1 e ]
-[; ;main.c: 122: volatile void* USBOutHandle;
-"123
+[; ;main.c: 118: volatile void* USBOutHandle;
+"119
 [v _USBInHandle `*Vv ~T0 @X0 1 e ]
-[; ;main.c: 123: volatile void* USBInHandle;
-"128
+[; ;main.c: 119: volatile void* USBInHandle;
+"124
 [v _LED_brightness `Vui ~T0 @X0 1 e ]
 [i _LED_brightness
 -> -> 235 `i `ui
 ]
-[; ;main.c: 128: volatile uint16_t LED_brightness = 235;
-"129
+[; ;main.c: 124: volatile uint16_t LED_brightness = 235;
+"125
 [v _LED_increasing `Vuc ~T0 @X0 1 e ]
 [i _LED_increasing
 -> -> 0 `i `uc
 ]
-[; ;main.c: 129: volatile uint8_t LED_increasing = 0;
-[; ;main.c: 130: typedef enum
-[; ;main.c: 131: {
-[; ;main.c: 132: LED_OFF,
-[; ;main.c: 133: LED_FAST_PULSE,
-[; ;main.c: 134: LED_SLOW_PULSE,
-[; ;main.c: 135: LED_FULL
-[; ;main.c: 136: } LED_STATE;
-"137
+[; ;main.c: 125: volatile uint8_t LED_increasing = 0;
+[; ;main.c: 126: typedef enum
+[; ;main.c: 127: {
+[; ;main.c: 128: LED_OFF,
+[; ;main.c: 129: LED_FAST_PULSE,
+[; ;main.c: 130: LED_SLOW_PULSE,
+[; ;main.c: 131: LED_FULL
+[; ;main.c: 132: } LED_STATE;
+"133
 [v _status_led `VE10824 ~T0 @X0 1 e ]
-[; ;main.c: 137: volatile LED_STATE status_led;
-[; ;main.c: 138: void update_LED();
-"139
+[; ;main.c: 133: volatile LED_STATE status_led;
+[; ;main.c: 134: void update_LED();
+"135
 [v _repeat_full `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 139: volatile uint8_t repeat_full;
-"141
+[; ;main.c: 135: volatile uint8_t repeat_full;
+"137
 [v _myAppState `E9788 ~T0 @X0 1 e ]
-[; ;main.c: 141: APP_STATE myAppState;
-"146
+[; ;main.c: 137: APP_STATE myAppState;
+"142
 [v _main `(v ~T0 @X0 1 ef ]
-"147
+"143
 {
-[; ;main.c: 146: void main(void)
-[; ;main.c: 147: {
+[; ;main.c: 142: void main(void)
+[; ;main.c: 143: {
 [e :U _main ]
 [f ]
-[; ;main.c: 148: SYSTEM_Initialize();
-"148
+[; ;main.c: 144: SYSTEM_Initialize();
+"144
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 153: myAppState = STATE_INIT;
-"153
+[; ;main.c: 149: myAppState = STATE_INIT;
+"149
 [e = _myAppState . `E9788 0 ]
-"155
+"151
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 155: bool result;
-[; ;main.c: 157: myLongAddress[0] = myMUTA_version;
-"157
+[; ;main.c: 151: bool result;
+[; ;main.c: 153: myLongAddress[0] = myMUTA_version;
+"153
 [e = *U + &U _myLongAddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux _myMUTA_version ]
-[; ;main.c: 158: myLongAddress[1] = myMODEL;
-"158
+[; ;main.c: 154: myLongAddress[1] = myMODEL;
+"154
 [e = *U + &U _myLongAddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux _myMODEL ]
-[; ;main.c: 159: myLongAddress[2] = myUID[0];
-"159
+[; ;main.c: 155: myLongAddress[2] = myUID[0];
+"155
 [e = *U + &U _myLongAddress * -> -> -> 2 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux *U + &U _myUID * -> -> -> 0 `i `ui `ux -> -> # *U &U _myUID `ui `ux ]
-[; ;main.c: 160: myLongAddress[3] = myUID[1];
-"160
+[; ;main.c: 156: myLongAddress[3] = myUID[1];
+"156
 [e = *U + &U _myLongAddress * -> -> -> 3 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux *U + &U _myUID * -> -> -> 1 `i `ui `ux -> -> # *U &U _myUID `ui `ux ]
-[; ;main.c: 163: for (int x=0; x<8; x++)
-"163
+[; ;main.c: 159: for (int x=0; x<8; x++)
+"159
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ < _x -> 8 `i 1362  ]
 [e $U 1363  ]
-"164
+"160
 [e :U 1362 ]
-[; ;main.c: 164: mySecurityKey[x] = StaticSecurityKey[x];
+[; ;main.c: 160: mySecurityKey[x] = StaticSecurityKey[x];
 [e = *U + &U _mySecurityKey * -> -> _x `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + &U _StaticSecurityKey * -> -> _x `ui `ux -> -> # *U &U _StaticSecurityKey `ui `ux ]
-"163
+"159
 [e ++ _x -> 1 `i ]
 [e $ < _x -> 8 `i 1362  ]
 [e :U 1363 ]
-"164
+"160
 }
-[; ;main.c: 171: status_led = LED_FAST_PULSE;
-"171
+[; ;main.c: 167: status_led = LED_FAST_PULSE;
+"167
 [e = _status_led . `E10824 1 ]
-[; ;main.c: 172: update_LED();
-"172
+[; ;main.c: 168: update_LED();
+"168
 [e ( _update_LED ..  ]
-[; ;main.c: 175: USBDeviceInit();
-"175
+[; ;main.c: 171: USBDeviceInit();
+"171
 [e ( _USBDeviceInit ..  ]
-[; ;main.c: 179: USBDeviceAttach();
-"179
+[; ;main.c: 175: USBDeviceAttach();
+"175
 [e ( _USBDeviceAttach ..  ]
-[; ;main.c: 180: while(1)
-"180
+[; ;main.c: 176: while(1)
+"176
 [e :U 1366 ]
-[; ;main.c: 181: {
-"181
+[; ;main.c: 177: {
+"177
 {
-[; ;main.c: 185: if( USBDeviceState < CONFIGURED_STATE )
-"185
+[; ;main.c: 181: if( USBDeviceState < CONFIGURED_STATE )
+"181
 [e $ ! < -> _USBDeviceState `i -> . `E10064 6 `i 1368  ]
-[; ;main.c: 186: continue;
-"186
+[; ;main.c: 182: continue;
+"182
 [e $U 1365  ]
 [e :U 1368 ]
-[; ;main.c: 187: if( UCONbits.SUSPND == 1 )
-"187
+[; ;main.c: 183: if( UCONbits.SUSPND == 1 )
+"183
 [e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 1369  ]
-[; ;main.c: 188: continue;
-"188
+[; ;main.c: 184: continue;
+"184
 [e $U 1365  ]
 [e :U 1369 ]
-[; ;main.c: 189: myAppState = STATE_USB_READY;
-"189
+[; ;main.c: 185: myAppState = STATE_USB_READY;
+"185
 [e = _myAppState . `E9788 1 ]
-[; ;main.c: 190: break;
-"190
+[; ;main.c: 186: break;
+"186
 [e $U 1367  ]
-"191
+"187
 }
 [e :U 1365 ]
-"180
+"176
 [e $U 1366  ]
 [e :U 1367 ]
-[; ;main.c: 191: }
-[; ;main.c: 193: strcpy(ToSendDataBuffer, "I|RESET");
-"193
+[; ;main.c: 187: }
+[; ;main.c: 189: strcpy(ToSendDataBuffer, "I|RESET");
+"189
 [e ( _strcpy (2 , &U _ToSendDataBuffer :s 1C ]
-[; ;main.c: 194: sendHIDText(ToSendDataBuffer);
-"194
+[; ;main.c: 190: sendHIDText(ToSendDataBuffer);
+"190
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 195: _delay((unsigned long)((20)*(16000000/4000.0)));
-"195
+[; ;main.c: 191: _delay((unsigned long)((20)*(16000000/4000.0)));
+"191
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 199: send_network_register();
-"199
+[; ;main.c: 195: send_network_register();
+"195
 [e ( _send_network_register ..  ]
-[; ;main.c: 200: while(1)
-"200
+[; ;main.c: 196: while(1)
+"196
 [e :U 1371 ]
-[; ;main.c: 201: {
-"201
+[; ;main.c: 197: {
+"197
 {
-[; ;main.c: 203: if((USBOutHandle==0?0:((volatile BDT_ENTRY*)USBOutHandle)->STAT.UOWN) == 0)
-"203
+[; ;main.c: 199: if((USBOutHandle==0?0:((volatile BDT_ENTRY*)USBOutHandle)->STAT.UOWN) == 0)
+"199
 [e $ ! == ? == _USBOutHandle -> -> 0 `i `*Vv : -> 0 `i -> . . . . *U -> _USBOutHandle `*VS1319 0 0 1 7 `i -> 0 `i 1373  ]
-[; ;main.c: 204: {
-"204
+[; ;main.c: 200: {
+"200
 {
-[; ;main.c: 205: switch (ReceivedDataBuffer[0])
-"205
+[; ;main.c: 201: switch (ReceivedDataBuffer[0])
+"201
 [e $U 1375  ]
-[; ;main.c: 206: {
-"206
+[; ;main.c: 202: {
+"202
 {
-[; ;main.c: 207: case 0x53:
-"207
+[; ;main.c: 203: case 0x53:
+"203
 [e :U 1376 ]
-[; ;main.c: 208: if (ReceivedDataBuffer[1] != 0x00 || ReceivedDataBuffer[2] != 0x00 || ReceivedDataBuffer[3] != 4 ||ReceivedDataBuffer[4] != 02 || ReceivedDataBuffer[5] != 0xff)
-"208
+[; ;main.c: 204: if (ReceivedDataBuffer[1] != 0x00 || ReceivedDataBuffer[2] != 0x00 || ReceivedDataBuffer[3] != 4 ||ReceivedDataBuffer[4] != 02 || ReceivedDataBuffer[5] != 0xff)
+"204
 [e $ ! || || || || != -> *U + &U _ReceivedDataBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 0 `i != -> *U + &U _ReceivedDataBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 0 `i != -> *U + &U _ReceivedDataBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 4 `i != -> *U + &U _ReceivedDataBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 2 `i != -> *U + &U _ReceivedDataBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 255 `i 1377  ]
-[; ;main.c: 211: {
-"211
+[; ;main.c: 207: {
+"207
 {
-[; ;main.c: 212: asm("reset");
-"212
+[; ;main.c: 208: asm("reset");
+"208
 [; <" reset ;# ">
-"213
+"209
 }
 [e :U 1377 ]
-[; ;main.c: 213: }
-[; ;main.c: 214: mySecurityKey[2] = ReceivedDataBuffer[6];
-"214
+[; ;main.c: 209: }
+[; ;main.c: 210: mySecurityKey[2] = ReceivedDataBuffer[6];
+"210
 [e = *U + &U _mySecurityKey * -> -> -> 2 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + &U _ReceivedDataBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 215: mySecurityKey[6] = ReceivedDataBuffer[7];
-"215
+[; ;main.c: 211: mySecurityKey[6] = ReceivedDataBuffer[7];
+"211
 [e = *U + &U _mySecurityKey * -> -> -> 6 `i `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + &U _ReceivedDataBuffer * -> -> -> 7 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 216: break;
-"216
+[; ;main.c: 212: break;
+"212
 [e $U 1374  ]
-[; ;main.c: 217: case 0x58:
-"217
+[; ;main.c: 213: case 0x58:
+"213
 [e :U 1378 ]
-[; ;main.c: 218: asm("reset");
-"218
+[; ;main.c: 214: asm("reset");
+"214
 [; <" reset ;# ">
-[; ;main.c: 219: break;
-"219
+[; ;main.c: 215: break;
+"215
 [e $U 1374  ]
-[; ;main.c: 220: default:
-"220
+[; ;main.c: 216: default:
+"216
 [e :U 1379 ]
-[; ;main.c: 222: break;
-"222
+[; ;main.c: 218: break;
+"218
 [e $U 1374  ]
-"223
+"219
 }
-[; ;main.c: 223: }
+[; ;main.c: 219: }
 [e $U 1374  ]
-"205
+"201
 [e :U 1375 ]
 [e [\ *U + &U _ReceivedDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux , $ -> -> 83 `i `uc 1376
  , $ -> -> 88 `i `uc 1378
  1379 ]
-"223
+"219
 [e :U 1374 ]
-[; ;main.c: 225: USBOutHandle = USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
-"225
+[; ;main.c: 221: USBOutHandle = USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
+"221
 [e = _USBOutHandle -> ( _USBTransferOnePacket (4 , , , -> -> 1 `i `uc -> -> 0 `i `uc &U _ReceivedDataBuffer -> -> 64 `i `uc `*Vv ]
-[; ;main.c: 226: break;
-"226
+[; ;main.c: 222: break;
+"222
 [e $U 1372  ]
-"227
+"223
 }
 [e :U 1373 ]
-"228
+"224
 }
 [e :U 1370 ]
-"200
+"196
 [e $U 1371  ]
 [e :U 1372 ]
-[; ;main.c: 227: }
-[; ;main.c: 228: }
-[; ;main.c: 232: MiApp_ProtocolInit(0);
-"232
+[; ;main.c: 223: }
+[; ;main.c: 224: }
+[; ;main.c: 228: MiApp_ProtocolInit(0);
+"228
 [e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 233: m_power = 0x00;
-"233
+[; ;main.c: 229: m_power = 0x00;
+"229
 [e = _m_power -> -> 0 `i `uc ]
-[; ;main.c: 234: MiMAC_SetPower(m_power);
-"234
+[; ;main.c: 230: MiMAC_SetPower(m_power);
+"230
 [e ( _MiMAC_SetPower (1 _m_power ]
-[; ;main.c: 237: strcpy(ToSendDataBuffer, "I|scanning channels for noise...");
-"237
+[; ;main.c: 233: strcpy(ToSendDataBuffer, "I|scanning channels for noise...");
+"233
 [e ( _strcpy (2 , &U _ToSendDataBuffer :s 2C ]
-[; ;main.c: 238: sendHIDText(ToSendDataBuffer);
+[; ;main.c: 234: sendHIDText(ToSendDataBuffer);
+"234
+[e ( _sendHIDText (1 &U _ToSendDataBuffer ]
+[; ;main.c: 235: _delay((unsigned long)((20)*(16000000/4000.0)));
+"235
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 238: BestChannel = MiApp_NoiseDetection(0x01010101, 14, 0x00, &noise_level);
 "238
-[e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 239: _delay((unsigned long)((20)*(16000000/4000.0)));
-"239
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 242: BestChannel = MiApp_NoiseDetection(0x00000100, 14, 0x00, &noise_level);
-"242
-[e = _BestChannel ( _MiApp_NoiseDetection (4 , , , -> -> -> 256 `i `l `ul -> -> 14 `i `uc -> -> 0 `i `uc &U _noise_level ]
-[; ;main.c: 244: sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
-"244
+[e = _BestChannel ( _MiApp_NoiseDetection (4 , , , -> -> 16843009 `l `ul -> -> 14 `i `uc -> -> 0 `i `uc &U _noise_level ]
+[; ;main.c: 240: sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
+"240
 [e ( _sprintf (1 , , (. , &U _ToSendDataBuffer :s 3C -> _BestChannel `i -> _noise_level `i ]
-[; ;main.c: 245: sendHIDText(ToSendDataBuffer);
-"245
+[; ;main.c: 241: sendHIDText(ToSendDataBuffer);
+"241
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 246: _delay((unsigned long)((20)*(16000000/4000.0)));
-"246
+[; ;main.c: 242: _delay((unsigned long)((20)*(16000000/4000.0)));
+"242
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 248: if( MiApp_SetChannel(BestChannel) == 0 )
-"248
+[; ;main.c: 244: if( MiApp_SetChannel(BestChannel) == 0 )
+"244
 [e $ ! == -> ( _MiApp_SetChannel (1 _BestChannel `i -> 0 `i 1380  ]
-[; ;main.c: 249: {
-"249
+[; ;main.c: 245: {
+"245
 {
-[; ;main.c: 250: sprintf(ToSendDataBuffer, "I|Error: unable to set channel %i! (T_T)", BestChannel);
-"250
+[; ;main.c: 246: sprintf(ToSendDataBuffer, "I|Error: unable to set channel %i! (T_T)", BestChannel);
+"246
 [e ( _sprintf (1 , (. , &U _ToSendDataBuffer :s 4C -> _BestChannel `i ]
-[; ;main.c: 251: sendHIDText(ToSendDataBuffer);
-"251
+[; ;main.c: 247: sendHIDText(ToSendDataBuffer);
+"247
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 252: _delay((unsigned long)((20)*(16000000/4000.0)));
-"252
+[; ;main.c: 248: _delay((unsigned long)((20)*(16000000/4000.0)));
+"248
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 253: return;
-"253
+[; ;main.c: 249: return;
+"249
 [e $UE 1361  ]
-"254
+"250
 }
 [e :U 1380 ]
-[; ;main.c: 254: }
-[; ;main.c: 256: sprintf(ToSendDataBuffer, "I|creating network...");
-"256
+[; ;main.c: 250: }
+[; ;main.c: 252: sprintf(ToSendDataBuffer, "I|creating network...");
+"252
 [e ( _sprintf (1 , &U _ToSendDataBuffer :s 5C ]
-[; ;main.c: 257: sendHIDText(ToSendDataBuffer);
-"257
+[; ;main.c: 253: sendHIDText(ToSendDataBuffer);
+"253
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 258: _delay((unsigned long)((20)*(16000000/4000.0)));
-"258
+[; ;main.c: 254: _delay((unsigned long)((20)*(16000000/4000.0)));
+"254
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 260: MiApp_StartConnection(0x00, 0, 0);
-"260
+[; ;main.c: 256: MiApp_StartConnection(0x00, 0, 0);
+"256
 [e ( _MiApp_StartConnection (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> -> 0 `i `l `ul ]
-[; ;main.c: 261: MiApp_ConnectionMode(0x03);
-"261
+[; ;main.c: 257: MiApp_ConnectionMode(0x03);
+"257
 [e ( _MiApp_ConnectionMode (1 -> -> 3 `i `uc ]
-[; ;main.c: 263: sprintf(ToSendDataBuffer, "I|PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],BestChannel);
-"263
+[; ;main.c: 259: sprintf(ToSendDataBuffer, "I|PANID:%02x%02x Ch:%02d",myPANID.v[1],myPANID.v[0],BestChannel);
+"259
 [e ( _sprintf (1 , , , (. , &U _ToSendDataBuffer :s 6C -> *U + &U . _myPANID 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> *U + &U . _myPANID 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myPANID 0 `ui `ux `i -> _BestChannel `i ]
+[; ;main.c: 260: sendHIDText(ToSendDataBuffer);
+"260
+[e ( _sendHIDText (1 &U _ToSendDataBuffer ]
+[; ;main.c: 261: _delay((unsigned long)((20)*(16000000/4000.0)));
+"261
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 263: sprintf(ToSendDataBuffer, "I|operator's address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+"263
+[e ( _sprintf (1 , , (. , &U _ToSendDataBuffer :s 7C -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
 [; ;main.c: 264: sendHIDText(ToSendDataBuffer);
 "264
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
 [; ;main.c: 265: _delay((unsigned long)((20)*(16000000/4000.0)));
 "265
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 267: sprintf(ToSendDataBuffer, "I|operator's address: %02x%02x", myShortAddress.v[1], myShortAddress.v[0]);
+[; ;main.c: 267: sprintf(ToSendDataBuffer, "I|status: ready!");
 "267
-[e ( _sprintf (1 , , (. , &U _ToSendDataBuffer :s 7C -> *U + &U . _myShortAddress 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i -> *U + &U . _myShortAddress 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _myShortAddress 0 `ui `ux `i ]
+[e ( _sprintf (1 , &U _ToSendDataBuffer :s 8C ]
 [; ;main.c: 268: sendHIDText(ToSendDataBuffer);
 "268
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
 [; ;main.c: 269: _delay((unsigned long)((20)*(16000000/4000.0)));
 "269
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 271: sprintf(ToSendDataBuffer, "I|status: ready!");
-"271
-[e ( _sprintf (1 , &U _ToSendDataBuffer :s 8C ]
-[; ;main.c: 272: sendHIDText(ToSendDataBuffer);
-"272
-[e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 273: _delay((unsigned long)((20)*(16000000/4000.0)));
-"273
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 278: send_complete_update();
-"278
+[; ;main.c: 274: send_complete_update();
+"274
 [e ( _send_complete_update ..  ]
-[; ;main.c: 281: MiApp_ConnectionMode(0x00);
-"281
+[; ;main.c: 277: MiApp_ConnectionMode(0x00);
+"277
 [e ( _MiApp_ConnectionMode (1 -> -> 0 `i `uc ]
-[; ;main.c: 283: sprintf(ToSendDataBuffer, "I|accepting scans & connections");
-"283
+[; ;main.c: 279: sprintf(ToSendDataBuffer, "I|accepting scans & connections");
+"279
 [e ( _sprintf (1 , &U _ToSendDataBuffer :s 9C ]
-[; ;main.c: 284: sendHIDText(ToSendDataBuffer);
-"284
+[; ;main.c: 280: sendHIDText(ToSendDataBuffer);
+"280
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-[; ;main.c: 285: _delay((unsigned long)((20)*(16000000/4000.0)));
-"285
+[; ;main.c: 281: _delay((unsigned long)((20)*(16000000/4000.0)));
+"281
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 287: myAppState = STATE_READY;
-"287
+[; ;main.c: 283: myAppState = STATE_READY;
+"283
 [e = _myAppState . `E9788 2 ]
-[; ;main.c: 288: status_led = LED_SLOW_PULSE;
-"288
+[; ;main.c: 284: status_led = LED_SLOW_PULSE;
+"284
 [e = _status_led . `E10824 2 ]
-[; ;main.c: 289: update_LED();
-"289
+[; ;main.c: 285: update_LED();
+"285
 [e ( _update_LED ..  ]
-[; ;main.c: 291: m_uptime_days = 0;
-"291
+[; ;main.c: 287: m_uptime_days = 0;
+"287
 [e = _m_uptime_days -> -> 0 `i `f ]
-[; ;main.c: 292: timer_reset();
-"292
+[; ;main.c: 288: timer_reset();
+"288
 [e ( _timer_reset ..  ]
-[; ;main.c: 296: while(1)
-"296
+[; ;main.c: 292: while(1)
+"292
 [e :U 1382 ]
-[; ;main.c: 297: {
-"297
+[; ;main.c: 293: {
+"293
 {
-"298
+"294
 [v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
-"299
+"295
 [v _power `uc ~T0 @X0 1 a ]
-"300
+"296
 [v _rssi `uc ~T0 @X0 1 a ]
-"301
+"297
 [v _uid `uc ~T0 @X0 -> 2 `i a ]
-"302
+"298
 [v _size `uc ~T0 @X0 1 a ]
-[; ;main.c: 298: uint8_t shortaddress[2];
-[; ;main.c: 299: uint8_t power;
-[; ;main.c: 300: uint8_t rssi;
-[; ;main.c: 301: uint8_t uid[2];
-[; ;main.c: 302: uint8_t size;
-[; ;main.c: 306: MiWiTasks();
-"306
+[; ;main.c: 294: uint8_t shortaddress[2];
+[; ;main.c: 295: uint8_t power;
+[; ;main.c: 296: uint8_t rssi;
+[; ;main.c: 297: uint8_t uid[2];
+[; ;main.c: 298: uint8_t size;
+[; ;main.c: 302: MiWiTasks();
+"302
 [e ( _MiWiTasks ..  ]
-[; ;main.c: 310: if(MiApp_MessageAvailable())
-"310
+[; ;main.c: 306: if(MiApp_MessageAvailable())
+"306
 [e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1384  ]
+[; ;main.c: 307: {
+"307
+{
+[; ;main.c: 308: shortaddress[0] = rxMessage.SourceAddress[0];
+"308
+[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x ]
+[; ;main.c: 309: shortaddress[1] = rxMessage.SourceAddress[1];
+"309
+[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x ]
+[; ;main.c: 310: switch(rxMessage.Payload[0])
+"310
+[e $U 1386  ]
 [; ;main.c: 311: {
 "311
 {
-[; ;main.c: 312: shortaddress[0] = rxMessage.SourceAddress[0];
+[; ;main.c: 312: case 01:
 "312
-[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x ]
-[; ;main.c: 313: shortaddress[1] = rxMessage.SourceAddress[1];
-"313
-[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x ]
-[; ;main.c: 314: switch(rxMessage.Payload[0])
-"314
-[e $U 1386  ]
-[; ;main.c: 315: {
-"315
-{
-[; ;main.c: 316: case 01:
-"316
 [e :U 1387 ]
-[; ;main.c: 317: rssi = rxMessage.PacketRSSI;
-"317
+[; ;main.c: 313: rssi = rxMessage.PacketRSSI;
+"313
 [e = _rssi . _rxMessage 5 ]
-[; ;main.c: 318: power = rxMessage.Payload[1];
-"318
+[; ;main.c: 314: power = rxMessage.Payload[1];
+"314
 [e = _power *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 319: MiApp_DiscardMessage();
-"319
+[; ;main.c: 315: MiApp_DiscardMessage();
+"315
 [e ( _MiApp_DiscardMessage ..  ]
-[; ;main.c: 321: {TxData = 11;};
-"321
+[; ;main.c: 317: {TxData = 11;};
+"317
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 322: TxBuffer[TxData++] = 01;
-"322
+[; ;main.c: 318: TxBuffer[TxData++] = 01;
+"318
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 1 `i `uc ]
-[; ;main.c: 323: TxBuffer[TxData++] = power;
-"323
+[; ;main.c: 319: TxBuffer[TxData++] = power;
+"319
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _power ]
-[; ;main.c: 324: TxBuffer[TxData++] = rssi;
-"324
+[; ;main.c: 320: TxBuffer[TxData++] = rssi;
+"320
 [e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux _rssi ]
-[; ;main.c: 326: if (MiApp_UnicastAddress(&shortaddress, 0, 1) == 1)
-"326
+[; ;main.c: 322: if (MiApp_UnicastAddress(&shortaddress, 0, 1) == 1)
+"322
 [e $ ! == -> ( _MiApp_UnicastAddress (3 , , &U _shortaddress -> -> 0 `i `uc -> -> 1 `i `uc `i -> 1 `i 1388  ]
-[; ;main.c: 327: {
-"327
+[; ;main.c: 323: {
+"323
 {
-[; ;main.c: 328: sprintf(ToSendDataBuffer, "I|%02x%02x:POWER_TEST: OK, %s, RSSI=%i", shortaddress[1], shortaddress[0], dBm_to_mW(power), rssi);
-"328
+[; ;main.c: 324: sprintf(ToSendDataBuffer, "I|%02x%02x:POWER_TEST: OK, %s, RSSI=%i", shortaddress[1], shortaddress[0], dBm_to_mW(power), rssi);
+"324
 [e ( _sprintf (1 , , , , (. , &U _ToSendDataBuffer :s 10C -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i ( _dBm_to_mW (1 _power -> _rssi `i ]
-[; ;main.c: 329: sendHIDText(ToSendDataBuffer);
-"329
+[; ;main.c: 325: sendHIDText(ToSendDataBuffer);
+"325
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-"331
+"327
 }
-[; ;main.c: 331: }
+[; ;main.c: 327: }
 [e $U 1389  ]
-"332
+"328
 [e :U 1388 ]
-[; ;main.c: 332: else
-[; ;main.c: 333: {
-"333
+[; ;main.c: 328: else
+[; ;main.c: 329: {
+"329
 {
-[; ;main.c: 334: sprintf(ToSendDataBuffer, "I|%02x%02x:POWER_TEST: error sending back, %s, RSSI=%i", shortaddress[1], shortaddress[0], dBm_to_mW(power), rssi);
-"334
+[; ;main.c: 330: sprintf(ToSendDataBuffer, "I|%02x%02x:POWER_TEST: error sending back, %s, RSSI=%i", shortaddress[1], shortaddress[0], dBm_to_mW(power), rssi);
+"330
 [e ( _sprintf (1 , , , , (. , &U _ToSendDataBuffer :s 11C -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i ( _dBm_to_mW (1 _power -> _rssi `i ]
-[; ;main.c: 335: sendHIDText(ToSendDataBuffer);
-"335
+[; ;main.c: 331: sendHIDText(ToSendDataBuffer);
+"331
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-"337
+"333
 }
 [e :U 1389 ]
-[; ;main.c: 337: }
-[; ;main.c: 338: break;
-"338
+[; ;main.c: 333: }
+[; ;main.c: 334: break;
+"334
 [e $U 1385  ]
-[; ;main.c: 340: case 02:
-"340
+[; ;main.c: 336: case 02:
+"336
 [e :U 1390 ]
-[; ;main.c: 342: p_buffer = &m_buffer[0];
-"342
+[; ;main.c: 338: p_buffer = &m_buffer[0];
+"338
 [e = _p_buffer &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux ]
-[; ;main.c: 343: *(p_buffer++) = 0x4d;
-"343
+[; ;main.c: 339: *(p_buffer++) = 0x4d;
+"339
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 344: *(p_buffer++) = shortaddress[0];
-"344
+[; ;main.c: 340: *(p_buffer++) = shortaddress[0];
+"340
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux ]
-[; ;main.c: 345: *(p_buffer++) = shortaddress[1];
-"345
+[; ;main.c: 341: *(p_buffer++) = shortaddress[1];
+"341
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux ]
-[; ;main.c: 346: size = rxMessage.PayloadSize;
-"346
+[; ;main.c: 342: size = rxMessage.PayloadSize;
+"342
 [e = _size . _rxMessage 4 ]
-[; ;main.c: 347: memcpy(p_buffer, &rxMessage.Payload[0], size);
-"347
+[; ;main.c: 343: memcpy(p_buffer, &rxMessage.Payload[0], size);
+"343
 [e ( _memcpy (3 , , -> _p_buffer `*v -> &U *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `*Cv -> _size `ui ]
-[; ;main.c: 348: p_buffer += size;
-"348
+[; ;main.c: 344: p_buffer += size;
+"344
 [e =+ _p_buffer * -> _size `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 350: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
-"350
+[; ;main.c: 346: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
+"346
 [e ( _sendHIDBinary (2 , &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux -> / - -> _p_buffer `x -> &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 351: MiApp_DiscardMessage();
-"351
+[; ;main.c: 347: MiApp_DiscardMessage();
+"347
 [e ( _MiApp_DiscardMessage ..  ]
-[; ;main.c: 352: break;
-"352
+[; ;main.c: 348: break;
+"348
 [e $U 1385  ]
-[; ;main.c: 354: case 03:
-"354
+[; ;main.c: 350: case 03:
+"350
 [e :U 1391 ]
-[; ;main.c: 355: {TxData = 11;};
-"355
+[; ;main.c: 351: {TxData = 11;};
+"351
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 356: size = rxMessage.PayloadSize;
-"356
+[; ;main.c: 352: size = rxMessage.PayloadSize;
+"352
 [e = _size . _rxMessage 4 ]
-[; ;main.c: 357: memcpy(&TxBuffer[TxData], &rxMessage.Payload[0], size);
-"357
+[; ;main.c: 353: memcpy(&TxBuffer[TxData], &rxMessage.Payload[0], size);
+"353
 [e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> &U *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `*Cv -> _size `ui ]
-[; ;main.c: 358: TxData = TxData + size;
-"358
+[; ;main.c: 354: TxData = TxData + size;
+"354
 [e = _TxData -> + -> _TxData `i -> _size `i `uc ]
-[; ;main.c: 359: MiApp_DiscardMessage();
-"359
+[; ;main.c: 355: MiApp_DiscardMessage();
+"355
 [e ( _MiApp_DiscardMessage ..  ]
-[; ;main.c: 361: if (MiApp_UnicastAddress(&shortaddress, 0, 1) == 1)
-"361
+[; ;main.c: 357: if (MiApp_UnicastAddress(&shortaddress, 0, 1) == 1)
+"357
 [e $ ! == -> ( _MiApp_UnicastAddress (3 , , &U _shortaddress -> -> 0 `i `uc -> -> 1 `i `uc `i -> 1 `i 1392  ]
-[; ;main.c: 362: {
-"362
+[; ;main.c: 358: {
+"358
 {
-[; ;main.c: 363: sprintf(ToSendDataBuffer, "I|%02x%02x:PING successful: payload_size=%i", shortaddress[1], shortaddress[0], size);
-"363
+[; ;main.c: 359: sprintf(ToSendDataBuffer, "I|%02x%02x:PING successful: payload_size=%i", shortaddress[1], shortaddress[0], size);
+"359
 [e ( _sprintf (1 , , , (. , &U _ToSendDataBuffer :s 12C -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> _size `i ]
-[; ;main.c: 364: sendHIDText(ToSendDataBuffer);
-"364
+[; ;main.c: 360: sendHIDText(ToSendDataBuffer);
+"360
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-"366
+"362
 }
-[; ;main.c: 366: }
+[; ;main.c: 362: }
 [e $U 1393  ]
-"367
+"363
 [e :U 1392 ]
-[; ;main.c: 367: else
-[; ;main.c: 368: {
-"368
+[; ;main.c: 363: else
+[; ;main.c: 364: {
+"364
 {
-[; ;main.c: 369: sprintf(ToSendDataBuffer, "I|%02x%02x:PING error sending back: payload_size=%i", shortaddress[1], shortaddress[0], size);
-"369
+[; ;main.c: 365: sprintf(ToSendDataBuffer, "I|%02x%02x:PING error sending back: payload_size=%i", shortaddress[1], shortaddress[0], size);
+"365
 [e ( _sprintf (1 , , , (. , &U _ToSendDataBuffer :s 13C -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> _size `i ]
-[; ;main.c: 370: sendHIDText(ToSendDataBuffer);
-"370
+[; ;main.c: 366: sendHIDText(ToSendDataBuffer);
+"366
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-"372
+"368
 }
 [e :U 1393 ]
-[; ;main.c: 372: }
-[; ;main.c: 373: break;
-"373
+[; ;main.c: 368: }
+[; ;main.c: 369: break;
+"369
 [e $U 1385  ]
-[; ;main.c: 375: case 04:
-"375
+[; ;main.c: 371: case 04:
+"371
 [e :U 1394 ]
-[; ;main.c: 377: p_buffer = &m_buffer[0];
-"377
+[; ;main.c: 373: p_buffer = &m_buffer[0];
+"373
 [e = _p_buffer &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux ]
-[; ;main.c: 378: *(p_buffer++) = 0x4d;
-"378
+[; ;main.c: 374: *(p_buffer++) = 0x4d;
+"374
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 379: *(p_buffer++) = shortaddress[0];
-"379
+[; ;main.c: 375: *(p_buffer++) = shortaddress[0];
+"375
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux ]
-[; ;main.c: 380: *(p_buffer++) = shortaddress[1];
-"380
+[; ;main.c: 376: *(p_buffer++) = shortaddress[1];
+"376
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux ]
-[; ;main.c: 381: size = rxMessage.PayloadSize;
-"381
+[; ;main.c: 377: size = rxMessage.PayloadSize;
+"377
 [e = _size . _rxMessage 4 ]
-[; ;main.c: 382: memcpy(p_buffer, &rxMessage.Payload[0], size);
-"382
+[; ;main.c: 378: memcpy(p_buffer, &rxMessage.Payload[0], size);
+"378
 [e ( _memcpy (3 , , -> _p_buffer `*v -> &U *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `*Cv -> _size `ui ]
-[; ;main.c: 383: p_buffer += size;
-"383
+[; ;main.c: 379: p_buffer += size;
+"379
 [e =+ _p_buffer * -> _size `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 385: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
-"385
+[; ;main.c: 381: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
+"381
 [e ( _sendHIDBinary (2 , &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux -> / - -> _p_buffer `x -> &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 386: MiApp_DiscardMessage();
-"386
+[; ;main.c: 382: MiApp_DiscardMessage();
+"382
 [e ( _MiApp_DiscardMessage ..  ]
-[; ;main.c: 387: break;
-"387
+[; ;main.c: 383: break;
+"383
 [e $U 1385  ]
-[; ;main.c: 389: default:
-"389
+[; ;main.c: 385: default:
+"385
 [e :U 1395 ]
-[; ;main.c: 391: sprintf(ToSendDataBuffer, "I|%02x%02x: %i command not recognized!", shortaddress[1], shortaddress[0], rxMessage.Payload[0]);
-"391
+[; ;main.c: 387: sprintf(ToSendDataBuffer, "I|%02x%02x: %i command not recognized!", shortaddress[1], shortaddress[0], rxMessage.Payload[0]);
+"387
 [e ( _sprintf (1 , , , (. , &U _ToSendDataBuffer :s 14C -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x `i ]
-[; ;main.c: 392: sendHIDText(ToSendDataBuffer);
-"392
+[; ;main.c: 388: sendHIDText(ToSendDataBuffer);
+"388
 [e ( _sendHIDText (1 &U _ToSendDataBuffer ]
-"393
+"389
 }
-[; ;main.c: 393: }
+[; ;main.c: 389: }
 [e $U 1385  ]
-"314
+"310
 [e :U 1386 ]
 [e [\ *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x , $ -> -> 1 `i `uc 1387
  , $ -> -> 2 `i `uc 1390
  , $ -> -> 3 `i `uc 1391
  , $ -> -> 4 `i `uc 1394
  1395 ]
-"393
+"389
 [e :U 1385 ]
-"394
+"390
 }
-[; ;main.c: 394: }
+[; ;main.c: 390: }
 [e $U 1396  ]
-"398
+"394
 [e :U 1384 ]
-[; ;main.c: 398: else if((USBOutHandle==0?0:((volatile BDT_ENTRY*)USBOutHandle)->STAT.UOWN) == 0)
+[; ;main.c: 394: else if((USBOutHandle==0?0:((volatile BDT_ENTRY*)USBOutHandle)->STAT.UOWN) == 0)
 [e $ ! == ? == _USBOutHandle -> -> 0 `i `*Vv : -> 0 `i -> . . . . *U -> _USBOutHandle `*VS1319 0 0 1 7 `i -> 0 `i 1397  ]
-[; ;main.c: 399: {
-"399
+[; ;main.c: 395: {
+"395
 {
-[; ;main.c: 400: switch (ReceivedDataBuffer[0])
-"400
+[; ;main.c: 396: switch (ReceivedDataBuffer[0])
+"396
 [e $U 1399  ]
-[; ;main.c: 401: {
-"401
+[; ;main.c: 397: {
+"397
 {
-[; ;main.c: 402: case 0x58:
-"402
+[; ;main.c: 398: case 0x58:
+"398
 [e :U 1400 ]
-[; ;main.c: 403: asm("reset");
-"403
+[; ;main.c: 399: asm("reset");
+"399
 [; <" reset ;# ">
-[; ;main.c: 404: break;
-"404
+[; ;main.c: 400: break;
+"400
 [e $U 1398  ]
-[; ;main.c: 405: case 0x53:
-"405
+[; ;main.c: 401: case 0x53:
+"401
 [e :U 1401 ]
-[; ;main.c: 407: shortaddress[0] = ReceivedDataBuffer[1];
-"407
+[; ;main.c: 403: shortaddress[0] = ReceivedDataBuffer[1];
+"403
 [e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + &U _ReceivedDataBuffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 408: shortaddress[1] = ReceivedDataBuffer[2];
-"408
+[; ;main.c: 404: shortaddress[1] = ReceivedDataBuffer[2];
+"404
 [e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + &U _ReceivedDataBuffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 409: size = ReceivedDataBuffer[3];
-"409
+[; ;main.c: 405: size = ReceivedDataBuffer[3];
+"405
 [e = _size *U + &U _ReceivedDataBuffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 410: if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00))
-"410
+[; ;main.c: 406: if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00))
+"406
 [e $ ! && == -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i 1402  ]
-[; ;main.c: 411: {
-"411
+[; ;main.c: 407: {
+"407
 {
-[; ;main.c: 413: if ((ReceivedDataBuffer[4] == 04) && (size > 2))
-"413
+[; ;main.c: 409: if ((ReceivedDataBuffer[4] == 04) && (size > 2))
+"409
 [e $ ! && == -> *U + &U _ReceivedDataBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 4 `i > -> _size `i -> 2 `i 1403  ]
-[; ;main.c: 414: {
-"414
+[; ;main.c: 410: {
+"410
 {
-"415
+"411
 [v _last_update `uc ~T0 @X0 1 a ]
-[; ;main.c: 415: bool last_update = (ReceivedDataBuffer[5] == 0xff);
+[; ;main.c: 411: bool last_update = (ReceivedDataBuffer[5] == 0xff);
 [e = _last_update -> -> == -> *U + &U _ReceivedDataBuffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 255 `i `i `uc ]
-[; ;main.c: 417: p_buffer = &ReceivedDataBuffer[6];
-"417
+[; ;main.c: 413: p_buffer = &ReceivedDataBuffer[6];
+"413
 [e = _p_buffer &U *U + &U _ReceivedDataBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux ]
-[; ;main.c: 418: while ((p_buffer - &ReceivedDataBuffer[6]) < (size - 2))
-"418
+[; ;main.c: 414: while ((p_buffer - &ReceivedDataBuffer[6]) < (size - 2))
+"414
 [e $U 1404  ]
 [e :U 1405 ]
-[; ;main.c: 419: {
-"419
+[; ;main.c: 415: {
+"415
 {
-[; ;main.c: 420: m_var = decode_variable(p_buffer);
-"420
+[; ;main.c: 416: m_var = decode_variable(p_buffer);
+"416
 [e = _m_var ( _decode_variable (1 _p_buffer ]
-[; ;main.c: 421: p_buffer += m_var.size;
-"421
+[; ;main.c: 417: p_buffer += m_var.size;
+"417
 [e =+ _p_buffer * -> . _m_var 7 `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 426: update_variable();
-"426
+[; ;main.c: 422: update_variable();
+"422
 [e ( _update_variable ..  ]
-"427
+"423
 }
 [e :U 1404 ]
-"418
+"414
 [e $ < / - -> _p_buffer `x -> &U *U + &U _ReceivedDataBuffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `x -> -> # *U _p_buffer `i `x -> - -> _size `i -> 2 `i `x 1405  ]
 [e :U 1406 ]
-[; ;main.c: 427: }
-[; ;main.c: 428: if (last_update)
-"428
+[; ;main.c: 423: }
+[; ;main.c: 424: if (last_update)
+"424
 [e $ ! != -> _last_update `i -> -> -> 0 `i `uc `i 1407  ]
-[; ;main.c: 429: {
-"429
+[; ;main.c: 425: {
+"425
 {
-[; ;main.c: 431: send_answer_to_update();
-"431
+[; ;main.c: 427: send_answer_to_update();
+"427
 [e ( _send_answer_to_update ..  ]
-"432
+"428
 }
 [e :U 1407 ]
-"433
+"429
 }
 [e :U 1403 ]
-"434
+"430
 }
-[; ;main.c: 432: }
-[; ;main.c: 433: }
-[; ;main.c: 434: }
+[; ;main.c: 428: }
+[; ;main.c: 429: }
+[; ;main.c: 430: }
 [e $U 1408  ]
-"435
+"431
 [e :U 1402 ]
-[; ;main.c: 435: else
-[; ;main.c: 436: {
-"436
+[; ;main.c: 431: else
+[; ;main.c: 432: {
+"432
 {
-[; ;main.c: 437: {TxData = 11;};
-"437
+[; ;main.c: 433: {TxData = 11;};
+"433
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-[; ;main.c: 438: memcpy(&TxBuffer[TxData], &ReceivedDataBuffer[4], size);
-"438
+[; ;main.c: 434: memcpy(&TxBuffer[TxData], &ReceivedDataBuffer[4], size);
+"434
 [e ( _memcpy (3 , , -> &U *U + &U _TxBuffer * -> _TxData `ux -> -> # *U &U _TxBuffer `ui `ux `*v -> &U *U + &U _ReceivedDataBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `*Cv -> _size `ui ]
-[; ;main.c: 439: TxData = TxData + size;
-"439
+[; ;main.c: 435: TxData = TxData + size;
+"435
 [e = _TxData -> + -> _TxData `i -> _size `i `uc ]
-[; ;main.c: 440: if (ReceivedDataBuffer[4] == 02)
-"440
+[; ;main.c: 436: if (ReceivedDataBuffer[4] == 02)
+"436
 [e $ ! == -> *U + &U _ReceivedDataBuffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux `i -> 2 `i 1409  ]
-[; ;main.c: 442: MiApp_UnicastAddress(&shortaddress, 0, 0) == 1;
-"442
+[; ;main.c: 438: MiApp_UnicastAddress(&shortaddress, 0, 0) == 1;
+"438
 [e == -> ( _MiApp_UnicastAddress (3 , , &U _shortaddress -> -> 0 `i `uc -> -> 0 `i `uc `i -> 1 `i ]
 [e $U 1410  ]
-"443
+"439
 [e :U 1409 ]
-[; ;main.c: 443: else
-[; ;main.c: 444: MiApp_UnicastAddress(&shortaddress, 0, 1);
-"444
+[; ;main.c: 439: else
+[; ;main.c: 440: MiApp_UnicastAddress(&shortaddress, 0, 1);
+"440
 [e ( _MiApp_UnicastAddress (3 , , &U _shortaddress -> -> 0 `i `uc -> -> 1 `i `uc ]
 [e :U 1410 ]
-"449
+"445
 }
 [e :U 1408 ]
-[; ;main.c: 449: }
-[; ;main.c: 450: break;
-"450
+[; ;main.c: 445: }
+[; ;main.c: 446: break;
+"446
 [e $U 1398  ]
-[; ;main.c: 451: default:
-"451
+[; ;main.c: 447: default:
+"447
 [e :U 1411 ]
-[; ;main.c: 453: break;
-"453
+[; ;main.c: 449: break;
+"449
 [e $U 1398  ]
-"454
+"450
 }
-[; ;main.c: 454: }
+[; ;main.c: 450: }
 [e $U 1398  ]
-"400
+"396
 [e :U 1399 ]
 [e [\ *U + &U _ReceivedDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ReceivedDataBuffer `ui `ux , $ -> -> 88 `i `uc 1400
  , $ -> -> 83 `i `uc 1401
  1411 ]
-"454
+"450
 [e :U 1398 ]
-[; ;main.c: 456: USBOutHandle = USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
-"456
+[; ;main.c: 452: USBOutHandle = USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
+"452
 [e = _USBOutHandle -> ( _USBTransferOnePacket (4 , , , -> -> 1 `i `uc -> -> 0 `i `uc &U _ReceivedDataBuffer -> -> 64 `i `uc `*Vv ]
-"457
+"453
 }
-[; ;main.c: 457: }
+[; ;main.c: 453: }
 [e $U 1412  ]
-"461
+"457
 [e :U 1397 ]
-[; ;main.c: 461: else if (timer_flag == 1)
+[; ;main.c: 457: else if (timer_flag == 1)
 [e $ ! == -> _timer_flag `i -> 1 `i 1413  ]
-[; ;main.c: 462: {
-"462
+[; ;main.c: 458: {
+"458
 {
-[; ;main.c: 463: send_periodic_update();
-"463
+[; ;main.c: 459: send_periodic_update();
+"459
 [e ( _send_periodic_update ..  ]
-[; ;main.c: 464: timer_flag = 0;
-"464
+[; ;main.c: 460: timer_flag = 0;
+"460
 [e = _timer_flag -> -> 0 `i `uc ]
-"465
+"461
 }
 [e :U 1413 ]
-"466
+"462
 [e :U 1412 ]
 [e :U 1396 ]
 }
 [e :U 1381 ]
-"296
+"292
 [e $U 1382  ]
 [e :U 1383 ]
-[; ;main.c: 465: }
-[; ;main.c: 466: }
-[; ;main.c: 467: }
-"467
+[; ;main.c: 461: }
+[; ;main.c: 462: }
+[; ;main.c: 463: }
+"463
 [e :UE 1361 ]
 }
-"472
+"468
 [v _send_network_register `(v ~T0 @X0 1 ef ]
-"473
+"469
 {
-[; ;main.c: 472: void send_network_register()
-[; ;main.c: 473: {
+[; ;main.c: 468: void send_network_register()
+[; ;main.c: 469: {
 [e :U _send_network_register ]
 [f ]
-[; ;main.c: 475: p_buffer = &m_buffer[0];
-"475
+[; ;main.c: 471: p_buffer = &m_buffer[0];
+"471
 [e = _p_buffer &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux ]
-[; ;main.c: 476: *(p_buffer++) = 0x4d;
-"476
+[; ;main.c: 472: *(p_buffer++) = 0x4d;
+"472
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 477: *(p_buffer++) = 0x00;
-"477
+[; ;main.c: 473: *(p_buffer++) = 0x00;
+"473
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 478: *(p_buffer++) = 0x00;
-"478
+[; ;main.c: 474: *(p_buffer++) = 0x00;
+"474
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 480: *(p_buffer++) = 02;
-"480
+[; ;main.c: 476: *(p_buffer++) = 02;
+"476
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 2 `i `uc ]
-[; ;main.c: 481: memcpy(p_buffer, &myLongAddress[0], 4);
-"481
+[; ;main.c: 477: memcpy(p_buffer, &myLongAddress[0], 4);
+"477
 [e ( _memcpy (3 , , -> _p_buffer `*v -> &U *U + &U _myLongAddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux `*Cv -> -> 4 `i `ui ]
-[; ;main.c: 482: p_buffer += 4;
-"482
+[; ;main.c: 478: p_buffer += 4;
+"478
 [e =+ _p_buffer * -> -> 4 `i `x -> -> # *U _p_buffer `i `x ]
-[; ;main.c: 486: *(p_buffer++) = 0xf0;
-"486
+[; ;main.c: 482: *(p_buffer++) = 0xf0;
+"482
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 240 `i `uc ]
-[; ;main.c: 489: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
-"489
+[; ;main.c: 485: sendHIDBinary(&m_buffer[0], (p_buffer-&m_buffer[0]));
+"485
 [e ( _sendHIDBinary (2 , &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux -> / - -> _p_buffer `x -> &U *U + &U _m_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _m_buffer `ui `ux `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 490: }
-"490
+[; ;main.c: 486: }
+"486
 [e :UE 1414 ]
 }
-"495
+"491
 [v _send_complete_update `(v ~T0 @X0 1 ef ]
-"496
+"492
 {
-[; ;main.c: 495: void send_complete_update()
-[; ;main.c: 496: {
+[; ;main.c: 491: void send_complete_update()
+[; ;main.c: 492: {
 [e :U _send_complete_update ]
 [f ]
-"497
+"493
 [v _tmp `uc ~T0 @X0 1 a ]
-[; ;main.c: 497: uint8_t tmp;
-[; ;main.c: 498: p_buffer = m_buffer;
+[; ;main.c: 493: uint8_t tmp;
+[; ;main.c: 494: p_buffer = m_buffer;
+"494
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 495: *(p_buffer++) = 0x4d;
+"495
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
+[; ;main.c: 496: *(p_buffer++) = 0x00;
+"496
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
+[; ;main.c: 497: *(p_buffer++) = 0x00;
+"497
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
+[; ;main.c: 498: *(p_buffer++) = 04;
 "498
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 499: *(p_buffer++) = 0x4d;
+[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 4 `i `uc ]
+[; ;main.c: 499: *(p_buffer++) = 0xf0;
 "499
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 500: *(p_buffer++) = 0x00;
-"500
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 501: *(p_buffer++) = 0x00;
-"501
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 502: *(p_buffer++) = 04;
-"502
-[e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 4 `i `uc ]
-[; ;main.c: 503: *(p_buffer++) = 0xf0;
-"503
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 240 `i `uc ]
-[; ;main.c: 505: memcpy(m_var.label, POWER_LABEL, 3);
-"505
+[; ;main.c: 501: memcpy(m_var.label, POWER_LABEL, 3);
+"501
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 506: m_var.unit = 8;
-"506
+[; ;main.c: 502: m_var.unit = 8;
+"502
 [e = . _m_var 4 -> -> 8 `i `uc ]
-[; ;main.c: 507: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
-"507
+[; ;main.c: 503: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+"503
 [e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
-[; ;main.c: 508: m_var.writable = 1;
-"508
+[; ;main.c: 504: m_var.writable = 1;
+"504
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 509: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"509
+[; ;main.c: 505: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"505
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 510: memcpy(m_var.label, CHANNEL_LABEL, 3);
-"510
+[; ;main.c: 506: memcpy(m_var.label, CHANNEL_LABEL, 3);
+"506
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _CHANNEL_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 511: m_var.unit = 0;
-"511
+[; ;main.c: 507: m_var.unit = 0;
+"507
 [e = . _m_var 4 -> -> 0 `i `uc ]
-[; ;main.c: 512: m_var.value_byte1 = BestChannel;
-"512
+[; ;main.c: 508: m_var.value_byte1 = BestChannel;
+"508
 [e = . _m_var 2 _BestChannel ]
-[; ;main.c: 513: m_var.writable = 0;
-"513
+[; ;main.c: 509: m_var.writable = 0;
+"509
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 514: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"514
+[; ;main.c: 510: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"510
 [e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 515: memcpy(m_var.label, NOISE_LABEL, 3);
-"515
+[; ;main.c: 511: memcpy(m_var.label, NOISE_LABEL, 3);
+"511
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _NOISE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 516: m_var.unit = 0;
-"516
+[; ;main.c: 512: m_var.unit = 0;
+"512
 [e = . _m_var 4 -> -> 0 `i `uc ]
-[; ;main.c: 517: m_var.value_byte1 = noise_level;
-"517
+[; ;main.c: 513: m_var.value_byte1 = noise_level;
+"513
 [e = . _m_var 2 _noise_level ]
-[; ;main.c: 518: m_var.writable = 0;
+[; ;main.c: 514: m_var.writable = 0;
+"514
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 515: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"515
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 517: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
+"517
+[e ( _sendHIDBinary (2 , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc ]
+[; ;main.c: 518: _delay((unsigned long)((20)*(16000000/4000.0)));
 "518
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 519: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"519
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 521: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
-"521
-[e ( _sendHIDBinary (2 , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 522: _delay((unsigned long)((20)*(16000000/4000.0)));
-"522
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 524: p_buffer = m_buffer;
-"524
+[; ;main.c: 520: p_buffer = m_buffer;
+"520
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 525: *(p_buffer++) = 0x4d;
-"525
+[; ;main.c: 521: *(p_buffer++) = 0x4d;
+"521
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 526: *(p_buffer++) = 0x00;
-"526
+[; ;main.c: 522: *(p_buffer++) = 0x00;
+"522
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 527: *(p_buffer++) = 0x00;
-"527
+[; ;main.c: 523: *(p_buffer++) = 0x00;
+"523
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 528: *(p_buffer++) = 04;
-"528
+[; ;main.c: 524: *(p_buffer++) = 04;
+"524
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 4 `i `uc ]
-[; ;main.c: 529: *(p_buffer++) = 0xff;
-"529
+[; ;main.c: 525: *(p_buffer++) = 0xff;
+"525
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 255 `i `uc ]
-[; ;main.c: 532: memcpy(m_var.label, UPTIME_LABEL, 3);
-"532
+[; ;main.c: 528: memcpy(m_var.label, UPTIME_LABEL, 3);
+"528
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 533: m_var.unit = 7;
-"533
+[; ;main.c: 529: m_var.unit = 7;
+"529
 [e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 534: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
-"534
+[; ;main.c: 530: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+"530
 [e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 535: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
-"535
+[; ;main.c: 531: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+"531
 [e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 536: m_var.writable = 0;
-"536
+[; ;main.c: 532: m_var.writable = 0;
+"532
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 537: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"537
+[; ;main.c: 533: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"533
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 539: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"539
+[; ;main.c: 535: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+"535
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 540: m_var.unit = 4;
-"540
+[; ;main.c: 536: m_var.unit = 4;
+"536
 [e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 541: m_var.value_byte1 = m_update_frequency;
-"541
+[; ;main.c: 537: m_var.value_byte1 = m_update_frequency;
+"537
 [e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 542: m_var.writable = 1;
-"542
+[; ;main.c: 538: m_var.writable = 1;
+"538
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 543: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"543
+[; ;main.c: 539: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"539
 [e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 545: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
-"545
+[; ;main.c: 541: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
+"541
 [e ( _sendHIDBinary (2 , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 546: _delay((unsigned long)((20)*(16000000/4000.0)));
-"546
+[; ;main.c: 542: _delay((unsigned long)((20)*(16000000/4000.0)));
+"542
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 547: }
-"547
+[; ;main.c: 543: }
+"543
 [e :UE 1415 ]
 }
-"552
+"548
 [v _send_answer_to_update `(v ~T0 @X0 1 ef ]
-"553
+"549
 {
-[; ;main.c: 552: void send_answer_to_update()
-[; ;main.c: 553: { uint8_t tmp;
+[; ;main.c: 548: void send_answer_to_update()
+[; ;main.c: 549: { uint8_t tmp;
 [e :U _send_answer_to_update ]
 [f ]
 [v _tmp `uc ~T0 @X0 1 a ]
-[; ;main.c: 554: p_buffer = m_buffer;
-"554
+[; ;main.c: 550: p_buffer = m_buffer;
+"550
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 555: *(p_buffer++) = 0x4d;
-"555
+[; ;main.c: 551: *(p_buffer++) = 0x4d;
+"551
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 556: *(p_buffer++) = 0x00;
-"556
+[; ;main.c: 552: *(p_buffer++) = 0x00;
+"552
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 557: *(p_buffer++) = 0x00;
-"557
+[; ;main.c: 553: *(p_buffer++) = 0x00;
+"553
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 558: *(p_buffer++) = 04;
-"558
+[; ;main.c: 554: *(p_buffer++) = 04;
+"554
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 4 `i `uc ]
-[; ;main.c: 559: *(p_buffer++) = 0xff;
-"559
+[; ;main.c: 555: *(p_buffer++) = 0xff;
+"555
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 255 `i `uc ]
-[; ;main.c: 561: if (Pwr_updated)
-"561
+[; ;main.c: 557: if (Pwr_updated)
+"557
 [e $ ! != -> _Pwr_updated `i -> -> -> 0 `i `uc `i 1417  ]
-[; ;main.c: 562: {
-"562
+[; ;main.c: 558: {
+"558
 {
-[; ;main.c: 564: memcpy(m_var.label, POWER_LABEL, 3);
-"564
+[; ;main.c: 560: memcpy(m_var.label, POWER_LABEL, 3);
+"560
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 565: m_var.unit = 8;
-"565
+[; ;main.c: 561: m_var.unit = 8;
+"561
 [e = . _m_var 4 -> -> 8 `i `uc ]
-[; ;main.c: 566: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
-"566
+[; ;main.c: 562: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+"562
 [e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
-[; ;main.c: 567: m_var.writable = 1;
-"567
+[; ;main.c: 563: m_var.writable = 1;
+"563
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 568: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"568
+[; ;main.c: 564: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"564
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-"569
+[; ;main.c: 565: Pwr_updated = 0;
+"565
+[e = _Pwr_updated -> -> 0 `i `uc ]
+"566
 }
 [e :U 1417 ]
-[; ;main.c: 569: }
-[; ;main.c: 570: if (UpF_updated)
-"570
+[; ;main.c: 566: }
+[; ;main.c: 567: if (UpF_updated)
+"567
 [e $ ! != -> _UpF_updated `i -> -> -> 0 `i `uc `i 1418  ]
-[; ;main.c: 571: {
-"571
+[; ;main.c: 568: {
+"568
 {
-[; ;main.c: 573: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"573
+[; ;main.c: 570: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+"570
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 574: m_var.unit = 4;
-"574
+[; ;main.c: 571: m_var.unit = 4;
+"571
 [e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 575: m_var.value_byte1 = m_update_frequency;
-"575
+[; ;main.c: 572: m_var.value_byte1 = m_update_frequency;
+"572
 [e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 576: m_var.writable = 1;
-"576
+[; ;main.c: 573: m_var.writable = 1;
+"573
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 577: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"577
+[; ;main.c: 574: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"574
 [e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 578: UpF_updated = 0;
-"578
+[; ;main.c: 575: UpF_updated = 0;
+"575
 [e = _UpF_updated -> -> 0 `i `uc ]
-"579
+"576
 }
 [e :U 1418 ]
-[; ;main.c: 579: }
-[; ;main.c: 581: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
-"581
+[; ;main.c: 576: }
+[; ;main.c: 578: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
+"578
 [e ( _sendHIDBinary (2 , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 582: _delay((unsigned long)((20)*(16000000/4000.0)));
-"582
+[; ;main.c: 579: _delay((unsigned long)((20)*(16000000/4000.0)));
+"579
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 583: }
-"583
+[; ;main.c: 580: }
+"580
 [e :UE 1416 ]
 }
-"587
+"584
 [v _send_periodic_update `(v ~T0 @X0 1 ef ]
-"588
+"585
 {
-[; ;main.c: 587: void send_periodic_update()
-[; ;main.c: 588: { uint8_t tmp;
+[; ;main.c: 584: void send_periodic_update()
+[; ;main.c: 585: { uint8_t tmp;
 [e :U _send_periodic_update ]
 [f ]
 [v _tmp `uc ~T0 @X0 1 a ]
-[; ;main.c: 589: p_buffer = m_buffer;
-"589
+[; ;main.c: 586: p_buffer = m_buffer;
+"586
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 590: *(p_buffer++) = 0x4d;
-"590
+[; ;main.c: 587: *(p_buffer++) = 0x4d;
+"587
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 77 `i `uc ]
-[; ;main.c: 591: *(p_buffer++) = 0x00;
-"591
+[; ;main.c: 588: *(p_buffer++) = 0x00;
+"588
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 592: *(p_buffer++) = 0x00;
-"592
+[; ;main.c: 589: *(p_buffer++) = 0x00;
+"589
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 0 `i `uc ]
-[; ;main.c: 593: *(p_buffer++) = 04;
-"593
+[; ;main.c: 590: *(p_buffer++) = 04;
+"590
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 4 `i `uc ]
-[; ;main.c: 594: *(p_buffer++) = 0xff;
-"594
+[; ;main.c: 591: *(p_buffer++) = 0xff;
+"591
 [e = *U ++ _p_buffer * -> -> 1 `i `x -> -> # *U _p_buffer `i `x -> -> 255 `i `uc ]
-[; ;main.c: 597: memcpy(m_var.label, UPTIME_LABEL, 3);
-"597
+[; ;main.c: 594: memcpy(m_var.label, UPTIME_LABEL, 3);
+"594
 [e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 598: m_var.unit = 7;
-"598
+[; ;main.c: 595: m_var.unit = 7;
+"595
 [e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 599: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
-"599
+[; ;main.c: 596: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+"596
 [e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 600: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
-"600
+[; ;main.c: 597: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+"597
 [e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 601: m_var.writable = 0;
-"601
+[; ;main.c: 598: m_var.writable = 0;
+"598
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 602: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"602
+[; ;main.c: 599: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"599
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 604: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
-"604
+[; ;main.c: 601: sendHIDBinary(m_buffer, (p_buffer-m_buffer));
+"601
 [e ( _sendHIDBinary (2 , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc ]
-[; ;main.c: 605: _delay((unsigned long)((20)*(16000000/4000.0)));
-"605
+[; ;main.c: 602: _delay((unsigned long)((20)*(16000000/4000.0)));
+"602
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 606: }
-"606
+[; ;main.c: 603: }
+"603
 [e :UE 1419 ]
 }
-"610
+"607
 [v _update_variable `(v ~T0 @X0 1 ef ]
-"611
+"608
 {
-[; ;main.c: 610: void update_variable()
-[; ;main.c: 611: {
+[; ;main.c: 607: void update_variable()
+[; ;main.c: 608: {
 [e :U _update_variable ]
 [f ]
-[; ;main.c: 613: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
-"613
+[; ;main.c: 610: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
+"610
 [e $ ! == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _POWER_LABEL `*uc `i -> 1 `i 1421  ]
-[; ;main.c: 614: {
-"614
+[; ;main.c: 611: {
+"611
 {
-[; ;main.c: 615: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
-"615
+[; ;main.c: 612: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
+"612
 [e = _m_power ( _mW_ufixed16_to_dBm (2 , . _m_var 2 . _m_var 3 ]
-[; ;main.c: 616: MiMAC_SetPower(m_power);
-"616
+[; ;main.c: 613: MiMAC_SetPower(m_power);
+"613
 [e ( _MiMAC_SetPower (1 _m_power ]
-[; ;main.c: 617: Pwr_updated = 1;
-"617
+[; ;main.c: 614: Pwr_updated = 1;
+"614
 [e = _Pwr_updated -> -> 1 `i `uc ]
-"618
+"615
 }
-[; ;main.c: 618: }
+[; ;main.c: 615: }
 [e $U 1422  ]
-"619
+"616
 [e :U 1421 ]
-[; ;main.c: 619: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
+[; ;main.c: 616: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 [e $ ! && && == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _UPDATE_FREQUENCY_LABEL `*uc `i -> 1 `i == -> . _m_var 4 `i -> 4 `i == -> . _m_var 1 `i -> 0 `i 1423  ]
-[; ;main.c: 621: {
-"621
+[; ;main.c: 618: {
+"618
 {
-[; ;main.c: 622: if (m_var.value_byte1 == 0)
-"622
+[; ;main.c: 619: if (m_var.value_byte1 == 0)
+"619
 [e $ ! == -> . _m_var 2 `i -> 0 `i 1424  ]
-[; ;main.c: 623: {
-"623
+[; ;main.c: 620: {
+"620
 {
-[; ;main.c: 624: m_update_frequency = 0;
-"624
+[; ;main.c: 621: m_update_frequency = 0;
+"621
 [e = _m_update_frequency -> -> 0 `i `uc ]
-[; ;main.c: 625: RtccWrOn();
+[; ;main.c: 622: RtccWrOn();
+"622
+[e ( _RtccWrOn ..  ]
+[; ;main.c: 623: RTCCFGbits.RTCPTR0 = 0;
+"623
+[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 624: RTCCFGbits.RTCPTR1 = 0;
+"624
+[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 625: RTCVALHbits.RTCVALH = 0x00;
 "625
-[e ( _RtccWrOn ..  ]
-[; ;main.c: 626: RTCCFGbits.RTCPTR0 = 0;
+[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 626: RTCVALLbits.RTCVALL = 0x00;
 "626
-[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 627: RTCCFGbits.RTCPTR1 = 0;
+[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 627: ALRMCFGbits.AMASK = 0b0010;
 "627
-[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 628: RTCVALHbits.RTCVALH = 0x00;
-"628
-[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 629: RTCVALLbits.RTCVALL = 0x00;
-"629
-[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 630: ALRMCFGbits.AMASK = 0b0010;
-"630
 [e = . . _ALRMCFGbits 0 1 -> -> 2 `i `uc ]
-[; ;main.c: 631: (RTCCFGbits.RTCWREN = 0);
-"631
+[; ;main.c: 628: (RTCCFGbits.RTCWREN = 0);
+"628
 [e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 632: timer_count = 1;
-"632
+[; ;main.c: 629: timer_count = 1;
+"629
 [e = _timer_count -> -> 1 `i `uc ]
-[; ;main.c: 633: timer_flag = 0;
-"633
+[; ;main.c: 630: timer_flag = 0;
+"630
 [e = _timer_flag -> -> 0 `i `uc ]
-"634
+"631
 }
-[; ;main.c: 634: }
+[; ;main.c: 631: }
 [e $U 1425  ]
-"635
+"632
 [e :U 1424 ]
-[; ;main.c: 635: else
-[; ;main.c: 636: {
-"636
+[; ;main.c: 632: else
+[; ;main.c: 633: {
+"633
 {
-[; ;main.c: 637: m_update_frequency = m_var.value_byte1;
-"637
+[; ;main.c: 634: m_update_frequency = m_var.value_byte1;
+"634
 [e = _m_update_frequency . _m_var 2 ]
-[; ;main.c: 638: RtccWrOn();
-"638
+[; ;main.c: 635: RtccWrOn();
+"635
 [e ( _RtccWrOn ..  ]
-[; ;main.c: 639: RTCCFGbits.RTCPTR0 = 0;
-"639
+[; ;main.c: 636: RTCCFGbits.RTCPTR0 = 0;
+"636
 [e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 640: RTCCFGbits.RTCPTR1 = 0;
-"640
+[; ;main.c: 637: RTCCFGbits.RTCPTR1 = 0;
+"637
 [e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 641: RTCVALHbits.RTCVALH = 0x00;
-"641
+[; ;main.c: 638: RTCVALHbits.RTCVALH = 0x00;
+"638
 [e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 642: RTCVALLbits.RTCVALL = 0x00;
-"642
+[; ;main.c: 639: RTCVALLbits.RTCVALL = 0x00;
+"639
 [e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 643: ALRMCFGbits.AMASK = 0b0011;
-"643
+[; ;main.c: 640: ALRMCFGbits.AMASK = 0b0011;
+"640
 [e = . . _ALRMCFGbits 0 1 -> -> 3 `i `uc ]
-[; ;main.c: 644: (RTCCFGbits.RTCWREN = 0);
-"644
+[; ;main.c: 641: (RTCCFGbits.RTCWREN = 0);
+"641
 [e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 645: timer_count = m_update_frequency;
-"645
+[; ;main.c: 642: timer_count = m_update_frequency;
+"642
 [e = _timer_count _m_update_frequency ]
-[; ;main.c: 646: timer_flag = 0;
-"646
+[; ;main.c: 643: timer_flag = 0;
+"643
 [e = _timer_flag -> -> 0 `i `uc ]
-"647
+"644
 }
 [e :U 1425 ]
-[; ;main.c: 647: }
-[; ;main.c: 648: UpF_updated = 1;
-"648
+[; ;main.c: 644: }
+[; ;main.c: 645: UpF_updated = 1;
+"645
 [e = _UpF_updated -> -> 1 `i `uc ]
-"649
+"646
 }
 [e :U 1423 ]
-"650
+"647
 [e :U 1422 ]
-[; ;main.c: 649: }
-[; ;main.c: 650: }
+[; ;main.c: 646: }
+[; ;main.c: 647: }
 [e :UE 1420 ]
 }
-"652
+"649
 [v _timer_reset `(v ~T0 @X0 1 ef ]
-"653
+"650
 {
-[; ;main.c: 652: void timer_reset()
-[; ;main.c: 653: {
+[; ;main.c: 649: void timer_reset()
+[; ;main.c: 650: {
 [e :U _timer_reset ]
 [f ]
-[; ;main.c: 661: if (m_update_frequency == 0)
-"661
+[; ;main.c: 658: if (m_update_frequency == 0)
+"658
 [e $ ! == -> _m_update_frequency `i -> 0 `i 1427  ]
-[; ;main.c: 662: timer_count = 1;
-"662
+[; ;main.c: 659: timer_count = 1;
+"659
 [e = _timer_count -> -> 1 `i `uc ]
 [e $U 1428  ]
-"663
+"660
 [e :U 1427 ]
-[; ;main.c: 663: else
-[; ;main.c: 664: timer_count = m_update_frequency;
-"664
+[; ;main.c: 660: else
+[; ;main.c: 661: timer_count = m_update_frequency;
+"661
 [e = _timer_count _m_update_frequency ]
 [e :U 1428 ]
-[; ;main.c: 665: timer_flag = 0;
-"665
+[; ;main.c: 662: timer_flag = 0;
+"662
 [e = _timer_flag -> -> 0 `i `uc ]
-[; ;main.c: 666: }
-"666
+[; ;main.c: 663: }
+"663
 [e :UE 1426 ]
 }
-"671
+"668
 [v _APP_DeviceCustomHIDInitialize `(v ~T0 @X0 1 ef ]
-"672
+"669
 {
-[; ;main.c: 671: void APP_DeviceCustomHIDInitialize()
-[; ;main.c: 672: {
+[; ;main.c: 668: void APP_DeviceCustomHIDInitialize()
+[; ;main.c: 669: {
 [e :U _APP_DeviceCustomHIDInitialize ]
 [f ]
-[; ;main.c: 675: USBInHandle = 0;
-"675
+[; ;main.c: 672: USBInHandle = 0;
+"672
 [e = _USBInHandle -> -> 0 `i `*Vv ]
-[; ;main.c: 677: USBEnableEndpoint(1, 0x02|0x04|0x10|0x08);
-"677
+[; ;main.c: 674: USBEnableEndpoint(1, 0x02|0x04|0x10|0x08);
+"674
 [e ( _USBEnableEndpoint (2 , -> -> 1 `i `uc -> | | | -> 2 `i -> 4 `i -> 16 `i -> 8 `i `uc ]
-[; ;main.c: 679: USBOutHandle = (volatile void*)USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
-"679
+[; ;main.c: 676: USBOutHandle = (volatile void*)USBTransferOnePacket(1,0,(uint8_t*)&ReceivedDataBuffer,64);
+"676
 [e = _USBOutHandle -> ( _USBTransferOnePacket (4 , , , -> -> 1 `i `uc -> -> 0 `i `uc &U _ReceivedDataBuffer -> -> 64 `i `uc `*Vv ]
-[; ;main.c: 680: }
-"680
+[; ;main.c: 677: }
+"677
 [e :UE 1429 ]
 }
-"684
+"681
 [v _sendHIDBinary `(uc ~T0 @X0 1 ef2`*uc`uc ]
-"685
+"682
 {
-[; ;main.c: 684: bool sendHIDBinary(char* buffer, uint8_t length)
-[; ;main.c: 685: {
+[; ;main.c: 681: bool sendHIDBinary(char* buffer, uint8_t length)
+[; ;main.c: 682: {
 [e :U _sendHIDBinary ]
-"684
+"681
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [v _length `uc ~T0 @X0 1 r2 ]
-"685
+"682
 [f ]
-[; ;main.c: 686: if ((USBDeviceState < CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-"686
+[; ;main.c: 683: if ((USBDeviceState < CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
+"683
 [e $ ! || < -> _USBDeviceState `i -> . `E10064 6 `i == -> . . _UCONbits 0 1 `i -> 1 `i 1431  ]
-[; ;main.c: 687: {
-"687
+[; ;main.c: 684: {
+"684
 {
-[; ;main.c: 688: return 0;
-"688
+[; ;main.c: 685: return 0;
+"685
 [e ) -> -> 0 `i `uc ]
 [e $UE 1430  ]
-"689
+"686
 }
 [e :U 1431 ]
-[; ;main.c: 689: }
-[; ;main.c: 690: while (1)
-"690
+[; ;main.c: 686: }
+[; ;main.c: 687: while (1)
+"687
 [e :U 1433 ]
-[; ;main.c: 691: {
-"691
+[; ;main.c: 688: {
+"688
 {
-[; ;main.c: 692: if(!(USBInHandle==0?0:((volatile BDT_ENTRY*)USBInHandle)->STAT.UOWN))
-"692
+[; ;main.c: 689: if(!(USBInHandle==0?0:((volatile BDT_ENTRY*)USBInHandle)->STAT.UOWN))
+"689
 [e $ ! ! != ? == _USBInHandle -> -> 0 `i `*Vv : -> 0 `i -> . . . . *U -> _USBInHandle `*VS1319 0 0 1 7 `i -> 0 `i 1435  ]
-[; ;main.c: 693: {
-"693
+[; ;main.c: 690: {
+"690
 {
-[; ;main.c: 694: memcpy(&ToSendDataBuffer[0], buffer, length);
-"694
+[; ;main.c: 691: memcpy(&ToSendDataBuffer[0], buffer, length);
+"691
 [e ( _memcpy (3 , , -> &U *U + &U _ToSendDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ToSendDataBuffer `ui `ux `*v -> _buffer `*Cv -> _length `ui ]
-[; ;main.c: 695: USBInHandle = USBTransferOnePacket(1,1,&ToSendDataBuffer[0],length);
-"695
+[; ;main.c: 692: USBInHandle = USBTransferOnePacket(1,1,&ToSendDataBuffer[0],length);
+"692
 [e = _USBInHandle -> ( _USBTransferOnePacket (4 , , , -> -> 1 `i `uc -> -> 1 `i `uc &U *U + &U _ToSendDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ToSendDataBuffer `ui `ux _length `*Vv ]
+[; ;main.c: 693: return 1;
+"693
+[e ) -> -> 1 `i `uc ]
+[e $UE 1430  ]
+"694
+}
+[e :U 1435 ]
+"695
+}
+[e :U 1432 ]
+"687
+[e $U 1433  ]
+[e :U 1434 ]
+[; ;main.c: 694: }
+[; ;main.c: 695: }
 [; ;main.c: 696: return 1;
 "696
 [e ) -> -> 1 `i `uc ]
 [e $UE 1430  ]
-"697
-}
-[e :U 1435 ]
-"698
-}
-[e :U 1432 ]
-"690
-[e $U 1433  ]
-[e :U 1434 ]
 [; ;main.c: 697: }
-[; ;main.c: 698: }
-[; ;main.c: 699: return 1;
-"699
-[e ) -> -> 1 `i `uc ]
-[e $UE 1430  ]
-[; ;main.c: 700: }
-"700
+"697
 [e :UE 1430 ]
 }
-"704
+"701
 [v _sendHIDText `(uc ~T0 @X0 1 ef1`*uc ]
-"705
+"702
 {
-[; ;main.c: 704: bool sendHIDText(char* str)
-[; ;main.c: 705: {
+[; ;main.c: 701: bool sendHIDText(char* str)
+[; ;main.c: 702: {
 [e :U _sendHIDText ]
-"704
+"701
 [v _str `*uc ~T0 @X0 1 r1 ]
-"705
+"702
 [f ]
-[; ;main.c: 706: if ((USBDeviceState < CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-"706
+[; ;main.c: 703: if ((USBDeviceState < CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
+"703
 [e $ ! || < -> _USBDeviceState `i -> . `E10064 6 `i == -> . . _UCONbits 0 1 `i -> 1 `i 1437  ]
-[; ;main.c: 707: {
-"707
+[; ;main.c: 704: {
+"704
 {
-[; ;main.c: 708: return 0;
-"708
+[; ;main.c: 705: return 0;
+"705
 [e ) -> -> 0 `i `uc ]
 [e $UE 1436  ]
-"709
+"706
 }
 [e :U 1437 ]
-[; ;main.c: 709: }
-[; ;main.c: 710: while (1)
-"710
+[; ;main.c: 706: }
+[; ;main.c: 707: while (1)
+"707
 [e :U 1439 ]
-[; ;main.c: 711: {
-"711
+[; ;main.c: 708: {
+"708
 {
-[; ;main.c: 712: if(!(USBInHandle==0?0:((volatile BDT_ENTRY*)USBInHandle)->STAT.UOWN))
-"712
+[; ;main.c: 709: if(!(USBInHandle==0?0:((volatile BDT_ENTRY*)USBInHandle)->STAT.UOWN))
+"709
 [e $ ! ! != ? == _USBInHandle -> -> 0 `i `*Vv : -> 0 `i -> . . . . *U -> _USBInHandle `*VS1319 0 0 1 7 `i -> 0 `i 1441  ]
-[; ;main.c: 713: {
-"713
+[; ;main.c: 710: {
+"710
 {
-"714
+"711
 [v _p `*uc ~T0 @X0 1 a ]
-[; ;main.c: 714: uint8_t* p = &ToSendDataBuffer[0];
+[; ;main.c: 711: uint8_t* p = &ToSendDataBuffer[0];
 [e = _p &U *U + &U _ToSendDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ToSendDataBuffer `ui `ux ]
-"715
+"712
 [v _size `i ~T0 @X0 1 a ]
-[; ;main.c: 715: int size = 0;
+[; ;main.c: 712: int size = 0;
 [e = _size -> 0 `i ]
-"716
+"713
 [v _c `uc ~T0 @X0 1 a ]
-[; ;main.c: 716: uint8_t c;
-[; ;main.c: 717: while ( c = *str++ )
-"717
+[; ;main.c: 713: uint8_t c;
+[; ;main.c: 714: while ( c = *str++ )
+"714
 [e $U 1442  ]
 [e :U 1443 ]
-[; ;main.c: 718: {
-"718
+[; ;main.c: 715: {
+"715
 {
-[; ;main.c: 719: *p = c;
-"719
+[; ;main.c: 716: *p = c;
+"716
 [e = *U _p _c ]
-[; ;main.c: 720: p++;
-"720
+[; ;main.c: 717: p++;
+"717
 [e ++ _p * -> -> 1 `i `x -> -> # *U _p `i `x ]
-[; ;main.c: 721: size++;
-"721
+[; ;main.c: 718: size++;
+"718
 [e ++ _size -> 1 `i ]
-"722
+"719
 }
 [e :U 1442 ]
-"717
+"714
 [e $ != -> = _c *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x `i -> -> -> 0 `i `uc `i 1443  ]
 [e :U 1444 ]
-[; ;main.c: 722: }
-[; ;main.c: 723: USBInHandle = USBTransferOnePacket(1,1,&ToSendDataBuffer[0],size);
-"723
+[; ;main.c: 719: }
+[; ;main.c: 720: USBInHandle = USBTransferOnePacket(1,1,&ToSendDataBuffer[0],size);
+"720
 [e = _USBInHandle -> ( _USBTransferOnePacket (4 , , , -> -> 1 `i `uc -> -> 1 `i `uc &U *U + &U _ToSendDataBuffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _ToSendDataBuffer `ui `ux -> _size `uc `*Vv ]
+[; ;main.c: 721: return 1;
+"721
+[e ) -> -> 1 `i `uc ]
+[e $UE 1436  ]
+"722
+}
+[e :U 1441 ]
+"723
+}
+[e :U 1438 ]
+"707
+[e $U 1439  ]
+[e :U 1440 ]
+[; ;main.c: 722: }
+[; ;main.c: 723: }
 [; ;main.c: 724: return 1;
 "724
 [e ) -> -> 1 `i `uc ]
 [e $UE 1436  ]
-"725
-}
-[e :U 1441 ]
-"726
-}
-[e :U 1438 ]
-"710
-[e $U 1439  ]
-[e :U 1440 ]
 [; ;main.c: 725: }
-[; ;main.c: 726: }
-[; ;main.c: 727: return 1;
-"727
-[e ) -> -> 1 `i `uc ]
-[e $UE 1436  ]
-[; ;main.c: 728: }
-"728
+"725
 [e :UE 1436 ]
 }
-"732
+"729
 [v _update_LED `(v ~T0 @X0 1 ef ]
-"733
+"730
 {
-[; ;main.c: 732: void update_LED()
-[; ;main.c: 733: {
+[; ;main.c: 729: void update_LED()
+[; ;main.c: 730: {
 [e :U _update_LED ]
 [f ]
-[; ;main.c: 734: switch(status_led)
-"734
+[; ;main.c: 731: switch(status_led)
+"731
 [e $U 1447  ]
-[; ;main.c: 735: {
-"735
+[; ;main.c: 732: {
+"732
 {
-[; ;main.c: 736: case LED_OFF:
-"736
+[; ;main.c: 733: case LED_OFF:
+"733
 [e :U 1448 ]
-[; ;main.c: 738: CCP1CONbits.DC1B0 = 0;
-"738
+[; ;main.c: 735: CCP1CONbits.DC1B0 = 0;
+"735
 [e = . . _CCP1CONbits 1 4 -> -> 0 `i `uc ]
-[; ;main.c: 739: CCP1CONbits.DC1B1 = 0;
-"739
+[; ;main.c: 736: CCP1CONbits.DC1B1 = 0;
+"736
 [e = . . _CCP1CONbits 1 5 -> -> 0 `i `uc ]
-[; ;main.c: 740: CCPR1L = 0;
-"740
+[; ;main.c: 737: CCPR1L = 0;
+"737
 [e = _CCPR1L -> -> 0 `i `uc ]
-[; ;main.c: 741: LED_increasing = 1;
-"741
+[; ;main.c: 738: LED_increasing = 1;
+"738
 [e = _LED_increasing -> -> 1 `i `uc ]
-[; ;main.c: 742: break;
-"742
+[; ;main.c: 739: break;
+"739
 [e $U 1446  ]
-[; ;main.c: 744: case LED_FULL:
-"744
+[; ;main.c: 741: case LED_FULL:
+"741
 [e :U 1449 ]
-[; ;main.c: 746: CCP1CONbits.DC1B0 = 1023 & 1;
-"746
+[; ;main.c: 743: CCP1CONbits.DC1B0 = 1023 & 1;
+"743
 [e = . . _CCP1CONbits 1 4 -> & -> 1023 `i -> 1 `i `uc ]
-[; ;main.c: 747: CCP1CONbits.DC1B1 = (1023 >> 1) & 1;
-"747
+[; ;main.c: 744: CCP1CONbits.DC1B1 = (1023 >> 1) & 1;
+"744
 [e = . . _CCP1CONbits 1 5 -> & >> -> 1023 `i -> 1 `i -> 1 `i `uc ]
-[; ;main.c: 748: CCPR1L = (1023 >> 2);
-"748
+[; ;main.c: 745: CCPR1L = (1023 >> 2);
+"745
 [e = _CCPR1L -> >> -> 1023 `i -> 2 `i `uc ]
-[; ;main.c: 749: repeat_full = 4;
-"749
+[; ;main.c: 746: repeat_full = 4;
+"746
 [e = _repeat_full -> -> 4 `i `uc ]
-[; ;main.c: 750: break;
-"750
+[; ;main.c: 747: break;
+"747
 [e $U 1446  ]
-[; ;main.c: 752: case LED_FAST_PULSE:
-"752
+[; ;main.c: 749: case LED_FAST_PULSE:
+"749
 [e :U 1450 ]
-[; ;main.c: 753: T4CONbits.T4CKPS = 0b01;
-"753
+[; ;main.c: 750: T4CONbits.T4CKPS = 0b01;
+"750
 [e = . . _T4CONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 755: CCP1CONbits.DC1B0 = 235 & 1;
+[; ;main.c: 752: CCP1CONbits.DC1B0 = 235 & 1;
+"752
+[e = . . _CCP1CONbits 1 4 -> & -> 235 `i -> 1 `i `uc ]
+[; ;main.c: 753: CCP1CONbits.DC1B1 = (235 >> 1) & 1;
+"753
+[e = . . _CCP1CONbits 1 5 -> & >> -> 235 `i -> 1 `i -> 1 `i `uc ]
+[; ;main.c: 754: CCPR1L = (235 >> 2);
+"754
+[e = _CCPR1L -> >> -> 235 `i -> 2 `i `uc ]
+[; ;main.c: 755: LED_increasing = 0;
 "755
-[e = . . _CCP1CONbits 1 4 -> & -> 235 `i -> 1 `i `uc ]
-[; ;main.c: 756: CCP1CONbits.DC1B1 = (235 >> 1) & 1;
+[e = _LED_increasing -> -> 0 `i `uc ]
+[; ;main.c: 756: break;
 "756
-[e = . . _CCP1CONbits 1 5 -> & >> -> 235 `i -> 1 `i -> 1 `i `uc ]
-[; ;main.c: 757: CCPR1L = (235 >> 2);
-"757
-[e = _CCPR1L -> >> -> 235 `i -> 2 `i `uc ]
-[; ;main.c: 758: LED_increasing = 0;
+[e $U 1446  ]
+[; ;main.c: 758: case LED_SLOW_PULSE:
 "758
-[e = _LED_increasing -> -> 0 `i `uc ]
-[; ;main.c: 759: break;
-"759
-[e $U 1446  ]
-[; ;main.c: 761: case LED_SLOW_PULSE:
-"761
 [e :U 1451 ]
-[; ;main.c: 762: T4CONbits.T4CKPS = 0b11;
-"762
+[; ;main.c: 759: T4CONbits.T4CKPS = 0b11;
+"759
 [e = . . _T4CONbits 0 0 -> -> 3 `i `uc ]
-[; ;main.c: 764: CCP1CONbits.DC1B0 = 235 & 1;
-"764
+[; ;main.c: 761: CCP1CONbits.DC1B0 = 235 & 1;
+"761
 [e = . . _CCP1CONbits 1 4 -> & -> 235 `i -> 1 `i `uc ]
-[; ;main.c: 765: CCP1CONbits.DC1B1 = (235 >> 1) & 1;
-"765
+[; ;main.c: 762: CCP1CONbits.DC1B1 = (235 >> 1) & 1;
+"762
 [e = . . _CCP1CONbits 1 5 -> & >> -> 235 `i -> 1 `i -> 1 `i `uc ]
-[; ;main.c: 766: CCPR1L = (235 >> 2);
-"766
+[; ;main.c: 763: CCPR1L = (235 >> 2);
+"763
 [e = _CCPR1L -> >> -> 235 `i -> 2 `i `uc ]
-[; ;main.c: 767: LED_increasing = 0;
-"767
+[; ;main.c: 764: LED_increasing = 0;
+"764
 [e = _LED_increasing -> -> 0 `i `uc ]
-[; ;main.c: 768: break;
-"768
+[; ;main.c: 765: break;
+"765
 [e $U 1446  ]
-"769
+"766
 }
-[; ;main.c: 769: }
+[; ;main.c: 766: }
 [e $U 1446  ]
-"734
+"731
 [e :U 1447 ]
 [e [\ _status_led , $ . `E10824 0 1448
  , $ . `E10824 3 1449
  , $ . `E10824 1 1450
  , $ . `E10824 2 1451
  1446 ]
-"769
+"766
 [e :U 1446 ]
-[; ;main.c: 770: }
-"770
+[; ;main.c: 767: }
+"767
 [e :UE 1445 ]
 }
 [v F10882 `(v ~T0 @X0 1 tf ]
-"779
+"776
 [v _SYS_InterruptHigh `IF10882 ~T0 @X0 1 e ]
-"780
+"777
 {
-[; ;main.c: 779: void interrupt SYS_InterruptHigh(void)
-[; ;main.c: 780: {
+[; ;main.c: 776: void interrupt SYS_InterruptHigh(void)
+[; ;main.c: 777: {
 [e :U _SYS_InterruptHigh ]
 [f ]
-[; ;main.c: 781: MIWIInterruptHandler();
-"781
+[; ;main.c: 778: MIWIInterruptHandler();
+"778
 [e ( _MIWIInterruptHandler ..  ]
-[; ;main.c: 782: }
-"782
+[; ;main.c: 779: }
+"779
 [e :UE 1452 ]
 }
 [v F10885 `(v ~T0 @X0 1 tf ]
-"787
+"784
 [v _SYS_InterruptLow `ILF10885 ~T0 @X0 1 e ]
-"788
+"785
 {
-[; ;main.c: 787: void interrupt low_priority SYS_InterruptLow(void)
-[; ;main.c: 788: {
+[; ;main.c: 784: void interrupt low_priority SYS_InterruptLow(void)
+[; ;main.c: 785: {
 [e :U _SYS_InterruptLow ]
 [f ]
-[; ;main.c: 789: USBDeviceTasks();
-"789
+[; ;main.c: 786: USBDeviceTasks();
+"786
 [e ( _USBDeviceTasks ..  ]
-[; ;main.c: 790: if (PIR3bits.TMR4IF)
-"790
+[; ;main.c: 787: if (PIR3bits.TMR4IF)
+"787
 [e $ ! != -> . . _PIR3bits 0 3 `i -> -> -> 0 `i `Vuc `i 1454  ]
+[; ;main.c: 788: {
+"788
+{
+[; ;main.c: 789: PIR3bits.TMR4IF = 0;
+"789
+[e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 790: if ((status_led == LED_SLOW_PULSE)||(status_led == LED_FAST_PULSE))
+"790
+[e $ ! || == -> _status_led `i -> . `E10824 2 `i == -> _status_led `i -> . `E10824 1 `i 1455  ]
 [; ;main.c: 791: {
 "791
 {
-[; ;main.c: 792: PIR3bits.TMR4IF = 0;
+[; ;main.c: 792: if (LED_increasing == 1)
 "792
-[e = . . _PIR3bits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 793: if ((status_led == LED_SLOW_PULSE)||(status_led == LED_FAST_PULSE))
-"793
-[e $ ! || == -> _status_led `i -> . `E10824 2 `i == -> _status_led `i -> . `E10824 1 `i 1455  ]
-[; ;main.c: 794: {
-"794
-{
-[; ;main.c: 795: if (LED_increasing == 1)
-"795
 [e $ ! == -> _LED_increasing `i -> 1 `i 1456  ]
+[; ;main.c: 793: {
+"793
+{
+[; ;main.c: 794: LED_brightness = LED_brightness + 2;
+"794
+[e = _LED_brightness + _LED_brightness -> -> 2 `i `ui ]
+[; ;main.c: 795: if (LED_brightness >= 235)
+"795
+[e $ ! >= _LED_brightness -> -> 235 `i `ui 1457  ]
 [; ;main.c: 796: {
 "796
 {
-[; ;main.c: 797: LED_brightness = LED_brightness + 2;
+[; ;main.c: 797: LED_brightness = 235;
 "797
-[e = _LED_brightness + _LED_brightness -> -> 2 `i `ui ]
-[; ;main.c: 798: if (LED_brightness >= 235)
-"798
-[e $ ! >= _LED_brightness -> -> 235 `i `ui 1457  ]
-[; ;main.c: 799: {
-"799
-{
-[; ;main.c: 800: LED_brightness = 235;
-"800
 [e = _LED_brightness -> -> 235 `i `ui ]
-[; ;main.c: 801: LED_increasing = 0;
-"801
+[; ;main.c: 798: LED_increasing = 0;
+"798
 [e = _LED_increasing -> -> 0 `i `uc ]
-"802
+"799
 }
 [e :U 1457 ]
-"803
+"800
 }
-[; ;main.c: 802: }
-[; ;main.c: 803: }
+[; ;main.c: 799: }
+[; ;main.c: 800: }
 [e $U 1458  ]
-"804
+"801
 [e :U 1456 ]
-[; ;main.c: 804: else
+[; ;main.c: 801: else
+[; ;main.c: 802: {
+"802
+{
+[; ;main.c: 803: LED_brightness = LED_brightness - 2;
+"803
+[e = _LED_brightness - _LED_brightness -> -> 2 `i `ui ]
+[; ;main.c: 804: if (LED_brightness <= 10)
+"804
+[e $ ! <= _LED_brightness -> -> 10 `i `ui 1459  ]
 [; ;main.c: 805: {
 "805
 {
-[; ;main.c: 806: LED_brightness = LED_brightness - 2;
+[; ;main.c: 806: LED_brightness = 10;
 "806
-[e = _LED_brightness - _LED_brightness -> -> 2 `i `ui ]
-[; ;main.c: 807: if (LED_brightness <= 10)
-"807
-[e $ ! <= _LED_brightness -> -> 10 `i `ui 1459  ]
-[; ;main.c: 808: {
-"808
-{
-[; ;main.c: 809: LED_brightness = 10;
-"809
 [e = _LED_brightness -> -> 10 `i `ui ]
-[; ;main.c: 810: LED_increasing = 1;
-"810
+[; ;main.c: 807: LED_increasing = 1;
+"807
 [e = _LED_increasing -> -> 1 `i `uc ]
-"811
+"808
 }
 [e :U 1459 ]
-"812
+"809
 }
 [e :U 1458 ]
-[; ;main.c: 811: }
-[; ;main.c: 812: }
-[; ;main.c: 814: CCP1CONbits.DC1B0 = LED_brightness & 1;
-"814
+[; ;main.c: 808: }
+[; ;main.c: 809: }
+[; ;main.c: 811: CCP1CONbits.DC1B0 = LED_brightness & 1;
+"811
 [e = . . _CCP1CONbits 1 4 -> & _LED_brightness -> -> 1 `i `ui `uc ]
-[; ;main.c: 815: CCP1CONbits.DC1B1 = (LED_brightness >> 1) & 1;
-"815
+[; ;main.c: 812: CCP1CONbits.DC1B1 = (LED_brightness >> 1) & 1;
+"812
 [e = . . _CCP1CONbits 1 5 -> & >> _LED_brightness -> 1 `i -> -> 1 `i `ui `uc ]
-[; ;main.c: 816: CCPR1L = (LED_brightness >> 2);
-"816
+[; ;main.c: 813: CCPR1L = (LED_brightness >> 2);
+"813
 [e = _CCPR1L -> >> _LED_brightness -> 2 `i `uc ]
-"817
+"814
 }
 [e :U 1455 ]
-[; ;main.c: 817: }
-[; ;main.c: 818: if (status_led == LED_FULL)
-"818
+[; ;main.c: 814: }
+[; ;main.c: 815: if (status_led == LED_FULL)
+"815
 [e $ ! == -> _status_led `i -> . `E10824 3 `i 1460  ]
+[; ;main.c: 816: {
+"816
+{
+[; ;main.c: 817: repeat_full = repeat_full - 1;
+"817
+[e = _repeat_full -> - -> _repeat_full `i -> 1 `i `uc ]
+[; ;main.c: 818: if (repeat_full == 0)
+"818
+[e $ ! == -> _repeat_full `i -> 0 `i 1461  ]
 [; ;main.c: 819: {
 "819
 {
-[; ;main.c: 820: repeat_full = repeat_full - 1;
+[; ;main.c: 820: if (myAppState == STATE_INIT)
 "820
-[e = _repeat_full -> - -> _repeat_full `i -> 1 `i `uc ]
-[; ;main.c: 821: if (repeat_full == 0)
-"821
-[e $ ! == -> _repeat_full `i -> 0 `i 1461  ]
-[; ;main.c: 822: {
-"822
-{
-[; ;main.c: 823: if (myAppState == STATE_INIT)
-"823
 [e $ ! == -> _myAppState `i -> . `E9788 0 `i 1462  ]
-[; ;main.c: 824: status_led = LED_FAST_PULSE;
-"824
+[; ;main.c: 821: status_led = LED_FAST_PULSE;
+"821
 [e = _status_led . `E10824 1 ]
 [e $U 1463  ]
-"825
+"822
 [e :U 1462 ]
-[; ;main.c: 825: else if (myAppState == STATE_USB_READY)
+[; ;main.c: 822: else if (myAppState == STATE_USB_READY)
 [e $ ! == -> _myAppState `i -> . `E9788 1 `i 1464  ]
-[; ;main.c: 826: status_led = LED_FAST_PULSE;
-"826
+[; ;main.c: 823: status_led = LED_FAST_PULSE;
+"823
 [e = _status_led . `E10824 1 ]
 [e $U 1465  ]
-"827
+"824
 [e :U 1464 ]
-[; ;main.c: 827: else if (myAppState == STATE_READY)
+[; ;main.c: 824: else if (myAppState == STATE_READY)
 [e $ ! == -> _myAppState `i -> . `E9788 2 `i 1466  ]
-[; ;main.c: 828: status_led = LED_SLOW_PULSE;
-"828
+[; ;main.c: 825: status_led = LED_SLOW_PULSE;
+"825
 [e = _status_led . `E10824 2 ]
 [e $U 1467  ]
-"829
+"826
 [e :U 1466 ]
-[; ;main.c: 829: else if (myAppState == STATE_PROBLEM)
+[; ;main.c: 826: else if (myAppState == STATE_PROBLEM)
 [e $ ! == -> _myAppState `i -> . `E9788 3 `i 1468  ]
-[; ;main.c: 830: status_led = LED_OFF;
-"830
+[; ;main.c: 827: status_led = LED_OFF;
+"827
 [e = _status_led . `E10824 0 ]
 [e :U 1468 ]
-"831
+"828
 [e :U 1467 ]
 [e :U 1465 ]
 [e :U 1463 ]
-[; ;main.c: 831: update_LED();
+[; ;main.c: 828: update_LED();
 [e ( _update_LED ..  ]
-"832
+"829
 }
 [e :U 1461 ]
-"833
+"830
 }
 [e :U 1460 ]
-"834
+"831
 }
-[; ;main.c: 832: }
-[; ;main.c: 833: }
-[; ;main.c: 834: }
+[; ;main.c: 829: }
+[; ;main.c: 830: }
+[; ;main.c: 831: }
 [e $U 1469  ]
-"835
+"832
 [e :U 1454 ]
-[; ;main.c: 835: else if(PIR3bits.RTCCIF)
+[; ;main.c: 832: else if(PIR3bits.RTCCIF)
 [e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1470  ]
-[; ;main.c: 836: {
-"836
+[; ;main.c: 833: {
+"833
 {
-[; ;main.c: 837: m_uptime_days = m_uptime_days + 0.000740741F;
-"837
+[; ;main.c: 834: m_uptime_days = m_uptime_days + 0.000740741F;
+"834
 [e = _m_uptime_days + _m_uptime_days -> .0.000740741 `f ]
-[; ;main.c: 838: timer_count = timer_count - 1;
-"838
+[; ;main.c: 835: timer_count = timer_count - 1;
+"835
 [e = _timer_count -> - -> _timer_count `i -> 1 `i `uc ]
-[; ;main.c: 839: if (timer_count == 0)
-"839
+[; ;main.c: 836: if (timer_count == 0)
+"836
 [e $ ! == -> _timer_count `i -> 0 `i 1471  ]
-[; ;main.c: 840: {
-"840
+[; ;main.c: 837: {
+"837
 {
-[; ;main.c: 841: timer_flag = 1;
-"841
+[; ;main.c: 838: timer_flag = 1;
+"838
 [e = _timer_flag -> -> 1 `i `uc ]
-[; ;main.c: 842: if (m_update_frequency == 0)
-"842
+[; ;main.c: 839: if (m_update_frequency == 0)
+"839
 [e $ ! == -> _m_update_frequency `i -> 0 `i 1472  ]
-[; ;main.c: 843: timer_count = 1;
-"843
+[; ;main.c: 840: timer_count = 1;
+"840
 [e = _timer_count -> -> 1 `i `uc ]
 [e $U 1473  ]
-"844
+"841
 [e :U 1472 ]
-[; ;main.c: 844: else
-[; ;main.c: 845: timer_count = m_update_frequency;
-"845
+[; ;main.c: 841: else
+[; ;main.c: 842: timer_count = m_update_frequency;
+"842
 [e = _timer_count _m_update_frequency ]
 [e :U 1473 ]
-"846
+"843
 }
 [e :U 1471 ]
-[; ;main.c: 846: }
-[; ;main.c: 847: PIR3bits.RTCCIF = 0;
-"847
+[; ;main.c: 843: }
+[; ;main.c: 844: PIR3bits.RTCCIF = 0;
+"844
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"848
+"845
 }
 [e :U 1470 ]
-"849
+"846
 [e :U 1469 ]
-[; ;main.c: 848: }
-[; ;main.c: 849: }
+[; ;main.c: 845: }
+[; ;main.c: 846: }
 [e :UE 1453 ]
 }
-"853
+"850
 [v _USER_USB_CALLBACK_EVENT_HANDLER `(uc ~T0 @X0 1 ef3`E10007`*v`ui ]
-"854
+"851
 {
-[; ;main.c: 853: bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
-[; ;main.c: 854: {
+[; ;main.c: 850: bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
+[; ;main.c: 851: {
 [e :U _USER_USB_CALLBACK_EVENT_HANDLER ]
-"853
+"850
 [v _event `E10007 ~T0 @X0 1 r1 ]
 [v _pdata `*v ~T0 @X0 1 r2 ]
 [v _size `ui ~T0 @X0 1 r3 ]
-"854
+"851
 [f ]
-[; ;main.c: 855: switch((int)event)
-"855
+[; ;main.c: 852: switch((int)event)
+"852
 [e $U 1476  ]
-[; ;main.c: 856: {
-"856
+[; ;main.c: 853: {
+"853
 {
-[; ;main.c: 857: case EVENT_TRANSFER:
-"857
+[; ;main.c: 854: case EVENT_TRANSFER:
+"854
 [e :U 1477 ]
-[; ;main.c: 858: break;
-"858
+[; ;main.c: 855: break;
+"855
 [e $U 1475  ]
-[; ;main.c: 860: case EVENT_SOF:
-"860
+[; ;main.c: 857: case EVENT_SOF:
+"857
 [e :U 1478 ]
-[; ;main.c: 863: APP_LEDUpdateUSBStatus();
+[; ;main.c: 860: APP_LEDUpdateUSBStatus();
+"860
+[e ( _APP_LEDUpdateUSBStatus ..  ]
+[; ;main.c: 861: break;
+"861
+[e $U 1475  ]
+[; ;main.c: 863: case EVENT_SUSPEND:
 "863
-[e ( _APP_LEDUpdateUSBStatus ..  ]
-[; ;main.c: 864: break;
-"864
-[e $U 1475  ]
-[; ;main.c: 866: case EVENT_SUSPEND:
-"866
 [e :U 1479 ]
-[; ;main.c: 868: APP_LEDUpdateUSBStatus();
+[; ;main.c: 865: APP_LEDUpdateUSBStatus();
+"865
+[e ( _APP_LEDUpdateUSBStatus ..  ]
+[; ;main.c: 866: break;
+"866
+[e $U 1475  ]
+[; ;main.c: 868: case EVENT_RESUME:
 "868
-[e ( _APP_LEDUpdateUSBStatus ..  ]
-[; ;main.c: 869: break;
-"869
-[e $U 1475  ]
-[; ;main.c: 871: case EVENT_RESUME:
-"871
 [e :U 1480 ]
-[; ;main.c: 873: APP_LEDUpdateUSBStatus();
-"873
+[; ;main.c: 870: APP_LEDUpdateUSBStatus();
+"870
 [e ( _APP_LEDUpdateUSBStatus ..  ]
-[; ;main.c: 874: break;
-"874
+[; ;main.c: 871: break;
+"871
 [e $U 1475  ]
-[; ;main.c: 876: case EVENT_CONFIGURED:
-"876
+[; ;main.c: 873: case EVENT_CONFIGURED:
+"873
 [e :U 1481 ]
-[; ;main.c: 879: APP_DeviceCustomHIDInitialize();
-"879
+[; ;main.c: 876: APP_DeviceCustomHIDInitialize();
+"876
 [e ( _APP_DeviceCustomHIDInitialize ..  ]
+[; ;main.c: 877: break;
+"877
+[e $U 1475  ]
+[; ;main.c: 879: case EVENT_SET_DESCRIPTOR:
+"879
+[e :U 1482 ]
 [; ;main.c: 880: break;
 "880
 [e $U 1475  ]
-[; ;main.c: 882: case EVENT_SET_DESCRIPTOR:
+[; ;main.c: 882: case EVENT_EP0_REQUEST:
 "882
-[e :U 1482 ]
-[; ;main.c: 883: break;
-"883
-[e $U 1475  ]
-[; ;main.c: 885: case EVENT_EP0_REQUEST:
-"885
 [e :U 1483 ]
-[; ;main.c: 888: USBCheckHIDRequest();
-"888
+[; ;main.c: 885: USBCheckHIDRequest();
+"885
 [e ( _USBCheckHIDRequest ..  ]
+[; ;main.c: 886: break;
+"886
+[e $U 1475  ]
+[; ;main.c: 888: case EVENT_BUS_ERROR:
+"888
+[e :U 1484 ]
 [; ;main.c: 889: break;
 "889
 [e $U 1475  ]
-[; ;main.c: 891: case EVENT_BUS_ERROR:
+[; ;main.c: 891: case EVENT_TRANSFER_TERMINATED:
 "891
-[e :U 1484 ]
+[e :U 1485 ]
 [; ;main.c: 892: break;
 "892
 [e $U 1475  ]
-[; ;main.c: 894: case EVENT_TRANSFER_TERMINATED:
+[; ;main.c: 894: default:
 "894
-[e :U 1485 ]
+[e :U 1486 ]
 [; ;main.c: 895: break;
 "895
 [e $U 1475  ]
-[; ;main.c: 897: default:
-"897
-[e :U 1486 ]
-[; ;main.c: 898: break;
-"898
-[e $U 1475  ]
-"899
+"896
 }
-[; ;main.c: 899: }
+[; ;main.c: 896: }
 [e $U 1475  ]
-"855
+"852
 [e :U 1476 ]
 [e [\ -> _event `i , $ -> . `E10007 16 `i 1477
  , $ -> . `E10007 17 `i 1478
@@ -12362,51 +12365,51 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> . `E10007 33 `i 1484
  , $ -> . `E10073 4 `i 1485
  1486 ]
-"899
+"896
 [e :U 1475 ]
-[; ;main.c: 900: return 1;
-"900
+[; ;main.c: 897: return 1;
+"897
 [e ) -> -> 1 `i `uc ]
 [e $UE 1474  ]
-[; ;main.c: 901: }
-"901
+[; ;main.c: 898: }
+"898
 [e :UE 1474 ]
 }
-"903
+"900
 [v _wait_for_1_sec `(v ~T0 @X0 1 ef ]
-"904
+"901
 {
-[; ;main.c: 903: void wait_for_1_sec()
-[; ;main.c: 904: {
+[; ;main.c: 900: void wait_for_1_sec()
+[; ;main.c: 901: {
 [e :U _wait_for_1_sec ]
 [f ]
-"905
+"902
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 905: unsigned int i;
-[; ;main.c: 906: for (i=0; i<100; i++)
-"906
+[; ;main.c: 902: unsigned int i;
+[; ;main.c: 903: for (i=0; i<100; i++)
+"903
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 100 `i `ui 1488  ]
 [e $U 1489  ]
-"907
+"904
 [e :U 1488 ]
-[; ;main.c: 907: {
+[; ;main.c: 904: {
 {
-[; ;main.c: 908: _delay((unsigned long)((10)*(16000000/4000.0)));
-"908
+[; ;main.c: 905: _delay((unsigned long)((10)*(16000000/4000.0)));
+"905
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"909
-}
 "906
+}
+"903
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 100 `i `ui 1488  ]
 [e :U 1489 ]
-"909
+"906
 }
-[; ;main.c: 909: }
-[; ;main.c: 910: }
-"910
+[; ;main.c: 906: }
+[; ;main.c: 907: }
+"907
 [e :UE 1487 ]
 }
 [p f _sprintf 12877956 ]

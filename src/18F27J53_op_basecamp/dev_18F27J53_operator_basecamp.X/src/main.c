@@ -1,5 +1,5 @@
 /*
- * MUTA operator / basecamp - r1 - 01/2016
+ * MUTA operator / basecamp - r2 (MUTA v01) - 12/2016
  * 
  * Main source code: copyright (2015-2016) Nicolas Barthe,
  * distributed as open source under the terms
@@ -44,14 +44,9 @@ let's put some const at the end of flash memory:
     model of the unit (00: operator, 01:scout, 02:enforcer...)
     + make of the unit (1 for mk1, 2 for mk2...) */
 const uint8_t myMUTA_version @ 0x01FFF2 = 0x01; // MUTA protocol version
-#ifdef MK1
-const uint8_t myMODEL @ 0x01FFF4 = 0x01; // operator mk1
-#else #ifdef MK3
-const uint8_t myMODEL @ 0x01FFF4 = 0x03; // operator mk3
-#endif
+const uint8_t myMODEL @ 0x01FFF4 = 0x00; // operator
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x00 }; // UID, must be unique!
-//const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 }; // UID, must be unique!
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x01 }; // UID, must be unique!
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
                                     // done at the beginning of main()
 /* this is the 64bit key that will be used for encryption/decryption
@@ -75,7 +70,8 @@ ex.: HEXMATE source.hex -FILL=0xBEEF@0x1000 -Odest.hex */
 // Possible channel numbers are from 0 to 31
 // channels 0,4,8,12,16,20,24,28 (energy scan duration: ~22sec)
 //#define MUTA_CHANNELS      0x11111111
-#define MUTA_CHANNELS      0x00000100
+#define MUTA_CHANNELS      0x01010101   // channel 0,8,16,24 only
+//#define MUTA_CHANNELS      0x00000001   // channel 0 only
 
 // to use the internal RTCC as a timer (with frequency==multiples of 1min, default @1min)
 #define DEFAULT_UPDATE_FREQUENCY    1
@@ -565,7 +561,8 @@ void send_answer_to_update()
         m_var.unit = MUTA_MWATT_UNIT;
         dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
         m_var.writable = true;
-        p_buffer += encode_ufixed16_variable(p_buffer, m_var);        
+        p_buffer += encode_ufixed16_variable(p_buffer, m_var);  
+        Pwr_updated = false;
     }
     if (UpF_updated)
     {
