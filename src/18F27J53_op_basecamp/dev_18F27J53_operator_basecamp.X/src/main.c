@@ -101,6 +101,7 @@ MUTA_VARIABLE m_var;
 
 // Main functions / helpers to keep the main code simple & clean
 void timer_reset();
+void RTCC_reset();
 void send_network_register();
 void send_complete_update();
 void send_answer_to_update();
@@ -285,6 +286,7 @@ void main(void)
     update_LED();
     
     m_uptime_days = 0;
+    RTCC_reset();
     timer_reset();
     
     // D) MAIN LOOP
@@ -646,15 +648,19 @@ void update_variable()
     }
 }
 
-void timer_reset()
+void RTCC_reset()
 {
-    /*RtccWrOn(); //write enable the rtcc registers
+    RtccWrOn(); //write enable the rtcc registers
     RTCCFGbits.RTCPTR0 = 0; //RTCVALH/L will point to min/seconds values
     RTCCFGbits.RTCPTR1 = 0;
     RTCVALHbits.RTCVALH = 0x00; // write 00 to min & sec
     RTCVALLbits.RTCVALL = 0x00;
     mRtccWrOff();   // write disable rtcc regs
-    */
+}
+
+void timer_reset()
+{
+
     if (m_update_frequency == 0) // special debug mode:every 10sec
         timer_count = 1;
     else

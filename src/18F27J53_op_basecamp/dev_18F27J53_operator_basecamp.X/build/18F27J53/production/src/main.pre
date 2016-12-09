@@ -13109,6 +13109,7 @@ MUTA_VARIABLE m_var;
 
 
 void timer_reset();
+void RTCC_reset();
 void send_network_register();
 void send_complete_update();
 void send_answer_to_update();
@@ -13167,19 +13168,19 @@ myLongAddress[3] = myUID[1];
 for (int x=0; x<8; x++)
 mySecurityKey[x] = StaticSecurityKey[x];
 
-# 167
+# 168
 status_led = LED_FAST_PULSE;
 update_LED();
 
 
 USBDeviceInit();
 
-# 175
+# 176
 USBDeviceAttach();
 while(1)
 {
 
-# 181
+# 182
 if( USBDeviceState < CONFIGURED_STATE )
 continue;
 if( UCONbits.SUSPND == 1 )
@@ -13205,7 +13206,7 @@ switch (ReceivedDataBuffer[0])
 case 0x53:
 if (ReceivedDataBuffer[1] != 0x00 || ReceivedDataBuffer[2] != 0x00 || ReceivedDataBuffer[3] != 4 ||ReceivedDataBuffer[4] != 02 || ReceivedDataBuffer[5] != 0xff)
 
-# 207
+# 208
 {
 asm("reset");
 }
@@ -13287,6 +13288,7 @@ status_led = LED_SLOW_PULSE;
 update_LED();
 
 m_uptime_days = 0;
+RTCC_reset();
 timer_reset();
 
 
@@ -13441,7 +13443,7 @@ MiApp_UnicastAddress(&shortaddress, 0, 0) == 1;
 else
 MiApp_UnicastAddress(&shortaddress, 0, 1);
 
-# 445
+# 447
 }
 break;
 default:
@@ -13615,7 +13617,7 @@ Pwr_updated = 1;
 }
 else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 
-# 618
+# 620
 {
 if (m_var.value_byte1 == 0)
 {
@@ -13647,10 +13649,19 @@ UpF_updated = 1;
 }
 }
 
+void RTCC_reset()
+{
+RtccWrOn();
+RTCCFGbits.RTCPTR0 = 0;
+RTCCFGbits.RTCPTR1 = 0;
+RTCVALHbits.RTCVALH = 0x00;
+RTCVALLbits.RTCVALL = 0x00;
+(RTCCFGbits.RTCWREN = 0);
+}
+
 void timer_reset()
 {
 
-# 658
 if (m_update_frequency == 0)
 timer_count = 1;
 else
@@ -13762,7 +13773,7 @@ break;
 }
 }
 
-# 776
+# 782
 void interrupt SYS_InterruptHigh(void)
 {
 MIWIInterruptHandler();
@@ -13846,7 +13857,7 @@ break;
 
 case EVENT_SOF:
 
-# 860
+# 866
 APP_LEDUpdateUSBStatus();
 break;
 
@@ -13862,7 +13873,7 @@ break;
 
 case EVENT_CONFIGURED:
 
-# 876
+# 882
 APP_DeviceCustomHIDInitialize();
 break;
 
@@ -13871,7 +13882,7 @@ break;
 
 case EVENT_EP0_REQUEST:
 
-# 885
+# 891
 USBCheckHIDRequest();
 break;
 

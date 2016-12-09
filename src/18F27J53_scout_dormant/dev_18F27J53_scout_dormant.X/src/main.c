@@ -115,6 +115,7 @@ bool send_writables_update();
 bool send_periodical_update();
 void update_variable();
 void timer_reset();
+void RTCC_reset();
 void wait_for_1_sec();
 
 // temp sensor I2C address
@@ -132,13 +133,8 @@ APP_STATE   myAppState; // track App status
 void main() {
 
     SYSTEM_Initialize(); // PIC hardware setup/configuration    
-        
-    /*timer_reset();
-    while(!timer_flag)
-    {
-    }
-    LATCbits.LATC0 = 0;  // turn led off
-    */ 
+    
+    timer_reset();
         
     myAppState = STATE_INIT;
 
@@ -167,9 +163,11 @@ void main() {
             // no candidate found, let's wait 1min
             // before retrying
             LATCbits.LATC0 = 0;  // turn led off
+            MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
             timer_reset();
-            while(!timer_flag)  // faire un sleep à la place!
-            {}
+            PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
+            //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+            SLEEP();    // now we are sleeping, until next RTCC interrupt
         }
         else
         {
@@ -196,10 +194,12 @@ void main() {
         // let's wait 1min before reset
         myAppState = STATE_PROBLEM;
         LATCbits.LATC0 = 0;  // turn led off
+        MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
         timer_reset();
-        while(!timer_flag)
-        {}
-        RESET();
+        PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
+        //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+        SLEEP();    // now we are sleeping, until next RTCC interrupt
+        RESET();    // now we don't
     }
     MiApp_ConnectionMode(DISABLE_ALL_CONN);  // don't answer to scan or join requests
     
@@ -218,10 +218,12 @@ void main() {
         // wait 1min & reset
         myAppState = STATE_PROBLEM;
         LATCbits.LATC0 = 0;  // turn led off
+        MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
         timer_reset();
-        while(!timer_flag)
-        {}
-        RESET();
+        PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
+        //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+        SLEEP();    // now we are sleeping
+        RESET();    // now we don't
     }
     
     // force security key update on
@@ -257,7 +259,8 @@ void main() {
         wait_for_1_sec();
     }
     consecutive_fails = 0;  // here we have received an UPDATE as answer to send_initial_update()
-
+    RTCC_reset();
+    
     // F) MAIN LOOP
     // ============
     while (true)
@@ -547,10 +550,10 @@ bool send_writables_update()
     {
         // send the power level
         memcpy(m_var.label, POWER_LABEL, 3);
-        m_var.unit = MUTA_NO_UNIT;
-        m_var.value_byte1 = m_power;
+        m_var.unit = MUTA_MWATT_UNIT;
+        dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
         m_var.writable = true;
-        p_buffer += encode_uint8_variable(p_buffer, m_var);
+        p_buffer += encode_ufixed16_variable(p_buffer, m_var);  
         Pwr_updated = false;
     }
     if (UpF_updated)
@@ -663,24 +666,25 @@ void update_variable()
     }
 }
 
-
-/* reset the timer */
-void timer_reset()
+void RTCC_reset()
 {
-    /*RtccWrOn(); //write enable the rtcc registers
+    RtccWrOn(); //write enable the rtcc registers
     RTCCFGbits.RTCPTR0 = 0; //RTCVALH/L will point to min/seconds values
     RTCCFGbits.RTCPTR1 = 0;
     RTCVALHbits.RTCVALH = 0x00; // write 00 to min & sec
     RTCVALLbits.RTCVALL = 0x00;
-    mRtccWrOff();   // write disable rtcc regs
-    */
+    mRtccWrOff();   // write disable rtcc regs    
+}
+
+/* reset the timer */
+void timer_reset()
+{
     if (m_update_frequency == 0) // special debug mode:every 10sec
         timer_count = 1;
     else
         timer_count = m_update_frequency;
     timer_flag = false;
 }
-
 
 // High priority interrupt handler
 void interrupt SYS_InterruptHigh(void)
@@ -696,7 +700,7 @@ void interrupt low_priority SYS_InterruptLow(void)
     //RTCC
     if(PIR3bits.RTCCIF) // RTCC every minute interrupt
     {
-        m_uptime_days = m_uptime_days + 0.000694444F; //== 60 seconds in days
+        m_uptime_days = m_uptime_days + 0.000671296F; //== 58 seconds in days
         timer_count = timer_count - 1;
         if (timer_count == 0)
         {

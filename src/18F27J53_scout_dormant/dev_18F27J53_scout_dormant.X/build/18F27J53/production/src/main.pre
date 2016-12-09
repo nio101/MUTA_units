@@ -12320,17 +12320,19 @@ bool send_writables_update();
 bool send_periodical_update();
 void update_variable();
 void timer_reset();
+void RTCC_reset();
 void wait_for_1_sec();
 
-# 126
+# 127
 APP_STATE myAppState;
 
-# 132
+# 133
 void main() {
 
 SYSTEM_Initialize();
 
-# 143
+timer_reset();
+
 myAppState = STATE_INIT;
 
 bool result;
@@ -12358,9 +12360,11 @@ if (scanresult == 0)
 
 
 LATCbits.LATC0 = 0;
+MiApp_TransceiverPowerState(0x00);
 timer_reset();
-while(!timer_flag)
-{}
+PIR3bits.RTCCIF = 0;
+
+asm(" sleep");
 }
 else
 {
@@ -12387,9 +12391,11 @@ if(Status == 0xFF)
 
 myAppState = STATE_PROBLEM;
 LATCbits.LATC0 = 0;
+MiApp_TransceiverPowerState(0x00);
 timer_reset();
-while(!timer_flag)
-{}
+PIR3bits.RTCCIF = 0;
+
+asm(" sleep");
 asm("reset");
 }
 MiApp_ConnectionMode(0x03);
@@ -12404,9 +12410,11 @@ if (!result)
 
 myAppState = STATE_PROBLEM;
 LATCbits.LATC0 = 0;
+MiApp_TransceiverPowerState(0x00);
 timer_reset();
-while(!timer_flag)
-{}
+PIR3bits.RTCCIF = 0;
+
+asm(" sleep");
 asm("reset");
 }
 
@@ -12443,6 +12451,7 @@ asm("reset");
 wait_for_1_sec();
 }
 consecutive_fails = 0;
+RTCC_reset();
 
 
 
@@ -12490,7 +12499,7 @@ consecutive_fails = 0;
 }
 }
 
-# 313
+# 316
 bool process_update_answer()
 {
 uint8_t shortaddress[2];
@@ -12728,10 +12737,10 @@ if (Pwr_updated)
 {
 
 memcpy(m_var.label, POWER_LABEL, 3);
-m_var.unit = 0;
-m_var.value_byte1 = m_power;
+m_var.unit = 8;
+dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 m_var.writable = 1;
-p_buffer += encode_uint8_variable(p_buffer, m_var);
+p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 Pwr_updated = 0;
 }
 if (UpF_updated)
@@ -12813,7 +12822,7 @@ Pwr_updated = 1;
 }
 else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 
-# 635
+# 638
 {
 if (m_var.value_byte1 == 0)
 {
@@ -12845,19 +12854,25 @@ UpF_updated = 1;
 }
 }
 
+void RTCC_reset()
+{
+RtccWrOn();
+RTCCFGbits.RTCPTR0 = 0;
+RTCCFGbits.RTCPTR1 = 0;
+RTCVALHbits.RTCVALH = 0x00;
+RTCVALLbits.RTCVALL = 0x00;
+(RTCCFGbits.RTCWREN = 0);
+}
 
 
 void timer_reset()
 {
-
-# 677
 if (m_update_frequency == 0)
 timer_count = 1;
 else
 timer_count = m_update_frequency;
 timer_flag = 0;
 }
-
 
 
 void interrupt SYS_InterruptHigh(void)
@@ -12873,7 +12888,7 @@ void interrupt low_priority SYS_InterruptLow(void)
 
 if(PIR3bits.RTCCIF)
 {
-m_uptime_days = m_uptime_days + 0.000694444F;
+m_uptime_days = m_uptime_days + 0.000671296F;
 timer_count = timer_count - 1;
 if (timer_count == 0)
 {

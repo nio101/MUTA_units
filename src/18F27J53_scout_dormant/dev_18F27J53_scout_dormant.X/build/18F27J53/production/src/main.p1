@@ -2,13 +2,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 src/../../../muta/muta_messages.h
 [s S1305 `uc -> 3 `i `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S1305 . label type value_byte1 value_byte2 unit writable _signed size ]
-"126 src/main.c
+"127 src/main.c
 [c E9788 0 1 2 .. ]
 [n E9788 . STATE_INIT STATE_READY STATE_PROBLEM  ]
 [p mainexit ]
 "116 src/18F27J53/system.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"47 src/main.c
+"117 src/main.c
+[v _timer_reset `(v ~T0 @X0 0 ef ]
+"47
 [v _myLongAddress `uc ~T0 @X0 -> 0 `x e ]
 "136 src/miwi/miwi_api.h
 [v _MiApp_ProtocolInit `(uc ~T0 @X0 0 ef1`uc ]
@@ -48,8 +50,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S650 . . . . . . . . . . ]
 "9960
 [v _LATCbits `VS650 ~T0 @X0 0 e@3979 ]
-"117 src/main.c
-[v _timer_reset `(v ~T0 @X0 0 ef ]
+"858 src/miwi/miwi_api.h
+[v _MiApp_TransceiverPowerState `(uc ~T0 @X0 0 ef1`uc ]
+"11584 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
+[s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
+"11594
+[s S737 :1 `uc 1 :1 `uc 1 ]
+[n S737 . . RXBNIF ]
+"11598
+[s S738 :4 `uc 1 :1 `uc 1 ]
+[n S738 . . TXBNIF ]
+"11583
+[u S735 `S736 1 `S737 1 `S738 1 ]
+[n S735 . . . . ]
+"11603
+[v _PIR3bits `VS735 ~T0 @X0 0 e@4004 ]
 "65 src/18F27J53/system.h
 [u S1272 `uc -> 2 `i `ui 1 ]
 [n S1272 . v Val ]
@@ -76,26 +92,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _adapt_power_level `(uc ~T0 @X0 0 ef2`uc`uc ]
 "112 src/main.c
 [v _read_sensors `(v ~T0 @X0 0 ef ]
-"858 src/miwi/miwi_api.h
-[v _MiApp_TransceiverPowerState `(uc ~T0 @X0 0 ef1`uc ]
-"11584 D:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f27j53.h
-[s S736 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S736 . RTCCIF TMR3GIF CTMUIF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
-"11594
-[s S737 :1 `uc 1 :1 `uc 1 ]
-[n S737 . . RXBNIF ]
-"11598
-[s S738 :4 `uc 1 :1 `uc 1 ]
-[n S738 . . TXBNIF ]
-"11583
-[u S735 `S736 1 `S737 1 `S738 1 ]
-[n S735 . . . . ]
-"11603
-[v _PIR3bits `VS735 ~T0 @X0 0 e@4004 ]
-"118 src/main.c
+"119
 [v _wait_for_1_sec `(v ~T0 @X0 0 ef ]
 "113
 [v _send_initial_update `(uc ~T0 @X0 0 ef ]
+"118
+[v _RTCC_reset `(v ~T0 @X0 0 ef ]
 "111
 [v _process_update_answer `(uc ~T0 @X0 0 ef ]
 "710 src/miwi/miwi_api.h
@@ -10160,200 +10162,198 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 115: bool send_periodical_update();
 [; ;main.c: 116: void update_variable();
 [; ;main.c: 117: void timer_reset();
-[; ;main.c: 118: void wait_for_1_sec();
-"126
+[; ;main.c: 118: void RTCC_reset();
+[; ;main.c: 119: void wait_for_1_sec();
+"127
 [v _myAppState `E9788 ~T0 @X0 1 e ]
-[; ;main.c: 126: APP_STATE myAppState;
-"132
+[; ;main.c: 127: APP_STATE myAppState;
+"133
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 132: void main() {
+[; ;main.c: 133: void main() {
 [e :U _main ]
 [f ]
-[; ;main.c: 134: SYSTEM_Initialize();
-"134
+[; ;main.c: 135: SYSTEM_Initialize();
+"135
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 143: myAppState = STATE_INIT;
-"143
+[; ;main.c: 137: timer_reset();
+"137
+[e ( _timer_reset ..  ]
+[; ;main.c: 139: myAppState = STATE_INIT;
+"139
 [e = _myAppState . `E9788 0 ]
-"145
+"141
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 145: bool result;
-[; ;main.c: 147: myLongAddress[0] = myMUTA_version;
-"147
+[; ;main.c: 141: bool result;
+[; ;main.c: 143: myLongAddress[0] = myMUTA_version;
+"143
 [e = *U + &U _myLongAddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux _myMUTA_version ]
-[; ;main.c: 148: myLongAddress[1] = myMODEL;
-"148
+[; ;main.c: 144: myLongAddress[1] = myMODEL;
+"144
 [e = *U + &U _myLongAddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux _myMODEL ]
-[; ;main.c: 149: myLongAddress[2] = myUID[0];
-"149
+[; ;main.c: 145: myLongAddress[2] = myUID[0];
+"145
 [e = *U + &U _myLongAddress * -> -> -> 2 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux *U + &U _myUID * -> -> -> 0 `i `ui `ux -> -> # *U &U _myUID `ui `ux ]
-[; ;main.c: 150: myLongAddress[3] = myUID[1];
-"150
+[; ;main.c: 146: myLongAddress[3] = myUID[1];
+"146
 [e = *U + &U _myLongAddress * -> -> -> 3 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux *U + &U _myUID * -> -> -> 1 `i `ui `ux -> -> # *U &U _myUID `ui `ux ]
-[; ;main.c: 153: for (int x=0; x<8; x++)
-"153
+[; ;main.c: 149: for (int x=0; x<8; x++)
+"149
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ < _x -> 8 `i 1307  ]
 [e $U 1308  ]
-"154
+"150
 [e :U 1307 ]
-[; ;main.c: 154: mySecurityKey[x] = StaticSecurityKey[x];
+[; ;main.c: 150: mySecurityKey[x] = StaticSecurityKey[x];
 [e = *U + &U _mySecurityKey * -> -> _x `ui `ux -> -> # *U &U _mySecurityKey `ui `ux *U + &U _StaticSecurityKey * -> -> _x `ui `ux -> -> # *U &U _StaticSecurityKey `ui `ux ]
-"153
+"149
 [e ++ _x -> 1 `i ]
 [e $ < _x -> 8 `i 1307  ]
 [e :U 1308 ]
-"154
+"150
 }
-[; ;main.c: 156: MiApp_ProtocolInit(0);
-"156
+[; ;main.c: 152: MiApp_ProtocolInit(0);
+"152
 [e ( _MiApp_ProtocolInit (1 -> -> 0 `i `uc ]
-[; ;main.c: 157: MiMAC_SetPower(0x00);
-"157
+[; ;main.c: 153: MiMAC_SetPower(0x00);
+"153
 [e ( _MiMAC_SetPower (1 -> -> 0 `i `uc ]
-"161
+"157
 [v _scanresult `Vuc ~T0 @X0 1 a ]
-[; ;main.c: 161: volatile uint8_t scanresult;
-[; ;main.c: 162: while(1)
-"162
+[; ;main.c: 157: volatile uint8_t scanresult;
+[; ;main.c: 158: while(1)
+"158
 [e :U 1311 ]
-[; ;main.c: 163: {
-"163
+[; ;main.c: 159: {
+"159
 {
-[; ;main.c: 164: scanresult = MiApp_SearchConnection(14, 0x01010101);
-"164
+[; ;main.c: 160: scanresult = MiApp_SearchConnection(14, 0x01010101);
+"160
 [e = _scanresult ( _MiApp_SearchConnection (2 , -> -> 14 `i `uc -> -> 16843009 `l `ul ]
-[; ;main.c: 165: if (scanresult == 0)
-"165
+[; ;main.c: 161: if (scanresult == 0)
+"161
 [e $ ! == -> _scanresult `i -> 0 `i 1313  ]
-[; ;main.c: 166: {
-"166
+[; ;main.c: 162: {
+"162
 {
-[; ;main.c: 169: LATCbits.LATC0 = 0;
-"169
+[; ;main.c: 165: LATCbits.LATC0 = 0;
+"165
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 170: timer_reset();
-"170
+[; ;main.c: 166: MiApp_TransceiverPowerState(0x00);
+"166
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 167: timer_reset();
+"167
 [e ( _timer_reset ..  ]
-[; ;main.c: 171: while(!timer_flag)
+[; ;main.c: 168: PIR3bits.RTCCIF = 0;
+"168
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 170: asm(" sleep");
+"170
+[; <"  sleep ;# ">
 "171
+}
+[; ;main.c: 171: }
 [e $U 1314  ]
-[e :U 1315 ]
-[; ;main.c: 172: {}
 "172
+[e :U 1313 ]
+[; ;main.c: 172: else
+[; ;main.c: 173: {
+"173
 {
+[; ;main.c: 174: break;
+"174
+[e $U 1312  ]
+"175
 }
 [e :U 1314 ]
-"171
-[e $ ! != -> _timer_flag `i -> -> -> 0 `i `Vuc `i 1315  ]
-[e :U 1316 ]
-"173
-}
-[; ;main.c: 173: }
-[e $U 1317  ]
-"174
-[e :U 1313 ]
-[; ;main.c: 174: else
-[; ;main.c: 175: {
-"175
-{
-[; ;main.c: 176: break;
 "176
-[e $U 1312  ]
-"177
-}
-[e :U 1317 ]
-"178
 }
 [e :U 1310 ]
-"162
+"158
 [e $U 1311  ]
 [e :U 1312 ]
-"179
+"177
 [v _best_RSSI `uc ~T0 @X0 1 a ]
-[; ;main.c: 177: }
-[; ;main.c: 178: }
-[; ;main.c: 179: uint8_t best_RSSI = 0;
+[; ;main.c: 175: }
+[; ;main.c: 176: }
+[; ;main.c: 177: uint8_t best_RSSI = 0;
 [e = _best_RSSI -> -> 0 `i `uc ]
-"180
+"178
 [v _best_candidate `uc ~T0 @X0 1 a ]
-[; ;main.c: 180: uint8_t best_candidate;
-[; ;main.c: 181: for(uint8_t j = 0; j < scanresult; j++)
-"181
+[; ;main.c: 178: uint8_t best_candidate;
+[; ;main.c: 179: for(uint8_t j = 0; j < scanresult; j++)
+"179
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $U 1321  ]
-"182
-[e :U 1318 ]
-[; ;main.c: 182: {
+[e $U 1318  ]
+"180
+[e :U 1315 ]
+[; ;main.c: 180: {
 {
-[; ;main.c: 183: if (ActiveScanResults[j].RSSIValue >= best_RSSI && ActiveScanResults[j].PANID.Val == 0x1337)
-"183
-[e $ ! && >= -> . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 3 `i -> _best_RSSI `i == . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 1 -> -> 4919 `i `ui 1322  ]
-[; ;main.c: 184: {
-"184
-{
-[; ;main.c: 185: best_RSSI = ActiveScanResults[j].RSSIValue;
-"185
-[e = _best_RSSI . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 3 ]
-[; ;main.c: 186: best_candidate = j;
-"186
-[e = _best_candidate _j ]
-"187
-}
-[e :U 1322 ]
-"188
-}
+[; ;main.c: 181: if (ActiveScanResults[j].RSSIValue >= best_RSSI && ActiveScanResults[j].PANID.Val == 0x1337)
 "181
-[e ++ _j -> -> 1 `i `uc ]
-[e :U 1321 ]
-[e $ < -> _j `i -> _scanresult `i 1318  ]
+[e $ ! && >= -> . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 3 `i -> _best_RSSI `i == . . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 2 1 -> -> 4919 `i `ui 1319  ]
+[; ;main.c: 182: {
+"182
+{
+[; ;main.c: 183: best_RSSI = ActiveScanResults[j].RSSIValue;
+"183
+[e = _best_RSSI . *U + &U _ActiveScanResults * -> _j `ux -> -> # *U &U _ActiveScanResults `ui `ux 3 ]
+[; ;main.c: 184: best_candidate = j;
+"184
+[e = _best_candidate _j ]
+"185
+}
 [e :U 1319 ]
-"188
+"186
 }
-"192
+"179
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 1318 ]
+[e $ < -> _j `i -> _scanresult `i 1315  ]
+[e :U 1316 ]
+"186
+}
+"190
 [v _Status `uc ~T0 @X0 1 a ]
-[; ;main.c: 187: }
-[; ;main.c: 188: }
-[; ;main.c: 192: uint8_t Status = MiApp_EstablishConnection(best_candidate, 0x00);
+[; ;main.c: 185: }
+[; ;main.c: 186: }
+[; ;main.c: 190: uint8_t Status = MiApp_EstablishConnection(best_candidate, 0x00);
 [e = _Status ( _MiApp_EstablishConnection (2 , _best_candidate -> -> 0 `i `uc ]
-[; ;main.c: 193: if(Status == 0xFF)
-"193
-[e $ ! == -> _Status `i -> 255 `i 1323  ]
-[; ;main.c: 194: {
-"194
+[; ;main.c: 191: if(Status == 0xFF)
+"191
+[e $ ! == -> _Status `i -> 255 `i 1320  ]
+[; ;main.c: 192: {
+"192
 {
-[; ;main.c: 197: myAppState = STATE_PROBLEM;
-"197
+[; ;main.c: 195: myAppState = STATE_PROBLEM;
+"195
 [e = _myAppState . `E9788 2 ]
-[; ;main.c: 198: LATCbits.LATC0 = 0;
-"198
+[; ;main.c: 196: LATCbits.LATC0 = 0;
+"196
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 199: timer_reset();
-"199
+[; ;main.c: 197: MiApp_TransceiverPowerState(0x00);
+"197
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 198: timer_reset();
+"198
 [e ( _timer_reset ..  ]
-[; ;main.c: 200: while(!timer_flag)
-"200
-[e $U 1324  ]
-[e :U 1325 ]
-[; ;main.c: 201: {}
+[; ;main.c: 199: PIR3bits.RTCCIF = 0;
+"199
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 201: asm(" sleep");
 "201
-{
-}
-[e :U 1324 ]
-"200
-[e $ ! != -> _timer_flag `i -> -> -> 0 `i `Vuc `i 1325  ]
-[e :U 1326 ]
+[; <"  sleep ;# ">
 [; ;main.c: 202: asm("reset");
 "202
 [; <" reset ;# ">
 "203
 }
-[e :U 1323 ]
+[e :U 1320 ]
 [; ;main.c: 203: }
 [; ;main.c: 204: MiApp_ConnectionMode(0x03);
 "204
@@ -10363,7 +10363,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _result ( _do_NETWORK_REGISTER (2 , &U *U + &U _myLongAddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _myLongAddress `ui `ux -> -> 255 `i `uc ]
 [; ;main.c: 215: if (!result)
 "215
-[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1327  ]
+[e $ ! ! != -> _result `i -> -> -> 0 `i `uc `i 1321  ]
 [; ;main.c: 216: {
 "216
 {
@@ -10373,1323 +10373,1353 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 220: LATCbits.LATC0 = 0;
 "220
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 221: timer_reset();
+[; ;main.c: 221: MiApp_TransceiverPowerState(0x00);
 "221
-[e ( _timer_reset ..  ]
-[; ;main.c: 222: while(!timer_flag)
-"222
-[e $U 1328  ]
-[e :U 1329 ]
-[; ;main.c: 223: {}
-"223
-{
-}
-[e :U 1328 ]
-"222
-[e $ ! != -> _timer_flag `i -> -> -> 0 `i `Vuc `i 1329  ]
-[e :U 1330 ]
-[; ;main.c: 224: asm("reset");
-"224
-[; <" reset ;# ">
-"225
-}
-[e :U 1327 ]
-[; ;main.c: 225: }
-[; ;main.c: 228: security_force_key_update();
-"228
-[e ( _security_force_key_update ..  ]
-[; ;main.c: 230: myAppState = STATE_READY;
-"230
-[e = _myAppState . `E9788 1 ]
-[; ;main.c: 234: m_power = adapt_power_level(0x00, 33);
-"234
-[e = _m_power ( _adapt_power_level (2 , -> -> 0 `i `uc -> -> 33 `i `uc ]
-[; ;main.c: 238: m_uptime_days = 0;
-"238
-[e = _m_uptime_days -> -> 0 `i `f ]
-[; ;main.c: 240: read_sensors();
-"240
-[e ( _read_sensors ..  ]
-[; ;main.c: 241: while (!send_initial_update())
-"241
-[e $U 1331  ]
-[e :U 1332 ]
-[; ;main.c: 242: {
-"242
-{
-[; ;main.c: 244: consecutive_fails++;
-"244
-[e ++ _consecutive_fails -> -> 1 `i `uc ]
-[; ;main.c: 245: if (consecutive_fails >= 3)
-"245
-[e $ ! >= -> _consecutive_fails `i -> 3 `i 1334  ]
-[; ;main.c: 246: {
-"246
-{
-[; ;main.c: 248: myAppState = STATE_PROBLEM;
-"248
-[e = _myAppState . `E9788 2 ]
-[; ;main.c: 249: LATCbits.LATC0 = 0;
-"249
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 250: MiApp_TransceiverPowerState(0x00);
-"250
 [e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
-[; ;main.c: 251: timer_reset();
-"251
+[; ;main.c: 222: timer_reset();
+"222
 [e ( _timer_reset ..  ]
-[; ;main.c: 252: PIR3bits.RTCCIF = 0;
-"252
+[; ;main.c: 223: PIR3bits.RTCCIF = 0;
+"223
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 254: asm(" sleep");
-"254
+[; ;main.c: 225: asm(" sleep");
+"225
 [; <"  sleep ;# ">
-[; ;main.c: 255: asm("reset");
-"255
+[; ;main.c: 226: asm("reset");
+"226
 [; <" reset ;# ">
-"256
+"227
 }
-[e :U 1334 ]
-[; ;main.c: 256: }
-[; ;main.c: 257: wait_for_1_sec();
+[e :U 1321 ]
+[; ;main.c: 227: }
+[; ;main.c: 230: security_force_key_update();
+"230
+[e ( _security_force_key_update ..  ]
+[; ;main.c: 232: myAppState = STATE_READY;
+"232
+[e = _myAppState . `E9788 1 ]
+[; ;main.c: 236: m_power = adapt_power_level(0x00, 33);
+"236
+[e = _m_power ( _adapt_power_level (2 , -> -> 0 `i `uc -> -> 33 `i `uc ]
+[; ;main.c: 240: m_uptime_days = 0;
+"240
+[e = _m_uptime_days -> -> 0 `i `f ]
+[; ;main.c: 242: read_sensors();
+"242
+[e ( _read_sensors ..  ]
+[; ;main.c: 243: while (!send_initial_update())
+"243
+[e $U 1322  ]
+[e :U 1323 ]
+[; ;main.c: 244: {
+"244
+{
+[; ;main.c: 246: consecutive_fails++;
+"246
+[e ++ _consecutive_fails -> -> 1 `i `uc ]
+[; ;main.c: 247: if (consecutive_fails >= 3)
+"247
+[e $ ! >= -> _consecutive_fails `i -> 3 `i 1325  ]
+[; ;main.c: 248: {
+"248
+{
+[; ;main.c: 250: myAppState = STATE_PROBLEM;
+"250
+[e = _myAppState . `E9788 2 ]
+[; ;main.c: 251: LATCbits.LATC0 = 0;
+"251
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 252: MiApp_TransceiverPowerState(0x00);
+"252
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 253: timer_reset();
+"253
+[e ( _timer_reset ..  ]
+[; ;main.c: 254: PIR3bits.RTCCIF = 0;
+"254
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 256: asm(" sleep");
+"256
+[; <"  sleep ;# ">
+[; ;main.c: 257: asm("reset");
 "257
-[e ( _wait_for_1_sec ..  ]
+[; <" reset ;# ">
 "258
 }
-[e :U 1331 ]
-"241
-[e $ ! != -> ( _send_initial_update ..  `i -> -> -> 0 `i `uc `i 1332  ]
-[e :U 1333 ]
+[e :U 1325 ]
 [; ;main.c: 258: }
-[; ;main.c: 259: consecutive_fails = 0;
+[; ;main.c: 259: wait_for_1_sec();
 "259
-[e = _consecutive_fails -> -> 0 `i `uc ]
-[; ;main.c: 263: while (1)
-"263
-[e :U 1336 ]
-[; ;main.c: 264: {
-"264
-{
-[; ;main.c: 267: process_update_answer();
-"267
-[e ( _process_update_answer ..  ]
-[; ;main.c: 271: LATCbits.LATC0 = 0;
-"271
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 272: MiApp_TransceiverPowerState(0x00);
-"272
-[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
-[; ;main.c: 273: timer_reset();
-"273
-[e ( _timer_reset ..  ]
-[; ;main.c: 274: while (!timer_flag)
-"274
-[e $U 1338  ]
-[e :U 1339 ]
-[; ;main.c: 275: {
-"275
-{
-[; ;main.c: 277: asm(" sleep");
-"277
-[; <"  sleep ;# ">
-"278
-}
-[e :U 1338 ]
-"274
-[e $ ! != -> _timer_flag `i -> -> -> 0 `i `Vuc `i 1339  ]
-[e :U 1340 ]
-[; ;main.c: 278: }
-[; ;main.c: 279: LATCbits.LATC0 = 1;
-"279
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 280: read_sensors();
-"280
-[e ( _read_sensors ..  ]
-[; ;main.c: 281: MiApp_TransceiverPowerState(0x01);
-"281
-[e ( _MiApp_TransceiverPowerState (1 -> -> 1 `i `uc ]
-[; ;main.c: 282: if(MiApp_MessageAvailable())
-"282
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1341  ]
-[; ;main.c: 283: MiApp_DiscardMessage();
-"283
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1341 ]
-[; ;main.c: 284: MiWiTasks();
-"284
-[e ( _MiWiTasks ..  ]
-[; ;main.c: 285: while (!send_periodical_update())
-"285
-[e $U 1342  ]
-[e :U 1343 ]
-[; ;main.c: 286: {
-"286
-{
-[; ;main.c: 288: consecutive_fails++;
-"288
-[e ++ _consecutive_fails -> -> 1 `i `uc ]
-[; ;main.c: 289: if (consecutive_fails >= 3)
-"289
-[e $ ! >= -> _consecutive_fails `i -> 3 `i 1345  ]
-[; ;main.c: 290: {
-"290
-{
-[; ;main.c: 292: myAppState = STATE_PROBLEM;
-"292
-[e = _myAppState . `E9788 2 ]
-[; ;main.c: 293: LATCbits.LATC0 = 0;
-"293
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 294: MiApp_TransceiverPowerState(0x00);
-"294
-[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
-[; ;main.c: 295: timer_reset();
-"295
-[e ( _timer_reset ..  ]
-[; ;main.c: 296: PIR3bits.RTCCIF = 0;
-"296
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 298: asm(" sleep");
-"298
-[; <"  sleep ;# ">
-[; ;main.c: 299: asm("reset");
-"299
-[; <" reset ;# ">
-"300
-}
-[e :U 1345 ]
-[; ;main.c: 300: }
-[; ;main.c: 301: wait_for_1_sec();
-"301
 [e ( _wait_for_1_sec ..  ]
-"302
+"260
 }
-[e :U 1342 ]
-"285
-[e $ ! != -> ( _send_periodical_update ..  `i -> -> -> 0 `i `uc `i 1343  ]
-[e :U 1344 ]
-[; ;main.c: 302: }
-[; ;main.c: 303: consecutive_fails = 0;
-"303
+[e :U 1322 ]
+"243
+[e $ ! != -> ( _send_initial_update ..  `i -> -> -> 0 `i `uc `i 1323  ]
+[e :U 1324 ]
+[; ;main.c: 260: }
+[; ;main.c: 261: consecutive_fails = 0;
+"261
 [e = _consecutive_fails -> -> 0 `i `uc ]
-"304
+[; ;main.c: 262: RTCC_reset();
+"262
+[e ( _RTCC_reset ..  ]
+[; ;main.c: 266: while (1)
+"266
+[e :U 1327 ]
+[; ;main.c: 267: {
+"267
+{
+[; ;main.c: 270: process_update_answer();
+"270
+[e ( _process_update_answer ..  ]
+[; ;main.c: 274: LATCbits.LATC0 = 0;
+"274
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 275: MiApp_TransceiverPowerState(0x00);
+"275
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 276: timer_reset();
+"276
+[e ( _timer_reset ..  ]
+[; ;main.c: 277: while (!timer_flag)
+"277
+[e $U 1329  ]
+[e :U 1330 ]
+[; ;main.c: 278: {
+"278
+{
+[; ;main.c: 280: asm(" sleep");
+"280
+[; <"  sleep ;# ">
+"281
 }
-[e :U 1335 ]
-"263
-[e $U 1336  ]
-[e :U 1337 ]
-[; ;main.c: 304: }
-[; ;main.c: 305: }
+[e :U 1329 ]
+"277
+[e $ ! != -> _timer_flag `i -> -> -> 0 `i `Vuc `i 1330  ]
+[e :U 1331 ]
+[; ;main.c: 281: }
+[; ;main.c: 282: LATCbits.LATC0 = 1;
+"282
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 283: read_sensors();
+"283
+[e ( _read_sensors ..  ]
+[; ;main.c: 284: MiApp_TransceiverPowerState(0x01);
+"284
+[e ( _MiApp_TransceiverPowerState (1 -> -> 1 `i `uc ]
+[; ;main.c: 285: if(MiApp_MessageAvailable())
+"285
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1332  ]
+[; ;main.c: 286: MiApp_DiscardMessage();
+"286
+[e ( _MiApp_DiscardMessage ..  ]
+[e :U 1332 ]
+[; ;main.c: 287: MiWiTasks();
+"287
+[e ( _MiWiTasks ..  ]
+[; ;main.c: 288: while (!send_periodical_update())
+"288
+[e $U 1333  ]
+[e :U 1334 ]
+[; ;main.c: 289: {
+"289
+{
+[; ;main.c: 291: consecutive_fails++;
+"291
+[e ++ _consecutive_fails -> -> 1 `i `uc ]
+[; ;main.c: 292: if (consecutive_fails >= 3)
+"292
+[e $ ! >= -> _consecutive_fails `i -> 3 `i 1336  ]
+[; ;main.c: 293: {
+"293
+{
+[; ;main.c: 295: myAppState = STATE_PROBLEM;
+"295
+[e = _myAppState . `E9788 2 ]
+[; ;main.c: 296: LATCbits.LATC0 = 0;
+"296
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 297: MiApp_TransceiverPowerState(0x00);
+"297
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 298: timer_reset();
+"298
+[e ( _timer_reset ..  ]
+[; ;main.c: 299: PIR3bits.RTCCIF = 0;
+"299
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 301: asm(" sleep");
+"301
+[; <"  sleep ;# ">
+[; ;main.c: 302: asm("reset");
+"302
+[; <" reset ;# ">
+"303
+}
+[e :U 1336 ]
+[; ;main.c: 303: }
+[; ;main.c: 304: wait_for_1_sec();
+"304
+[e ( _wait_for_1_sec ..  ]
 "305
+}
+[e :U 1333 ]
+"288
+[e $ ! != -> ( _send_periodical_update ..  `i -> -> -> 0 `i `uc `i 1334  ]
+[e :U 1335 ]
+[; ;main.c: 305: }
+[; ;main.c: 306: consecutive_fails = 0;
+"306
+[e = _consecutive_fails -> -> 0 `i `uc ]
+"307
+}
+[e :U 1326 ]
+"266
+[e $U 1327  ]
+[e :U 1328 ]
+[; ;main.c: 307: }
+[; ;main.c: 308: }
+"308
 [e :UE 1306 ]
 }
-"313
+"316
 [v _process_update_answer `(uc ~T0 @X0 1 ef ]
-"314
+"317
 {
-[; ;main.c: 313: bool process_update_answer()
-[; ;main.c: 314: {
+[; ;main.c: 316: bool process_update_answer()
+[; ;main.c: 317: {
 [e :U _process_update_answer ]
 [f ]
-"315
+"318
 [v _shortaddress `uc ~T0 @X0 -> 2 `i a ]
-"316
+"319
 [v _result `uc ~T0 @X0 1 a ]
-[; ;main.c: 315: uint8_t shortaddress[2];
-[; ;main.c: 316: uint8_t result = 0;
+[; ;main.c: 318: uint8_t shortaddress[2];
+[; ;main.c: 319: uint8_t result = 0;
 [e = _result -> -> 0 `i `uc ]
-"317
+"320
 [v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 317: uint8_t i;
-[; ;main.c: 322: while(1)
-"322
-[e :U 1348 ]
-[; ;main.c: 323: {
-"323
+[; ;main.c: 320: uint8_t i;
+[; ;main.c: 325: while(1)
+"325
+[e :U 1339 ]
+[; ;main.c: 326: {
+"326
 {
-[; ;main.c: 324: for (i=0; i<200; i++)
-"324
+[; ;main.c: 327: for (i=0; i<200; i++)
+"327
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 200 `i 1350  ]
-[e $U 1351  ]
-"325
-[e :U 1350 ]
-[; ;main.c: 325: {
-{
-[; ;main.c: 326: _delay((unsigned long)((10)*(8000000/4000.0)));
-"326
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 327: if(MiApp_MessageAvailable())
-"327
-[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1353  ]
-[; ;main.c: 328: {
+[e $ < -> _i `i -> 200 `i 1341  ]
+[e $U 1342  ]
 "328
+[e :U 1341 ]
+[; ;main.c: 328: {
 {
-[; ;main.c: 329: shortaddress[0] = rxMessage.SourceAddress[0];
+[; ;main.c: 329: _delay((unsigned long)((10)*(8000000/4000.0)));
 "329
-[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x ]
-[; ;main.c: 330: shortaddress[1] = rxMessage.SourceAddress[1];
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 330: if(MiApp_MessageAvailable())
 "330
-[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x ]
+[e $ ! != -> ( _MiApp_MessageAvailable ..  `i -> -> -> 0 `i `uc `i 1344  ]
+[; ;main.c: 331: {
 "331
-[v _size `uc ~T0 @X0 1 a ]
-[; ;main.c: 331: uint8_t size = rxMessage.PayloadSize;
-[e = _size . _rxMessage 4 ]
-[; ;main.c: 332: switch(rxMessage.Payload[0])
+{
+[; ;main.c: 332: shortaddress[0] = rxMessage.SourceAddress[0];
 "332
-[e $U 1355  ]
-[; ;main.c: 333: {
+[e = *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 0 `i `x -> -> # *U . _rxMessage 2 `i `x ]
+[; ;main.c: 333: shortaddress[1] = rxMessage.SourceAddress[1];
 "333
-{
-[; ;main.c: 334: case 04:
+[e = *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux *U + . _rxMessage 2 * -> -> 1 `i `x -> -> # *U . _rxMessage 2 `i `x ]
 "334
-[e :U 1356 ]
-[; ;main.c: 337: if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00) && (size == 2))
+[v _size `uc ~T0 @X0 1 a ]
+[; ;main.c: 334: uint8_t size = rxMessage.PayloadSize;
+[e = _size . _rxMessage 4 ]
+[; ;main.c: 335: switch(rxMessage.Payload[0])
+"335
+[e $U 1346  ]
+[; ;main.c: 336: {
+"336
+{
+[; ;main.c: 337: case 04:
 "337
-[e $ ! && && == -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> _size `i -> 2 `i 1357  ]
-[; ;main.c: 338: {
-"338
-{
-[; ;main.c: 339: return 1;
-"339
-[e ) -> -> 1 `i `uc ]
-[e $UE 1346  ]
+[e :U 1347 ]
+[; ;main.c: 340: if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00) && (size == 2))
 "340
-}
-[; ;main.c: 340: }
-[e $U 1358  ]
-"343
-[e :U 1357 ]
-[; ;main.c: 343: else if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00) && (size > 2))
-[e $ ! && && == -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i > -> _size `i -> 2 `i 1359  ]
-[; ;main.c: 344: {
-"344
+[e $ ! && && == -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> _size `i -> 2 `i 1348  ]
+[; ;main.c: 341: {
+"341
 {
-"345
-[v _ack_required `uc ~T0 @X0 1 a ]
-[; ;main.c: 345: bool ack_required = rxMessage.Payload[1];
-[e = _ack_required *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 347: p_buffer = &rxMessage.Payload[2];
-"347
-[e = _p_buffer &U *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
-[; ;main.c: 348: while ((p_buffer - &rxMessage.Payload[2]) < (size - 2))
-"348
-[e $U 1360  ]
-[e :U 1361 ]
-[; ;main.c: 349: {
-"349
-{
-[; ;main.c: 350: m_var = decode_variable(p_buffer);
-"350
-[e = _m_var ( _decode_variable (1 _p_buffer ]
-[; ;main.c: 351: p_buffer += m_var.size;
-"351
-[e =+ _p_buffer * -> . _m_var 7 `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 353: update_variable();
-"353
-[e ( _update_variable ..  ]
-"354
-}
-[e :U 1360 ]
-"348
-[e $ < / - -> _p_buffer `x -> &U *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `x -> -> # *U _p_buffer `i `x -> - -> _size `i -> 2 `i `x 1361  ]
-[e :U 1362 ]
-[; ;main.c: 354: }
-[; ;main.c: 355: MiApp_DiscardMessage();
-"355
-[e ( _MiApp_DiscardMessage ..  ]
-[; ;main.c: 356: if (ack_required)
-"356
-[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1363  ]
-[; ;main.c: 357: {
-"357
-{
-[; ;main.c: 358: while (!send_writables_update())
-"358
-[e $U 1364  ]
-[e :U 1365 ]
-[; ;main.c: 359: {
-"359
-{
-[; ;main.c: 361: consecutive_fails++;
-"361
-[e ++ _consecutive_fails -> -> 1 `i `uc ]
-[; ;main.c: 362: if (consecutive_fails >= 3)
-"362
-[e $ ! >= -> _consecutive_fails `i -> 3 `i 1367  ]
-[; ;main.c: 363: {
-"363
-{
-[; ;main.c: 365: myAppState = STATE_PROBLEM;
-"365
-[e = _myAppState . `E9788 2 ]
-[; ;main.c: 366: LATCbits.LATC0 = 0;
-"366
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 367: MiApp_TransceiverPowerState(0x00);
-"367
-[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
-[; ;main.c: 368: timer_reset();
-"368
-[e ( _timer_reset ..  ]
-[; ;main.c: 369: PIR3bits.RTCCIF = 0;
-"369
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 371: asm(" sleep");
-"371
-[; <"  sleep ;# ">
-[; ;main.c: 372: asm("reset");
-"372
-[; <" reset ;# ">
-"373
-}
-[e :U 1367 ]
-[; ;main.c: 373: }
-[; ;main.c: 374: wait_for_1_sec();
-"374
-[e ( _wait_for_1_sec ..  ]
-"375
-}
-[e :U 1364 ]
-"358
-[e $ ! != -> ( _send_writables_update ..  `i -> -> -> 0 `i `uc `i 1365  ]
-[e :U 1366 ]
-[; ;main.c: 375: }
-[; ;main.c: 376: consecutive_fails = 0;
-"376
-[e = _consecutive_fails -> -> 0 `i `uc ]
-[; ;main.c: 377: return 1;
-"377
+[; ;main.c: 342: return 1;
+"342
 [e ) -> -> 1 `i `uc ]
-[e $UE 1346  ]
+[e $UE 1337  ]
+"343
+}
+[; ;main.c: 343: }
+[e $U 1349  ]
+"346
+[e :U 1348 ]
+[; ;main.c: 346: else if ((shortaddress[0] == 0x00) && (shortaddress[1] == 0x00) && (size > 2))
+[e $ ! && && == -> *U + &U _shortaddress * -> -> -> 0 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i == -> *U + &U _shortaddress * -> -> -> 1 `i `ui `ux -> -> # *U &U _shortaddress `ui `ux `i -> 0 `i > -> _size `i -> 2 `i 1350  ]
+[; ;main.c: 347: {
+"347
+{
+"348
+[v _ack_required `uc ~T0 @X0 1 a ]
+[; ;main.c: 348: bool ack_required = rxMessage.Payload[1];
+[e = _ack_required *U + . _rxMessage 3 * -> -> 1 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;main.c: 350: p_buffer = &rxMessage.Payload[2];
+"350
+[e = _p_buffer &U *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x ]
+[; ;main.c: 351: while ((p_buffer - &rxMessage.Payload[2]) < (size - 2))
+"351
+[e $U 1351  ]
+[e :U 1352 ]
+[; ;main.c: 352: {
+"352
+{
+[; ;main.c: 353: m_var = decode_variable(p_buffer);
+"353
+[e = _m_var ( _decode_variable (1 _p_buffer ]
+[; ;main.c: 354: p_buffer += m_var.size;
+"354
+[e =+ _p_buffer * -> . _m_var 7 `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 356: update_variable();
+"356
+[e ( _update_variable ..  ]
+"357
+}
+[e :U 1351 ]
+"351
+[e $ < / - -> _p_buffer `x -> &U *U + . _rxMessage 3 * -> -> 2 `i `x -> -> # *U . _rxMessage 3 `i `x `x -> -> # *U _p_buffer `i `x -> - -> _size `i -> 2 `i `x 1352  ]
+[e :U 1353 ]
+[; ;main.c: 357: }
+[; ;main.c: 358: MiApp_DiscardMessage();
+"358
+[e ( _MiApp_DiscardMessage ..  ]
+[; ;main.c: 359: if (ack_required)
+"359
+[e $ ! != -> _ack_required `i -> -> -> 0 `i `uc `i 1354  ]
+[; ;main.c: 360: {
+"360
+{
+[; ;main.c: 361: while (!send_writables_update())
+"361
+[e $U 1355  ]
+[e :U 1356 ]
+[; ;main.c: 362: {
+"362
+{
+[; ;main.c: 364: consecutive_fails++;
+"364
+[e ++ _consecutive_fails -> -> 1 `i `uc ]
+[; ;main.c: 365: if (consecutive_fails >= 3)
+"365
+[e $ ! >= -> _consecutive_fails `i -> 3 `i 1358  ]
+[; ;main.c: 366: {
+"366
+{
+[; ;main.c: 368: myAppState = STATE_PROBLEM;
+"368
+[e = _myAppState . `E9788 2 ]
+[; ;main.c: 369: LATCbits.LATC0 = 0;
+"369
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 370: MiApp_TransceiverPowerState(0x00);
+"370
+[e ( _MiApp_TransceiverPowerState (1 -> -> 0 `i `uc ]
+[; ;main.c: 371: timer_reset();
+"371
+[e ( _timer_reset ..  ]
+[; ;main.c: 372: PIR3bits.RTCCIF = 0;
+"372
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 374: asm(" sleep");
+"374
+[; <"  sleep ;# ">
+[; ;main.c: 375: asm("reset");
+"375
+[; <" reset ;# ">
+"376
+}
+[e :U 1358 ]
+[; ;main.c: 376: }
+[; ;main.c: 377: wait_for_1_sec();
+"377
+[e ( _wait_for_1_sec ..  ]
 "378
 }
-[e :U 1363 ]
-"379
-}
+[e :U 1355 ]
+"361
+[e $ ! != -> ( _send_writables_update ..  `i -> -> -> 0 `i `uc `i 1356  ]
+[e :U 1357 ]
 [; ;main.c: 378: }
-[; ;main.c: 379: }
-[e $U 1368  ]
+[; ;main.c: 379: consecutive_fails = 0;
+"379
+[e = _consecutive_fails -> -> 0 `i `uc ]
+[; ;main.c: 380: return 1;
 "380
-[e :U 1359 ]
-[; ;main.c: 380: else
-[; ;main.c: 381: MiApp_DiscardMessage();
+[e ) -> -> 1 `i `uc ]
+[e $UE 1337  ]
 "381
-[e ( _MiApp_DiscardMessage ..  ]
-[e :U 1368 ]
-[e :U 1358 ]
-[; ;main.c: 383: default:
+}
+[e :U 1354 ]
+"382
+}
+[; ;main.c: 381: }
+[; ;main.c: 382: }
+[e $U 1359  ]
 "383
-[e :U 1369 ]
+[e :U 1350 ]
+[; ;main.c: 383: else
 [; ;main.c: 384: MiApp_DiscardMessage();
 "384
 [e ( _MiApp_DiscardMessage ..  ]
-"385
-}
-[; ;main.c: 385: }
-[e $U 1354  ]
-"332
-[e :U 1355 ]
-[e [\ *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x , $ -> -> 4 `i `uc 1356
- 1369 ]
-"385
-[e :U 1354 ]
+[e :U 1359 ]
+[e :U 1349 ]
+[; ;main.c: 386: default:
 "386
-}
-[e :U 1353 ]
+[e :U 1360 ]
+[; ;main.c: 387: MiApp_DiscardMessage();
 "387
-}
-"324
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 200 `i 1350  ]
-[e :U 1351 ]
-"387
-}
+[e ( _MiApp_DiscardMessage ..  ]
 "388
 }
-[e :U 1347 ]
-"322
-[e $U 1348  ]
-[e :U 1349 ]
-[; ;main.c: 386: }
-[; ;main.c: 387: }
 [; ;main.c: 388: }
-[; ;main.c: 389: return result;
+[e $U 1345  ]
+"335
+[e :U 1346 ]
+[e [\ *U + . _rxMessage 3 * -> -> 0 `i `x -> -> # *U . _rxMessage 3 `i `x , $ -> -> 4 `i `uc 1347
+ 1360 ]
+"388
+[e :U 1345 ]
 "389
-[e ) _result ]
-[e $UE 1346  ]
-[; ;main.c: 390: }
-"390
-[e :UE 1346 ]
 }
-"395
+[e :U 1344 ]
+"390
+}
+"327
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 200 `i 1341  ]
+[e :U 1342 ]
+"390
+}
+"391
+}
+[e :U 1338 ]
+"325
+[e $U 1339  ]
+[e :U 1340 ]
+[; ;main.c: 389: }
+[; ;main.c: 390: }
+[; ;main.c: 391: }
+[; ;main.c: 392: return result;
+"392
+[e ) _result ]
+[e $UE 1337  ]
+[; ;main.c: 393: }
+"393
+[e :UE 1337 ]
+}
+"398
 [v _read_sensors `(v ~T0 @X0 1 ef ]
-"396
+"399
 {
-[; ;main.c: 395: void read_sensors()
-[; ;main.c: 396: {
+[; ;main.c: 398: void read_sensors()
+[; ;main.c: 399: {
 [e :U _read_sensors ]
 [f ]
-[; ;main.c: 398: ADCON0bits.ADON = 1;
-"398
+[; ;main.c: 401: ADCON0bits.ADON = 1;
+"401
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 399: LATAbits.LATA6 = 1;
-"399
+[; ;main.c: 402: LATAbits.LATA6 = 1;
+"402
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 400: _delay((unsigned long)((20)*(8000000/4000.0)));
-"400
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 403: ADCON1bits.ADCAL = 1;
+[; ;main.c: 403: _delay((unsigned long)((20)*(8000000/4000.0)));
 "403
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 406: ADCON1bits.ADCAL = 1;
+"406
 [e = . . _ADCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 404: ADCON0bits.GO = 1;
-"404
+[; ;main.c: 407: ADCON0bits.GO = 1;
+"407
 [e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
-[; ;main.c: 405: while (ADCON0bits.GO == 1) {}
-"405
-[e $U 1371  ]
-[e :U 1372 ]
+[; ;main.c: 408: while (ADCON0bits.GO == 1) {}
+"408
+[e $U 1362  ]
+[e :U 1363 ]
 {
+}
+[e :U 1362 ]
+[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1363  ]
+[e :U 1364 ]
+[; ;main.c: 409: ADCON1bits.ADCAL = 0;
+"409
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 412: ADCON0bits.CHS = 0;
+"412
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+[; ;main.c: 413: ADCON0bits.GO = 1;
+"413
+[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
+[; ;main.c: 414: while (ADCON0bits.GO == 1) {}
+"414
+[e $U 1365  ]
+[e :U 1366 ]
+{
+}
+[e :U 1365 ]
+[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1366  ]
+[e :U 1367 ]
+"416
+[v _adc_result `ui ~T0 @X0 1 a ]
+[; ;main.c: 416: uint16_t adc_result = (ADRESHbits.ADRESH << 8) + ADRESLbits.ADRESL;
+[e = _adc_result -> + << -> . . _ADRESHbits 0 0 `i -> 8 `i -> . . _ADRESLbits 0 0 `i `ui ]
+[; ;main.c: 417: m_battery_voltage = (4096F / adc_result) * 1.24F;
+"417
+[e = _m_battery_voltage * / -> .4096 `f -> _adc_result `f -> .1.24 `f ]
+[; ;main.c: 420: ADCON0bits.CHS = 1;
+"420
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 422: ADCON0bits.GO = 1;
+"422
+[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
+[; ;main.c: 423: while (ADCON0bits.GO == 1) {}
+"423
+[e $U 1368  ]
+[e :U 1369 ]
+{
+}
+[e :U 1368 ]
+[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1369  ]
+[e :U 1370 ]
+[; ;main.c: 425: adc_result = (ADRESHbits.ADRESH << 8) + ADRESLbits.ADRESL;
+"425
+[e = _adc_result -> + << -> . . _ADRESHbits 0 0 `i -> 8 `i -> . . _ADRESLbits 0 0 `i `ui ]
+[; ;main.c: 426: m_light_level = (uint8_t)((adc_result / 74F) * 100F);
+"426
+[e = _m_light_level -> * / -> _adc_result `f -> .74 `f -> .100 `f `uc ]
+[; ;main.c: 427: if (m_light_level > 100)
+"427
+[e $ ! > -> _m_light_level `i -> 100 `i 1371  ]
+[; ;main.c: 428: {
+"428
+{
+[; ;main.c: 429: m_light_level = 100;
+"429
+[e = _m_light_level -> -> 100 `i `uc ]
+"430
 }
 [e :U 1371 ]
-[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1372  ]
-[e :U 1373 ]
-[; ;main.c: 406: ADCON1bits.ADCAL = 0;
-"406
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 409: ADCON0bits.CHS = 0;
-"409
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-[; ;main.c: 410: ADCON0bits.GO = 1;
-"410
-[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
-[; ;main.c: 411: while (ADCON0bits.GO == 1) {}
-"411
-[e $U 1374  ]
-[e :U 1375 ]
-{
-}
-[e :U 1374 ]
-[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1375  ]
-[e :U 1376 ]
-"413
-[v _adc_result `ui ~T0 @X0 1 a ]
-[; ;main.c: 413: uint16_t adc_result = (ADRESHbits.ADRESH << 8) + ADRESLbits.ADRESL;
-[e = _adc_result -> + << -> . . _ADRESHbits 0 0 `i -> 8 `i -> . . _ADRESLbits 0 0 `i `ui ]
-[; ;main.c: 414: m_battery_voltage = (4096F / adc_result) * 1.24F;
-"414
-[e = _m_battery_voltage * / -> .4096 `f -> _adc_result `f -> .1.24 `f ]
-[; ;main.c: 417: ADCON0bits.CHS = 1;
-"417
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 419: ADCON0bits.GO = 1;
-"419
-[e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
-[; ;main.c: 420: while (ADCON0bits.GO == 1) {}
-"420
-[e $U 1377  ]
-[e :U 1378 ]
-{
-}
-[e :U 1377 ]
-[e $ == -> . . _ADCON0bits 4 1 `i -> 1 `i 1378  ]
-[e :U 1379 ]
-[; ;main.c: 422: adc_result = (ADRESHbits.ADRESH << 8) + ADRESLbits.ADRESL;
-"422
-[e = _adc_result -> + << -> . . _ADRESHbits 0 0 `i -> 8 `i -> . . _ADRESLbits 0 0 `i `ui ]
-[; ;main.c: 423: m_light_level = (uint8_t)((adc_result / 74F) * 100F);
-"423
-[e = _m_light_level -> * / -> _adc_result `f -> .74 `f -> .100 `f `uc ]
-[; ;main.c: 424: if (m_light_level > 100)
-"424
-[e $ ! > -> _m_light_level `i -> 100 `i 1380  ]
-[; ;main.c: 425: {
-"425
-{
-[; ;main.c: 426: m_light_level = 100;
-"426
-[e = _m_light_level -> -> 100 `i `uc ]
-"427
-}
-[e :U 1380 ]
-[; ;main.c: 427: }
-[; ;main.c: 432: _delay((unsigned long)((90)*(8000000/4000.0)));
-"432
-[e ( __delay (1 -> * -> -> 90 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 433: OpenI2C1(0b00001000, 0b10000000);
-"433
-[e ( _OpenI2C1 (2 , -> -> 8 `i `uc -> -> 128 `i `uc ]
+[; ;main.c: 430: }
+[; ;main.c: 435: _delay((unsigned long)((90)*(8000000/4000.0)));
 "435
+[e ( __delay (1 -> * -> -> 90 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 436: OpenI2C1(0b00001000, 0b10000000);
+"436
+[e ( _OpenI2C1 (2 , -> -> 8 `i `uc -> -> 128 `i `uc ]
+"438
 [v _t0 `uc ~T0 @X0 1 a ]
 [v _t1 `uc ~T0 @X0 1 a ]
-[; ;main.c: 435: uint8_t t0, t1;
-[; ;main.c: 438: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"438
+[; ;main.c: 438: uint8_t t0, t1;
+[; ;main.c: 441: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"441
+[e $U 1372  ]
+[e :U 1373 ]
+[e :U 1372 ]
+[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1373  ]
+[e :U 1374 ]
+[; ;main.c: 442: SSP1CON2bits.SEN=1;while(SSP1CON2bits.SEN);
+"442
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+[e $U 1375  ]
+[e :U 1376 ]
+[e :U 1375 ]
+[e $ != -> . . _SSP1CON2bits 0 0 `i -> -> -> 0 `i `Vuc `i 1376  ]
+[e :U 1377 ]
+[; ;main.c: 443: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"443
+[e $U 1378  ]
+[e :U 1379 ]
+[e :U 1378 ]
+[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1379  ]
+[e :U 1380 ]
+[; ;main.c: 444: WriteI2C1( 0b10010000 & 0xfe );
+"444
+[e ( _WriteI2C1 (1 -> & -> 144 `i -> 254 `i `uc ]
+[; ;main.c: 445: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"445
 [e $U 1381  ]
 [e :U 1382 ]
 [e :U 1381 ]
 [e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1382  ]
 [e :U 1383 ]
-[; ;main.c: 439: SSP1CON2bits.SEN=1;while(SSP1CON2bits.SEN);
-"439
-[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 446: WriteI2C1( 0x00 );
+"446
+[e ( _WriteI2C1 (1 -> -> 0 `i `uc ]
+[; ;main.c: 447: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"447
 [e $U 1384  ]
 [e :U 1385 ]
 [e :U 1384 ]
-[e $ != -> . . _SSP1CON2bits 0 0 `i -> -> -> 0 `i `Vuc `i 1385  ]
+[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1385  ]
 [e :U 1386 ]
-[; ;main.c: 440: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"440
+[; ;main.c: 448: SSP1CON2bits.PEN=1;while(SSP1CON2bits.PEN);
+"448
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
 [e $U 1387  ]
 [e :U 1388 ]
 [e :U 1387 ]
-[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1388  ]
+[e $ != -> . . _SSP1CON2bits 0 2 `i -> -> -> 0 `i `Vuc `i 1388  ]
 [e :U 1389 ]
-[; ;main.c: 441: WriteI2C1( 0b10010000 & 0xfe );
-"441
-[e ( _WriteI2C1 (1 -> & -> 144 `i -> 254 `i `uc ]
-[; ;main.c: 442: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"442
+[; ;main.c: 451: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"451
 [e $U 1390  ]
 [e :U 1391 ]
 [e :U 1390 ]
 [e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1391  ]
 [e :U 1392 ]
-[; ;main.c: 443: WriteI2C1( 0x00 );
-"443
-[e ( _WriteI2C1 (1 -> -> 0 `i `uc ]
-[; ;main.c: 444: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"444
+[; ;main.c: 452: SSP1CON2bits.SEN=1;while(SSP1CON2bits.SEN);
+"452
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
 [e $U 1393  ]
 [e :U 1394 ]
 [e :U 1393 ]
-[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1394  ]
+[e $ != -> . . _SSP1CON2bits 0 0 `i -> -> -> 0 `i `Vuc `i 1394  ]
 [e :U 1395 ]
-[; ;main.c: 445: SSP1CON2bits.PEN=1;while(SSP1CON2bits.PEN);
-"445
-[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 453: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"453
 [e $U 1396  ]
 [e :U 1397 ]
 [e :U 1396 ]
-[e $ != -> . . _SSP1CON2bits 0 2 `i -> -> -> 0 `i `Vuc `i 1397  ]
+[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1397  ]
 [e :U 1398 ]
-[; ;main.c: 448: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"448
+[; ;main.c: 454: WriteI2C1( 0b10010000 | 0x01 );
+"454
+[e ( _WriteI2C1 (1 -> | -> 144 `i -> 1 `i `uc ]
+[; ;main.c: 455: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
+"455
 [e $U 1399  ]
 [e :U 1400 ]
 [e :U 1399 ]
 [e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1400  ]
 [e :U 1401 ]
-[; ;main.c: 449: SSP1CON2bits.SEN=1;while(SSP1CON2bits.SEN);
-"449
-[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 456: t1 = ReadI2C1();
+"456
+[e = _t1 ( _ReadI2C1 ..  ]
+[; ;main.c: 457: SSP1CON2bits.ACKDT=0, SSP1CON2bits.ACKEN=1;while(SSP1CON2bits.ACKEN);
+"457
+[e ; = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
 [e $U 1402  ]
 [e :U 1403 ]
 [e :U 1402 ]
-[e $ != -> . . _SSP1CON2bits 0 0 `i -> -> -> 0 `i `Vuc `i 1403  ]
+[e $ != -> . . _SSP1CON2bits 0 4 `i -> -> -> 0 `i `Vuc `i 1403  ]
 [e :U 1404 ]
-[; ;main.c: 450: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"450
+[; ;main.c: 458: t0 = ReadI2C1();
+"458
+[e = _t0 ( _ReadI2C1 ..  ]
+[; ;main.c: 459: SSP1CON2bits.ACKDT=1, SSP1CON2bits.ACKEN=1;while(SSP1CON2bits.ACKEN);
+"459
+[e ; = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
 [e $U 1405  ]
 [e :U 1406 ]
 [e :U 1405 ]
-[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1406  ]
+[e $ != -> . . _SSP1CON2bits 0 4 `i -> -> -> 0 `i `Vuc `i 1406  ]
 [e :U 1407 ]
-[; ;main.c: 451: WriteI2C1( 0b10010000 | 0x01 );
-"451
-[e ( _WriteI2C1 (1 -> | -> 144 `i -> 1 `i `uc ]
-[; ;main.c: 452: while ((SSP1CON2 & 0x1F) | (SSP1STATbits.R_W));
-"452
+[; ;main.c: 460: SSP1CON2bits.PEN=1;while(SSP1CON2bits.PEN);
+"460
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
 [e $U 1408  ]
 [e :U 1409 ]
 [e :U 1408 ]
-[e $ != | & -> _SSP1CON2 `i -> 31 `i -> . . _SSP1STATbits 4 1 `i -> 0 `i 1409  ]
+[e $ != -> . . _SSP1CON2bits 0 2 `i -> -> -> 0 `i `Vuc `i 1409  ]
 [e :U 1410 ]
-[; ;main.c: 453: t1 = ReadI2C1();
-"453
-[e = _t1 ( _ReadI2C1 ..  ]
-[; ;main.c: 454: SSP1CON2bits.ACKDT=0, SSP1CON2bits.ACKEN=1;while(SSP1CON2bits.ACKEN);
-"454
-[e ; = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[e $U 1411  ]
-[e :U 1412 ]
-[e :U 1411 ]
-[e $ != -> . . _SSP1CON2bits 0 4 `i -> -> -> 0 `i `Vuc `i 1412  ]
-[e :U 1413 ]
-[; ;main.c: 455: t0 = ReadI2C1();
-"455
-[e = _t0 ( _ReadI2C1 ..  ]
-[; ;main.c: 456: SSP1CON2bits.ACKDT=1, SSP1CON2bits.ACKEN=1;while(SSP1CON2bits.ACKEN);
-"456
-[e ; = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-[e $U 1414  ]
-[e :U 1415 ]
-[e :U 1414 ]
-[e $ != -> . . _SSP1CON2bits 0 4 `i -> -> -> 0 `i `Vuc `i 1415  ]
-[e :U 1416 ]
-[; ;main.c: 457: SSP1CON2bits.PEN=1;while(SSP1CON2bits.PEN);
-"457
-[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
-[e $U 1417  ]
-[e :U 1418 ]
-[e :U 1417 ]
-[e $ != -> . . _SSP1CON2bits 0 2 `i -> -> -> 0 `i `Vuc `i 1418  ]
-[e :U 1419 ]
-"459
+"462
 [v _value `ui ~T0 @X0 1 a ]
-[; ;main.c: 459: uint16_t value = (t1<<8) + t0;
+[; ;main.c: 462: uint16_t value = (t1<<8) + t0;
 [e = _value -> + << -> _t1 `i -> 8 `i -> _t0 `i `ui ]
-[; ;main.c: 460: value = (value>>4);
-"460
-[e = _value >> _value -> 4 `i ]
-[; ;main.c: 461: m_temperature = ((float)value)*0.0625F;
-"461
-[e = _m_temperature * -> _value `f -> .0.0625 `f ]
-[; ;main.c: 463: ADCON0bits.ADON = 0;
+[; ;main.c: 463: value = (value>>4);
 "463
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 464: SSP1CON1 &=0xDF;
+[e = _value >> _value -> 4 `i ]
+[; ;main.c: 464: m_temperature = ((float)value)*0.0625F;
 "464
-[e =& _SSP1CON1 -> -> 223 `i `uc ]
-[; ;main.c: 465: LATAbits.LATA6 = 0;
-"465
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 466: }
+[e = _m_temperature * -> _value `f -> .0.0625 `f ]
+[; ;main.c: 466: ADCON0bits.ADON = 0;
 "466
-[e :UE 1370 ]
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 467: SSP1CON1 &=0xDF;
+"467
+[e =& _SSP1CON1 -> -> 223 `i `uc ]
+[; ;main.c: 468: LATAbits.LATA6 = 0;
+"468
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 469: }
+"469
+[e :UE 1361 ]
 }
-"470
+"473
 [v _send_initial_update `(uc ~T0 @X0 1 ef ]
-"471
+"474
 {
-[; ;main.c: 470: bool send_initial_update()
-[; ;main.c: 471: {
+[; ;main.c: 473: bool send_initial_update()
+[; ;main.c: 474: {
 [e :U _send_initial_update ]
 [f ]
-"472
+"475
 [v _tmp `ui ~T0 @X0 1 a ]
-[; ;main.c: 472: uint16_t tmp;
-[; ;main.c: 474: p_buffer = m_buffer;
-"474
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 477: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
+[; ;main.c: 475: uint16_t tmp;
+[; ;main.c: 477: p_buffer = m_buffer;
 "477
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 478: m_var.unit = 2;
-"478
-[e = . _m_var 4 -> -> 2 `i `uc ]
-[; ;main.c: 479: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
-"479
-[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
-[; ;main.c: 480: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 480: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
 "480
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
-[; ;main.c: 481: m_var.writable = 0;
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 481: m_var.unit = 2;
 "481
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 482: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e = . _m_var 4 -> -> 2 `i `uc ]
+[; ;main.c: 482: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
 "482
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 484: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
+[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
+[; ;main.c: 483: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
+"483
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
+[; ;main.c: 484: m_var.writable = 0;
 "484
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 485: m_var.unit = 3;
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 485: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "485
-[e = . _m_var 4 -> -> 3 `i `uc ]
-[; ;main.c: 486: m_var.value_byte1 = m_light_level;
-"486
-[e = . _m_var 2 _m_light_level ]
-[; ;main.c: 487: m_var.writable = 0;
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 487: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
 "487
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 488: p_buffer += encode_uint8_variable(p_buffer, m_var);
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 488: m_var.unit = 3;
 "488
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 490: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
-"490
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 491: m_var.unit = 1;
-"491
-[e = . _m_var 4 -> -> 1 `i `uc ]
-[; ;main.c: 492: m_var.value_byte1 = (uint8_t)floor(m_temperature);
-"492
-[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
-[; ;main.c: 493: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
-"493
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
-[; ;main.c: 494: m_var.writable = 0;
-"494
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 495: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"495
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 497: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
-"497
-[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1421  ]
-[; ;main.c: 498: return 0;
-"498
-[e ) -> -> 0 `i `uc ]
-[e $UE 1420  ]
-[e :U 1421 ]
-[; ;main.c: 501: p_buffer = m_buffer;
-"501
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 503: memcpy(m_var.label, POWER_LABEL, 3);
-"503
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 504: m_var.unit = 8;
-"504
-[e = . _m_var 4 -> -> 8 `i `uc ]
-[; ;main.c: 505: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
-"505
-[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
-[; ;main.c: 506: m_var.writable = 1;
-"506
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 507: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"507
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 509: memcpy(m_var.label, UPTIME_LABEL, 3);
-"509
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 510: m_var.unit = 7;
-"510
-[e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 511: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
-"511
-[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 512: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
-"512
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 513: m_var.writable = 0;
-"513
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 514: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"514
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 516: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"516
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 517: m_var.unit = 4;
-"517
-[e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 518: m_var.value_byte1 = m_update_frequency;
-"518
-[e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 519: m_var.writable = 1;
-"519
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 520: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"520
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 522: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
-"522
-[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1422  ]
-[; ;main.c: 523: return 0;
-"523
-[e ) -> -> 0 `i `uc ]
-[e $UE 1420  ]
-[e :U 1422 ]
-[; ;main.c: 527: p_buffer = m_buffer;
-"527
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 528: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
-"528
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 529: m_var.unit = 3;
-"529
 [e = . _m_var 4 -> -> 3 `i `uc ]
-"530
-[v _tmp2 `f ~T0 @X0 1 a ]
-[; ;main.c: 530: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
-[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
-[; ;main.c: 531: m_var.value_byte1 = (uint8_t)floor(tmp2);
-"531
-[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
-[; ;main.c: 532: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
-"532
-[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
-[; ;main.c: 533: m_var.writable = 0;
-"533
+[; ;main.c: 489: m_var.value_byte1 = m_light_level;
+"489
+[e = . _m_var 2 _m_light_level ]
+[; ;main.c: 490: m_var.writable = 0;
+"490
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 534: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"534
+[; ;main.c: 491: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"491
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 493: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
+"493
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 494: m_var.unit = 1;
+"494
+[e = . _m_var 4 -> -> 1 `i `uc ]
+[; ;main.c: 495: m_var.value_byte1 = (uint8_t)floor(m_temperature);
+"495
+[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
+[; ;main.c: 496: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
+"496
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
+[; ;main.c: 497: m_var.writable = 0;
+"497
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 498: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"498
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 536: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+[; ;main.c: 500: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
+"500
+[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1412  ]
+[; ;main.c: 501: return 0;
+"501
+[e ) -> -> 0 `i `uc ]
+[e $UE 1411  ]
+[e :U 1412 ]
+[; ;main.c: 504: p_buffer = m_buffer;
+"504
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 506: memcpy(m_var.label, POWER_LABEL, 3);
+"506
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 507: m_var.unit = 8;
+"507
+[e = . _m_var 4 -> -> 8 `i `uc ]
+[; ;main.c: 508: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+"508
+[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
+[; ;main.c: 509: m_var.writable = 1;
+"509
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 510: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"510
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 512: memcpy(m_var.label, UPTIME_LABEL, 3);
+"512
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 513: m_var.unit = 7;
+"513
+[e = . _m_var 4 -> -> 7 `i `uc ]
+[; ;main.c: 514: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+"514
+[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
+[; ;main.c: 515: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+"515
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
+[; ;main.c: 516: m_var.writable = 0;
+"516
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 517: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"517
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 519: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+"519
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 520: m_var.unit = 4;
+"520
+[e = . _m_var 4 -> -> 4 `i `uc ]
+[; ;main.c: 521: m_var.value_byte1 = m_update_frequency;
+"521
+[e = . _m_var 2 _m_update_frequency ]
+[; ;main.c: 522: m_var.writable = 1;
+"522
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 523: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"523
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 525: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
+"525
+[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1413  ]
+[; ;main.c: 526: return 0;
+"526
+[e ) -> -> 0 `i `uc ]
+[e $UE 1411  ]
+[e :U 1413 ]
+[; ;main.c: 530: p_buffer = m_buffer;
+"530
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 531: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
+"531
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 532: m_var.unit = 3;
+"532
+[e = . _m_var 4 -> -> 3 `i `uc ]
+"533
+[v _tmp2 `f ~T0 @X0 1 a ]
+[; ;main.c: 533: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
+[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
+[; ;main.c: 534: m_var.value_byte1 = (uint8_t)floor(tmp2);
+"534
+[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
+[; ;main.c: 535: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
+"535
+[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
+[; ;main.c: 536: m_var.writable = 0;
 "536
-[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
-[e $UE 1420  ]
-[; ;main.c: 537: }
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 537: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "537
-[e :UE 1420 ]
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 539: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"539
+[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
+[e $UE 1411  ]
+[; ;main.c: 540: }
+"540
+[e :UE 1411 ]
 }
-"541
+"544
 [v _send_writables_update `(uc ~T0 @X0 1 ef ]
-"542
+"545
 {
-[; ;main.c: 541: bool send_writables_update()
-[; ;main.c: 542: {
+[; ;main.c: 544: bool send_writables_update()
+[; ;main.c: 545: {
 [e :U _send_writables_update ]
 [f ]
-"543
-[v _tmp `ui ~T0 @X0 1 a ]
-[; ;main.c: 543: uint16_t tmp;
-[; ;main.c: 544: p_buffer = m_buffer;
-"544
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 546: if (Pwr_updated)
 "546
-[e $ ! != -> _Pwr_updated `i -> -> -> 0 `i `uc `i 1424  ]
-[; ;main.c: 547: {
+[v _tmp `ui ~T0 @X0 1 a ]
+[; ;main.c: 546: uint16_t tmp;
+[; ;main.c: 547: p_buffer = m_buffer;
 "547
-{
-[; ;main.c: 549: memcpy(m_var.label, POWER_LABEL, 3);
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 549: if (Pwr_updated)
 "549
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 550: m_var.unit = 0;
+[e $ ! != -> _Pwr_updated `i -> -> -> 0 `i `uc `i 1415  ]
+[; ;main.c: 550: {
 "550
-[e = . _m_var 4 -> -> 0 `i `uc ]
-[; ;main.c: 551: m_var.value_byte1 = m_power;
-"551
-[e = . _m_var 2 _m_power ]
-[; ;main.c: 552: m_var.writable = 1;
+{
+[; ;main.c: 552: memcpy(m_var.label, POWER_LABEL, 3);
 "552
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 553: p_buffer += encode_uint8_variable(p_buffer, m_var);
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 553: m_var.unit = 8;
 "553
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 554: Pwr_updated = 0;
+[e = . _m_var 4 -> -> 8 `i `uc ]
+[; ;main.c: 554: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 "554
-[e = _Pwr_updated -> -> 0 `i `uc ]
+[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
+[; ;main.c: 555: m_var.writable = 1;
 "555
-}
-[e :U 1424 ]
-[; ;main.c: 555: }
-[; ;main.c: 556: if (UpF_updated)
-"556
-[e $ ! != -> _UpF_updated `i -> -> -> 0 `i `uc `i 1425  ]
-[; ;main.c: 557: {
-"557
-{
-[; ;main.c: 559: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"559
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 560: m_var.unit = 4;
-"560
-[e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 561: m_var.value_byte1 = m_update_frequency;
-"561
-[e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 562: m_var.writable = 1;
-"562
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 563: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"563
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 564: UpF_updated = 0;
-"564
-[e = _UpF_updated -> -> 0 `i `uc ]
-"565
+[; ;main.c: 556: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"556
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 557: Pwr_updated = 0;
+"557
+[e = _Pwr_updated -> -> 0 `i `uc ]
+"558
 }
-[e :U 1425 ]
-[; ;main.c: 565: }
-[; ;main.c: 567: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
-"567
-[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
-[e $UE 1423  ]
-[; ;main.c: 568: }
-"568
-[e :UE 1423 ]
-}
-"572
-[v _send_periodical_update `(uc ~T0 @X0 1 ef ]
-"573
+[e :U 1415 ]
+[; ;main.c: 558: }
+[; ;main.c: 559: if (UpF_updated)
+"559
+[e $ ! != -> _UpF_updated `i -> -> -> 0 `i `uc `i 1416  ]
+[; ;main.c: 560: {
+"560
 {
-[; ;main.c: 572: bool send_periodical_update()
-[; ;main.c: 573: {
+[; ;main.c: 562: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+"562
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 563: m_var.unit = 4;
+"563
+[e = . _m_var 4 -> -> 4 `i `uc ]
+[; ;main.c: 564: m_var.value_byte1 = m_update_frequency;
+"564
+[e = . _m_var 2 _m_update_frequency ]
+[; ;main.c: 565: m_var.writable = 1;
+"565
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 566: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"566
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 567: UpF_updated = 0;
+"567
+[e = _UpF_updated -> -> 0 `i `uc ]
+"568
+}
+[e :U 1416 ]
+[; ;main.c: 568: }
+[; ;main.c: 570: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"570
+[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
+[e $UE 1414  ]
+[; ;main.c: 571: }
+"571
+[e :UE 1414 ]
+}
+"575
+[v _send_periodical_update `(uc ~T0 @X0 1 ef ]
+"576
+{
+[; ;main.c: 575: bool send_periodical_update()
+[; ;main.c: 576: {
 [e :U _send_periodical_update ]
 [f ]
-"574
+"577
 [v _tmp `ui ~T0 @X0 1 a ]
-[; ;main.c: 574: uint16_t tmp;
-[; ;main.c: 576: p_buffer = m_buffer;
-"576
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 579: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
+[; ;main.c: 577: uint16_t tmp;
+[; ;main.c: 579: p_buffer = m_buffer;
 "579
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 580: m_var.unit = 2;
-"580
-[e = . _m_var 4 -> -> 2 `i `uc ]
-[; ;main.c: 581: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
-"581
-[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
-[; ;main.c: 582: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
-"582
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
-[; ;main.c: 583: m_var.writable = 0;
-"583
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 584: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"584
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 586: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
-"586
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 587: m_var.unit = 3;
-"587
-[e = . _m_var 4 -> -> 3 `i `uc ]
-[; ;main.c: 588: m_var.value_byte1 = m_light_level;
-"588
-[e = . _m_var 2 _m_light_level ]
-[; ;main.c: 589: m_var.writable = 0;
-"589
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 590: p_buffer += encode_uint8_variable(p_buffer, m_var);
-"590
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 592: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
-"592
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 593: m_var.unit = 1;
-"593
-[e = . _m_var 4 -> -> 1 `i `uc ]
-[; ;main.c: 594: m_var.value_byte1 = (uint8_t)floor(m_temperature);
-"594
-[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
-[; ;main.c: 595: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
-"595
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
-[; ;main.c: 596: m_var.writable = 0;
-"596
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 597: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"597
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 599: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
-"599
-[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1427  ]
-[; ;main.c: 600: return 0;
-"600
-[e ) -> -> 0 `i `uc ]
-[e $UE 1426  ]
-[e :U 1427 ]
-[; ;main.c: 603: p_buffer = m_buffer;
-"603
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 605: memcpy(m_var.label, UPTIME_LABEL, 3);
-"605
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 606: m_var.unit = 7;
-"606
-[e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 607: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
-"607
-[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 608: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
-"608
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 609: m_var.writable = 0;
-"609
+[; ;main.c: 582: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
+"582
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 583: m_var.unit = 2;
+"583
+[e = . _m_var 4 -> -> 2 `i `uc ]
+[; ;main.c: 584: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
+"584
+[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
+[; ;main.c: 585: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
+"585
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
+[; ;main.c: 586: m_var.writable = 0;
+"586
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 610: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"610
+[; ;main.c: 587: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"587
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 612: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
-"612
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 613: m_var.unit = 3;
-"613
+[; ;main.c: 589: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
+"589
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 590: m_var.unit = 3;
+"590
 [e = . _m_var 4 -> -> 3 `i `uc ]
-"614
-[v _tmp2 `f ~T0 @X0 1 a ]
-[; ;main.c: 614: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
-[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
-[; ;main.c: 615: m_var.value_byte1 = (uint8_t)floor(tmp2);
-"615
-[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
-[; ;main.c: 616: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
-"616
-[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
-[; ;main.c: 617: m_var.writable = 0;
-"617
+[; ;main.c: 591: m_var.value_byte1 = m_light_level;
+"591
+[e = . _m_var 2 _m_light_level ]
+[; ;main.c: 592: m_var.writable = 0;
+"592
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 618: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"618
+[; ;main.c: 593: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"593
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 595: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
+"595
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 596: m_var.unit = 1;
+"596
+[e = . _m_var 4 -> -> 1 `i `uc ]
+[; ;main.c: 597: m_var.value_byte1 = (uint8_t)floor(m_temperature);
+"597
+[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
+[; ;main.c: 598: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
+"598
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
+[; ;main.c: 599: m_var.writable = 0;
+"599
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 600: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"600
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 620: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+[; ;main.c: 602: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
+"602
+[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1418  ]
+[; ;main.c: 603: return 0;
+"603
+[e ) -> -> 0 `i `uc ]
+[e $UE 1417  ]
+[e :U 1418 ]
+[; ;main.c: 606: p_buffer = m_buffer;
+"606
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 608: memcpy(m_var.label, UPTIME_LABEL, 3);
+"608
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 609: m_var.unit = 7;
+"609
+[e = . _m_var 4 -> -> 7 `i `uc ]
+[; ;main.c: 610: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+"610
+[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
+[; ;main.c: 611: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+"611
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
+[; ;main.c: 612: m_var.writable = 0;
+"612
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 613: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"613
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 615: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
+"615
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 616: m_var.unit = 3;
+"616
+[e = . _m_var 4 -> -> 3 `i `uc ]
+"617
+[v _tmp2 `f ~T0 @X0 1 a ]
+[; ;main.c: 617: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
+[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
+[; ;main.c: 618: m_var.value_byte1 = (uint8_t)floor(tmp2);
+"618
+[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
+[; ;main.c: 619: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
+"619
+[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
+[; ;main.c: 620: m_var.writable = 0;
 "620
-[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
-[e $UE 1426  ]
-[; ;main.c: 621: }
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 621: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "621
-[e :UE 1426 ]
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 623: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"623
+[e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
+[e $UE 1417  ]
+[; ;main.c: 624: }
+"624
+[e :UE 1417 ]
 }
-"625
+"628
 [v _update_variable `(v ~T0 @X0 1 ef ]
-"626
+"629
 {
-[; ;main.c: 625: void update_variable()
-[; ;main.c: 626: {
+[; ;main.c: 628: void update_variable()
+[; ;main.c: 629: {
 [e :U _update_variable ]
 [f ]
-[; ;main.c: 627: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
-"627
-[e $ ! == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _POWER_LABEL `*uc `i -> 1 `i 1429  ]
-[; ;main.c: 628: {
-"628
-{
-[; ;main.c: 629: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
-"629
-[e = _m_power ( _mW_ufixed16_to_dBm (2 , . _m_var 2 . _m_var 3 ]
-[; ;main.c: 630: MiMAC_SetPower(m_power);
+[; ;main.c: 630: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
 "630
-[e ( _MiMAC_SetPower (1 _m_power ]
-[; ;main.c: 631: Pwr_updated = 1;
+[e $ ! == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _POWER_LABEL `*uc `i -> 1 `i 1420  ]
+[; ;main.c: 631: {
 "631
-[e = _Pwr_updated -> -> 1 `i `uc ]
+{
+[; ;main.c: 632: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
 "632
-}
-[; ;main.c: 632: }
-[e $U 1430  ]
+[e = _m_power ( _mW_ufixed16_to_dBm (2 , . _m_var 2 . _m_var 3 ]
+[; ;main.c: 633: MiMAC_SetPower(m_power);
 "633
-[e :U 1429 ]
-[; ;main.c: 633: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
-[e $ ! && && == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _UPDATE_FREQUENCY_LABEL `*uc `i -> 1 `i == -> . _m_var 4 `i -> 4 `i == -> . _m_var 1 `i -> 0 `i 1431  ]
-[; ;main.c: 635: {
+[e ( _MiMAC_SetPower (1 _m_power ]
+[; ;main.c: 634: Pwr_updated = 1;
+"634
+[e = _Pwr_updated -> -> 1 `i `uc ]
 "635
-{
-[; ;main.c: 636: if (m_var.value_byte1 == 0)
+}
+[; ;main.c: 635: }
+[e $U 1421  ]
 "636
-[e $ ! == -> . _m_var 2 `i -> 0 `i 1432  ]
-[; ;main.c: 637: {
-"637
-{
-[; ;main.c: 638: m_update_frequency = 0;
+[e :U 1420 ]
+[; ;main.c: 636: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
+[e $ ! && && == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _UPDATE_FREQUENCY_LABEL `*uc `i -> 1 `i == -> . _m_var 4 `i -> 4 `i == -> . _m_var 1 `i -> 0 `i 1422  ]
+[; ;main.c: 638: {
 "638
-[e = _m_update_frequency -> -> 0 `i `uc ]
-[; ;main.c: 639: RtccWrOn();
+{
+[; ;main.c: 639: if (m_var.value_byte1 == 0)
 "639
-[e ( _RtccWrOn ..  ]
-[; ;main.c: 640: RTCCFGbits.RTCPTR0 = 0;
+[e $ ! == -> . _m_var 2 `i -> 0 `i 1423  ]
+[; ;main.c: 640: {
 "640
-[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 641: RTCCFGbits.RTCPTR1 = 0;
+{
+[; ;main.c: 641: m_update_frequency = 0;
 "641
-[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 642: RTCVALHbits.RTCVALH = 0x00;
+[e = _m_update_frequency -> -> 0 `i `uc ]
+[; ;main.c: 642: RtccWrOn();
 "642
-[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 643: RTCVALLbits.RTCVALL = 0x00;
-"643
-[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 644: ALRMCFGbits.AMASK = 0b0010;
-"644
-[e = . . _ALRMCFGbits 0 1 -> -> 2 `i `uc ]
-[; ;main.c: 645: (RTCCFGbits.RTCWREN = 0);
-"645
-[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 646: timer_count = 1;
-"646
-[e = _timer_count -> -> 1 `i `uc ]
-[; ;main.c: 647: timer_flag = 0;
-"647
-[e = _timer_flag -> -> 0 `i `uc ]
-"648
-}
-[; ;main.c: 648: }
-[e $U 1433  ]
-"649
-[e :U 1432 ]
-[; ;main.c: 649: else
-[; ;main.c: 650: {
-"650
-{
-[; ;main.c: 651: m_update_frequency = m_var.value_byte1;
-"651
-[e = _m_update_frequency . _m_var 2 ]
-[; ;main.c: 652: RtccWrOn();
-"652
 [e ( _RtccWrOn ..  ]
-[; ;main.c: 653: RTCCFGbits.RTCPTR0 = 0;
-"653
+[; ;main.c: 643: RTCCFGbits.RTCPTR0 = 0;
+"643
 [e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 654: RTCCFGbits.RTCPTR1 = 0;
-"654
+[; ;main.c: 644: RTCCFGbits.RTCPTR1 = 0;
+"644
 [e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 655: RTCVALHbits.RTCVALH = 0x00;
-"655
+[; ;main.c: 645: RTCVALHbits.RTCVALH = 0x00;
+"645
 [e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 656: RTCVALLbits.RTCVALL = 0x00;
-"656
+[; ;main.c: 646: RTCVALLbits.RTCVALL = 0x00;
+"646
 [e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 657: ALRMCFGbits.AMASK = 0b0011;
-"657
-[e = . . _ALRMCFGbits 0 1 -> -> 3 `i `uc ]
-[; ;main.c: 658: (RTCCFGbits.RTCWREN = 0);
-"658
+[; ;main.c: 647: ALRMCFGbits.AMASK = 0b0010;
+"647
+[e = . . _ALRMCFGbits 0 1 -> -> 2 `i `uc ]
+[; ;main.c: 648: (RTCCFGbits.RTCWREN = 0);
+"648
 [e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 659: timer_count = m_update_frequency;
-"659
-[e = _timer_count _m_update_frequency ]
-[; ;main.c: 660: timer_flag = 0;
-"660
+[; ;main.c: 649: timer_count = 1;
+"649
+[e = _timer_count -> -> 1 `i `uc ]
+[; ;main.c: 650: timer_flag = 0;
+"650
 [e = _timer_flag -> -> 0 `i `uc ]
-"661
+"651
 }
-[e :U 1433 ]
-[; ;main.c: 661: }
-[; ;main.c: 662: UpF_updated = 1;
-"662
-[e = _UpF_updated -> -> 1 `i `uc ]
-"663
-}
-[e :U 1431 ]
-"664
-[e :U 1430 ]
-[; ;main.c: 663: }
-[; ;main.c: 664: }
-[e :UE 1428 ]
-}
-"668
-[v _timer_reset `(v ~T0 @X0 1 ef ]
-"669
+[; ;main.c: 651: }
+[e $U 1424  ]
+"652
+[e :U 1423 ]
+[; ;main.c: 652: else
+[; ;main.c: 653: {
+"653
 {
-[; ;main.c: 668: void timer_reset()
-[; ;main.c: 669: {
+[; ;main.c: 654: m_update_frequency = m_var.value_byte1;
+"654
+[e = _m_update_frequency . _m_var 2 ]
+[; ;main.c: 655: RtccWrOn();
+"655
+[e ( _RtccWrOn ..  ]
+[; ;main.c: 656: RTCCFGbits.RTCPTR0 = 0;
+"656
+[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 657: RTCCFGbits.RTCPTR1 = 0;
+"657
+[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 658: RTCVALHbits.RTCVALH = 0x00;
+"658
+[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 659: RTCVALLbits.RTCVALL = 0x00;
+"659
+[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 660: ALRMCFGbits.AMASK = 0b0011;
+"660
+[e = . . _ALRMCFGbits 0 1 -> -> 3 `i `uc ]
+[; ;main.c: 661: (RTCCFGbits.RTCWREN = 0);
+"661
+[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 662: timer_count = m_update_frequency;
+"662
+[e = _timer_count _m_update_frequency ]
+[; ;main.c: 663: timer_flag = 0;
+"663
+[e = _timer_flag -> -> 0 `i `uc ]
+"664
+}
+[e :U 1424 ]
+[; ;main.c: 664: }
+[; ;main.c: 665: UpF_updated = 1;
+"665
+[e = _UpF_updated -> -> 1 `i `uc ]
+"666
+}
+[e :U 1422 ]
+"667
+[e :U 1421 ]
+[; ;main.c: 666: }
+[; ;main.c: 667: }
+[e :UE 1419 ]
+}
+"669
+[v _RTCC_reset `(v ~T0 @X0 1 ef ]
+"670
+{
+[; ;main.c: 669: void RTCC_reset()
+[; ;main.c: 670: {
+[e :U _RTCC_reset ]
+[f ]
+[; ;main.c: 671: RtccWrOn();
+"671
+[e ( _RtccWrOn ..  ]
+[; ;main.c: 672: RTCCFGbits.RTCPTR0 = 0;
+"672
+[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 673: RTCCFGbits.RTCPTR1 = 0;
+"673
+[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 674: RTCVALHbits.RTCVALH = 0x00;
+"674
+[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 675: RTCVALLbits.RTCVALL = 0x00;
+"675
+[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 676: (RTCCFGbits.RTCWREN = 0);
+"676
+[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 677: }
+"677
+[e :UE 1425 ]
+}
+"680
+[v _timer_reset `(v ~T0 @X0 1 ef ]
+"681
+{
+[; ;main.c: 680: void timer_reset()
+[; ;main.c: 681: {
 [e :U _timer_reset ]
 [f ]
-[; ;main.c: 677: if (m_update_frequency == 0)
-"677
-[e $ ! == -> _m_update_frequency `i -> 0 `i 1435  ]
-[; ;main.c: 678: timer_count = 1;
-"678
-[e = _timer_count -> -> 1 `i `uc ]
-[e $U 1436  ]
-"679
-[e :U 1435 ]
-[; ;main.c: 679: else
-[; ;main.c: 680: timer_count = m_update_frequency;
-"680
-[e = _timer_count _m_update_frequency ]
-[e :U 1436 ]
-[; ;main.c: 681: timer_flag = 0;
-"681
-[e = _timer_flag -> -> 0 `i `uc ]
-[; ;main.c: 682: }
+[; ;main.c: 682: if (m_update_frequency == 0)
 "682
-[e :UE 1434 ]
-}
-[v F10345 `(v ~T0 @X0 1 tf ]
+[e $ ! == -> _m_update_frequency `i -> 0 `i 1427  ]
+[; ;main.c: 683: timer_count = 1;
+"683
+[e = _timer_count -> -> 1 `i `uc ]
+[e $U 1428  ]
+"684
+[e :U 1427 ]
+[; ;main.c: 684: else
+[; ;main.c: 685: timer_count = m_update_frequency;
+"685
+[e = _timer_count _m_update_frequency ]
+[e :U 1428 ]
+[; ;main.c: 686: timer_flag = 0;
 "686
-[v _SYS_InterruptHigh `IF10345 ~T0 @X0 1 e ]
+[e = _timer_flag -> -> 0 `i `uc ]
+[; ;main.c: 687: }
 "687
+[e :UE 1426 ]
+}
+[v F10346 `(v ~T0 @X0 1 tf ]
+"690
+[v _SYS_InterruptHigh `IF10346 ~T0 @X0 1 e ]
+"691
 {
-[; ;main.c: 686: void interrupt SYS_InterruptHigh(void)
-[; ;main.c: 687: {
+[; ;main.c: 690: void interrupt SYS_InterruptHigh(void)
+[; ;main.c: 691: {
 [e :U _SYS_InterruptHigh ]
 [f ]
-[; ;main.c: 688: MIWIInterruptHandler();
-"688
+[; ;main.c: 692: MIWIInterruptHandler();
+"692
 [e ( _MIWIInterruptHandler ..  ]
-[; ;main.c: 689: }
-"689
-[e :UE 1437 ]
+[; ;main.c: 693: }
+"693
+[e :UE 1429 ]
 }
-[v F10348 `(v ~T0 @X0 1 tf ]
-"694
-[v _SYS_InterruptLow `ILF10348 ~T0 @X0 1 e ]
-"695
+[v F10349 `(v ~T0 @X0 1 tf ]
+"698
+[v _SYS_InterruptLow `ILF10349 ~T0 @X0 1 e ]
+"699
 {
-[; ;main.c: 694: void interrupt low_priority SYS_InterruptLow(void)
-[; ;main.c: 695: {
+[; ;main.c: 698: void interrupt low_priority SYS_InterruptLow(void)
+[; ;main.c: 699: {
 [e :U _SYS_InterruptLow ]
 [f ]
-[; ;main.c: 697: if(PIR3bits.RTCCIF)
-"697
-[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1439  ]
-[; ;main.c: 698: {
-"698
-{
-[; ;main.c: 699: m_uptime_days = m_uptime_days + 0.000694444F;
-"699
-[e = _m_uptime_days + _m_uptime_days -> .0.000694444 `f ]
-[; ;main.c: 700: timer_count = timer_count - 1;
-"700
-[e = _timer_count -> - -> _timer_count `i -> 1 `i `uc ]
-[; ;main.c: 701: if (timer_count == 0)
+[; ;main.c: 701: if(PIR3bits.RTCCIF)
 "701
-[e $ ! == -> _timer_count `i -> 0 `i 1440  ]
+[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1431  ]
 [; ;main.c: 702: {
 "702
 {
-[; ;main.c: 703: timer_flag = 1;
+[; ;main.c: 703: m_uptime_days = m_uptime_days + 0.000671296F;
 "703
-[e = _timer_flag -> -> 1 `i `uc ]
-[; ;main.c: 704: if (m_update_frequency == 0)
+[e = _m_uptime_days + _m_uptime_days -> .0.000671296 `f ]
+[; ;main.c: 704: timer_count = timer_count - 1;
 "704
-[e $ ! == -> _m_update_frequency `i -> 0 `i 1441  ]
-[; ;main.c: 705: timer_count = 1;
+[e = _timer_count -> - -> _timer_count `i -> 1 `i `uc ]
+[; ;main.c: 705: if (timer_count == 0)
 "705
-[e = _timer_count -> -> 1 `i `uc ]
-[e $U 1442  ]
+[e $ ! == -> _timer_count `i -> 0 `i 1432  ]
+[; ;main.c: 706: {
 "706
-[e :U 1441 ]
-[; ;main.c: 706: else
-[; ;main.c: 707: timer_count = m_update_frequency;
-"707
-[e = _timer_count _m_update_frequency ]
-[e :U 1442 ]
-"708
-}
-[e :U 1440 ]
-[; ;main.c: 708: }
-[; ;main.c: 709: PIR3bits.RTCCIF = 0;
-"709
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"710
-}
-[e :U 1439 ]
-[; ;main.c: 710: }
-[; ;main.c: 711: }
-"711
-[e :UE 1438 ]
-}
-"714
-[v _wait_for_1_sec `(v ~T0 @X0 1 ef ]
-"715
 {
-[; ;main.c: 714: void wait_for_1_sec()
-[; ;main.c: 715: {
+[; ;main.c: 707: timer_flag = 1;
+"707
+[e = _timer_flag -> -> 1 `i `uc ]
+[; ;main.c: 708: if (m_update_frequency == 0)
+"708
+[e $ ! == -> _m_update_frequency `i -> 0 `i 1433  ]
+[; ;main.c: 709: timer_count = 1;
+"709
+[e = _timer_count -> -> 1 `i `uc ]
+[e $U 1434  ]
+"710
+[e :U 1433 ]
+[; ;main.c: 710: else
+[; ;main.c: 711: timer_count = m_update_frequency;
+"711
+[e = _timer_count _m_update_frequency ]
+[e :U 1434 ]
+"712
+}
+[e :U 1432 ]
+[; ;main.c: 712: }
+[; ;main.c: 713: PIR3bits.RTCCIF = 0;
+"713
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"714
+}
+[e :U 1431 ]
+[; ;main.c: 714: }
+[; ;main.c: 715: }
+"715
+[e :UE 1430 ]
+}
+"718
+[v _wait_for_1_sec `(v ~T0 @X0 1 ef ]
+"719
+{
+[; ;main.c: 718: void wait_for_1_sec()
+[; ;main.c: 719: {
 [e :U _wait_for_1_sec ]
 [f ]
-"716
+"720
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 716: unsigned int i;
-[; ;main.c: 717: for (i=0; i<100; i++)
-"717
+[; ;main.c: 720: unsigned int i;
+[; ;main.c: 721: for (i=0; i<100; i++)
+"721
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1444  ]
-[e $U 1445  ]
-"718
-[e :U 1444 ]
-[; ;main.c: 718: {
+[e $ < _i -> -> 100 `i `ui 1436  ]
+[e $U 1437  ]
+"722
+[e :U 1436 ]
+[; ;main.c: 722: {
 {
-[; ;main.c: 719: _delay((unsigned long)((10)*(8000000/4000.0)));
-"719
+[; ;main.c: 723: _delay((unsigned long)((10)*(8000000/4000.0)));
+"723
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"720
+"724
 }
-"717
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 100 `i `ui 1444  ]
-[e :U 1445 ]
-"720
-}
-[; ;main.c: 720: }
-[; ;main.c: 721: }
 "721
-[e :UE 1443 ]
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> -> 100 `i `ui 1436  ]
+[e :U 1437 ]
+"724
+}
+[; ;main.c: 724: }
+[; ;main.c: 725: }
+"725
+[e :UE 1435 ]
 }

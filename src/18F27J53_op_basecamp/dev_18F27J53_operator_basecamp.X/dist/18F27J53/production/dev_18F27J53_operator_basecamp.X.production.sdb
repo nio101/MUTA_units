@@ -87,21 +87,21 @@ ADR_PENDING_STATE 8
 ADDRESS_STATE 16
 CONFIGURED_STATE 32
 ]
-"133 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
-[e E10824 . `uc
+"134 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+[e E10825 . `uc
 LED_OFF 0
 LED_FAST_PULSE 1
 LED_SLOW_PULSE 2
 LED_FULL 3
 ]
-"137
+"138
 [e E9788 . `uc
 STATE_INIT 0
 STATE_USB_READY 1
 STATE_READY 2
 STATE_PROBLEM 3
 ]
-"181
+"182
 [e E10064 . `uc
 DETACHED_STATE 0
 ATTACHED_STATE 1
@@ -111,7 +111,7 @@ ADR_PENDING_STATE 8
 ADDRESS_STATE 16
 CONFIGURED_STATE 32
 ]
-"851
+"857
 [e E10007 . `ui
 EVENT_NONE 0
 EVENT_DEVICE_STACK_BASE 1
@@ -148,7 +148,7 @@ EVENT_AUDIO_BASE 1000
 EVENT_USER_BASE 10000
 EVENT_BUS_ERROR 32767
 ]
-"852
+"858
 [e E10073 . `uc
 EVENT_CONFIGURED 1
 EVENT_SET_DESCRIPTOR 2
@@ -263,35 +263,37 @@ EVENT_TRANSFER_TERMINATED 5
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 0 0 ]
 "86 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/app_led_usb_status.c
 [v _APP_LEDUpdateUSBStatus APP_LEDUpdateUSBStatus `(v  1 e 0 0 ]
-"142 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"143 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _main main `(v  1 e 0 0 ]
-"468
+"470
 [v _send_network_register send_network_register `(v  1 e 0 0 ]
-"491
+"493
 [v _send_complete_update send_complete_update `(v  1 e 0 0 ]
-"548
+"550
 [v _send_answer_to_update send_answer_to_update `(v  1 e 0 0 ]
-"584
+"586
 [v _send_periodic_update send_periodic_update `(v  1 e 0 0 ]
-"607
+"609
 [v _update_variable update_variable `(v  1 e 0 0 ]
-"649
+"651
+[v _RTCC_reset RTCC_reset `(v  1 e 0 0 ]
+"661
 [v _timer_reset timer_reset `(v  1 e 0 0 ]
-"668
+"674
 [v _APP_DeviceCustomHIDInitialize APP_DeviceCustomHIDInitialize `(v  1 e 0 0 ]
-"681
+"687
 [v _sendHIDBinary sendHIDBinary `(uc  1 e 1 0 ]
-"701
+"707
 [v _sendHIDText sendHIDText `(uc  1 e 1 0 ]
-"729
+"735
 [v _update_LED update_LED `(i  1 e 2 0 ]
 [v i1_update_LED update_LED `(i  1 e 2 0 ]
 [v i2_update_LED update_LED `(i  1 e 2 0 ]
-"776
+"782
 [v _SYS_InterruptHigh SYS_InterruptHigh `II(v  1 e 0 0 ]
-"784
+"790
 [v _SYS_InterruptLow SYS_InterruptLow `IIL(v  1 e 0 0 ]
-"850
+"856
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(uc  1 e 1 0 ]
 "164 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/miwi/drv_mrf_miwi_89xa.c
 [v _RegisterSet RegisterSet `(v  1 e 0 0 ]
@@ -1237,23 +1239,23 @@ EVENT_TRANSFER_TERMINATED 5
 [s S4405 . 10 `[3]uc 1 label 3 0 `uc 1 type 1 3 `uc 1 value_byte1 1 4 `uc 1 value_byte2 1 5 `uc 1 unit 1 6 `uc 1 writable 1 7 `uc 1 _signed 1 8 `uc 1 size 1 9 ]
 "100
 [v _m_var m_var `S4405  1 e 10 0 ]
-"113
-[v _ReceivedDataBuffer ReceivedDataBuffer `[64]uc  1 e 64 0 ]
 "114
+[v _ReceivedDataBuffer ReceivedDataBuffer `[64]uc  1 e 64 0 ]
+"115
 [v _ToSendDataBuffer ToSendDataBuffer `[64]uc  1 e 64 0 ]
-"118
-[v _USBOutHandle USBOutHandle `*.39VEv  1 e 2 0 ]
 "119
+[v _USBOutHandle USBOutHandle `*.39VEv  1 e 2 0 ]
+"120
 [v _USBInHandle USBInHandle `*.39VEv  1 e 2 0 ]
-"124
-[v _LED_brightness LED_brightness `VEui  1 e 2 0 ]
 "125
+[v _LED_brightness LED_brightness `VEui  1 e 2 0 ]
+"126
 [v _LED_increasing LED_increasing `VEuc  1 e 1 0 ]
-"133
+"134
 [v _status_led status_led `VEE10762  1 e 1 0 ]
-"135
+"136
 [v _repeat_full repeat_full `VEuc  1 e 1 0 ]
-"137
+"138
 [v _myAppState myAppState `E9788  1 e 1 0 ]
 [s S1373 . 1 `uc 1 Valid 1 0 :1:0 
 ]
@@ -1621,15 +1623,15 @@ EVENT_TRANSFER_TERMINATED 5
 [v _device_dsc device_dsc `CS3396  1 e 18 0 ]
 "185
 [v _configDescriptor1 configDescriptor1 `C[41]uc  1 e 41 0 ]
-[s S5016 . 4 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[1]ui 1 string 2 2 ]
+[s S5021 . 4 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[1]ui 1 string 2 2 ]
 "234
-[v _sd000 sd000 `CS5016  1 e 4 0 ]
-[s S5020 . 52 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[25]ui 1 string 50 2 ]
+[v _sd000 sd000 `CS5021  1 e 4 0 ]
+[s S5025 . 52 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[25]ui 1 string 50 2 ]
 "239
-[v _sd001 sd001 `CS5020  1 e 52 0 ]
-[s S5024 . 46 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[22]ui 1 string 44 2 ]
+[v _sd001 sd001 `CS5025  1 e 52 0 ]
+[s S5029 . 46 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[22]ui 1 string 44 2 ]
 "246
-[v _sd002 sd002 `CS5024  1 e 46 0 ]
+[v _sd002 sd002 `CS5029  1 e 46 0 ]
 [s S4349 . 29 `[29]uc 1 report 29 0 ]
 "253
 [v _hid_rpt01 hid_rpt01 `CS4349  1 e 29 0 ]
@@ -1637,27 +1639,27 @@ EVENT_TRANSFER_TERMINATED 5
 [v _USB_CD_Ptr USB_CD_Ptr `C[1]*.32Cuc  1 e 2 0 ]
 "279
 [v _USB_SD_Ptr USB_SD_Ptr `C[3]*.32Cuc  1 e 6 0 ]
-"142 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"143 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _main main `(v  1 e 0 0 ]
 {
-"411
+"413
 [v main@last_update last_update `uc  1 a 1 19 ]
-"294
-[v main@shortaddress shortaddress `[2]uc  1 a 2 29 ]
-"298
-[v main@size size `uc  1 a 1 28 ]
 "296
+[v main@shortaddress shortaddress `[2]uc  1 a 2 29 ]
+"300
+[v main@size size `uc  1 a 1 28 ]
+"298
 [v main@rssi rssi `uc  1 a 1 25 ]
-"295
+"297
 [v main@power power `uc  1 a 1 24 ]
-"159
+"160
 [v main@x x `i  1 a 2 26 ]
-"463
+"465
 } 0
-"607
+"609
 [v _update_variable update_variable `(v  1 e 0 0 ]
 {
-"647
+"649
 } 0
 "22 D:\uc_stuff\MUTA_units\src/muta/muta_messages.c
 [v _mW_ufixed16_to_dBm mW_ufixed16_to_dBm `(uc  1 e 1 0 ]
@@ -1685,15 +1687,15 @@ EVENT_TRANSFER_TERMINATED 5
 [v MiMAC_SetPower@outputPower outputPower `uc  1 a 1 8 ]
 "545
 } 0
-"729 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"735 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _update_LED update_LED `(i  1 e 2 0 ]
 {
-"767
+"773
 } 0
-"649
+"661
 [v _timer_reset timer_reset `(v  1 e 0 0 ]
 {
-"663
+"669
 } 0
 "8 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\strcpy.c
 [v _strcpy strcpy `(*.39uc  1 e 2 0 ]
@@ -1760,20 +1762,20 @@ EVENT_TRANSFER_TERMINATED 5
 [v ___lwmod@divisor divisor `ui  1 p 2 9 ]
 "26
 } 0
-"584 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"586 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _send_periodic_update send_periodic_update `(v  1 e 0 0 ]
 {
-"603
+"605
 } 0
-"468
+"470
 [v _send_network_register send_network_register `(v  1 e 0 0 ]
 {
-"486
+"488
 } 0
-"491
+"493
 [v _send_complete_update send_complete_update `(v  1 e 0 0 ]
 {
-"543
+"545
 } 0
 "13 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
 [v _floor floor `(d  1 e 3 0 ]
@@ -1862,17 +1864,17 @@ EVENT_TRANSFER_TERMINATED 5
 [v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"548 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"550 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _send_answer_to_update send_answer_to_update `(v  1 e 0 0 ]
 {
-"580
+"582
 } 0
-"681
+"687
 [v _sendHIDBinary sendHIDBinary `(uc  1 e 1 0 ]
 {
 [v sendHIDBinary@buffer buffer `*.39uc  1 p 2 10 ]
 [v sendHIDBinary@length length `uc  1 p 1 12 ]
-"697
+"703
 } 0
 "118 D:\uc_stuff\MUTA_units\src/muta/muta_messages.c
 [v _encode_uint8_variable encode_uint8_variable `(uc  1 e 1 0 ]
@@ -1910,18 +1912,18 @@ EVENT_TRANSFER_TERMINATED 5
 [v dBm_to_mW_ufixed16@power power `uc  1 a 1 4 ]
 "86
 } 0
-"701 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"707 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _sendHIDText sendHIDText `(uc  1 e 1 0 ]
 {
-"712
+"718
 [v sendHIDText@size size `i  1 a 2 15 ]
-"711
+"717
 [v sendHIDText@p p `*.39uc  1 a 2 13 ]
-"713
+"719
 [v sendHIDText@c c `uc  1 a 1 10 ]
-"701
+"707
 [v sendHIDText@str str `*.39uc  1 p 2 7 ]
-"725
+"731
 } 0
 "995 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/usb/usb_device.c
 [v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 2 0 ]
@@ -2025,6 +2027,11 @@ EVENT_TRANSFER_TERMINATED 5
 "64
 [v SYSTEM_Initialize@pll_startup_counter pll_startup_counter `ui  1 a 2 0 ]
 "245
+} 0
+"651 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+[v _RTCC_reset RTCC_reset `(v  1 e 0 0 ]
+{
+"659
 } 0
 "21 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\rtcc\RtccWrOn.c
 [v _RtccWrOn RtccWrOn `(v  1 e 0 0 ]
@@ -2670,10 +2677,10 @@ EVENT_TRANSFER_TERMINATED 5
 [v MiApp_ConnectionMode@Mode Mode `uc  1 a 1 1 ]
 "3934
 } 0
-"784 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"790 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _SYS_InterruptLow SYS_InterruptLow `IIL(v  1 e 0 0 ]
 {
-"846
+"852
 } 0
 "86 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
 [v i1___ftadd __ftadd `(f  1 e 3 0 ]
@@ -2843,13 +2850,13 @@ EVENT_TRANSFER_TERMINATED 5
 [v USBStdFeatureReqHandler@current_ep_data current_ep_data `S2914  1 a 1 23 ]
 "2983
 } 0
-"850 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"856 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(uc  1 e 1 0 ]
 {
 [v USER_USB_CALLBACK_EVENT_HANDLER@event event `E10007  1 p 2 12 ]
 [v USER_USB_CALLBACK_EVENT_HANDLER@pdata pdata `*.39v  1 p 2 14 ]
 [v USER_USB_CALLBACK_EVENT_HANDLER@size size `ui  1 p 2 16 ]
-"898
+"904
 } 0
 "157 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/usb/usb_device_hid.c
 [v _USBCheckHIDRequest USBCheckHIDRequest `(v  1 e 0 0 ]
@@ -2861,15 +2868,15 @@ EVENT_TRANSFER_TERMINATED 5
 {
 "124
 } 0
-"729 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"735 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v i1_update_LED update_LED `(i  1 e 2 0 ]
 {
-"767
+"773
 } 0
-"668
+"674
 [v _APP_DeviceCustomHIDInitialize APP_DeviceCustomHIDInitialize `(v  1 e 0 0 ]
 {
-"677
+"683
 } 0
 "995 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/usb/usb_device.c
 [v i1_USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 2 0 ]
@@ -2995,10 +3002,10 @@ EVENT_TRANSFER_TERMINATED 5
 [v USBCtrlTrfTxService@byteToSend byteToSend `uc  1 a 1 0 ]
 "1825
 } 0
-"776 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"782 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v _SYS_InterruptHigh SYS_InterruptHigh `II(v  1 e 0 0 ]
 {
-"779
+"785
 } 0
 "1248 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/miwi/drv_mrf_miwi_89xa.c
 [v _MIWIInterruptHandler MIWIInterruptHandler `(v  1 e 0 0 ]
@@ -3023,10 +3030,10 @@ EVENT_TRANSFER_TERMINATED 5
 [v MIWIInterruptHandler@bAck bAck `uc  1 a 1 47 ]
 "1512
 } 0
-"729 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
+"735 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 [v i2_update_LED update_LED `(i  1 e 2 0 ]
 {
-"767
+"773
 } 0
 "288 D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/miwi/drv_mrf_miwi_89xa.c
 [v i2_TxPacket TxPacket `(uc  1 e 1 0 ]

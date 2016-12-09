@@ -6,17 +6,17 @@
             <url>src/main.c</url>
             <bookmark id="5">
                 <name/>
-                <line>133</line>
+                <line>134</line>
                 <key/>
             </bookmark>
             <bookmark id="4">
                 <name/>
-                <line>139</line>
+                <line>137</line>
                 <key/>
             </bookmark>
             <bookmark id="3">
                 <name/>
-                <line>696</line>
+                <line>700</line>
                 <key/>
             </bookmark>
         </file>
@@ -30,8 +30,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/uc_stuff/MUTA_units/src/18F27J53_scout_dormant/dev_18F27J53_scout_dormant.X/src/main.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
