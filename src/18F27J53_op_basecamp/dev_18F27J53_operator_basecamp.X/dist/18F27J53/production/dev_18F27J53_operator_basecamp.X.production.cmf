@@ -165,7 +165,7 @@ text126 CODE 0 B174 B174 74 1
 _StaticSecurityKey_const CODE 0 1FEC 1FEC 8 1
 bssCOMRAM COMRAM 1 32 32 29 1
 mediumconst MEDIUMCONST 0 1FF4 1FF4 3D2 1
-$C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+$C:\Users\nio10\AppData\Local\Temp\sj8.obj
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 1E4 1E4 4 1
 config CONFIG 0 1FFF8 1FFF8 8 1
@@ -3261,106 +3261,106 @@ A65C text3 CODE >18:D:\uc_stuff\MUTA_units\src/muta/muta_messages.c
 4806 text0 CODE >461:D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 480A text0 CODE >462:D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
 4810 text0 CODE >294:D:\uc_stuff\MUTA_units\src\18F27J53_op_basecamp\dev_18F27J53_operator_basecamp.X\src/main.c
-9AFC cinit CODE >10056:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9AFC cinit CODE >10058:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9AFC cinit CODE >10061:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9AFC cinit CODE >10428:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B00 cinit CODE >10429:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B04 cinit CODE >10430:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B04 cinit CODE >10431:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B06 cinit CODE >10432:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B08 cinit CODE >10433:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B0A cinit CODE >10434:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B0C cinit CODE >10435:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B0E cinit CODE >10436:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B10 cinit CODE >10439:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B14 cinit CODE >10440:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B18 cinit CODE >10441:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B18 cinit CODE >10442:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B1A cinit CODE >10443:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B1C cinit CODE >10444:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B1E cinit CODE >10445:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B20 cinit CODE >10446:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B22 cinit CODE >10447:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B24 cinit CODE >10450:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B28 cinit CODE >10451:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B2A cinit CODE >10452:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B2A cinit CODE >10453:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B2C cinit CODE >10454:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B2E cinit CODE >10455:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B30 cinit CODE >10458:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B34 cinit CODE >10459:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B36 cinit CODE >10460:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B36 cinit CODE >10461:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B38 cinit CODE >10462:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B3A cinit CODE >10463:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B3C cinit CODE >10466:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B40 cinit CODE >10467:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B42 cinit CODE >10468:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B42 cinit CODE >10469:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B44 cinit CODE >10470:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B46 cinit CODE >10471:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B48 cinit CODE >10474:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B4C cinit CODE >10475:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B4E cinit CODE >10476:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B4E cinit CODE >10477:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B50 cinit CODE >10478:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B52 cinit CODE >10479:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B54 cinit CODE >10482:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B58 cinit CODE >10483:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B5A cinit CODE >10484:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B5A cinit CODE >10485:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B5C cinit CODE >10486:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B5E cinit CODE >10487:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B60 cinit CODE >10490:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B64 cinit CODE >10491:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B66 cinit CODE >10492:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B66 cinit CODE >10493:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B68 cinit CODE >10494:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B6A cinit CODE >10495:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B6C cinit CODE >10500:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B6E cinit CODE >10501:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B70 cinit CODE >10502:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B72 cinit CODE >10503:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B74 cinit CODE >10504:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B76 cinit CODE >10505:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B78 cinit CODE >10506:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B7C cinit CODE >10507:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B80 cinit CODE >10508:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B80 cinit CODE >10509:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B82 cinit CODE >10510:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B86 cinit CODE >10511:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B88 cinit CODE >10512:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B8A cinit CODE >10513:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B8C cinit CODE >10517:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B8E cinit CODE >10518:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B90 cinit CODE >10519:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B92 cinit CODE >10520:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B94 cinit CODE >10521:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B96 cinit CODE >10522:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B98 cinit CODE >10523:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B9A cinit CODE >10524:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9B9E cinit CODE >10525:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BA0 cinit CODE >10526:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BA4 cinit CODE >10527:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BA6 cinit CODE >10528:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BAA cinit CODE >10532:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BAC cinit CODE >10533:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BAE cinit CODE >10534:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BB0 cinit CODE >10535:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BB2 cinit CODE >10536:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BB4 cinit CODE >10537:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BB6 cinit CODE >10538:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BB8 cinit CODE >10539:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BBC cinit CODE >10540:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BBE cinit CODE >10541:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BC2 cinit CODE >10542:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BC4 cinit CODE >10543:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BC8 cinit CODE >10549:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BC8 cinit CODE >10551:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BCA cinit CODE >10552:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BCC cinit CODE >10553:C:\Users\nio10\AppData\Local\Temp\s7gg.
-9BCE cinit CODE >10554:C:\Users\nio10\AppData\Local\Temp\s7gg.
+9AFC cinit CODE >10056:C:\Users\nio10\AppData\Local\Temp\sj8.
+9AFC cinit CODE >10058:C:\Users\nio10\AppData\Local\Temp\sj8.
+9AFC cinit CODE >10061:C:\Users\nio10\AppData\Local\Temp\sj8.
+9AFC cinit CODE >10428:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B00 cinit CODE >10429:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B04 cinit CODE >10430:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B04 cinit CODE >10431:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B06 cinit CODE >10432:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B08 cinit CODE >10433:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B0A cinit CODE >10434:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B0C cinit CODE >10435:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B0E cinit CODE >10436:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B10 cinit CODE >10439:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B14 cinit CODE >10440:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B18 cinit CODE >10441:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B18 cinit CODE >10442:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B1A cinit CODE >10443:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B1C cinit CODE >10444:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B1E cinit CODE >10445:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B20 cinit CODE >10446:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B22 cinit CODE >10447:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B24 cinit CODE >10450:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B28 cinit CODE >10451:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B2A cinit CODE >10452:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B2A cinit CODE >10453:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B2C cinit CODE >10454:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B2E cinit CODE >10455:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B30 cinit CODE >10458:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B34 cinit CODE >10459:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B36 cinit CODE >10460:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B36 cinit CODE >10461:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B38 cinit CODE >10462:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B3A cinit CODE >10463:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B3C cinit CODE >10466:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B40 cinit CODE >10467:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B42 cinit CODE >10468:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B42 cinit CODE >10469:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B44 cinit CODE >10470:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B46 cinit CODE >10471:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B48 cinit CODE >10474:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B4C cinit CODE >10475:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B4E cinit CODE >10476:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B4E cinit CODE >10477:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B50 cinit CODE >10478:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B52 cinit CODE >10479:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B54 cinit CODE >10482:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B58 cinit CODE >10483:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B5A cinit CODE >10484:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B5A cinit CODE >10485:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B5C cinit CODE >10486:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B5E cinit CODE >10487:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B60 cinit CODE >10490:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B64 cinit CODE >10491:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B66 cinit CODE >10492:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B66 cinit CODE >10493:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B68 cinit CODE >10494:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B6A cinit CODE >10495:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B6C cinit CODE >10500:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B6E cinit CODE >10501:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B70 cinit CODE >10502:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B72 cinit CODE >10503:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B74 cinit CODE >10504:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B76 cinit CODE >10505:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B78 cinit CODE >10506:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B7C cinit CODE >10507:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B80 cinit CODE >10508:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B80 cinit CODE >10509:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B82 cinit CODE >10510:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B86 cinit CODE >10511:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B88 cinit CODE >10512:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B8A cinit CODE >10513:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B8C cinit CODE >10517:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B8E cinit CODE >10518:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B90 cinit CODE >10519:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B92 cinit CODE >10520:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B94 cinit CODE >10521:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B96 cinit CODE >10522:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B98 cinit CODE >10523:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B9A cinit CODE >10524:C:\Users\nio10\AppData\Local\Temp\sj8.
+9B9E cinit CODE >10525:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BA0 cinit CODE >10526:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BA4 cinit CODE >10527:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BA6 cinit CODE >10528:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BAA cinit CODE >10532:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BAC cinit CODE >10533:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BAE cinit CODE >10534:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BB0 cinit CODE >10535:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BB2 cinit CODE >10536:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BB4 cinit CODE >10537:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BB6 cinit CODE >10538:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BB8 cinit CODE >10539:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BBC cinit CODE >10540:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BBE cinit CODE >10541:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BC2 cinit CODE >10542:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BC4 cinit CODE >10543:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BC8 cinit CODE >10549:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BC8 cinit CODE >10551:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BCA cinit CODE >10552:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BCC cinit CODE >10553:C:\Users\nio10\AppData\Local\Temp\sj8.
+9BCE cinit CODE >10554:C:\Users\nio10\AppData\Local\Temp\sj8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -3400,7 +3400,7 @@ _p_buffer 1B9 0 BANK1 1 bssBANK1 dist/18F27J53/production\dev_18F27J53_operator_
 MiWi_TickGet@currentTime 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 i1_USBDeviceInit 84E6 0 CODE 0 text89 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _labelcmp$5116 107 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+__mediumconst 1FF4 0 MEDIUMCONST 0 mediumconst C:\Users\nio10\AppData\Local\Temp\sj8.obj
 MiMAC_SendPacket@headerLen 136 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 MiApp_UnicastAddress@PermanentAddr 17F 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _ReceivedBankIndex 1C5 0 BANK1 1 bssBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -3440,7 +3440,7 @@ _UEIE F37 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.pr
 _UEIR F63 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _UEP0 F26 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _UEP1 F27 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+___sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\sj8.obj
 _main 3D4A 0 CODE 0 text0 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _pDst 3C 0 COMRAM 1 bssCOMRAM dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _role 1CA 0 BANK1 1 bssBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -3451,7 +3451,7 @@ SetRFMode@mode 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_o
 ___ftadd@f1 108 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 ___ftadd@f2 10B 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_USBCtrlTrfTxService 0 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-start 1E4 0 CODE 0 init C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+start 1E4 0 CODE 0 init C:\Users\nio10\AppData\Local\Temp\sj8.obj
 __end_of_TX_POWER_13_DB_MW 21B9 0 MEDIUMCONST 0 mediumconst dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_USBCheckHIDRequest 94A4 0 CODE 0 text104 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_myMUTA_version 1FFF3 0 CODE 0 _myMUTA_version_const dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -3530,11 +3530,11 @@ __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/18F27J53/production\dev_18F27J53_operato
 i2RegisterRead@IRQ0select A7 0 BANK0 1 cstackBANK0 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 MiWiTasks@destShortAddress 173 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __end_ofi2_TxPacket 752E 0 CODE 0 text119 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-intlevel0 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-intlevel1 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-intlevel2 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-intlevel3 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+__accesstop 60 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\sj8.obj
+intlevel0 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\sj8.obj
+intlevel1 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\sj8.obj
+intlevel2 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\sj8.obj
+intlevel3 0 0 CODE 0 text C:\Users\nio10\AppData\Local\Temp\sj8.obj
 __ptext100 A4E8 0 CODE 0 text100 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __ptext101 7FCA 0 CODE 0 text101 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __ptext102 665C 0 CODE 0 text102 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -3621,8 +3621,8 @@ _ANCON0 F48 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.
 _ANCON1 F49 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _idle_rate 5A 0 COMRAM 1 bssCOMRAM dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 ___awdiv@dividend 106 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\sj8.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\nio10\AppData\Local\Temp\sj8.obj
 __end_ofi2_MiWi_TickGet B1E8 0 CODE 0 text126 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_send_network_register 0 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 MiApp_UnicastAddress@DestAddress 17D 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -3956,7 +3956,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/18F27J53/production\dev_18F27J53_operator_baseca
 __size_of_USBCtrlEPAllowStatusStage 0 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\nio10\AppData\Local\Temp\sj8.obj
 _USBCheckStdRequest 968C 0 CODE 0 text97 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 i2_WriteFIFO B764 0 CODE 0 text120 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 i2RegisterRead@IRQ1select A6 0 BANK0 1 cstackBANK0 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -4495,8 +4495,8 @@ _RTCVALLbits F3A 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_baseca
 __L_StaticSecurityKey_const 1FEC 0 CODE 0 _StaticSecurityKey_const dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_findNextNetworkEntry B7E4 0 CODE 0 text60 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 USBEnableEndpoint@p A 0 COMRAM 1 cstackCOMRAM dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-stackhi CFF 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\s7gg.obj
-stacklo 840 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+stackhi CFF 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\sj8.obj
+stacklo 840 0 ABS 0 - C:\Users\nio10\AppData\Local\Temp\sj8.obj
 __end_of_USBConfigureEndpoint ADF0 0 CODE 0 text110 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _MiApp_DiscardMessage BBAA 0 CODE 0 text63 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _USBCtrlEPAllowDataStage AA60 0 CODE 0 text96 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
@@ -4717,7 +4717,7 @@ __Ltext98 0 0 ABS 0 text98 dist/18F27J53/production\dev_18F27J53_operator_baseca
 __Ltext99 0 0 ABS 0 text99 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __size_of_InitSymbolTimer 0 0 ABS 0 - dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 __end_of_USBCtrlTrfInHandler A142 0 CODE 0 text114 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\nio10\AppData\Local\Temp\s7gg.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\nio10\AppData\Local\Temp\sj8.obj
 _sprintf 53BC 0 CODE 0 text8 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 _MiWiTasks 23C6 0 CODE 0 text42 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj
 CBC_MAC@MIC 11C 0 BANK1 1 cstackBANK1 dist/18F27J53/production\dev_18F27J53_operator_basecamp.X.production.obj

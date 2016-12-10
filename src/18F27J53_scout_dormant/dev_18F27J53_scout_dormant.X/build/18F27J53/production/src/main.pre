@@ -12273,7 +12273,7 @@ bool do_UPDATE(uint8_t* p_buff, uint8_t size, bool ack_required);
 const uint8_t myMUTA_version @ 0x01FFF2 = 0x01;
 const uint8_t myMODEL @ 0x01FFF4 = 0x01;
 
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x02 };
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };
 
 # 47
 extern uint8_t myLongAddress[4];
@@ -12282,7 +12282,7 @@ extern uint8_t myLongAddress[4];
 const unsigned char StaticSecurityKey[8] @ 0x01FFEC = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };
 unsigned char mySecurityKey[8];
 
-# 81
+# 82
 volatile bool timer_flag = 0;
 volatile uint8_t timer_count = 1;
 
@@ -12322,15 +12322,17 @@ void update_variable();
 void timer_reset();
 void RTCC_reset();
 void wait_for_1_sec();
+void inline sleep_and_reset();
 
-# 127
+# 129
 APP_STATE myAppState;
 
-# 133
+# 135
 void main() {
 
 SYSTEM_Initialize();
 
+RTCC_reset();
 timer_reset();
 
 myAppState = STATE_INIT;
@@ -12354,20 +12356,35 @@ MiMAC_SetPower(0x00);
 volatile uint8_t scanresult;
 while(1)
 {
-scanresult = MiApp_SearchConnection(14, 0x01010101);
+scanresult = MiApp_SearchConnection(8, 0x11111111);
 if (scanresult == 0)
 {
 
 
+if (m_update_frequency<10)
+{
+m_update_frequency++;
+}
 LATCbits.LATC0 = 0;
-MiApp_TransceiverPowerState(0x00);
 timer_reset();
-PIR3bits.RTCCIF = 0;
+MiApp_TransceiverPowerState(0x00);
 
+while (!timer_flag)
+{
+OSCCONbits.IDLEN = 0;
 asm(" sleep");
+}
+
+# 185
+MiApp_TransceiverPowerState(0x01);
+
+
+
 }
 else
 {
+
+m_update_frequency = 1;
 break;
 }
 }
@@ -12390,32 +12407,20 @@ if(Status == 0xFF)
 
 
 myAppState = STATE_PROBLEM;
-LATCbits.LATC0 = 0;
-MiApp_TransceiverPowerState(0x00);
-timer_reset();
-PIR3bits.RTCCIF = 0;
-
-asm(" sleep");
-asm("reset");
+sleep_and_reset();
 }
 MiApp_ConnectionMode(0x03);
 
-# 211
+# 225
 result = do_NETWORK_REGISTER(&myLongAddress[0],0xff);
 
-# 215
+# 229
 if (!result)
 {
 
 
 myAppState = STATE_PROBLEM;
-LATCbits.LATC0 = 0;
-MiApp_TransceiverPowerState(0x00);
-timer_reset();
-PIR3bits.RTCCIF = 0;
-
-asm(" sleep");
-asm("reset");
+sleep_and_reset();
 }
 
 
@@ -12425,11 +12430,13 @@ myAppState = STATE_READY;
 
 
 
-m_power = adapt_power_level(0x00, 33);
+m_power = adapt_power_level(0x00, 35);
 
 
 
 m_uptime_days = 0;
+
+RTCC_reset();
 
 read_sensors();
 while (!send_initial_update())
@@ -12440,18 +12447,11 @@ if (consecutive_fails >= 3)
 {
 
 myAppState = STATE_PROBLEM;
-LATCbits.LATC0 = 0;
-MiApp_TransceiverPowerState(0x00);
-timer_reset();
-PIR3bits.RTCCIF = 0;
-
-asm(" sleep");
-asm("reset");
+sleep_and_reset();
 }
 wait_for_1_sec();
 }
 consecutive_fails = 0;
-RTCC_reset();
 
 
 
@@ -12466,11 +12466,14 @@ process_update_answer();
 LATCbits.LATC0 = 0;
 MiApp_TransceiverPowerState(0x00);
 timer_reset();
+
 while (!timer_flag)
 {
-
+OSCCONbits.IDLEN = 0;
 asm(" sleep");
 }
+
+# 290
 LATCbits.LATC0 = 1;
 read_sensors();
 MiApp_TransceiverPowerState(0x01);
@@ -12485,13 +12488,7 @@ if (consecutive_fails >= 3)
 {
 
 myAppState = STATE_PROBLEM;
-LATCbits.LATC0 = 0;
-MiApp_TransceiverPowerState(0x00);
-timer_reset();
-PIR3bits.RTCCIF = 0;
-
-asm(" sleep");
-asm("reset");
+sleep_and_reset();
 }
 wait_for_1_sec();
 }
@@ -12499,7 +12496,7 @@ consecutive_fails = 0;
 }
 }
 
-# 316
+# 318
 bool process_update_answer()
 {
 uint8_t shortaddress[2];
@@ -12577,6 +12574,24 @@ MiApp_DiscardMessage();
 }
 }
 return result;
+}
+
+
+void inline sleep_and_reset()
+{
+LATCbits.LATC0 = 0;
+timer_reset();
+MiApp_TransceiverPowerState(0x00);
+
+while (!timer_flag)
+{
+OSCCONbits.IDLEN = 0;
+asm(" sleep");
+}
+
+# 413
+MiApp_TransceiverPowerState(0x01);
+asm("reset");
 }
 
 
@@ -12822,7 +12837,7 @@ Pwr_updated = 1;
 }
 else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
 
-# 638
+# 660
 {
 if (m_var.value_byte1 == 0)
 {

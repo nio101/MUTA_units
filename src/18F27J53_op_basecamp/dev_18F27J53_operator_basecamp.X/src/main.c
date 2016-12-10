@@ -69,8 +69,8 @@ ex.: HEXMATE source.hex -FILL=0xBEEF@0x1000 -Odest.hex */
 
 // Possible channel numbers are from 0 to 31
 // channels 0,4,8,12,16,20,24,28 (energy scan duration: ~22sec)
-//#define MUTA_CHANNELS      0x11111111
-#define MUTA_CHANNELS      0x01010101   // channel 0,8,16,24 only
+#define MUTA_CHANNELS      0x11111111
+//#define MUTA_CHANNELS      0x01010101   // channel 0,8,16,24 only
 //#define MUTA_CHANNELS      0x00000001   // channel 0 only
 
 // to use the internal RTCC as a timer (with frequency==multiples of 1min, default @1min)
@@ -236,7 +236,7 @@ void main(void)
     __delay_ms(20);
       
     // noise scan on the 8 selected channels takes 24 sec with '14'
-    BestChannel = MiApp_NoiseDetection(MUTA_CHANNELS, 14, NOISE_DETECT_ENERGY, &noise_level);
+    BestChannel = MiApp_NoiseDetection(MUTA_CHANNELS, 8, NOISE_DETECT_ENERGY, &noise_level);
     
     sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
     sendHIDText(ToSendDataBuffer);

@@ -10706,9 +10706,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 236: _delay((unsigned long)((20)*(16000000/4000.0)));
 "236
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 239: BestChannel = MiApp_NoiseDetection(0x01010101, 14, 0x00, &noise_level);
+[; ;main.c: 239: BestChannel = MiApp_NoiseDetection(0x11111111, 8, 0x00, &noise_level);
 "239
-[e = _BestChannel ( _MiApp_NoiseDetection (4 , , , -> -> 16843009 `l `ul -> -> 14 `i `uc -> -> 0 `i `uc &U _noise_level ]
+[e = _BestChannel ( _MiApp_NoiseDetection (4 , , , -> -> 286331153 `l `ul -> -> 8 `i `uc -> -> 0 `i `uc &U _noise_level ]
 [; ;main.c: 241: sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
 "241
 [e ( _sprintf (1 , , (. , &U _ToSendDataBuffer :s 3C -> _BestChannel `i -> _noise_level `i ]

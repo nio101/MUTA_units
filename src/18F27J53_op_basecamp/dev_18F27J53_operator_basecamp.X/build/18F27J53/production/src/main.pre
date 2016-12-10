@@ -13238,7 +13238,7 @@ sendHIDText(ToSendDataBuffer);
 _delay((unsigned long)((20)*(16000000/4000.0)));
 
 
-BestChannel = MiApp_NoiseDetection(0x01010101, 14, 0x00, &noise_level);
+BestChannel = MiApp_NoiseDetection(0x11111111, 8, 0x00, &noise_level);
 
 sprintf(ToSendDataBuffer, "I|best channel: %i (noise == %i)", BestChannel, noise_level);
 sendHIDText(ToSendDataBuffer);

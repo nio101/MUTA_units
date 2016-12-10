@@ -41,7 +41,7 @@ let's put some const at the end of flash memory:
 const uint8_t myMUTA_version @ 0x01FFF2 = 0x01; // MUTA protocol version
 const uint8_t myMODEL @ 0x01FFF4 = 0x01; // scout
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x02 };   // uid
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };   // uid
 /* those info are mapped @ 0x01FFF4 and 0x01FFF6, and can then be modified
  * without recompiling the firmware, if needed (using the proper tool) */
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
@@ -67,16 +67,17 @@ to modify those value without recompiling the firmware
 ex.: HEXMATE source.hex -FILL=0xBEEF@0x1000 -Odest.hex */
 // Possible channel numbers are from 0 to 31
 // channels 0,4,8,12,16,20,24,28 (~22sec max))
-//#define MUTA_CHANNELS      0x11111111
-#define MUTA_CHANNELS      0x01010101   // channel 0,8,16,24 only
+#define MUTA_CHANNELS      0x11111111
+//#define MUTA_CHANNELS      0x01010101   // channel 0,8,16,24 only
 //#define MUTA_CHANNELS      0x00000001   // channel 0 only
 
-#define MINIMAL_RSSI    33
+#define MINIMAL_RSSI     35
 #define MUTA_PANID   0x1337
 
 #define MAX_CONSECUTIVE_FAILS   3
 
-// to use the internal RTCC as a timer (with frequency==multiples of 1min, default @1min)
+// to use the internal RTCC as a timer
+// with frequency==multiples of 1min, default @1min
 #define DEFAULT_UPDATE_FREQUENCY    1
 volatile bool timer_flag = false;
 volatile uint8_t timer_count = DEFAULT_UPDATE_FREQUENCY;
@@ -117,6 +118,7 @@ void update_variable();
 void timer_reset();
 void RTCC_reset();
 void wait_for_1_sec();
+void inline sleep_and_reset();
 
 // temp sensor I2C address
 #define temp_slave_address 0b10010000
@@ -134,6 +136,7 @@ void main() {
 
     SYSTEM_Initialize(); // PIC hardware setup/configuration    
     
+    RTCC_reset();
     timer_reset();
         
     myAppState = STATE_INIT;
@@ -157,20 +160,37 @@ void main() {
     volatile uint8_t scanresult;
     while(1)
     {
-        scanresult = MiApp_SearchConnection(14, MUTA_CHANNELS);
+        scanresult = MiApp_SearchConnection(8, MUTA_CHANNELS);
         if (scanresult == 0)
         {
-            // no candidate found, let's wait 1min
-            // before retrying
+            // no candidate found, sleep & try again + increase the 
+            // default tryout frequency by 1mn, up to 10min
+            if (m_update_frequency<10)
+            {
+                m_update_frequency++;
+            }
             LATCbits.LATC0 = 0;  // turn led off
-            MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
             timer_reset();
-            PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
-            //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-            SLEEP();    // now we are sleeping, until next RTCC interrupt
+            MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
+#ifdef SLEEPING_SCOUT
+            while (!timer_flag)
+            {
+                OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+                SLEEP();        // now we are sleeping            
+            }
+#else
+            while(!timer_flag)
+            {}
+#endif
+            MiApp_TransceiverPowerState(POWER_STATE_WAKEUP);// wake up the MRF89
+            //if(MiApp_MessageAvailable()) // flush - not required here:
+            //    MiApp_DiscardMessage();  // Miwi is not initialized!
+            //MiWiTasks();
         }
         else
         {
+            // restore the default update frequency
+            m_update_frequency = DEFAULT_UPDATE_FREQUENCY;
             break;
         }
     }
@@ -191,15 +211,9 @@ void main() {
     if(Status == 0xFF)
     {  
         // joining network failed!
-        // let's wait 1min before reset
+        // let's sleep 1 cycle before resetting
         myAppState = STATE_PROBLEM;
-        LATCbits.LATC0 = 0;  // turn led off
-        MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
-        timer_reset();
-        PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
-        //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-        SLEEP();    // now we are sleeping, until next RTCC interrupt
-        RESET();    // now we don't
+        sleep_and_reset();
     }
     MiApp_ConnectionMode(DISABLE_ALL_CONN);  // don't answer to scan or join requests
     
@@ -215,15 +229,9 @@ void main() {
     if (!result)
     {
         // auth failed!
-        // wait 1min & reset
+        // let's sleep 1 cycle before resetting
         myAppState = STATE_PROBLEM;
-        LATCbits.LATC0 = 0;  // turn led off
-        MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
-        timer_reset();
-        PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
-        //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-        SLEEP();    // now we are sleeping
-        RESET();    // now we don't
+        sleep_and_reset();
     }
     
     // force security key update on
@@ -239,27 +247,22 @@ void main() {
     // ==================================================
     m_uptime_days = 0;
 
+    RTCC_reset();   // to resync it to every min from now
+    
     read_sensors();  
-    while (!send_initial_update())  // veiller à updater: m_failed_messages & m_sent_messages dans MUTA_message.h/c
+    while (!send_initial_update())
     {
-        // failed attempt
+        // another failed attempt
         consecutive_fails++;
         if (consecutive_fails >= MAX_CONSECUTIVE_FAILS)
         {
-            // sleep 1min && reset!
+            // let's sleep 1 cycle before resetting
             myAppState = STATE_PROBLEM;
-            LATCbits.LATC0 = 0;  // turn led off
-            MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
-            timer_reset();
-            PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
-            //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-            SLEEP();    // now we are sleeping
-            RESET();    // now we don't
+            sleep_and_reset();
         }
         wait_for_1_sec();
     }
     consecutive_fails = 0;  // here we have received an UPDATE as answer to send_initial_update()
-    RTCC_reset();
     
     // F) MAIN LOOP
     // ============
@@ -274,11 +277,16 @@ void main() {
         LATCbits.LATC0 = 0;  // turn led off
         MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
         timer_reset();
-        while (!timer_flag)
-        {
-            //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-            SLEEP();        // now we are sleeping            
-        }
+#ifdef SLEEPING_SCOUT
+            while (!timer_flag)
+            {
+                OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+                SLEEP();        // now we are sleeping            
+            }
+#else
+            while(!timer_flag)
+            {}
+#endif
         LATCbits.LATC0 = 1;  // turn led on
         read_sensors();
         MiApp_TransceiverPowerState(POWER_STATE_WAKEUP);    // wake up the MRF89
@@ -291,15 +299,9 @@ void main() {
             consecutive_fails++;
             if (consecutive_fails >= MAX_CONSECUTIVE_FAILS)
             {
-                // sleep 1min: reset!
+                // let's sleep 1 cycle before resetting
                 myAppState = STATE_PROBLEM;
-                LATCbits.LATC0 = 0;  // turn led off
-                MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
-                timer_reset();
-                PIR3bits.RTCCIF = 0;  // clear RTCC interrupt flag
-                //OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
-                SLEEP();    // now we are sleeping
-                RESET();    // now we don't
+                sleep_and_reset();
             }
             wait_for_1_sec();
         }
@@ -390,6 +392,26 @@ bool process_update_answer()    // TODO
         }
     }
     return result;   // will be false if timeout
+}
+
+
+void inline sleep_and_reset()
+{
+    LATCbits.LATC0 = 0;  // turn led off
+    timer_reset();
+    MiApp_TransceiverPowerState(POWER_STATE_SLEEP);
+#ifdef SLEEPING_SCOUT
+    while (!timer_flag)
+    {
+        OSCCONbits.IDLEN = 0;   // specs says it should be used just before SLEEP())
+        SLEEP();        // now we are sleeping            
+    }
+#else
+    while(!timer_flag)
+    {}
+#endif
+    MiApp_TransceiverPowerState(POWER_STATE_WAKEUP);// wake up the MRF89
+    RESET();    // it's groundhog day!
 }
 
 

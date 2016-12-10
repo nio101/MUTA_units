@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
-                                                                                               Fri Dec 09 07:54:15 2016
+                                                                                               Fri Dec 09 12:38:45 2016
 
 Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F27J53
@@ -3817,17 +3817,17 @@ Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080
   3804  003F56  D7FC               	goto	u25167
   3805  003F58  D000               	nop2	
   3806                           
-  3807                           ;main.c: 239: BestChannel = MiApp_NoiseDetection(0x01010101, 14, 0x00, &noise_level);
-  3808  003F5A  0E01               	movlw	1
+  3807                           ;main.c: 239: BestChannel = MiApp_NoiseDetection(0x11111111, 8, 0x00, &noise_level);
+  3808  003F5A  0E11               	movlw	17
   3809  003F5C  0101               	movlb	1	; () banked
   3810  003F5E  6F1D               	movwf	MiApp_NoiseDetection@ChannelMap& (0+255),b
-  3811  003F60  0E01               	movlw	1
+  3811  003F60  0E11               	movlw	17
   3812  003F62  6F1E               	movwf	(MiApp_NoiseDetection@ChannelMap+1)& (0+255),b
-  3813  003F64  0E01               	movlw	1
+  3813  003F64  0E11               	movlw	17
   3814  003F66  6F1F               	movwf	(MiApp_NoiseDetection@ChannelMap+2)& (0+255),b
-  3815  003F68  0E01               	movlw	1
+  3815  003F68  0E11               	movlw	17
   3816  003F6A  6F20               	movwf	(MiApp_NoiseDetection@ChannelMap+3)& (0+255),b
-  3817  003F6C  0E0E               	movlw	14
+  3817  003F6C  0E08               	movlw	8
   3818  003F6E  0101               	movlb	1	; () banked
   3819  003F70  6F21               	movwf	MiApp_NoiseDetection@ScanDuration& (0+255),b
   3820  003F72  0E00               	movlw	0
@@ -43639,7 +43639,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
-Symbol Table                                                                                   Fri Dec 09 07:54:15 2016
+Symbol Table                                                                                   Fri Dec 09 12:38:45 2016
 
                               i2_TxPacket 737E                              ___altoft@exp 012B  
                               _USB_SD_Ptr 20C3                                i1___ftpack A7C4  
