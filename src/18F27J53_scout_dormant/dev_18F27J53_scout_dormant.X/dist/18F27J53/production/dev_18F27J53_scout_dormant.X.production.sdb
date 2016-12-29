@@ -130,21 +130,21 @@ STATE_PROBLEM 2
 [v _read_sensors read_sensors `(v  1 e 0 0 ]
 "495
 [v _send_initial_update send_initial_update `(uc  1 e 1 0 ]
-"566
+"567
 [v _send_writables_update send_writables_update `(uc  1 e 1 0 ]
-"597
+"598
 [v _send_periodical_update send_periodical_update `(uc  1 e 1 0 ]
-"650
+"652
 [v _update_variable update_variable `(v  1 e 0 0 ]
-"691
+"693
 [v _RTCC_reset RTCC_reset `(v  1 e 0 0 ]
-"702
+"704
 [v _timer_reset timer_reset `(v  1 e 0 0 ]
-"712
+"714
 [v _SYS_InterruptHigh SYS_InterruptHigh `II(v  1 e 0 0 ]
-"720
+"722
 [v _SYS_InterruptLow SYS_InterruptLow `IIL(v  1 e 0 0 ]
-"740
+"742
 [v _wait_for_1_sec wait_for_1_sec `(v  1 e 0 0 ]
 "71 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/miwi/drv_mrf_miwi_89xa.c
 [v _security_force_key_update security_force_key_update `(v  1 e 0 0 ]
@@ -1314,19 +1314,19 @@ STATE_PROBLEM 2
 {
 "415
 } 0
-"597
+"598
 [v _send_periodical_update send_periodical_update `(uc  1 e 1 0 ]
 {
-"639
+"641
 [v send_periodical_update@tmp2 tmp2 `f  1 a 3 28 ]
-"646
+"648
 } 0
 "495
 [v _send_initial_update send_initial_update `(uc  1 e 1 0 ]
 {
-"555
+"556
 [v send_initial_update@tmp2 tmp2 `f  1 a 3 28 ]
-"562
+"563
 } 0
 "13 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\floor.c
 [v _floor floor `(d  1 e 3 0 ]
@@ -1502,17 +1502,17 @@ STATE_PROBLEM 2
 [v process_update_answer@result result `uc  1 a 1 35 ]
 "395
 } 0
-"740
+"742
 [v _wait_for_1_sec wait_for_1_sec `(v  1 e 0 0 ]
 {
-"742
+"744
 [v wait_for_1_sec@i i `ui  1 a 2 1 ]
-"747
+"749
 } 0
-"650
+"652
 [v _update_variable update_variable `(v  1 e 0 0 ]
 {
-"689
+"691
 } 0
 "22 D:\uc_stuff\MUTA_units\src/muta/muta_messages.c
 [v _mW_ufixed16_to_dBm mW_ufixed16_to_dBm `(uc  1 e 1 0 ]
@@ -1531,15 +1531,15 @@ STATE_PROBLEM 2
 [v labelcmp@p2 p2 `*.32uc  1 p 2 2 ]
 "19
 } 0
-"702 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
+"704 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
 [v _timer_reset timer_reset `(v  1 e 0 0 ]
 {
-"709
+"711
 } 0
-"566
+"567
 [v _send_writables_update send_writables_update `(uc  1 e 1 0 ]
 {
-"593
+"594
 } 0
 "118 D:\uc_stuff\MUTA_units\src/muta/muta_messages.c
 [v _encode_uint8_variable encode_uint8_variable `(uc  1 e 1 0 ]
@@ -1698,10 +1698,10 @@ STATE_PROBLEM 2
 {
 "233
 } 0
-"691 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
+"693 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
 [v _RTCC_reset RTCC_reset `(v  1 e 0 0 ]
 {
-"699
+"701
 } 0
 "21 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic18\plib\rtcc\RtccWrOn.c
 [v _RtccWrOn RtccWrOn `(v  1 e 0 0 ]
@@ -2231,10 +2231,10 @@ STATE_PROBLEM 2
 [v MiApp_ConnectionMode@Mode Mode `uc  1 a 1 1 ]
 "3933
 } 0
-"720 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
+"722 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
 [v _SYS_InterruptLow SYS_InterruptLow `IIL(v  1 e 0 0 ]
 {
-"737
+"739
 } 0
 "86 D:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
 [v i1___ftadd __ftadd `(f  1 e 3 0 ]
@@ -2254,10 +2254,10 @@ STATE_PROBLEM 2
 [v i1___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"712 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
+"714 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/main.c
 [v _SYS_InterruptHigh SYS_InterruptHigh `II(v  1 e 0 0 ]
 {
-"715
+"717
 } 0
 "1258 D:\uc_stuff\MUTA_units\src\18F27J53_scout_dormant\dev_18F27J53_scout_dormant.X\src/miwi/drv_mrf_miwi_89xa.c
 [v _MIWIInterruptHandler MIWIInterruptHandler `(v  1 e 0 0 ]

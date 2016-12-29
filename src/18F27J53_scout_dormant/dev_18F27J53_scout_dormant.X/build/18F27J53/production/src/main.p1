@@ -9985,10 +9985,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _myUID
 :U ..
 -> -> 0 `i `uc
--> -> 4 `i `uc
+-> -> 2 `i `uc
 ..
 ]
-[; ;main.c: 44: const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };
+[; ;main.c: 44: const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x02 };
 [; ;main.c: 47: extern uint8_t myLongAddress[4];
 "55
 [v _StaticSecurityKey `Cuc ~T0 @X0 -> 8 `i e@131052 ]
@@ -11159,608 +11159,614 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 518: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
 "518
 [e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
-[; ;main.c: 519: m_var.writable = 0;
+[; ;main.c: 519: m_var._signed = 1;
 "519
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 520: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e = . _m_var 6 -> -> 1 `i `uc ]
+[; ;main.c: 520: m_var.writable = 0;
 "520
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 521: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"521
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 522: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
-"522
-[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1420  ]
-[; ;main.c: 523: return 0;
+[; ;main.c: 523: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
 "523
+[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1420  ]
+[; ;main.c: 524: return 0;
+"524
 [e ) -> -> 0 `i `uc ]
 [e $UE 1419  ]
 [e :U 1420 ]
-[; ;main.c: 526: p_buffer = m_buffer;
-"526
+[; ;main.c: 527: p_buffer = m_buffer;
+"527
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 528: memcpy(m_var.label, POWER_LABEL, 3);
-"528
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 529: m_var.unit = 8;
+[; ;main.c: 529: memcpy(m_var.label, POWER_LABEL, 3);
 "529
-[e = . _m_var 4 -> -> 8 `i `uc ]
-[; ;main.c: 530: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 530: m_var.unit = 8;
 "530
-[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
-[; ;main.c: 531: m_var.writable = 1;
+[e = . _m_var 4 -> -> 8 `i `uc ]
+[; ;main.c: 531: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 "531
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 532: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
+[; ;main.c: 532: m_var.writable = 1;
 "532
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 534: memcpy(m_var.label, UPTIME_LABEL, 3);
-"534
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 535: m_var.unit = 7;
-"535
-[e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 536: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
-"536
-[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 537: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
-"537
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 538: m_var.writable = 0;
-"538
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 539: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"539
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 541: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"541
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 542: m_var.unit = 4;
-"542
-[e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 543: m_var.value_byte1 = m_update_frequency;
-"543
-[e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 544: m_var.writable = 1;
-"544
 [e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 545: p_buffer += encode_uint8_variable(p_buffer, m_var);
+[; ;main.c: 533: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"533
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 535: memcpy(m_var.label, UPTIME_LABEL, 3);
+"535
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 536: m_var.unit = 7;
+"536
+[e = . _m_var 4 -> -> 7 `i `uc ]
+[; ;main.c: 537: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+"537
+[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
+[; ;main.c: 538: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+"538
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
+[; ;main.c: 539: m_var.writable = 0;
+"539
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 540: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"540
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 542: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
+"542
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 543: m_var.unit = 4;
+"543
+[e = . _m_var 4 -> -> 4 `i `uc ]
+[; ;main.c: 544: m_var.value_byte1 = m_update_frequency;
+"544
+[e = . _m_var 2 _m_update_frequency ]
+[; ;main.c: 545: m_var.writable = 1;
 "545
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 546: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"546
 [e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 547: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
-"547
-[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1421  ]
-[; ;main.c: 548: return 0;
+[; ;main.c: 548: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
 "548
+[e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1421  ]
+[; ;main.c: 549: return 0;
+"549
 [e ) -> -> 0 `i `uc ]
 [e $UE 1419  ]
 [e :U 1421 ]
-[; ;main.c: 552: p_buffer = m_buffer;
-"552
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 553: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
+[; ;main.c: 553: p_buffer = m_buffer;
 "553
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 554: m_var.unit = 3;
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 554: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
 "554
-[e = . _m_var 4 -> -> 3 `i `uc ]
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 555: m_var.unit = 3;
 "555
-[v _tmp2 `f ~T0 @X0 1 a ]
-[; ;main.c: 555: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
-[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
-[; ;main.c: 556: m_var.value_byte1 = (uint8_t)floor(tmp2);
+[e = . _m_var 4 -> -> 3 `i `uc ]
 "556
-[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
-[; ;main.c: 557: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
+[v _tmp2 `f ~T0 @X0 1 a ]
+[; ;main.c: 556: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
+[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
+[; ;main.c: 557: m_var.value_byte1 = (uint8_t)floor(tmp2);
 "557
-[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
-[; ;main.c: 558: m_var.writable = 0;
+[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
+[; ;main.c: 558: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
 "558
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 559: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
+[; ;main.c: 559: m_var.writable = 0;
 "559
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 560: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"560
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 561: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
-"561
+[; ;main.c: 562: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"562
 [e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
 [e $UE 1419  ]
-[; ;main.c: 562: }
-"562
+[; ;main.c: 563: }
+"563
 [e :UE 1419 ]
 }
-"566
-[v _send_writables_update `(uc ~T0 @X0 1 ef ]
 "567
+[v _send_writables_update `(uc ~T0 @X0 1 ef ]
+"568
 {
-[; ;main.c: 566: bool send_writables_update()
-[; ;main.c: 567: {
+[; ;main.c: 567: bool send_writables_update()
+[; ;main.c: 568: {
 [e :U _send_writables_update ]
 [f ]
-"568
-[v _tmp `ui ~T0 @X0 1 a ]
-[; ;main.c: 568: uint16_t tmp;
-[; ;main.c: 569: p_buffer = m_buffer;
 "569
+[v _tmp `ui ~T0 @X0 1 a ]
+[; ;main.c: 569: uint16_t tmp;
+[; ;main.c: 570: p_buffer = m_buffer;
+"570
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 571: if (Pwr_updated)
-"571
-[e $ ! != -> _Pwr_updated `i -> -> -> 0 `i `uc `i 1423  ]
-[; ;main.c: 572: {
+[; ;main.c: 572: if (Pwr_updated)
 "572
+[e $ ! != -> _Pwr_updated `i -> -> -> 0 `i `uc `i 1423  ]
+[; ;main.c: 573: {
+"573
 {
-[; ;main.c: 574: memcpy(m_var.label, POWER_LABEL, 3);
-"574
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 575: m_var.unit = 8;
+[; ;main.c: 575: memcpy(m_var.label, POWER_LABEL, 3);
 "575
-[e = . _m_var 4 -> -> 8 `i `uc ]
-[; ;main.c: 576: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _POWER_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 576: m_var.unit = 8;
 "576
-[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
-[; ;main.c: 577: m_var.writable = 1;
+[e = . _m_var 4 -> -> 8 `i `uc ]
+[; ;main.c: 577: dBm_to_mW_ufixed16(m_power, &(m_var.value_byte1), &(m_var.value_byte2));
 "577
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 578: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e ( _dBm_to_mW_ufixed16 (3 , , _m_power &U . _m_var 2 &U . _m_var 3 ]
+[; ;main.c: 578: m_var.writable = 1;
 "578
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 579: Pwr_updated = 0;
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 579: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "579
-[e = _Pwr_updated -> -> 0 `i `uc ]
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 580: Pwr_updated = 0;
 "580
+[e = _Pwr_updated -> -> 0 `i `uc ]
+"581
 }
 [e :U 1423 ]
-[; ;main.c: 580: }
-[; ;main.c: 581: if (UpF_updated)
-"581
-[e $ ! != -> _UpF_updated `i -> -> -> 0 `i `uc `i 1424  ]
-[; ;main.c: 582: {
+[; ;main.c: 581: }
+[; ;main.c: 582: if (UpF_updated)
 "582
+[e $ ! != -> _UpF_updated `i -> -> -> 0 `i `uc `i 1424  ]
+[; ;main.c: 583: {
+"583
 {
-[; ;main.c: 584: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
-"584
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 585: m_var.unit = 4;
+[; ;main.c: 585: memcpy(m_var.label, UPDATE_FREQUENCY_LABEL, 3);
 "585
-[e = . _m_var 4 -> -> 4 `i `uc ]
-[; ;main.c: 586: m_var.value_byte1 = m_update_frequency;
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPDATE_FREQUENCY_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 586: m_var.unit = 4;
 "586
-[e = . _m_var 2 _m_update_frequency ]
-[; ;main.c: 587: m_var.writable = 1;
+[e = . _m_var 4 -> -> 4 `i `uc ]
+[; ;main.c: 587: m_var.value_byte1 = m_update_frequency;
 "587
-[e = . _m_var 5 -> -> 1 `i `uc ]
-[; ;main.c: 588: p_buffer += encode_uint8_variable(p_buffer, m_var);
+[e = . _m_var 2 _m_update_frequency ]
+[; ;main.c: 588: m_var.writable = 1;
 "588
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 589: UpF_updated = 0;
+[e = . _m_var 5 -> -> 1 `i `uc ]
+[; ;main.c: 589: p_buffer += encode_uint8_variable(p_buffer, m_var);
 "589
-[e = _UpF_updated -> -> 0 `i `uc ]
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 590: UpF_updated = 0;
 "590
+[e = _UpF_updated -> -> 0 `i `uc ]
+"591
 }
 [e :U 1424 ]
-[; ;main.c: 590: }
-[; ;main.c: 592: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
-"592
+[; ;main.c: 591: }
+[; ;main.c: 593: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"593
 [e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
 [e $UE 1422  ]
-[; ;main.c: 593: }
-"593
+[; ;main.c: 594: }
+"594
 [e :UE 1422 ]
 }
-"597
-[v _send_periodical_update `(uc ~T0 @X0 1 ef ]
 "598
+[v _send_periodical_update `(uc ~T0 @X0 1 ef ]
+"599
 {
-[; ;main.c: 597: bool send_periodical_update()
-[; ;main.c: 598: {
+[; ;main.c: 598: bool send_periodical_update()
+[; ;main.c: 599: {
 [e :U _send_periodical_update ]
 [f ]
-"599
+"600
 [v _tmp `ui ~T0 @X0 1 a ]
-[; ;main.c: 599: uint16_t tmp;
-[; ;main.c: 601: p_buffer = m_buffer;
-"601
+[; ;main.c: 600: uint16_t tmp;
+[; ;main.c: 602: p_buffer = m_buffer;
+"602
 [e = _p_buffer &U _m_buffer ]
-[; ;main.c: 604: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
-"604
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 605: m_var.unit = 2;
+[; ;main.c: 605: memcpy(m_var.label, BATTERY_VOLTAGE_LABEL, 3);
 "605
-[e = . _m_var 4 -> -> 2 `i `uc ]
-[; ;main.c: 606: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _BATTERY_VOLTAGE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 606: m_var.unit = 2;
 "606
-[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
-[; ;main.c: 607: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
+[e = . _m_var 4 -> -> 2 `i `uc ]
+[; ;main.c: 607: m_var.value_byte1 = (uint8_t)floor(m_battery_voltage);
 "607
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
-[; ;main.c: 608: m_var.writable = 0;
+[e = . _m_var 2 -> ( _floor (1 -> _m_battery_voltage `d `uc ]
+[; ;main.c: 608: m_var.value_byte2 = (uint8_t)floor(((m_battery_voltage - floor(m_battery_voltage))*100));
 "608
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 609: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_battery_voltage `d ( _floor (1 -> _m_battery_voltage `d -> -> 100 `i `d `uc ]
+[; ;main.c: 609: m_var.writable = 0;
 "609
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 610: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"610
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 611: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
-"611
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 612: m_var.unit = 3;
+[; ;main.c: 612: memcpy(m_var.label, LIGHT_LEVEL_LABEL, 3);
 "612
-[e = . _m_var 4 -> -> 3 `i `uc ]
-[; ;main.c: 613: m_var.value_byte1 = m_light_level;
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _LIGHT_LEVEL_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 613: m_var.unit = 3;
 "613
-[e = . _m_var 2 _m_light_level ]
-[; ;main.c: 614: m_var.writable = 0;
+[e = . _m_var 4 -> -> 3 `i `uc ]
+[; ;main.c: 614: m_var.value_byte1 = m_light_level;
 "614
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 615: p_buffer += encode_uint8_variable(p_buffer, m_var);
+[e = . _m_var 2 _m_light_level ]
+[; ;main.c: 615: m_var.writable = 0;
 "615
-[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 617: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
-"617
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 618: m_var.unit = 1;
-"618
-[e = . _m_var 4 -> -> 1 `i `uc ]
-[; ;main.c: 619: m_var.value_byte1 = (uint8_t)floor(m_temperature);
-"619
-[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
-[; ;main.c: 620: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
-"620
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
-[; ;main.c: 621: m_var.writable = 0;
-"621
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 622: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[; ;main.c: 616: p_buffer += encode_uint8_variable(p_buffer, m_var);
+"616
+[e =+ _p_buffer * -> ( _encode_uint8_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 618: memcpy(m_var.label, TEMPERATURE_LABEL, 3);
+"618
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _TEMPERATURE_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 619: m_var.unit = 1;
+"619
+[e = . _m_var 4 -> -> 1 `i `uc ]
+[; ;main.c: 620: m_var.value_byte1 = (uint8_t)floor(m_temperature);
+"620
+[e = . _m_var 2 -> ( _floor (1 -> _m_temperature `d `uc ]
+[; ;main.c: 621: m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));
+"621
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_temperature `d ( _floor (1 -> _m_temperature `d -> -> 100 `i `d `uc ]
+[; ;main.c: 622: m_var._signed = 1;
 "622
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 624: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
+[e = . _m_var 6 -> -> 1 `i `uc ]
+[; ;main.c: 623: m_var.writable = 0;
+"623
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 624: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "624
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 626: if (!do_UPDATE(m_buffer, p_buffer-m_buffer, 0))
+"626
 [e $ ! ! != -> ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 1426  ]
-[; ;main.c: 625: return 0;
-"625
+[; ;main.c: 627: return 0;
+"627
 [e ) -> -> 0 `i `uc ]
 [e $UE 1425  ]
 [e :U 1426 ]
-[; ;main.c: 628: p_buffer = m_buffer;
-"628
-[e = _p_buffer &U _m_buffer ]
-[; ;main.c: 630: memcpy(m_var.label, UPTIME_LABEL, 3);
+[; ;main.c: 630: p_buffer = m_buffer;
 "630
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 631: m_var.unit = 7;
-"631
-[e = . _m_var 4 -> -> 7 `i `uc ]
-[; ;main.c: 632: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
+[e = _p_buffer &U _m_buffer ]
+[; ;main.c: 632: memcpy(m_var.label, UPTIME_LABEL, 3);
 "632
-[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
-[; ;main.c: 633: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _UPTIME_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 633: m_var.unit = 7;
 "633
-[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
-[; ;main.c: 634: m_var.writable = 0;
+[e = . _m_var 4 -> -> 7 `i `uc ]
+[; ;main.c: 634: m_var.value_byte1 = (uint8_t)floor(m_uptime_days);
 "634
-[e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 635: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+[e = . _m_var 2 -> ( _floor (1 -> _m_uptime_days `d `uc ]
+[; ;main.c: 635: m_var.value_byte2 = (uint8_t)floor(((m_uptime_days - floor(m_uptime_days))*100));
 "635
-[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 637: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
-"637
-[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
-[; ;main.c: 638: m_var.unit = 3;
-"638
-[e = . _m_var 4 -> -> 3 `i `uc ]
-"639
-[v _tmp2 `f ~T0 @X0 1 a ]
-[; ;main.c: 639: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
-[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
-[; ;main.c: 640: m_var.value_byte1 = (uint8_t)floor(tmp2);
-"640
-[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
-[; ;main.c: 641: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
-"641
-[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
-[; ;main.c: 642: m_var.writable = 0;
-"642
+[e = . _m_var 3 -> ( _floor (1 * - -> _m_uptime_days `d ( _floor (1 -> _m_uptime_days `d -> -> 100 `i `d `uc ]
+[; ;main.c: 636: m_var.writable = 0;
+"636
 [e = . _m_var 5 -> -> 0 `i `uc ]
-[; ;main.c: 643: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
-"643
+[; ;main.c: 637: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
+"637
 [e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
-[; ;main.c: 645: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+[; ;main.c: 639: memcpy(m_var.label, FAILEDMSG_LABEL, 3);
+"639
+[e ( _memcpy (3 , , -> &U . _m_var 0 `*v -> &U _FAILEDMSG_LABEL `*Cv -> -> 3 `i `ui ]
+[; ;main.c: 640: m_var.unit = 3;
+"640
+[e = . _m_var 4 -> -> 3 `i `uc ]
+"641
+[v _tmp2 `f ~T0 @X0 1 a ]
+[; ;main.c: 641: float tmp2 = (float)(m_failed_messages*100)/(float)(m_failed_messages + m_sent_messages);
+[e = _tmp2 / -> * _m_failed_messages -> -> -> 100 `i `l `ul `f -> + _m_failed_messages _m_sent_messages `f ]
+[; ;main.c: 642: m_var.value_byte1 = (uint8_t)floor(tmp2);
+"642
+[e = . _m_var 2 -> ( _floor (1 -> _tmp2 `d `uc ]
+[; ;main.c: 643: m_var.value_byte2 = (uint8_t)floor(((tmp2 - floor(tmp2))*100));
+"643
+[e = . _m_var 3 -> ( _floor (1 * - -> _tmp2 `d ( _floor (1 -> _tmp2 `d -> -> 100 `i `d `uc ]
+[; ;main.c: 644: m_var.writable = 0;
+"644
+[e = . _m_var 5 -> -> 0 `i `uc ]
+[; ;main.c: 645: p_buffer += encode_ufixed16_variable(p_buffer, m_var);
 "645
+[e =+ _p_buffer * -> ( _encode_ufixed16_variable (2 , _p_buffer _m_var `ux -> -> # *U _p_buffer `ui `ux ]
+[; ;main.c: 647: return do_UPDATE(m_buffer, p_buffer-m_buffer, 1);
+"647
 [e ) ( _do_UPDATE (3 , , &U _m_buffer -> / - -> _p_buffer `x -> &U _m_buffer `x -> -> # *U _p_buffer `i `x `uc -> -> 1 `i `uc ]
 [e $UE 1425  ]
-[; ;main.c: 646: }
-"646
+[; ;main.c: 648: }
+"648
 [e :UE 1425 ]
 }
-"650
-[v _update_variable `(v ~T0 @X0 1 ef ]
-"651
-{
-[; ;main.c: 650: void update_variable()
-[; ;main.c: 651: {
-[e :U _update_variable ]
-[f ]
-[; ;main.c: 652: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
 "652
-[e $ ! == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _POWER_LABEL `*uc `i -> 1 `i 1428  ]
-[; ;main.c: 653: {
+[v _update_variable `(v ~T0 @X0 1 ef ]
 "653
 {
-[; ;main.c: 654: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
+[; ;main.c: 652: void update_variable()
+[; ;main.c: 653: {
+[e :U _update_variable ]
+[f ]
+[; ;main.c: 654: if (labelcmp(m_var.label, (uint8_t*)POWER_LABEL) == 1)
 "654
-[e = _m_power ( _mW_ufixed16_to_dBm (2 , . _m_var 2 . _m_var 3 ]
-[; ;main.c: 655: MiMAC_SetPower(m_power);
+[e $ ! == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _POWER_LABEL `*uc `i -> 1 `i 1428  ]
+[; ;main.c: 655: {
 "655
-[e ( _MiMAC_SetPower (1 _m_power ]
-[; ;main.c: 656: Pwr_updated = 1;
-"656
-[e = _Pwr_updated -> -> 1 `i `uc ]
-"657
-}
-[; ;main.c: 657: }
-[e $U 1429  ]
-"658
-[e :U 1428 ]
-[; ;main.c: 658: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
-[e $ ! && && == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _UPDATE_FREQUENCY_LABEL `*uc `i -> 1 `i == -> . _m_var 4 `i -> 4 `i == -> . _m_var 1 `i -> 0 `i 1430  ]
-[; ;main.c: 660: {
-"660
 {
-[; ;main.c: 661: if (m_var.value_byte1 == 0)
-"661
-[e $ ! == -> . _m_var 2 `i -> 0 `i 1431  ]
+[; ;main.c: 656: m_power = mW_ufixed16_to_dBm(m_var.value_byte1, m_var.value_byte2);
+"656
+[e = _m_power ( _mW_ufixed16_to_dBm (2 , . _m_var 2 . _m_var 3 ]
+[; ;main.c: 657: MiMAC_SetPower(m_power);
+"657
+[e ( _MiMAC_SetPower (1 _m_power ]
+[; ;main.c: 658: Pwr_updated = 1;
+"658
+[e = _Pwr_updated -> -> 1 `i `uc ]
+"659
+}
+[; ;main.c: 659: }
+[e $U 1429  ]
+"660
+[e :U 1428 ]
+[; ;main.c: 660: else if ((labelcmp(m_var.label, (uint8_t*)UPDATE_FREQUENCY_LABEL) == 1) && (m_var.unit == 4) && (m_var.type == 0))
+[e $ ! && && == -> ( _labelcmp (2 , &U . _m_var 0 -> &U _UPDATE_FREQUENCY_LABEL `*uc `i -> 1 `i == -> . _m_var 4 `i -> 4 `i == -> . _m_var 1 `i -> 0 `i 1430  ]
 [; ;main.c: 662: {
 "662
 {
-[; ;main.c: 663: m_update_frequency = 0;
+[; ;main.c: 663: if (m_var.value_byte1 == 0)
 "663
-[e = _m_update_frequency -> -> 0 `i `uc ]
-[; ;main.c: 664: RtccWrOn();
+[e $ ! == -> . _m_var 2 `i -> 0 `i 1431  ]
+[; ;main.c: 664: {
 "664
-[e ( _RtccWrOn ..  ]
-[; ;main.c: 665: RTCCFGbits.RTCPTR0 = 0;
-"665
-[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 666: RTCCFGbits.RTCPTR1 = 0;
-"666
-[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 667: RTCVALHbits.RTCVALH = 0x00;
-"667
-[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 668: RTCVALLbits.RTCVALL = 0x00;
-"668
-[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 669: ALRMCFGbits.AMASK = 0b0010;
-"669
-[e = . . _ALRMCFGbits 0 1 -> -> 2 `i `uc ]
-[; ;main.c: 670: (RTCCFGbits.RTCWREN = 0);
-"670
-[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 671: timer_count = 1;
-"671
-[e = _timer_count -> -> 1 `i `uc ]
-[; ;main.c: 672: timer_flag = 0;
-"672
-[e = _timer_flag -> -> 0 `i `uc ]
-"673
-}
-[; ;main.c: 673: }
-[e $U 1432  ]
-"674
-[e :U 1431 ]
-[; ;main.c: 674: else
-[; ;main.c: 675: {
-"675
 {
-[; ;main.c: 676: m_update_frequency = m_var.value_byte1;
-"676
-[e = _m_update_frequency . _m_var 2 ]
-[; ;main.c: 677: RtccWrOn();
-"677
+[; ;main.c: 665: m_update_frequency = 0;
+"665
+[e = _m_update_frequency -> -> 0 `i `uc ]
+[; ;main.c: 666: RtccWrOn();
+"666
 [e ( _RtccWrOn ..  ]
-[; ;main.c: 678: RTCCFGbits.RTCPTR0 = 0;
-"678
+[; ;main.c: 667: RTCCFGbits.RTCPTR0 = 0;
+"667
 [e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 679: RTCCFGbits.RTCPTR1 = 0;
-"679
+[; ;main.c: 668: RTCCFGbits.RTCPTR1 = 0;
+"668
 [e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 680: RTCVALHbits.RTCVALH = 0x00;
-"680
+[; ;main.c: 669: RTCVALHbits.RTCVALH = 0x00;
+"669
 [e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 681: RTCVALLbits.RTCVALL = 0x00;
-"681
+[; ;main.c: 670: RTCVALLbits.RTCVALL = 0x00;
+"670
 [e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 682: ALRMCFGbits.AMASK = 0b0011;
-"682
-[e = . . _ALRMCFGbits 0 1 -> -> 3 `i `uc ]
-[; ;main.c: 683: (RTCCFGbits.RTCWREN = 0);
-"683
+[; ;main.c: 671: ALRMCFGbits.AMASK = 0b0010;
+"671
+[e = . . _ALRMCFGbits 0 1 -> -> 2 `i `uc ]
+[; ;main.c: 672: (RTCCFGbits.RTCWREN = 0);
+"672
 [e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 684: timer_count = m_update_frequency;
-"684
-[e = _timer_count _m_update_frequency ]
-[; ;main.c: 685: timer_flag = 0;
-"685
+[; ;main.c: 673: timer_count = 1;
+"673
+[e = _timer_count -> -> 1 `i `uc ]
+[; ;main.c: 674: timer_flag = 0;
+"674
 [e = _timer_flag -> -> 0 `i `uc ]
-"686
+"675
 }
-[e :U 1432 ]
-[; ;main.c: 686: }
-[; ;main.c: 687: UpF_updated = 1;
+[; ;main.c: 675: }
+[e $U 1432  ]
+"676
+[e :U 1431 ]
+[; ;main.c: 676: else
+[; ;main.c: 677: {
+"677
+{
+[; ;main.c: 678: m_update_frequency = m_var.value_byte1;
+"678
+[e = _m_update_frequency . _m_var 2 ]
+[; ;main.c: 679: RtccWrOn();
+"679
+[e ( _RtccWrOn ..  ]
+[; ;main.c: 680: RTCCFGbits.RTCPTR0 = 0;
+"680
+[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 681: RTCCFGbits.RTCPTR1 = 0;
+"681
+[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 682: RTCVALHbits.RTCVALH = 0x00;
+"682
+[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 683: RTCVALLbits.RTCVALL = 0x00;
+"683
+[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 684: ALRMCFGbits.AMASK = 0b0011;
+"684
+[e = . . _ALRMCFGbits 0 1 -> -> 3 `i `uc ]
+[; ;main.c: 685: (RTCCFGbits.RTCWREN = 0);
+"685
+[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 686: timer_count = m_update_frequency;
+"686
+[e = _timer_count _m_update_frequency ]
+[; ;main.c: 687: timer_flag = 0;
 "687
-[e = _UpF_updated -> -> 1 `i `uc ]
+[e = _timer_flag -> -> 0 `i `uc ]
 "688
 }
-[e :U 1430 ]
-"689
-[e :U 1429 ]
+[e :U 1432 ]
 [; ;main.c: 688: }
-[; ;main.c: 689: }
+[; ;main.c: 689: UpF_updated = 1;
+"689
+[e = _UpF_updated -> -> 1 `i `uc ]
+"690
+}
+[e :U 1430 ]
+"691
+[e :U 1429 ]
+[; ;main.c: 690: }
+[; ;main.c: 691: }
 [e :UE 1427 ]
 }
-"691
+"693
 [v _RTCC_reset `(v ~T0 @X0 1 ef ]
-"692
+"694
 {
-[; ;main.c: 691: void RTCC_reset()
-[; ;main.c: 692: {
+[; ;main.c: 693: void RTCC_reset()
+[; ;main.c: 694: {
 [e :U _RTCC_reset ]
 [f ]
-[; ;main.c: 693: RtccWrOn();
-"693
-[e ( _RtccWrOn ..  ]
-[; ;main.c: 694: RTCCFGbits.RTCPTR0 = 0;
-"694
-[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 695: RTCCFGbits.RTCPTR1 = 0;
+[; ;main.c: 695: RtccWrOn();
 "695
-[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 696: RTCVALHbits.RTCVALH = 0x00;
+[e ( _RtccWrOn ..  ]
+[; ;main.c: 696: RTCCFGbits.RTCPTR0 = 0;
 "696
-[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 697: RTCVALLbits.RTCVALL = 0x00;
+[e = . . _RTCCFGbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 697: RTCCFGbits.RTCPTR1 = 0;
 "697
-[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 698: (RTCCFGbits.RTCWREN = 0);
+[e = . . _RTCCFGbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 698: RTCVALHbits.RTCVALH = 0x00;
 "698
-[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 699: }
+[e = . . _RTCVALHbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 699: RTCVALLbits.RTCVALL = 0x00;
 "699
+[e = . . _RTCVALLbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 700: (RTCCFGbits.RTCWREN = 0);
+"700
+[e = . . _RTCCFGbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 701: }
+"701
 [e :UE 1433 ]
 }
-"702
+"704
 [v _timer_reset `(v ~T0 @X0 1 ef ]
-"703
+"705
 {
-[; ;main.c: 702: void timer_reset()
-[; ;main.c: 703: {
+[; ;main.c: 704: void timer_reset()
+[; ;main.c: 705: {
 [e :U _timer_reset ]
 [f ]
-[; ;main.c: 704: if (m_update_frequency == 0)
-"704
+[; ;main.c: 706: if (m_update_frequency == 0)
+"706
 [e $ ! == -> _m_update_frequency `i -> 0 `i 1435  ]
-[; ;main.c: 705: timer_count = 1;
-"705
+[; ;main.c: 707: timer_count = 1;
+"707
 [e = _timer_count -> -> 1 `i `uc ]
 [e $U 1436  ]
-"706
+"708
 [e :U 1435 ]
-[; ;main.c: 706: else
-[; ;main.c: 707: timer_count = m_update_frequency;
-"707
+[; ;main.c: 708: else
+[; ;main.c: 709: timer_count = m_update_frequency;
+"709
 [e = _timer_count _m_update_frequency ]
 [e :U 1436 ]
-[; ;main.c: 708: timer_flag = 0;
-"708
+[; ;main.c: 710: timer_flag = 0;
+"710
 [e = _timer_flag -> -> 0 `i `uc ]
-[; ;main.c: 709: }
-"709
+[; ;main.c: 711: }
+"711
 [e :UE 1434 ]
 }
 [v F10349 `(v ~T0 @X0 1 tf ]
-"712
+"714
 [v _SYS_InterruptHigh `IF10349 ~T0 @X0 1 e ]
-"713
+"715
 {
-[; ;main.c: 712: void interrupt SYS_InterruptHigh(void)
-[; ;main.c: 713: {
+[; ;main.c: 714: void interrupt SYS_InterruptHigh(void)
+[; ;main.c: 715: {
 [e :U _SYS_InterruptHigh ]
 [f ]
-[; ;main.c: 714: MIWIInterruptHandler();
-"714
+[; ;main.c: 716: MIWIInterruptHandler();
+"716
 [e ( _MIWIInterruptHandler ..  ]
-[; ;main.c: 715: }
-"715
+[; ;main.c: 717: }
+"717
 [e :UE 1437 ]
 }
 [v F10352 `(v ~T0 @X0 1 tf ]
-"720
+"722
 [v _SYS_InterruptLow `ILF10352 ~T0 @X0 1 e ]
-"721
+"723
 {
-[; ;main.c: 720: void interrupt low_priority SYS_InterruptLow(void)
-[; ;main.c: 721: {
+[; ;main.c: 722: void interrupt low_priority SYS_InterruptLow(void)
+[; ;main.c: 723: {
 [e :U _SYS_InterruptLow ]
 [f ]
-[; ;main.c: 723: if(PIR3bits.RTCCIF)
-"723
-[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1439  ]
-[; ;main.c: 724: {
-"724
-{
-[; ;main.c: 725: m_uptime_days = m_uptime_days + 0.000671296F;
+[; ;main.c: 725: if(PIR3bits.RTCCIF)
 "725
-[e = _m_uptime_days + _m_uptime_days -> .0.000671296 `f ]
-[; ;main.c: 726: timer_count = timer_count - 1;
+[e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 1439  ]
+[; ;main.c: 726: {
 "726
-[e = _timer_count -> - -> _timer_count `i -> 1 `i `uc ]
-[; ;main.c: 727: if (timer_count == 0)
-"727
-[e $ ! == -> _timer_count `i -> 0 `i 1440  ]
-[; ;main.c: 728: {
-"728
 {
-[; ;main.c: 729: timer_flag = 1;
+[; ;main.c: 727: m_uptime_days = m_uptime_days + 0.000671296F;
+"727
+[e = _m_uptime_days + _m_uptime_days -> .0.000671296 `f ]
+[; ;main.c: 728: timer_count = timer_count - 1;
+"728
+[e = _timer_count -> - -> _timer_count `i -> 1 `i `uc ]
+[; ;main.c: 729: if (timer_count == 0)
 "729
-[e = _timer_flag -> -> 1 `i `uc ]
-[; ;main.c: 730: if (m_update_frequency == 0)
+[e $ ! == -> _timer_count `i -> 0 `i 1440  ]
+[; ;main.c: 730: {
 "730
-[e $ ! == -> _m_update_frequency `i -> 0 `i 1441  ]
-[; ;main.c: 731: timer_count = 1;
+{
+[; ;main.c: 731: timer_flag = 1;
 "731
+[e = _timer_flag -> -> 1 `i `uc ]
+[; ;main.c: 732: if (m_update_frequency == 0)
+"732
+[e $ ! == -> _m_update_frequency `i -> 0 `i 1441  ]
+[; ;main.c: 733: timer_count = 1;
+"733
 [e = _timer_count -> -> 1 `i `uc ]
 [e $U 1442  ]
-"732
+"734
 [e :U 1441 ]
-[; ;main.c: 732: else
-[; ;main.c: 733: timer_count = m_update_frequency;
-"733
+[; ;main.c: 734: else
+[; ;main.c: 735: timer_count = m_update_frequency;
+"735
 [e = _timer_count _m_update_frequency ]
 [e :U 1442 ]
-"734
-}
-[e :U 1440 ]
-[; ;main.c: 734: }
-[; ;main.c: 735: PIR3bits.RTCCIF = 0;
-"735
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
 "736
 }
-[e :U 1439 ]
+[e :U 1440 ]
 [; ;main.c: 736: }
-[; ;main.c: 737: }
+[; ;main.c: 737: PIR3bits.RTCCIF = 0;
 "737
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"738
+}
+[e :U 1439 ]
+[; ;main.c: 738: }
+[; ;main.c: 739: }
+"739
 [e :UE 1438 ]
 }
-"740
+"742
 [v _wait_for_1_sec `(v ~T0 @X0 1 ef ]
-"741
+"743
 {
-[; ;main.c: 740: void wait_for_1_sec()
-[; ;main.c: 741: {
+[; ;main.c: 742: void wait_for_1_sec()
+[; ;main.c: 743: {
 [e :U _wait_for_1_sec ]
 [f ]
-"742
+"744
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 742: unsigned int i;
-[; ;main.c: 743: for (i=0; i<100; i++)
-"743
+[; ;main.c: 744: unsigned int i;
+[; ;main.c: 745: for (i=0; i<100; i++)
+"745
 {
 [e = _i -> -> 0 `i `ui ]
 [e $ < _i -> -> 100 `i `ui 1444  ]
 [e $U 1445  ]
-"744
-[e :U 1444 ]
-[; ;main.c: 744: {
-{
-[; ;main.c: 745: _delay((unsigned long)((10)*(8000000/4000.0)));
-"745
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "746
+[e :U 1444 ]
+[; ;main.c: 746: {
+{
+[; ;main.c: 747: _delay((unsigned long)((10)*(8000000/4000.0)));
+"747
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"748
 }
-"743
+"745
 [e ++ _i -> -> 1 `i `ui ]
 [e $ < _i -> -> 100 `i `ui 1444  ]
 [e :U 1445 ]
-"746
+"748
 }
-[; ;main.c: 746: }
-[; ;main.c: 747: }
-"747
+[; ;main.c: 748: }
+[; ;main.c: 749: }
+"749
 [e :UE 1443 ]
 }

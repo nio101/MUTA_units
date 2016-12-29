@@ -41,7 +41,7 @@ let's put some const at the end of flash memory:
 const uint8_t myMUTA_version @ 0x01FFF2 = 0x01; // MUTA protocol version
 const uint8_t myMODEL @ 0x01FFF4 = 0x01; // scout
 // Unique ID used to identify the unit
-const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x04 };   // uid
+const uint8_t myUID[2] @ 0x01FFF6 = { 0x00, 0x02 };   // uid
 /* those info are mapped @ 0x01FFF4 and 0x01FFF6, and can then be modified
  * without recompiling the firmware, if needed (using the proper tool) */
 extern uint8_t myLongAddress[4];    // equal to myMODEL+myUID
@@ -516,6 +516,7 @@ bool send_initial_update()
     m_var.unit = MUTA_DEGREES_UNIT;
     m_var.value_byte1 = (uint8_t)floor(m_temperature);  // integer part
     m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));  // +2 digits
+    m_var._signed = true;
     m_var.writable = false;
     p_buffer += encode_ufixed16_variable(p_buffer, m_var);
     // send the message
@@ -618,6 +619,7 @@ bool send_periodical_update()
     m_var.unit = MUTA_DEGREES_UNIT;
     m_var.value_byte1 = (uint8_t)floor(m_temperature);  // integer part
     m_var.value_byte2 = (uint8_t)floor(((m_temperature - floor(m_temperature))*100));  // +2 digits
+    m_var._signed = true;
     m_var.writable = false;
     p_buffer += encode_ufixed16_variable(p_buffer, m_var);    
     // send the message
